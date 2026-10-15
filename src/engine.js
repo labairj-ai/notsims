@@ -26,6 +26,17 @@ export const key = (x,y)=>`${x},${y}`;
 export const inside = (x,y)=>Number.isInteger(x)&&Number.isInteger(y)&&x>=0&&y>=0&&x<SIZE&&y<SIZE;
 export const itemDef = id=>CATALOG.find(d=>d.id===id);
 export function dimensions(item){const d=itemDef(item.type);return item.rotation%2?[d.h,d.w]:[d.w,d.h];}
+export function furniturePoint(f,lx,ly){const d=itemDef(f.type),[w,h]=dimensions(f),a=f.rotation*Math.PI/2,c=Math.cos(a),s=Math.sin(a);return [f.x+w/2+(lx-d.w/2)*c+(ly-d.h/2)*s,f.y+h/2-(lx-d.w/2)*s+(ly-d.h/2)*c];}
+export function interactionTargets(f){
+ const [w,h]=dimensions(f),d=itemDef(f.type),targets=[];
+ if(['sofa','toilet'].includes(f.type)){
+  for(let x=0;x<d.w;x++){const [wx,wy]=furniturePoint(f,x+.5,d.h+.5);targets.push([Math.floor(wx+1e-8),Math.floor(wy+1e-8)]);}
+ }else{
+  for(let x=f.x;x<f.x+w;x++)targets.push([x,f.y-1],[x,f.y+h]);
+  for(let y=f.y;y<f.y+h;y++)targets.push([f.x-1,y],[f.x+w,y]);
+ }
+ return targets;
+}
 export function at(s,x,y,flat=false){return s.furniture.find(f=>{const [w,h]=dimensions(f);return !!itemDef(f.type).flat===flat&&x>=f.x&&y>=f.y&&x<f.x+w&&y<f.y+h;});}
 export function edgeKey(x,y,nx,ny){return x===nx?`h:${x},${Math.max(y,ny)}`:`v:${Math.max(x,nx)},${y}`;}
 export function blocked(s,x,y,nx,ny){return !inside(nx,ny)||!!at(s,nx,ny)||s.walls[edgeKey(x,y,nx,ny)]==='wall';}
@@ -91,7 +102,7 @@ function begin(s,a){
  if(a.kind==='use'){
  const f=s.furniture.find(f=>f.id===a.id);if(!f)return;const d=itemDef(f.type);if(!d.need)return;
  if(s.money<(d.cost||0)){log(s,'Not enough money for that meal. Try a free snack.');return;}
- const [w,h]=dimensions(f),targets=[];for(let x=f.x;x<f.x+w;x++){targets.push([x,f.y-1],[x,f.y+h]);}for(let y=f.y;y<f.y+h;y++)targets.push([f.x-1,y],[f.x+w,y]);
+ const targets=interactionTargets(f);
  const paths=targets.map(([x,y])=>pathTo(s,x,y)).filter(p=>p!==null).sort((a,b)=>a.length-b.length);if(!paths.length){log(s,'Cannot reach that furniture. Clear a path to one of its sides.');return;}
  s.money-=d.cost||0;s.activity={...a,path:paths[0],label:d.verb,need:d.need,rate:d.rate,total:d.duration,elapsed:0,skill:!!d.skill};return;
  }
@@ -111,7 +122,8 @@ export function tick(s,dt){
  for(const n of Object.keys(NEEDS)){let factor=s.person.trait==='social'&&n==='social'?.7:s.person.trait==='active'&&n==='energy'?.8:1;s.needs[n]=clamp(s.needs[n]-decay[n]*step*factor);}
  const day=Math.floor(s.minutes/1440);if(day>s.billsDay){s.billsDay=day;if(day%3===0){const bill=75+Math.floor(s.furniture.length*2);s.money-=bill;log(s,`Household bills: $${bill}. A new day begins.`);}}
  if(!s.activity&&s.queue.length)begin(s,s.queue.shift());const a=s.activity;if(!a)continue;
- if(a.path?.length){a.walkClock=(a.walkClock||0)+step;if(a.walkClock>=2){a.walkClock=0;const [x,y]=a.path.shift();if(blocked(s,s.person.x,s.person.y,x,y)){log(s,'The path changed. Action cancelled.');s.activity=null;continue;}s.person.x=x;s.person.y=y;}if(a.kind!=='walk')continue;}
+ if(a.path?.length){a.walkClock=(a.walkClock||0)+step;if(a.walkClock>=2-1e-9){a.walkClock=Math.max(0,a.walkClock-2);const [x,y]=a.path.shift();if(blocked(s,s.person.x,s.person.y,x,y)){log(s,'The path changed. Action cancelled.');s.activity=null;continue;}s.person.x=x;s.person.y=y;}if(a.kind!=='walk')continue;}
+ if(a.kind==='walk'){a.elapsed+=step;if(!a.path.length)s.activity=null;continue;}
  a.elapsed+=step;
  if(a.need)s.needs[a.need]=clamp(s.needs[a.need]+a.rate*step*(s.person.trait==='creative'&&a.skill?1.2:1));
  if(a.kind==='work'){s.needs.energy=clamp(s.needs.energy-.025*step);s.needs.social=clamp(s.needs.social+.08*step);}

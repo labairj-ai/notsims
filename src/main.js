@@ -6,7 +6,31 @@ let state=newGame(), saved=null,started=false,editing=false,speed=1,lastNonzero=
 try{const raw=localStorage.getItem(STORAGE);if(raw)saved=validateSave(raw);}catch{$('#save-status').textContent='Saved game unavailable. You can load a backup.';}
 if(saved)state=saved;
 const ui={tab:'live',tool:'room',floor:'wood',selected:null,rotation:0,category:'All',hover:null,roomStart:null,edge:null};
-const renderer=new Renderer($('#world'));let down=null;
+let renderer,characterPreview=null,is3D=false,down=null;
+const classicRequested=new URLSearchParams(location.search).get('view')==='classic';
+if(!classicRequested){
+ let candidate;
+ try{
+  const {Renderer3D}=await import('./render3d.js');
+  candidate=new Renderer3D($('#world'));candidate.draw(state,ui,performance.now()/1000);
+  await candidate.ready;renderer=candidate;is3D=true;
+ }catch(error){
+  console.warn('Using the classic view because the 3D view is unavailable.',error);
+  candidate?.renderer.dispose();const canvas=$('#world'),fresh=canvas.cloneNode(false);canvas.replaceWith(fresh);
+ }
+}
+if(!renderer)renderer=new Renderer($('#world'));
+if(is3D){
+ try{
+  const {CharacterPreview}=await import('./character3d.js');
+  characterPreview=new CharacterPreview($('#character-preview'));await characterPreview.ready;
+ }catch(error){
+  console.warn('Using a portrait preview.',error);characterPreview=null;
+  const canvas=$('#character-preview');canvas.replaceWith(canvas.cloneNode(false));
+ }
+}
+$('#scene-loading').hidden=true;$('#scene-badge').textContent=is3D?'3D WORLD':'CLASSIC VIEW';
+$('#camera-left').disabled=$('#camera-right').disabled=!is3D;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function toast(message){const el=$('#toast');el.textContent=message;el.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.hidden=true,4200);}
 function errorOr(message,success){if(message)toast(message);else if(success)toast(success);updateUI(true);}
@@ -52,9 +76,14 @@ $('#save').onclick=()=>save();$('#manual-save').onclick=()=>save();$('#menu').on
 $('#help').onclick=()=>{$('#game-menu').close();$('#help-dialog').showModal();};
 $('#walls').onclick=()=>{renderer.fullWalls=!renderer.fullWalls;toast(renderer.fullWalls?'Full walls. Toggle again for the open dollhouse view.':'Dollhouse view. Front walls are lowered.');};
 $('#zoom-in').onclick=()=>renderer.zoom=Math.min(2.8,renderer.zoom+.15);$('#zoom-out').onclick=()=>renderer.zoom=Math.max(.6,renderer.zoom-.15);$('#recenter').onclick=()=>{renderer.panX=renderer.panY=0;renderer.zoom=1.15;};
+$('#camera-left').onclick=()=>{renderer.rotate?.(-1);$('#object-popup').hidden=true;};
+$('#camera-right').onclick=()=>{renderer.rotate?.(1);$('#object-popup').hidden=true;};
+$('#view-mode').innerHTML=is3D?'▧ Switch to classic view <span>→</span>':'▧ Try the 3D view <span>→</span>';
+$('#view-mode').onclick=()=>{save(true);const url=new URL(location.href);if(is3D)url.searchParams.set('view','classic');else url.searchParams.delete('view');location.href=url.href;};
+function refreshCharacterPreview(){if(characterPreview)characterPreview.customize(fields());else drawCharacter($('#character-preview'),fields());}
 function fields(){return {name:$('#character-name').value.trim()||'Alex Green',skin:$('#skin').value,hair:$('#hair').value,shirt:$('#shirt').value,style:$('#hairstyle').value,trait:$('#trait').value};}
-function openCreator(edit=false){editing=edit;$('#creator-close').hidden=!started;$('#lot-label').hidden=edit;$('#resume').hidden=edit||!saved;$('#begin').innerHTML=edit?'A little more you <span>↗</span>':'Let’s make a life <span>↗</span>';const p=state.person;$('#character-name').value=p.name;$('#skin').value=p.skin;$('#hair').value=p.hair;$('#shirt').value=p.shirt;$('#hairstyle').value=p.style;$('#trait').value=p.trait;drawCharacter($('#character-preview'),fields());$('#creator').showModal();}
-$('#character-form').addEventListener('input',()=>drawCharacter($('#character-preview'),fields()));
+function openCreator(edit=false){editing=edit;$('#creator-close').hidden=!started;$('#lot-label').hidden=edit;$('#resume').hidden=edit||!saved;$('#begin').innerHTML=edit?'A little more you <span>↗</span>':'Let’s make a life <span>↗</span>';const p=state.person;$('#character-name').value=p.name;$('#skin').value=p.skin;$('#hair').value=p.hair;$('#shirt').value=p.shirt;$('#hairstyle').value=p.style;$('#trait').value=p.trait;refreshCharacterPreview();$('#creator').showModal();}
+$('#character-form').addEventListener('input',()=>refreshCharacterPreview());
 $('#character-form').onsubmit=e=>{e.preventDefault();if(editing){Object.assign(state.person,fields());log(state,'A fresh look for a new day.');}else{if(started&&!confirm('Start a new life? Download your current save from the menu first if you want to keep it.'))return;state=newGame(fields(),$('#lot').value==='empty');started=true;selectTab('live');}$('#creator').close();updateUI(true);save(true);toast(editing?'Looking good. Feeling like you.':'Welcome home. Click furniture to use it, or open Build to make it your own.');};
 $('#creator').addEventListener('cancel',e=>{if(!started)e.preventDefault();});
 $('#creator-close').onclick=()=>$('#creator').close();$('#edit-character').onclick=()=>openCreator(true);$('#new-game').onclick=()=>{$('#game-menu').close();openCreator(false);};
@@ -73,12 +102,12 @@ $('#world').addEventListener('pointerup',e=>{if(!down)return;const d=down;down=n
  else errorOr(buildTile(state,ui.tool,p.x,p.y,p.edge,ui.floor));return;
  }
  if(ui.tab==='shop'&&ui.selected){errorOr(buy(state,ui.selected,p.x,p.y,ui.rotation));return;}
- let f=at(state,p.x,p.y);if(!f){const candidates=state.furniture.filter(f=>!itemDef(f.type).flat).filter(f=>{const [w,h]=dimensions(f),[cx,cy]=renderer.p(f.x+w/2,f.y+h/2);return Math.abs(p.px-cx)<renderer.t*(w+h)*.45&&p.py>cy-renderer.t*2.6&&p.py<cy+renderer.t*.3;});f=candidates.sort((a,b)=>(b.x+b.y)-(a.x+a.y))[0];}
+ let f=renderer.pickFurniture?.(state,p.px,p.py)||at(state,p.x,p.y);if(!f&&!is3D){const candidates=state.furniture.filter(f=>!itemDef(f.type).flat).filter(f=>{const [w,h]=dimensions(f),[cx,cy]=renderer.p(f.x+w/2,f.y+h/2);return Math.abs(p.px-cx)<renderer.t*(w+h)*.45&&p.py>cy-renderer.t*2.6&&p.py<cy+renderer.t*.3;});f=candidates.sort((a,b)=>(b.x+b.y)-(a.x+a.y))[0];}
  if(f){showObject(f,p);return;}errorOr(enqueue(state,{kind:'walk',x:p.x,y:p.y}));
 });
 function showObject(f,p){const d=itemDef(f.type),el=$('#object-popup');el.innerHTML=`<button class="close-popup" aria-label="Close object menu">×</button><strong>${esc(d.name)}</strong><small>${d.need?`A little boost for ${d.need}`:'A little character for your home'}</small>${d.need?`<button id="use-object">${d.verb} ${d.cost?`· ${money(d.cost)}`:'→'}</button>`:''}<button id="find-furnish">Make room for something new ↗</button>`;el.style.left=`${Math.max(10,Math.min(p.px-85,renderer.w-220))}px`;el.style.top=`${Math.max(80,Math.min(p.py-115,renderer.h-190))}px`;el.hidden=false;el.querySelector('.close-popup').onclick=()=>el.hidden=true;if($('#use-object'))$('#use-object').onclick=()=>{errorOr(enqueue(state,{kind:'use',id:f.id}));el.hidden=true;};$('#find-furnish').onclick=()=>{ui.tool='erase';selectTab('build');};}
 $('#world').addEventListener('wheel',e=>{e.preventDefault();renderer.zoom=Math.max(.6,Math.min(2.8,renderer.zoom-e.deltaY*.001));},{passive:false});
-document.addEventListener('keydown',e=>{if(['INPUT','SELECT','TEXTAREA'].includes(document.activeElement?.tagName)||$('dialog[open]'))return;if(e.key===' '){e.preventDefault();if(['build','shop'].includes(ui.tab))selectTab('live');setSpeed(speed?0:lastNonzero);}if(['1','2','3'].includes(e.key)){if(['build','shop'].includes(ui.tab))selectTab('live');setSpeed({'1':1,'2':3,'3':8}[e.key]);}if(e.key.toLowerCase()==='r'&&ui.tab==='shop'){ui.rotation=(ui.rotation+1)%4;toast(`Rotated ${ui.rotation*90}°`);}if(e.key==='Escape'){ui.selected=null;ui.roomStart=null;$('#object-popup').hidden=true;if(ui.tab==='shop')renderStudio();}if(e.key.startsWith('Arrow')){e.preventDefault();renderer.panX+=e.key==='ArrowLeft'?35:e.key==='ArrowRight'?-35:0;renderer.panY+=e.key==='ArrowUp'?35:e.key==='ArrowDown'?-35:0;}updateUI(true);});
+document.addEventListener('keydown',e=>{if(['INPUT','SELECT','TEXTAREA'].includes(document.activeElement?.tagName)||$('dialog[open]'))return;if(e.key===' '){e.preventDefault();if(['build','shop'].includes(ui.tab))selectTab('live');setSpeed(speed?0:lastNonzero);}if(['1','2','3'].includes(e.key)){if(['build','shop'].includes(ui.tab))selectTab('live');setSpeed({'1':1,'2':3,'3':8}[e.key]);}if(e.key.toLowerCase()==='r'&&ui.tab==='shop'){ui.rotation=(ui.rotation+1)%4;toast(`Rotated ${ui.rotation*90}°`);}if(is3D&&['q','e'].includes(e.key.toLowerCase())){renderer.rotate(e.key.toLowerCase()==='q'?-1:1);$('#object-popup').hidden=true;}if(e.key==='Escape'){ui.selected=null;ui.roomStart=null;$('#object-popup').hidden=true;if(ui.tab==='shop')renderStudio();}if(e.key.startsWith('Arrow')){e.preventDefault();renderer.panX+=e.key==='ArrowLeft'?35:e.key==='ArrowRight'?-35:0;renderer.panY+=e.key==='ArrowUp'?35:e.key==='ArrowDown'?-35:0;}updateUI(true);});
 setInterval(()=>save(true),20000);window.addEventListener('pagehide',()=>save(true));document.addEventListener('visibilitychange',()=>{if(document.hidden)save(true);lastFrame=performance.now();});
-function frame(now){const dt=Math.min((now-lastFrame)/1000,.25);lastFrame=now;if(!paused()&&!document.hidden)tick(state,dt*speed);renderer.draw(state,ui,now/1000);if(now-lastUI>220){updateUI();lastUI=now;}requestAnimationFrame(frame);}
+function frame(now){const dt=Math.min((now-lastFrame)/1000,.25);lastFrame=now;if(!paused()&&!document.hidden)tick(state,dt*speed);renderer.draw(state,ui,now/1000);if(characterPreview&&$('#creator').open)characterPreview.draw(dt);if(now-lastUI>220){updateUI();lastUI=now;}requestAnimationFrame(frame);}
 renderStudio();updateUI(true);requestAnimationFrame(frame);openCreator();

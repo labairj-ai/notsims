@@ -17,9 +17,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+      - run: npm ci
       - run: npm test
       - run: npm run build
-      - run: node --check src/main.js && node --check src/render.js
+      - run: node --check src/main.js && node --check src/render.js && node --check src/render3d.js && node --check src/character3d.js && node --check src/scene3d.js
       - uses: actions/upload-artifact@v4
         with:
           name: notsims-static

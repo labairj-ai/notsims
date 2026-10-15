@@ -11,7 +11,7 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'
 function toast(message){const el=$('#toast');el.textContent=message;el.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.hidden=true,4200);}
 function errorOr(message,success){if(message)toast(message);else if(success)toast(success);updateUI(true);}
 function paused(){return !started||speed===0||['build','shop'].includes(ui.tab)||!!$('dialog[open]');}
-function save(quiet=false){if(!started)return;try{localStorage.setItem(STORAGE,JSON.stringify(state));$('#save-status').textContent=`Saved at ${new Date().toLocaleTimeString([],{hour:'numeric',minute:'2-digit'})}`;if(!quiet)toast('Your little life is saved.');}catch{$('#save-status').textContent='Autosave unavailable';if(!quiet)toast('Browser storage is unavailable. Download a save from the menu.');}}
+function save(quiet=false){if(!started)return;try{localStorage.setItem(STORAGE,JSON.stringify(state));saved=structuredClone(state);$('#save-status').textContent=`Saved at ${new Date().toLocaleTimeString([],{hour:'numeric',minute:'2-digit'})}`;if(!quiet)toast('Your little life is saved.');}catch{$('#save-status').textContent='Autosave unavailable';if(!quiet)toast('Browser storage is unavailable. Download a save from the menu.');}}
 function setSpeed(n){speed=n;if(n)lastNonzero=n;updateUI(true);}
 function selectTab(tab){ui.tab=tab;ui.roomStart=null;ui.selected=null;$('#object-popup').hidden=true;$$('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));renderStudio();updateUI(true);}
 function renderStudio(){const root=$('#studio-content');

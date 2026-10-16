@@ -78,3 +78,54 @@ See [follow-up validation](../docs/reviews/social-followup-validation.md) and
 [physical/audio acceptance matrix](../docs/reviews/mobile-social-human-acceptance.md).
 The explicit request to build everything included shared-activity implementation;
 0052 remains the human certification gate and has not been declared passed.
+
+## Embodied character behavior and food-economy correction
+
+Tasks **0054–0068** are open, imported from the
+[replacement embodied-behavior review](https://chatgpt.com/s/t_6ad2a99165108191bc4e362cee7f9ee9)
+and checked against implementation `69b09c6`. **0069** is a separate critical
+correctness task identified while reviewing its claim of an earlier food fix.
+This update adds backlog items only.
+
+| ID | Priority | Work |
+| --- | --- | --- |
+| 0054 | Critical | Define renderer-neutral BodyIntent, layering, timing and behavior mappings |
+| 0055 | Critical | Expand reproducible CC0 animation primitives and clip metadata |
+| 0056 | Critical | Add bounded head/neck/torso attention and gaze |
+| 0057 | High | Add safe relationship/context-aware conversation staging |
+| 0058 | Critical | Choreograph social speaker/listener gestures and outcome reactions |
+| 0059 | High | Derive subtle mood/need presentation without changing travel or outcomes |
+| 0060 | High | Add irregular micro-idle and social backchannels |
+| 0061 | Critical | Add rotated neutral furniture anchors and bounded hand IK |
+| 0062 | Critical | Choreograph object use and align semantic audio phases |
+| 0063 | Medium | Add delayed, partial relationship-aware synchrony |
+| 0064 | High | Give all five shared activities complementary two-person choreography |
+| 0065 | Critical | Build the layered animation controller and interrupt-safe ownership |
+| 0066 | High | Render equivalent semantic gestures and postures in Classic |
+| 0067 | High | Add reduced motion, degradation policy and measured mobile budgets |
+| 0068 | Critical | Validate the full matrix and record real human animation acceptance |
+| 0069 | Critical | Correct shared-food charges, consumption and atomic cancellation policy |
+
+Suggested execution: **0069 → 0054 → 0055 → 0065 → 0056 → 0057 → 0058 →
+0059 → 0060 → 0061 → 0062 → 0063 → 0064 → 0066 → 0067 → 0068**.
+0069 can also run independently alongside the presentation foundation; it must
+land before 0064. Numeric order alone is not a valid execution order here.
+
+Dependency corrections from the source:
+
+- 0065 originally depended on 0055–0064 while the recommendation put it first.
+  Its foundation now follows 0054/0055; procedural consumers depend on that API.
+  Combined-layer integration is validated by 0067/0068 without a dependency cycle.
+- 0060 requires 0059; it cannot precede affect support as the prose suggested.
+- 0053/0048 implementation is available; their outstanding human acceptance
+  does not prevent building this presentation layer.
+- 0068 can prepare automated evidence before 0052 closes. Final human/mobile
+  certification still accounts for 0052 and never infers a physical result.
+- The source's eight-character performance case is synthetic stress testing;
+  production remains capped at one player plus three visitors.
+- The source's earlier food-economy correction is not implemented. Shared meals
+  currently restore hunger without a charge; 0069 captures the missing work.
+
+Each item retains its proposed behavior and guardrails, plus repository-specific
+integration notes and QA. Presentation must remain separate from gameplay truth,
+consume no simulation RNG, preserve saves/replay and share intent across renderers.

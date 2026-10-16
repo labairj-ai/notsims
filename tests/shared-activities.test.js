@@ -51,3 +51,10 @@ test('cancellation, departure, object changes, timeout and save/load cannot dupl
   assert.equal(s.money,money-(active?16:0));
  }
 });
+test('shared candidate query prepares once, stays pure and revalidates changed funds on start',()=>{
+ const s=setup('table'),before=structuredClone(s),funds=s.money;let reads=0;
+ Object.defineProperty(s,'money',{configurable:true,get(){reads++;return funds;}});
+ const choices=availableSharedActivities(s,'person_1');assert.equal(reads,1);assert.equal(choices[0].cost,16);assert.equal(choices[0].eligible,true);
+ Object.defineProperty(s,'money',{configurable:true,writable:true,value:funds});assert.deepEqual(s,before);
+ s.money=0;const snapshot=structuredClone(s);assert.equal(dispatch(s,{type:'SHARED_ACTIVITY',personId:'person_1',objectId:1,interactionId:'shared_eat'}).code,'INSUFFICIENT_FUNDS');assert.deepEqual(s,snapshot);
+});

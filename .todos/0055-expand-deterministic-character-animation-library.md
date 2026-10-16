@@ -1,7 +1,7 @@
 # Expand the Deterministic Character Animation Library
 
 - **ID:** 0055
-- **Status:** complete
+- **Status:** in progress
 - **Created:** 2026-10-16
 - **Priority:** critical
 - **Depends:** 0054
@@ -100,7 +100,7 @@ SitToStand
 - [x] every required clip exists in the GLB.
 - [x] clip duration/loop metadata validated.
 - [x] existing character customization works.
-- [x] animation transitions show no major pose snapping.
+- [ ] animation transitions show no major pose snapping.
 
 ## QA requirements
 
@@ -132,3 +132,9 @@ Original design scope retained; dependency and integration clarifications are do
 Software implementation and automated coverage are available. See
 [behavior contract](../docs/architecture/embodied-character-behavior.md) and
 [validation record](../docs/reviews/embodied-character-behavior-validation.md).
+
+## Human acceptance ownership (0070)
+
+Software/structural evidence remains valid. The perceptual transition criterion
+above is pending desktop human review in 0074 and physical review in 0075,
+tracked by 0068. Automated screenshots and finite-pose checks do not close it.

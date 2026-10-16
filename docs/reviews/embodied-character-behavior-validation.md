@@ -93,7 +93,12 @@ cost >8 ms removes optional visitor IK/micro-idle before player/partner detail.
 
 Live `prefers-reduced-motion` suppresses decorative sway/glances/flourishes,
 retaining essential social/action feedback at reduced amplitude. `?body=off`
-provides the legacy baseline without simulation/save changes.
+provides the **behavior-off baseline** without simulation/save changes. It keeps
+the expanded GLB, clip vocabulary, current renderer and loading path. It disables
+gesture, gaze, IK, affect/posture, micro-motion and synchrony layers. It is not an
+old-asset or pre-embodied load/performance baseline. For that comparison, use the
+separate exact prior release `69b09c677b8ba1b6bc6eda5e21db8ce7e57132bb`
+and its asset hash; never attribute the current asset load cost to behavior-off.
 
 ## Required human/physical acceptance — pending
 
@@ -113,3 +118,17 @@ physics/animated furniture doors; IK falls back when a safe approach cannot
 reach a visual anchor; standing shared TV/table/book/desk slots do not invent
 chairs. Sit/lie transitions, clipped contacts and gaze comfort require the human
 matrix above. No physical or listening result is inferred here.
+
+## Evidence and acceptance ownership (0070/0072)
+
+0054 and 0069 retain their completed software evidence. 0055 and 0065 are in
+progress: their structural tests passed, while perceptual transition criteria
+remain unchecked. 0056–0064 and 0066–0068 retain their pending human/device status.
+0074 owns the desktop motion review and 0075 owns the physical/standalone/thermal/
+listening matrix. 0068 consolidates that evidence without duplicating or inventing
+a pass. The original `c43dae2` implementation evidence remains traceable through
+PR #1; later corrective checks identify their own source SHA.
+
+Use behavior-off to isolate procedural presentation effects on the same asset.
+Use a separately checked-out old release for asset/load/performance comparisons.
+Neither comparison establishes human motion quality or physical phone comfort.

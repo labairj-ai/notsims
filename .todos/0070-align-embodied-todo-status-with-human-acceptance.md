@@ -1,7 +1,7 @@
 # Align Embodied TODO Status With Human Acceptance
 
 - **ID:** 0070
-- **Status:** open
+- **Status:** in progress
 - **Created:** 2026-10-16
 - **Priority:** high
 - **Depends:** none
@@ -77,3 +77,8 @@ existing completion claims or satisfy them.
 
 Imported from the [PR follow-up review](https://chatgpt.com/s/t_6ad2b66d40308191b0b3972664052ad7), checked against `c43dae2b1e8beccd1896a7173e95dde32f30d9fa` on `codex/embodied-character-behavior` and read-only PR #1/main metadata.
 Source scope retained; dependency, check-name and deployment clarifications are recorded above. All new tasks remain open.
+
+## Current implementation
+
+Corrective work is implemented. See the updated embodied validation record;
+final candidate CI and governance evidence are recorded separately.

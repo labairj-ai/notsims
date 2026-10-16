@@ -1,7 +1,7 @@
 # Complete Physical Mobile, Standalone, Thermal, and Audio Acceptance
 
 - **ID:** 0075
-- **Status:** open
+- **Status:** in progress
 - **Created:** 2026-10-16
 - **Priority:** critical
 - **Depends:** 0067 (implementation), 0074 (desktop review)
@@ -162,3 +162,9 @@ thermal behavior acceptable, and label unsupported/unmeasured cases explicitly.
 
 Imported from the [PR follow-up review](https://chatgpt.com/s/t_6ad2b66d40308191b0b3972664052ad7), checked against `c43dae2b1e8beccd1896a7173e95dde32f30d9fa` on `codex/embodied-character-behavior` and read-only PR #1/main metadata.
 Source scope retained; dependency, check-name and deployment clarifications are recorded above. All new tasks remain open.
+
+## Current acceptance state
+
+Automated evidence and review preparation are in progress. Required human/
+physical results remain pending. PR #1 remains draft; merge and production
+activation are held by the explicit 0074/0075 acceptance criteria in 0076.

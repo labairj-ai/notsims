@@ -1,7 +1,7 @@
 # Remove Duplicate Shared-Activity Eligibility Evaluation
 
 - **ID:** 0071
-- **Status:** open
+- **Status:** in progress
 - **Created:** 2026-10-16
 - **Priority:** medium
 - **Depends:** 0053, 0069
@@ -82,3 +82,8 @@ container or persistent cache solely to count calls.
 
 Imported from the [PR follow-up review](https://chatgpt.com/s/t_6ad2b66d40308191b0b3972664052ad7), checked against `c43dae2b1e8beccd1896a7173e95dde32f30d9fa` on `codex/embodied-character-behavior` and read-only PR #1/main metadata.
 Source scope retained; dependency, check-name and deployment clarifications are recorded above. All new tasks remain open.
+
+## Current implementation
+
+Corrective work is implemented. See the updated embodied validation record;
+final candidate CI and governance evidence are recorded separately.

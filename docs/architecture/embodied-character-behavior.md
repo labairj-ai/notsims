@@ -110,7 +110,10 @@ meal/book/keyboard/pan shapes. It does not maintain separate action mappings.
 
 Live `prefers-reduced-motion` removes micro-motion, glances and need flourishes;
 required gestures retain reduced amplitude. `?body=off` disables new overlays,
-gaze, IK and affect without changing saves or simulation. Production remains one
+gaze, IK, affect/posture, micro-motion and synchrony without changing saves or
+simulation. This is the **behavior-off baseline**: the expanded GLB, clip
+vocabulary, current renderer and loading path remain. A true pre-embodied
+asset/load/performance baseline requires a separate old-release checkout. Production remains one
 player plus three visitors; eight actors are a synthetic stress case only.
 
 Target devices for outstanding acceptance: current iPhone Safari and Android

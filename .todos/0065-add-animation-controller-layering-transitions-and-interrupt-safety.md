@@ -1,7 +1,7 @@
 # Add Animation Controller, Layering, Transitions, and Interrupt Safety
 
 - **ID:** 0065
-- **Status:** complete
+- **Status:** in progress
 - **Created:** 2026-10-16
 - **Priority:** critical
 - **Depends:** 0054, 0055
@@ -101,7 +101,7 @@ with activity state still completing according to simulation time.
 - [x] base + gesture + gaze + IK can coexist.
 - [x] interruptions cleanly reset all layers.
 - [x] no stuck bones after cancellation.
-- [x] transitions remain smooth at 1×/3×/8×.
+- [ ] transitions remain smooth at 1×/3×/8×.
 
 ## QA requirements
 
@@ -132,3 +132,9 @@ Original design scope retained; dependency and integration clarifications are do
 Software implementation and automated coverage are available. See
 [behavior contract](../docs/architecture/embodied-character-behavior.md) and
 [validation record](../docs/reviews/embodied-character-behavior-validation.md).
+
+## Human acceptance ownership (0070)
+
+Software/structural evidence remains valid. The perceptual transition criterion
+above is pending desktop human review in 0074 and physical review in 0075,
+tracked by 0068. Automated screenshots and finite-pose checks do not close it.

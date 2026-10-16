@@ -1,7 +1,7 @@
 # Protect Main and Require CI Before Merge
 
 - **ID:** 0073
-- **Status:** open
+- **Status:** in progress
 - **Created:** 2026-10-16
 - **Priority:** high
 - **Depends:** none

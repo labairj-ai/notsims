@@ -43,3 +43,31 @@ milestone; it is not a prerequisite for 0046. Numeric order also satisfies depen
 See the [social epic overview](../SOCIAL-EPIC-README.md) and
 [social architecture](../docs/architecture/social-simulation.md). Existing mobile
 and production audio certification requirements remain open as recorded above.
+
+## Social correctness, usability and shared activities
+
+Tasks 0047–0053 are **open**, reviewed against implementation `91008ba` and
+imported from the [shared follow-up review](https://chatgpt.com/share/6ad2940c-5270-83ea-88e8-a8ec8f0f1dfe?ogimg=plain).
+This is backlog planning; no gameplay changes are included in this import.
+
+| ID | Priority | Work |
+| --- | --- | --- |
+| 0047 | Critical | Correct initiative ownership, canonical effects, discovery gates, waiting visitor decisions and visit cooldowns |
+| 0048 | Critical | Rank contextual actions; show 3–5 recommendations with More and a concise channel choice |
+| 0049 | High | Add bounded repetition fatigue, variety and memory coalescing |
+| 0050 | High | Extract focused social modules with unchanged replay behavior |
+| 0051 | High | Add semantic text/ring/knock/milestone audio and lifecycle handling |
+| 0052 | Critical | Consolidate real iPhone/Android, standalone and human audio acceptance |
+| 0053 | High | Add at least four coordinated shared furniture activities |
+
+Recommended sequence: **0047 → 0048 → 0049 → 0050 → 0051 → 0052 → 0053**.
+0046's automated baseline is already available; its physical acceptance does not
+block starting 0047. Task 0052 validates existing certification requirements
+rather than depending on their prior completion. UI/audio implementation and
+automated evidence can finish before their human sign-off under 0052. Keep
+0052 as the release-readiness gate for the shared-activity feature in 0053.
+
+Review findings are confirmed in current source: unconditional player initiative,
+direct autonomy effects, ungated roster candidates, normal actions for waiting
+guests, full catalog/channel clusters and full repeat gains. Each task records
+its repository-specific integration notes, save compatibility and QA obligations.

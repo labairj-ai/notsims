@@ -143,16 +143,16 @@ Include:
 - [ ] Object interaction is comfortable with a finger.
 - [ ] Safe areas are respected.
 - [ ] Audio still unlocks/plays after mobile UX changes.
-- [ ] Final mobile validation record is committed.
+- [x] Final mobile validation record is committed.
 
 ## QA requirements
 
-- [ ] Full existing test suite passes.
-- [ ] Focused mobile tests pass.
-- [ ] Build/source checks pass.
+- [x] Full existing test suite passes.
+- [x] Focused mobile tests pass.
+- [x] Build/source checks pass.
 - [ ] Classic and Three pass.
-- [ ] GitHub CI passes.
-- [ ] Production/mobile smoke check passes after deployment.
+- [x] GitHub CI passes.
+- [x] Production/mobile smoke check passes after deployment.
 
 ## Source
 

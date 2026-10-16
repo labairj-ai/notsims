@@ -71,3 +71,29 @@ HTTP/MIME checks. Classic/Three desktop and phone-size audio tests passed unlock
 all WAV decoding, MP3 streams/crossfades, mute/settings/persistence, owned-loop
 teardown; desktop hidden/resume and failure paths also passed. Audio-disabled
 startup and New Game passed. Physical listening remains pending.
+
+## Final production release
+
+- Deployed source: `ef88e605cf6e5c943f214ba86cb90424f705a66f`.
+- Release/current target: `/var/www/notsims/releases/20261016T192936Z-ef88e60`.
+- Deployed: 2026-10-16T19:30:06.762122+00:00, atomic symlink update.
+- Previous release retained: `/var/www/notsims/releases/20261016T191921Z-929208b`;
+  prior audio release is also retained.
+- Clean checkout: npm ci, 81 tests, build and source checks pass.
+- [Corrective CI](https://github.com/labairj-ai/notsims/actions/runs/38954869948): passed.
+- [Implementation CI](https://github.com/labairj-ai/notsims/actions/runs/38953999681): passed.
+- Final production interaction scenarios: Classic and Three pass, including the
+  sheet-button regression and actual one-command room drawing/placement.
+- [Production layout evidence](mobile-evidence/production-layout-results.json):
+  56 passing checks on the first mobile release; the corrective release changes
+  only sheet drag capture and adds the scenario harness/documentation.
+- [Final HTTP evidence](mobile-evidence/production-http-results.json): all 57
+  responses HTTP 200, correct MIME and byte-identical to the verified build.
+  Manifest and both PNG icons included. All 127 packaged file hashes were checked
+  on OptiPlex before activation. Existing Nginx/Tailscale routes retained.
+- Public game: https://optiplex.tailb97cdb.ts.net/notsims/
+
+The audio harness completed successfully after a delayed Chrome shutdown. All
+four desktop/phone renderer cases and unavailable-audio startup passed. This is
+not a physical listening result. Real-device certification remains pending as
+detailed above.

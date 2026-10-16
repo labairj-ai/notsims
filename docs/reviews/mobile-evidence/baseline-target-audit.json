@@ -480,6 +480,44 @@
     ]
   },
   {
+    "width": 320,
+    "tab": "game-menu",
+    "small": [
+      {
+        "control": "Close menu",
+        "width": 34,
+        "height": 34
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "tab": "help-dialog",
+    "small": [
+      {
+        "control": "Close help",
+        "width": 34,
+        "height": 34
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "tab": "audio-settings",
+    "small": [
+      {
+        "control": "Close audio settings",
+        "width": 33.03125,
+        "height": 34
+      },
+      {
+        "control": "mute-all",
+        "width": 22,
+        "height": 22
+      }
+    ]
+  },
+  {
     "width": 390,
     "tab": "creator",
     "small": [
@@ -985,6 +1023,44 @@
     ]
   },
   {
+    "width": 390,
+    "tab": "game-menu",
+    "small": [
+      {
+        "control": "Close menu",
+        "width": 34,
+        "height": 34
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "tab": "help-dialog",
+    "small": [
+      {
+        "control": "Close help",
+        "width": 34,
+        "height": 34
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "tab": "audio-settings",
+    "small": [
+      {
+        "control": "Close audio settings",
+        "width": 34,
+        "height": 34
+      },
+      {
+        "control": "mute-all",
+        "width": 22,
+        "height": 22
+      }
+    ]
+  },
+  {
     "width": 768,
     "tab": "creator",
     "small": [
@@ -1406,6 +1482,44 @@
         "control": "Take the job ↗",
         "width": 185,
         "height": 35
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "tab": "game-menu",
+    "small": [
+      {
+        "control": "Close menu",
+        "width": 34,
+        "height": 34
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "tab": "help-dialog",
+    "small": [
+      {
+        "control": "Close help",
+        "width": 34,
+        "height": 34
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "tab": "audio-settings",
+    "small": [
+      {
+        "control": "Close audio settings",
+        "width": 34,
+        "height": 34
+      },
+      {
+        "control": "mute-all",
+        "width": 22,
+        "height": 22
       }
     ]
   }

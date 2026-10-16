@@ -26,6 +26,16 @@ The game automatically uses the classic Canvas view if WebGL or 3D asset loading
 
 Buildings cost money; floors cost $12 per tile, walls $18 per edge, doors $35. Furniture sells for 65% of its purchase price. Household bills arrive every three game days. Jobs pay on completing a shift, with a raise every three completed shifts. Leaving work early forfeits the shift’s pay. Character needs never cause death.
 
+## Sound
+
+Original music, subtle building feedback, interaction sounds, footsteps and garden
+ambience start after your first click or keypress. Open **Menu → Audio settings**
+for separate Master, Music, Sound Effects, Ambience and Interface volume controls,
+plus Mute All. Preferences stay on this device and are separate from game saves.
+Music continues while paused; activity sounds pause with simulation. Hidden tabs
+are silent. See [audio architecture](docs/architecture/audio.md) and
+[asset provenance](assets/audio/LICENSES.md).
+
 ## Saves
 
 Saves use this browser’s local storage and are specific to this origin/device. The game autosaves every 20 seconds and when the page is hidden or left. Use the game menu to download a save and import it elsewhere. No account or cloud service is required; there is no cloud save synchronization. The game does not advance while closed or in a hidden tab. In-progress jobs resume after loading; other current actions and queued paths are cleared safely.
@@ -75,6 +85,12 @@ See [architecture](docs/architecture/game-architecture.md),
 [system review template](docs/reviews/TEMPLATE.md).
 See the [validation record](docs/reviews/architecture-refactor-validation.md) for
 test results and browser checks.
+
+## Audio work order
+
+Tasks 0013–0020 are complete. Dependency order is 0013, then
+0014/0015, 0016/0017, 0018/0019, and 0020 for final QA. The numeric order is valid.
+See [audio validation](docs/reviews/audio-validation.md) for acceptance evidence.
 
 ## Hosting
 

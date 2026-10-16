@@ -4,5 +4,8 @@ await rm('dist',{recursive:true,force:true});await mkdir('dist',{recursive:true}
 for(const file of ['index.html','favicon.svg'])await copyFile(file,`dist/${file}`);
 await cp('src','dist/src',{recursive:true});await copyFile('.nojekyll','dist/.nojekyll');
 await cp('assets','dist/assets',{recursive:true});await vendor('dist/vendor');
+const {validateAudio}=await import('./check-audio.mjs');
+const audio=await validateAudio('dist',{writeManifest:true});console.log(`Audio bundle: ${audio.totalBytes} bytes; unlock preload: ${audio.essentialBytes} bytes; decoded SFX: ${audio.estimatedDecodedSfxBytes} bytes.`);
+if(audio.totalBytes>audio.budget.totalWarn||audio.essentialBytes>audio.budget.essentialWarn)console.warn('Audio exceeds the warning budget.');
 await import('./check-build.mjs');
 console.log('Notsims built in dist/');

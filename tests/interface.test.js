@@ -18,8 +18,8 @@ async function boot(view,saved=null){
   globalThis.setInterval=()=>0;
   globalThis.setTimeout=(...args)=>{const timer=timeout(...args);timer.unref?.();return timer;};
   const messages=[];console.warn=(...a)=>messages.push(a.join(' '));console.error=(...a)=>messages.push(a.join(' '));
-  try{await import(`../src/main.js?interface-test=${view}`);}finally{globalThis.setInterval=interval;console.warn=warn;console.error=error;}
-  return {dom,w,$:s=>w.document.querySelector(s),messages,finish:()=>{globalThis.setTimeout=timeout;w.close();}};
+  let game;try{game=(await import(`../src/main.js?interface-test=${view}`)).app;}finally{globalThis.setInterval=interval;console.warn=warn;console.error=error;}
+  return {dom,w,game,$:s=>w.document.querySelector(s),messages,finish:()=>{game?.audio?.dispose();globalThis.setTimeout=timeout;w.close();}};
 }
 
 test('classic interface starts a game, edits appearance, switches tools and persists a save',async()=>{
@@ -86,4 +86,23 @@ test('import/export controller validates before replacing local save and preserv
     w.HTMLAnchorElement.prototype.click=function(){clicked=true;assert.match(this.download,/notsims-day-1.json/);};
     $('#export').click();assert.equal(clicked,true);assert.equal(JSON.parse(await blob.text()).person.name,'Imported Resident');
   }finally{URL.createObjectURL=oldCreate;URL.revokeObjectURL=oldRevoke;app.finish();}
+});
+
+test('audio settings are labelled, live, reversible and remain device-local across imports and new games',async()=>{
+ const {FakeAudioBackend,flush}=await import('./helpers/fake-audio.js');
+ const app=await boot('audio-settings'),{$,w,game}=app;const backend=new FakeAudioBackend();game.audio.manager.backend=backend;
+ try{
+  await game.audio.manager.unlock();await flush();
+  $('#character-form').dispatchEvent(new w.Event('submit',{cancelable:true}));$('#menu').click();$('#audio-menu').click();assert.ok($('#audio-settings').open);
+  for(const bus of ['master','music','sfx','ambience','ui'])assert.ok($(`label[for="volume-${bus}"]`));
+  const slider=$('#volume-music');slider.value='22';slider.dispatchEvent(new w.Event('input',{bubbles:true}));assert.equal(backend.gains.music,.22);assert.equal($('#volume-music-value').textContent,'22%');
+  $('#mute-all').checked=true;$('#mute-all').dispatchEvent(new w.Event('change'));assert.equal(backend.gains.master,0);assert.equal(game.audio.manager.settings.music,.22);
+  $('#mute-all').checked=false;$('#mute-all').dispatchEvent(new w.Event('change'));assert.equal(backend.gains.master,.7);assert.equal(backend.gains.music,.22);
+  const prefs=w.localStorage.getItem('notsims.settings.v1');assert.equal(JSON.parse(prefs).music,.22);
+  $('[data-close="audio-settings"]').click();assert.equal($('#audio-settings').open,false);
+  const input=$('#import-file');const imported=newGame({name:'Audio Import'});Object.defineProperty(input,'files',{configurable:true,value:[{size:100,text:async()=>JSON.stringify(imported)}]});
+  game.audio.manager.startLoop('interaction.shower.loop');await flush();await input.onchange({target:input});assert.equal(game.audio.manager.debug().loops.length,0);assert.equal(w.localStorage.getItem('notsims.settings.v1'),prefs);
+  assert.ok(!JSON.stringify(game.state).includes('volume'));assert.ok(!Object.hasOwn(game.state,'settings'));
+  $('#new-game').click();$('#character-form').dispatchEvent(new w.Event('submit',{cancelable:true}));assert.equal(w.localStorage.getItem('notsims.settings.v1'),prefs);assert.equal(game.audio.manager.settings.music,.22);
+ }finally{app.finish();}
 });

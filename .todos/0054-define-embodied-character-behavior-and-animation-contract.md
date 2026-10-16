@@ -1,7 +1,7 @@
 # Define Embodied Character Behavior and Animation Contract
 
 - **ID:** 0054
-- **Status:** open
+- **Status:** complete
 - **Created:** 2026-10-16
 - **Priority:** critical
 - **Depends:** 0050, 0053 (implementation available)
@@ -118,13 +118,13 @@ Document semantic movement categories:
 
 ## Done when
 
-- [ ] `BodyIntent` contract documented.
-- [ ] animation layering order documented.
-- [ ] existing actions mapped to intended body behavior.
-- [ ] social actions mapped to intended gestures.
-- [ ] object actions mapped to intended interaction phases.
-- [ ] affect/mood overlay contract documented.
-- [ ] Classic fallback semantics documented.
+- [x] `BodyIntent` contract documented.
+- [x] animation layering order documented.
+- [x] existing actions mapped to intended body behavior.
+- [x] social actions mapped to intended gestures.
+- [x] object actions mapped to intended interaction phases.
+- [x] affect/mood overlay contract documented.
+- [x] Classic fallback semantics documented.
 
 ## QA requirements
 
@@ -151,3 +151,9 @@ procedural layers. Existing five clip names and save v3 remain supported.
 
 Imported from the [shared embodied-behavior review](https://chatgpt.com/s/t_6ad2a99165108191bc4e362cee7f9ee9), reviewed against implementation `69b09c677b8ba1b6bc6eda5e21db8ce7e57132bb`.
 Original design scope retained; dependency and integration clarifications are documented above. Research citations in the source are design rationale, not independently certified findings in this backlog import.
+
+## Implementation evidence (2026-10-16)
+
+Software implementation and automated coverage are available. See
+[behavior contract](../docs/architecture/embodied-character-behavior.md) and
+[validation record](../docs/reviews/embodied-character-behavior-validation.md).

@@ -1,3 +1,5 @@
+import {CLIPS} from './presentation/clips.js';
+import {CharacterAnimationController} from './presentation/animation-controller.js';
 import * as THREE from 'three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {clone} from 'three/addons/utils/SkeletonUtils.js';
@@ -27,8 +29,8 @@ export class Human {
     });
     this.materials=[...clonedMaterials.values()];
     this.mixer=new THREE.AnimationMixer(this.model);
-    this.actions=Object.fromEntries(asset.animations.map(c=>[c.name,this.mixer.clipAction(c)]));
-    this.current=null;this.appearance='';this.play('Idle',true);
+    this.actions=Object.fromEntries(asset.animations.map(c=>{const action=this.mixer.clipAction(c);if(CLIPS[c.name]?.loop===false){action.setLoop(THREE.LoopOnce,1);action.clampWhenFinished=true;}return [c.name,action];}));
+    this.current=null;this.appearance='';this.play('Idle',true);this.controller=new CharacterAnimationController(this,asset.animations);
   }
   play(name,immediate=false) {
     if(this.current===name)return;
@@ -50,7 +52,7 @@ export class Human {
     this.model.traverse(o=>{if(o.name.startsWith('Notsims_Hair_')&&!o.isBone)o.visible=o.name.startsWith(`Notsims_Hair_${person.style}`);});
   }
   update(dt) {this.mixer.update(Math.max(0,dt));}
-  dispose() {this.mixer.stopAllAction();this.mixer.uncacheRoot(this.model);this.materials.forEach(m=>m.dispose());}
+  dispose() {this.controller.dispose();this.mixer.stopAllAction();this.mixer.uncacheRoot(this.model);this.materials.forEach(m=>m.dispose());}
 }
 
 export class CharacterPreview {

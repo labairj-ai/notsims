@@ -29,3 +29,32 @@ test('shared-activity scenario replays and contextual query is pure',()=>{
  const initial=setup('tv'),before=structuredClone(initial);assert.ok(availableSharedActivities(initial,'person_1').some(a=>a.interactionId==='shared_watch'));assert.deepEqual(initial,before);
  const a=runScenario({initial,steps:[{command:{type:'SHARED_ACTIVITY',personId:'person_1',interactionId:'shared_watch',objectId:1}},{advance:100}]});assert.deepEqual(replay(a.trace).state,a.state);assert.ok(a.events.some(e=>e.type==='SHARED_ACTIVITY_COMPLETED'));
 });
+
+test('shared meals price two portions, charge exactly once at consumption and reject insufficient funds atomically',()=>{
+ for(const [type,interactionId,cost] of [['table','shared_eat',16],['stove','shared_cook',24]]){
+  const s=setup(type),command={type:'SHARED_ACTIVITY',personId:'person_1',objectId:1,interactionId};s.money=cost-1;let before=structuredClone(s);assert.equal(dispatch(s,command).code,'INSUFFICIENT_FUNDS');assert.deepEqual(s,before);
+  const choice=availableSharedActivities(s,'person_1').find(a=>a.interactionId===interactionId);assert.equal(choice.cost,cost);assert.equal(choice.eligible,false);assert.equal(choice.disabledReason,'INSUFFICIENT_FUNDS');
+  s.money=cost;assert.equal(dispatch(s,command).ok,true);assert.equal(s.money,cost);const events=[];for(let i=0;i<120&&s.social.sharedActivity;i++)events.push(...advance(s,1).events);
+  assert.equal(s.money,0);assert.equal(events.filter(e=>e.type==='MONEY_SPENT'&&e.reason==='shared_meal').length,1);assert.equal(events.find(e=>e.type==='MONEY_SPENT').amount,cost);assert.ok(events.some(e=>e.type==='SHARED_ACTIVITY_COMPLETED'));
+ }
+});
+test('food transaction revalidates funds on arrival and has no purchase or hunger benefit on failure',()=>{
+ const s=setup('table');dispatch(s,{type:'SHARED_ACTIVITY',personId:'person_1',objectId:1,interactionId:'shared_eat'});s.money=0;s.needs.hunger=20;const events=[];for(let i=0;i<100&&s.social.sharedActivity;i++)events.push(...advance(s,1).events);assert.ok(s.needs.hunger<=20);assert.equal(s.money,0);assert.equal(events.filter(e=>e.type==='MONEY_SPENT').length,0);assert.ok(events.some(e=>e.type==='SHARED_ACTIVITY_CANCELLED'&&e.reason==='INSUFFICIENT_FUNDS'));
+});
+test('cancellation, departure, object changes, timeout and save/load cannot duplicate charges or refund consumed portions',()=>{
+ for(const active of [false,true])for(const reason of ['cancel','leave','object','timeout','load']){
+  const s=setup('table'),money=s.money;dispatch(s,{type:'SHARED_ACTIVITY',personId:'person_1',objectId:1,interactionId:'shared_eat'});
+  if(active)for(let i=0;i<100&&s.social.sharedActivity.status!=='active';i++)advance(s,1);
+  assert.equal(s.money,money-(active?16:0));
+  if(reason==='cancel')dispatch(s,{type:'CANCEL_ACTION'});if(reason==='leave')dispatch(s,{type:'ASK_GUEST_TO_LEAVE',personId:'person_1'});if(reason==='object')s.furniture[0].rotation++;if(reason==='timeout')s.social.sharedActivity.deadline=s.minutes;
+  if(reason==='load'){const loaded=validateSave(serializeSave(s));assert.equal(loaded.social.sharedActivity,null);assert.equal(loaded.money,s.money);const before=loaded.money;advance(loaded,2);assert.equal(loaded.money,before);}else {advance(s,1);assert.equal(s.social.sharedActivity,null);}
+  assert.equal(s.money,money-(active?16:0));
+ }
+});
+test('shared candidate query prepares once, stays pure and revalidates changed funds on start',()=>{
+ const s=setup('table'),before=structuredClone(s),funds=s.money;let reads=0;
+ Object.defineProperty(s,'money',{configurable:true,get(){reads++;return funds;}});
+ const choices=availableSharedActivities(s,'person_1');assert.equal(reads,1);assert.equal(choices[0].cost,16);assert.equal(choices[0].eligible,true);
+ Object.defineProperty(s,'money',{configurable:true,writable:true,value:funds});assert.deepEqual(s,before);
+ s.money=0;const snapshot=structuredClone(s);assert.equal(dispatch(s,{type:'SHARED_ACTIVITY',personId:'person_1',objectId:1,interactionId:'shared_eat'}).code,'INSUFFICIENT_FUNDS');assert.deepEqual(s,snapshot);
+});

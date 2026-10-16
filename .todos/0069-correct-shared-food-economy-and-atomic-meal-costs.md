@@ -1,7 +1,7 @@
 # Correct Shared Food Economy and Atomic Meal Costs
 
 - **ID:** 0069
-- **Status:** open
+- **Status:** complete
 - **Created:** 2026-10-16
 - **Priority:** critical
 - **Depends:** 0050, 0053 (implementation available)
@@ -47,26 +47,34 @@ It must not be reused as a meal price.
 
 ## Done when
 
-- [ ] Shared eating and cooking use an explicit documented food-cost policy.
-- [ ] Shared meals cannot produce unintended free hunger recovery.
-- [ ] Insufficient funds and unreachable/occupied targets fail without mutation.
-- [ ] Charges occur exactly once and emit canonical economy facts.
-- [ ] Cancellation, timeout, departure, object change and save/load have defined,
+- [x] Shared eating and cooking use an explicit documented food-cost policy.
+- [x] Shared meals cannot produce unintended free hunger recovery.
+- [x] Insufficient funds and unreachable/occupied targets fail without mutation.
+- [x] Charges occur exactly once and emit canonical economy facts.
+- [x] Cancellation, timeout, departure, object change and save/load have defined,
       tested purchase/consumption/refund outcomes.
-- [ ] Contextual UI shows relevant cost/disabled state without owning price rules.
-- [ ] Free snacks and existing solo interactions retain their intended behavior.
+- [x] Contextual UI shows relevant cost/disabled state without owning price rules.
+- [x] Free snacks and existing solo interactions retain their intended behavior.
 
 ## QA requirements
 
-- [ ] Exact-funds, insufficient-funds and pricing/portion tests.
-- [ ] Atomic reservation/path/funds failure tests.
-- [ ] Cancel before/after consumption and departure/object-change tests.
-- [ ] Export/import and save/load tests ensure no duplicate charge or free meal.
-- [ ] Deterministic scenario and economy-event count checks.
-- [ ] Classic/Three contextual UI and shared meal browser checks.
-- [ ] Full unit suite, build, source checks and CI pass.
+- [x] Exact-funds, insufficient-funds and pricing/portion tests.
+- [x] Atomic reservation/path/funds failure tests.
+- [x] Cancel before/after consumption and departure/object-change tests.
+- [x] Export/import and save/load tests ensure no duplicate charge or free meal.
+- [x] Deterministic scenario and economy-event count checks.
+- [x] Classic/Three contextual UI and shared meal browser checks.
+- [x] Full unit suite, build, source checks and CI pass.
 
 ## Source
 
 Added during review of the [embodied-behavior backlog](https://chatgpt.com/s/t_6ad2a99165108191bc4e362cee7f9ee9), specifically 0064's instruction that shared eating must not create free food. Confirmed against `src/systems/social/shared-activities.js`, `src/content/shared-activities.js` and implementation `69b09c677b8ba1b6bc6eda5e21db8ce7e57132bb`.
 This is a correctness prerequisite for 0064, not a claim that the earlier fix exists.
+
+## Implementation evidence (2026-10-16)
+
+Software implementation and automated coverage are available. See
+[behavior contract](../docs/architecture/embodied-character-behavior.md) and
+[validation record](../docs/reviews/embodied-character-behavior-validation.md).
+Classic/Three browser checks passed for meal prices, disabled state, purchase
+and completion. The separate 0052/0068 human acceptance gates remain pending.

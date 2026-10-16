@@ -81,11 +81,14 @@ The explicit request to build everything included shared-activity implementation
 
 ## Embodied character behavior and food-economy correction
 
-Tasks **0054–0068** are open, imported from the
+Tasks **0054–0068** were imported from the
 [replacement embodied-behavior review](https://chatgpt.com/s/t_6ad2a99165108191bc4e362cee7f9ee9)
 and checked against implementation `69b09c6`. **0069** is a separate critical
 correctness task identified while reviewing its claim of an earlier food fix.
-This update adds backlog items only.
+Software implementation and automated evidence are now available; see the
+[body validation record](../docs/reviews/embodied-character-behavior-validation.md).
+0054, 0055, 0065 and 0069 are complete. Other items retain their human/physical
+acceptance requirements; 0052/0068 are not certified.
 
 | ID | Priority | Work |
 | --- | --- | --- |
@@ -123,9 +126,45 @@ Dependency corrections from the source:
   certification still accounts for 0052 and never infers a physical result.
 - The source's eight-character performance case is synthetic stress testing;
   production remains capped at one player plus three visitors.
-- The source's earlier food-economy correction is not implemented. Shared meals
-  currently restore hunger without a charge; 0069 captures the missing work.
+- The missing food-economy correction is implemented under 0069: shared meals
+  purchase two portions once at coordinated arrival. See the validation record.
 
 Each item retains its proposed behavior and guardrails, plus repository-specific
 integration notes and QA. Presentation must remain separate from gameplay truth,
 consume no simulation RNG, preserve saves/replay and share intent across renderers.
+
+## Embodied PR acceptance and release follow-ups
+
+Tasks **0070–0076** are open, imported from the
+[PR follow-up review](https://chatgpt.com/s/t_6ad2b66d40308191b0b3972664052ad7)
+and checked against draft [PR #1](https://github.com/labairj-ai/notsims/pull/1),
+implementation `c43dae2`. This import is backlog-only: no runtime, status
+reconciliation, branch-protection, merge or deployment changes are performed.
+
+| ID | Priority | Work |
+| --- | --- | --- |
+| 0070 | High | Reconcile embodied completion claims with pending perceptual acceptance |
+| 0071 | Medium | Evaluate shared-activity eligibility once per candidate |
+| 0072 | Low | Distinguish behavior-off from an actual old-release performance baseline |
+| 0073 | High | Protect main and require the actual GitHub Actions check before merge |
+| 0074 | Critical | Perform and record desktop human motion review |
+| 0075 | Critical | Complete physical mobile, standalone, thermal and audible-output acceptance |
+| 0076 | Critical | Merge the accepted candidate, atomically deploy and verify production |
+
+Suggested sequence: **0070 → 0071 → 0072 → 0073 → 0074 → 0075 → 0076**.
+0071/0072 are independent pre-merge corrections; 0073 can run alongside them.
+0070 reviews evidence/status now rather than waiting on 0068 human acceptance.
+0074 needs implementation readiness, not completed human acceptance of the same
+features. 0075 validates 0052/0067/0068 physical criteria instead of depending on
+them already being certified. 0076 keeps those actual human/physical release gates.
+
+Read-only review found main unprotected and PR #1 draft with successful `build`
+check under workflow `Test Notsims`; require the actual check context when 0073
+is executed. Existing static hosting and clean-build/hash/atomic-release contracts
+remain authoritative. Each task records source and repository-specific notes.
+
+0070–0073 are complete: status ownership and baseline terminology corrected,
+eligibility evaluated once, and main protection verified with a disposable failing/
+passing PR. 0074/0075 remain in progress for actual human/device observations.
+0076 remains gated on those results; PR #1 is draft and production is unchanged.
+See [follow-up evidence](../docs/reviews/pr-acceptance-followup-validation.md).

@@ -1,17 +1,21 @@
-# Notsims embodied character behavior backlog
+# Notsims embodied character behavior
 
-Open tasks [0054–0069](.todos/README.md#embodied-character-behavior-and-food-economy-correction)
-turn existing clip/pose selection into layered, renderer-neutral body behavior.
+Tasks 0054–0069 now have software implementation and automated coverage.
+See the [behavior contract](docs/architecture/embodied-character-behavior.md)
+and [validation record](docs/reviews/embodied-character-behavior-validation.md).
 
-Foundation: **0054 contract → 0055 reusable clips → 0065 controller**.
-Then add gaze/staging, social and affect motion, micro-idle, furniture anchors/IK,
-object choreography, synchrony and complementary shared-activity roles. Finish
-with Classic semantic parity, reduced-motion/performance policy and human QA.
+The shared renderer-neutral resolver supplies both Classic and 3D. The pinned
+CC0 exporter produces 26 clips; the controller owns additive gestures, affect,
+gaze, contact and safe cleanup. Shared-food costs are charged once on arrival.
 
-Review corrections: 0065's original dependency list conflicted with its early
-placement; 0060 depends on affect support; certification is distinct from code
-readiness. Task 0069 separately fixes the uncharged shared-food behavior referenced
-by 0064. It can proceed now and must land before that shared choreography work.
+Physical iPhone/Android, standalone, audible-output and human motion review
+remain pending under 0052/0068 and the individual task acceptance requirements.
+Implementation availability does not certify those results.
 
-These are open planning items. No new animation, gameplay or certification result
-is delivered by this import. See each task for source, scope, dependencies and QA.
+## PR acceptance and release follow-ups
+
+The next [open items 0070–0076](.todos/README.md#embodied-pr-acceptance-and-release-follow-ups)
+reconcile evidence/status, remove duplicate eligibility work, clarify behavior-off
+terminology, protect main, conduct desktop/physical human reviews and release the
+accepted candidate. These are separate from the implemented PR's software work;
+adding the tasks does not close human acceptance or authorize a merge by itself.

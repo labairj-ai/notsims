@@ -1,0 +1,522 @@
+[
+  {
+    "view": "classic",
+    "width": 1440,
+    "type": "sofa",
+    "id": "shared_sit",
+    "base": "Sit",
+    "gesture": null,
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "type": "tv",
+    "id": "shared_watch",
+    "base": "Idle",
+    "gesture": null,
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "type": "table",
+    "id": "shared_eat",
+    "base": "Idle",
+    "gesture": "TalkB",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "type": "stove",
+    "id": "shared_cook",
+    "base": "Idle",
+    "gesture": "UseHands",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "type": "bookcase",
+    "id": "shared_read",
+    "base": "Idle",
+    "gesture": "Read",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "type": "fridge",
+    "id": "use",
+    "base": "Idle",
+    "gesture": "Eat",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "type": "bed",
+    "id": "use",
+    "base": "Sleep",
+    "gesture": null,
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "type": "shower",
+    "id": "use",
+    "base": "Idle",
+    "gesture": "UseHands",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "type": "toilet",
+    "id": "use",
+    "base": "Sit",
+    "gesture": null,
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "type": "desk",
+    "id": "use",
+    "base": "Idle",
+    "gesture": "Type",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "type": "none",
+    "id": "argue",
+    "base": "Idle",
+    "gesture": "Argue",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "type": "none",
+    "id": "apologize",
+    "base": "Idle",
+    "gesture": "Apologize",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "type": "none",
+    "id": "greet",
+    "base": "Idle",
+    "gesture": "Wave",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "type": "sofa",
+    "id": "shared_sit",
+    "base": "Sit",
+    "gesture": null,
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "type": "tv",
+    "id": "shared_watch",
+    "base": "Idle",
+    "gesture": null,
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "type": "table",
+    "id": "shared_eat",
+    "base": "Idle",
+    "gesture": "TalkB",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "type": "stove",
+    "id": "shared_cook",
+    "base": "Idle",
+    "gesture": "UseHands",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "type": "bookcase",
+    "id": "shared_read",
+    "base": "Idle",
+    "gesture": "Read",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "type": "fridge",
+    "id": "use",
+    "base": "Idle",
+    "gesture": "Eat",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "type": "bed",
+    "id": "use",
+    "base": "Sleep",
+    "gesture": null,
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "type": "shower",
+    "id": "use",
+    "base": "Idle",
+    "gesture": "UseHands",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "type": "toilet",
+    "id": "use",
+    "base": "Sit",
+    "gesture": null,
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "type": "desk",
+    "id": "use",
+    "base": "Idle",
+    "gesture": "Type",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "type": "none",
+    "id": "argue",
+    "base": "Idle",
+    "gesture": "Argue",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "type": "none",
+    "id": "apologize",
+    "base": "Idle",
+    "gesture": "Apologize",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "type": "none",
+    "id": "greet",
+    "base": "Idle",
+    "gesture": "Wave",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "type": "sofa",
+    "id": "shared_sit",
+    "base": "Sit",
+    "gesture": null,
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "type": "tv",
+    "id": "shared_watch",
+    "base": "Idle",
+    "gesture": null,
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "type": "table",
+    "id": "shared_eat",
+    "base": "Idle",
+    "gesture": "TalkB",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "type": "stove",
+    "id": "shared_cook",
+    "base": "Idle",
+    "gesture": "UseHands",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "type": "bookcase",
+    "id": "shared_read",
+    "base": "Idle",
+    "gesture": "Read",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "type": "fridge",
+    "id": "use",
+    "base": "Idle",
+    "gesture": "Eat",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "type": "bed",
+    "id": "use",
+    "base": "Sleep",
+    "gesture": null,
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "type": "shower",
+    "id": "use",
+    "base": "Idle",
+    "gesture": "UseHands",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "type": "toilet",
+    "id": "use",
+    "base": "Sit",
+    "gesture": null,
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "type": "desk",
+    "id": "use",
+    "base": "Idle",
+    "gesture": "Type",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "type": "none",
+    "id": "argue",
+    "base": "Idle",
+    "gesture": "Argue",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "type": "none",
+    "id": "apologize",
+    "base": "Idle",
+    "gesture": "Apologize",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "type": "none",
+    "id": "greet",
+    "base": "Idle",
+    "gesture": "Wave",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "type": "sofa",
+    "id": "shared_sit",
+    "base": "Sit",
+    "gesture": null,
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "type": "tv",
+    "id": "shared_watch",
+    "base": "Idle",
+    "gesture": null,
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "type": "table",
+    "id": "shared_eat",
+    "base": "Idle",
+    "gesture": "TalkB",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "type": "stove",
+    "id": "shared_cook",
+    "base": "Idle",
+    "gesture": "UseHands",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "type": "bookcase",
+    "id": "shared_read",
+    "base": "Idle",
+    "gesture": "Read",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "type": "fridge",
+    "id": "use",
+    "base": "Idle",
+    "gesture": "Eat",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "type": "bed",
+    "id": "use",
+    "base": "Sleep",
+    "gesture": null,
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "type": "shower",
+    "id": "use",
+    "base": "Idle",
+    "gesture": "UseHands",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "type": "toilet",
+    "id": "use",
+    "base": "Sit",
+    "gesture": null,
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "type": "desk",
+    "id": "use",
+    "base": "Idle",
+    "gesture": "Type",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "type": "none",
+    "id": "argue",
+    "base": "Idle",
+    "gesture": "Argue",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "type": "none",
+    "id": "apologize",
+    "base": "Idle",
+    "gesture": "Apologize",
+    "finite": true,
+    "ik": 0
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "type": "none",
+    "id": "greet",
+    "base": "Idle",
+    "gesture": "Wave",
+    "finite": true,
+    "ik": 0
+  }
+]

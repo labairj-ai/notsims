@@ -8,4 +8,5 @@ const {validateAudio}=await import('./check-audio.mjs');
 const audio=await validateAudio('dist',{writeManifest:true});console.log(`Audio bundle: ${audio.totalBytes} bytes; unlock preload: ${audio.essentialBytes} bytes; decoded SFX: ${audio.estimatedDecodedSfxBytes} bytes.`);
 if(audio.totalBytes>audio.budget.totalWarn||audio.essentialBytes>audio.budget.essentialWarn)console.warn('Audio exceeds the warning budget.');
 await import('./check-build.mjs');
+const {checkCharacter}=await import('./check-character.mjs');await checkCharacter('dist/assets');
 console.log('Notsims built in dist/');

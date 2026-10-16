@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 import bpy
 import math
+import json
 import numpy as np
 from mathutils import Quaternion, Vector
 
@@ -117,10 +118,17 @@ for obj in [o for o in bpy.context.scene.objects if o.type=='MESH']:
         else:bpy.ops.object.modifier_apply(modifier=mod.name)
     for poly in obj.data.polygons:poly.use_smooth=True
 
+assert bpy.app.version[:3] == (4, 5, 4), 'Use pinned Blender 4.5.4 for character exports'
 identity=Quaternion()
 def turn(axis,angle):return Quaternion(Vector(axis),angle)
 def pose(mode,phase=0):
     desired={}
+    t=phase/(2*math.pi)
+    envelope=math.sin(math.pi*t)**2
+    cycle=math.sin(phase)
+    one_shots={'Wave','Nod','HeadShake','Laugh','Shrug','Point','LeanIn','LeanBack','Apologize','ReachHigh','ReachMid','ReachLow'}
+    strength=envelope if mode in one_shots else 1
+
     for side,sign in [('l',1),('r',-1)]:
         arm=rig.pose.bones['upperarm_'+side]
         fore=rig.pose.bones['lowerarm_'+side]
@@ -133,21 +141,50 @@ def pose(mode,phase=0):
         if mode=='Eat' and side=='r':
             arm_vector=Vector((-.3,-.55,-.75))
             fore_vector=Vector((.1,-.4,.9))
+        # Reusable armature-space gesture targets; all one-shots settle to neutral.
+        active=side=='r' or mode in {'TalkA','TalkB','Laugh','Shrug','Apologize','Argue','UseHands','Type','Read','Stir'}
+        if active:
+            av=fv=None
+            if mode=='Wave': av=Vector((sign*.5,0,.6));fv=Vector((sign*(.25+cycle*.22),-.1,1))
+            elif mode in {'TalkA','TalkB','Argue'}:
+                vigor=1.35 if mode=='Argue' else 1
+                av=Vector((sign*(.25+cycle*.08),-.35*vigor,-.7));fv=Vector((sign*.15,-.65,.3+math.sin(phase+(0 if side=='l' else 1))*.18))
+            elif mode=='Laugh': av=Vector((sign*.2,-.2,-.8));fv=Vector((0,-.5,.5))
+            elif mode=='Shrug': av=Vector((sign*.55,-.15,-.45));fv=Vector((sign*.6,-.3,.4))
+            elif mode=='Point': av=Vector((sign*.1,-1,-.1));fv=Vector((0,-1,0))
+            elif mode=='Apologize': av=Vector((sign*.12,-.2,-.8));fv=Vector((-sign*.2,-.45,.3))
+            elif mode.startswith('Reach'):
+                height={'ReachHigh':.7,'ReachMid':-.1,'ReachLow':-.7}[mode]
+                av=Vector((sign*.15,-.85,height));fv=Vector((0,-1,height*.5))
+            elif mode in {'UseHands','Type','Read','Stir'}:
+                av=Vector((sign*.25,-.35,-.75));fv=Vector((-sign*.1,-.7,.18))
+                if mode=='Type': fv.x+=math.sin(phase*2+(0 if side=='l' else 1))*.06
+                if mode=='Stir' and side=='r':fv.x+=math.sin(phase)*.15;fv.z+=math.cos(phase)*.12
+                if mode=='Read':fv.x=-sign*.3;fv.z=.35
+            if av is not None:
+                arm_vector=arm_vector.lerp(av,strength)
+                fore_vector=fore_vector.lerp(fv,strength)
         for b,vec in [(arm,arm_vector),(fore,fore_vector)]:
             rest=b.bone.tail_local-b.bone.head_local
             desired[b.name]=rest.normalized().rotation_difference(vec.normalized())
         for name in ['thigh_'+side,'calf_'+side]:
             b=rig.pose.bones[name]
             rest=b.bone.tail_local-b.bone.head_local
-            if mode=='Sit':target=Vector((sign*.025,-1,0)) if name.startswith('thigh') else Vector((0,0,-1))
+            if mode in {'Sit','StandToSit','SitToStand'}:target=Vector((sign*.025,-1,0)) if name.startswith('thigh') else Vector((0,0,-1))
             elif mode=='Walk':
                 swing=math.sin(phase)*.48*sign
                 bend=max(0,-math.cos(phase+(0 if side=='l' else math.pi)))*.7
                 target=turn((1,0,0),swing+(bend if name.startswith('calf') else 0))@rest
             else:target=rest
+            if mode in {'StandToSit','SitToStand'}:
+                blend=t if mode=='StandToSit' else 1-t
+                target=rest.normalized().lerp(target.normalized(),blend)
             desired[name]=rest.normalized().rotation_difference(target.normalized())
     if mode in ['Idle','Eat']:
         desired['spine_03']=turn((1,0,0),math.sin(phase)*.012)
+    if mode in {'Nod','Apologize','Laugh'}:desired['head']=turn((1,0,0),strength*(.16*math.sin(phase*2) if mode!='Apologize' else .22))
+    if mode=='HeadShake':desired['head']=turn((0,0,1),strength*cycle*.3)
+    if mode in {'LeanIn','LeanBack','Apologize','Laugh'}:desired['spine_03']=turn((1,0,0),strength*({'LeanIn':.13,'LeanBack':-.1,'Apologize':.08,'Laugh':cycle*.055}[mode]))
     # Turn desired armature-space orientations into local pose quaternions.
     applied={}
     for b in rig.pose.bones:
@@ -160,24 +197,31 @@ def pose(mode,phase=0):
         applied[b.name]=delta
 
 rig.animation_data_create()
-clips=[('Idle',3,48),('Walk',1,24),('Sit',3,48),('Eat',2,36),('Sleep',3,48)]
+durations={'Idle':3,'Walk':1,'Sit':3,'Eat':2,'Sleep':3,'Wave':2,'TalkA':3,'TalkB':3.5,'Nod':1.2,'HeadShake':1.4,'Laugh':2,'Shrug':2,'Point':1.8,'LeanIn':2,'LeanBack':2,'Apologize':2.5,'Argue':2,'ReachHigh':2,'ReachMid':2,'ReachLow':2,'UseHands':2,'Type':2,'Read':3,'Stir':2.5,'StandToSit':1.5,'SitToStand':1.5}
+looping={'Idle','Walk','Sit','Sleep','Eat','TalkA','TalkB','Argue','UseHands','Type','Read','Stir'}
+clips=[(name,round(duration*24)/24,round(duration*24)) for name,duration in durations.items()]
 for name,duration,count in clips:
     action=bpy.data.actions.new(name)
     rig.animation_data.action=action
     for i in range(count+1):
-        frame=1+duration*24*i/count
+        frame=duration*24*i/count
         pose(name,2*math.pi*i/count)
         for bone in rig.pose.bones:
             bone.keyframe_insert('rotation_quaternion',frame=frame,group=bone.name)
     track=rig.animation_data.nla_tracks.new();track.name=name
-    track.strips.new(name,1,action)
+    track.strips.new(name,0,action)
     track.mute=True
 rig.animation_data.action=None
 pose('Idle')
 bpy.context.scene.render.fps=24
-bpy.context.scene.frame_set(1)
+bpy.context.scene.frame_start=0
+bpy.context.scene.frame_set(0)
 bpy.ops.wm.save_as_mainfile(filepath=str(out / 'character-source.blend'))
 bpy.ops.export_scene.gltf(filepath=str(out/'notsims-human.glb'),export_format='GLB',
     export_animations=True,export_animation_mode='ACTIONS',export_force_sampling=True,
     export_skins=True,export_morph=False,export_yup=True,export_apply=False)
+metadata={'blender':bpy.app.version_string,'fps':24,'bones':len(rig.pose.bones),'clips':[{'name':name,'duration':duration,'loop':name in looping} for name,duration,_ in clips]}
+assert len({c['name'] for c in metadata['clips']})==len(durations)
+assert (out/'notsims-human.glb').stat().st_size<12_000_000, 'Character exceeds 12 MB mobile budget'
+(out/'character-metadata.json').write_text(json.dumps(metadata,indent=2)+'\n')
 print('EXPORTED',out/'notsims-human.glb',flush=True)

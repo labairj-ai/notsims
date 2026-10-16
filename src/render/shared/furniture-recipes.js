@@ -1,10 +1,10 @@
 import {itemDef} from '../../content/furniture.js';
-import {dimensions} from '../../systems/objects/geometry.js';
+import {dimensions,furniturePoint} from '../../systems/objects/geometry.js';
 // Painter contract: box, ellipse, line and p (world to painter coordinates).
 export const furnitureRecipes={
 furniture(f){const d=itemDef(f.type),[w,h]=dimensions(f),x=f.x,y=f.y,r=f.rotation%2;
- const b=(a,c,ww,hh,z,col,base=0)=>r?this.box(x+c,y+a,hh,ww,z,col,base):this.box(x+a,y+c,ww,hh,z,col,base);
- const e=(a,c,z,rx,ry,col)=>r?this.ellipse(x+c,y+a,z,rx,ry,col):this.ellipse(x+a,y+c,z,rx,ry,col);
+ const b=(a,c,ww,hh,z,col,base=0)=>{const p=furniturePoint(f,a,c),q=furniturePoint(f,a+ww,c+hh);this.box(Math.min(p[0],q[0]),Math.min(p[1],q[1]),r?hh:ww,r?ww:hh,z,col,base);};
+ const e=(a,c,z,rx,ry,col)=>{const [px,py]=furniturePoint(f,a,c);this.ellipse(px,py,z,rx,ry,col);};
  const color=d.color;
  if(!d.flat)this.ellipse(x+w/2+.08,y+h/2+.08,0,w*.75,h*.31,'#344c3120');
  switch(f.type){

@@ -11,9 +11,9 @@ export class InteractionAudio {
   if(this.active&&(this.active.activity!==a||this.active.id!==f?.id))this.stop();
   if(f&&!this.active){
    const mapping=INTERACTION_AUDIO[INTERACTION_IDS[f.type]]??{};this.active={activity:a,id:f.id,mapping,token:null};
-   if(mapping.start)m.playCue(mapping.start,{position:f,spatial});if(mapping.detail)m.playCue(mapping.detail,{position:f,spatial});
+   if(mapping.start)m.playCue(mapping.start,{position:f,spatial});
   }
-  if(this.active){const active=this.active;if(active.mapping.loop&&!m.voices.has(active.token))active.token=m.startLoop(active.mapping.loop,{position:f,spatial});}
+  if(this.active){const active=this.active;if(active.mapping.detail&&!active.detailPlayed&&(a.elapsed??0)>=2){m.playCue(active.mapping.detail,{position:f,spatial});active.detailPlayed=true;}if(active.mapping.loop&&!m.voices.has(active.token))active.token=m.startLoop(active.mapping.loop,{position:f,spatial});}
   // Match renderer interpolation, then bound footsteps by real presentation time.
   if(a?.path?.length){const target=a.path[0],t=Math.min(1,(a.walkClock||0)/2),pos={x:state.person.x+(target[0]-state.person.x)*t,y:state.person.y+(target[1]-state.person.y)*t};
    if(this.lastPosition)this.distance+=Math.hypot(pos.x-this.lastPosition.x,pos.y-this.lastPosition.y);

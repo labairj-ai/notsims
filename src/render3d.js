@@ -1,7 +1,7 @@
-import {sharedActivityPose} from './systems/social/shared-activities.js';
+import {BodyPresentation} from './presentation/runtime.js';
 import * as THREE from 'three';
 import {SIZE,inside,dimensions,canPlace} from './engine.js';
-import {GeometryPainter,houseObject,gardenObject,furnitureObject,disposeGroup,interactionPose,material,batch} from './scene3d.js';
+import {GeometryPainter,houseObject,gardenObject,furnitureObject,disposeGroup,material,batch} from './scene3d.js';
 import {loadHuman,Human} from './character3d.js';
 
 export class WorldCamera {
@@ -35,7 +35,7 @@ export class Renderer3D extends WorldCamera {
     this.scene.add(gardenObject());this.highlight=new THREE.Group();this.scene.add(this.highlight);
     this.pathMarkers=new THREE.Group();this.scene.add(this.pathMarkers);this.markerSignature='';
     this.pin=new THREE.Mesh(new THREE.OctahedronGeometry(.10),new THREE.MeshStandardMaterial({color:'#e5c67a',emissive:'#b69b55',emissiveIntensity:.15,metalness:.25,roughness:.5}));this.scene.add(this.pin);
-    this.visitors=new Map();this.ready=loadHuman().then(asset=>{this.humanAsset=asset;this.human=new Human(asset);this.scene.add(this.human.root);return this.human;});
+    this.body=new BodyPresentation();this.visitors=new Map();this.ready=loadHuman().then(asset=>{this.humanAsset=asset;this.human=new Human(asset);this.scene.add(this.human.root);return this.human;});
     this.resize();
   }
   resize() {
@@ -81,31 +81,26 @@ export class Renderer3D extends WorldCamera {
     for(const o of [...this.pathMarkers.children])disposeGroup(o);
     const p=new GeometryPainter();for(const [x,y] of path)p.ellipse(x+.5,y+.5,.035,.055,.018,'#fff8d6');this.pathMarkers.add(batch(p.group));
   }
-  updateHuman(s,time) {
-    const a=s.activity,working=a?.kind==='work';this.pin.visible=!working;
-    if(!this.human)return;
-    const human=this.human;human.customize(s.person);human.root.visible=!working;
-    let x=s.person.x+.5,y=s.person.y+.5,height=0,angle=human.root.rotation.y,animation='Idle';
-    if(a?.path?.length){const [tx,ty]=a.path[0],t=Math.min(1,(a.walkClock||0)/2);x+=(tx-s.person.x)*t;y+=(ty-s.person.y)*t;angle=Math.atan2(tx-s.person.x,ty-s.person.y);animation='Walk';}
-    const pose=sharedActivityPose(s,'player')||interactionPose(s);if(pose){({x,y,height,angle,animation}=pose);if(animation==='Sit')height-=.874;}
-    if(a?.kind==='snack')animation='Eat';if(a?.kind==='nap'){animation='Sleep';height=.05;}
-    human.root.position.set(x,height,y);human.root.rotation.set(0,angle,0);
-    human.model.rotation.x=animation==='Sleep'?-Math.PI/2:0;
-    human.play(animation);
-    // Animation and navigation use the same game clock, including pause and speed.
-    const gameDelta=this.lastMinute===null?0:Math.max(0,Math.min(2,s.minutes-this.lastMinute));
-    human.update(gameDelta);
-    this.pin.position.set(x,animation==='Sleep'?.6:animation==='Sit'?1.7:2.05,y);
-    if(gameDelta>0)this.pin.rotation.y+=gameDelta*.5;
+  resetBodies(){this.body.reset();this.human?.controller.reset();for(const h of this.visitors.values())h.controller.reset();}
+  applyBody(s,id,h,frame){
+    const intent=this.body.intent(s,id);h.customize(id==='player'?s.person:s.people[id]);
+    h.root.position.fromArray(intent.position);const targetHeight=intent.position[1]-(intent.seatOffset??0);h.visualHeight=h.visualHeight??targetHeight;if(frame.dt)h.visualHeight+=(targetHeight-h.visualHeight)*(1-Math.exp(-frame.dt*10));h.root.position.y=h.visualHeight;
+    if(intent.facing!==null){const delta=Math.atan2(Math.sin(intent.facing-h.root.rotation.y),Math.cos(intent.facing-h.root.rotation.y));h.root.rotation.y+=Math.sign(delta)*Math.min(Math.abs(delta),frame.dt?frame.dt*3:0);}
+    const tilt=intent.base==='Sleep'?-Math.PI/2:0;if(frame.dt)h.model.rotation.x+=(tilt-h.model.rotation.x)*(1-Math.exp(-frame.dt*8));
+    h.root.visible=id!=='player'||s.activity?.kind!=='work';
+    h.controller.update(intent,frame.dt,frame);
+    return intent;
   }
-  updateVisitors(s){
-    if(!this.humanAsset)return;
+  updateBodies(s,time,options){
+    const start=performance.now(),frame=this.body.frame(s,time,options);
     const ids=new Set(s.social.presences.map(p=>p.personId));
     for(const [id,h] of this.visitors)if(!ids.has(id)){this.scene.remove(h.root);h.dispose();this.visitors.delete(id);}
-    for(const p of s.social.presences){let h=this.visitors.get(p.personId);if(!h){h=new Human(this.humanAsset);this.visitors.set(p.personId,h);this.scene.add(h.root);}h.customize(s.people[p.personId]);let x=p.x+.5,y=p.y+.5;if(p.path.length){const [tx,ty]=p.path[0],t=Math.min(1,p.moveClock/2);x+=(tx-p.x)*t;y+=(ty-p.y)*t;h.root.rotation.y=Math.atan2(tx-p.x,ty-p.y);}const pose=sharedActivityPose(s,p.personId);h.root.position.set(pose?pose.x:x,pose?(pose.animation==='Sit'?pose.height-.874:pose.height):0,pose?pose.y:y);if(pose)h.root.rotation.y=pose.angle;h.play(pose?pose.animation:p.path.length?'Walk':'Idle');h.update(this.lastMinute===null?0:Math.max(0,Math.min(2,s.minutes-this.lastMinute)));}
+    if(this.human){const intent=this.applyBody(s,'player',this.human,frame);this.pin.visible=s.activity?.kind!=='work';this.pin.position.set(intent.position[0],intent.base==='Sleep'?.6:intent.base==='Sit'?1.7:2.05,intent.position[2]);if(frame.dt)this.pin.rotation.y+=frame.dt*.5;}
+    if(this.humanAsset)for(const p of s.social.presences){let h=this.visitors.get(p.personId);if(!h){h=new Human(this.humanAsset);this.visitors.set(p.personId,h);this.scene.add(h.root);}this.applyBody(s,p.personId,h,frame);}
+    this.body.reportCost(performance.now()-start);
   }
-  draw(s,ui,time) {
-    this.resize();this.updateHouse(s);this.updatePreview(s,ui);this.updatePath(s);this.updateHuman(s,time);this.updateVisitors(s);
+  draw(s,ui,time,options={}) {
+    this.resize();this.updateHouse(s);this.updatePreview(s,ui);this.updatePath(s);this.updateBodies(s,time,options);
     const hour=(s.minutes%1440)/60,night=hour<6||hour>=20;
     this.ambient.intensity=night?.8:2;this.sun.intensity=night?.5:3.4;this.sun.color.set(night?'#b0c6ed':'#fff0d0');
     this.renderer.render(this.scene,this.camera);this.lastMinute=s.minutes;this.lastTime=time;

@@ -1,0 +1,8 @@
+import {$} from '../dom.js';
+export function buildPanel({ui,state}){return `<span class="eyebrow">FROM THE GROUND UP</span><h2>Room to grow.</h2><p class="intro">A blank canvas, a few good ideas.<br>Let’s make a home.</p><div class="tool-grid">${[['room','▧','Draw room','Floors + walls'],['floor','▦','Lay floor','$12 / tile'],['wall','▥','Add wall','$18 / edge'],['door','▯','Add door','$35 / edge'],['erase','⌫','Sell / remove','Recover some funds']].map(([id,icon,title,sub])=>`<button class="tool ${ui.tool===id?'active':''}" data-tool="${id}"><span>${icon}</span><strong>${title}</strong><small>${sub}</small></button>`).join('')}</div><div class="mini-heading">A little texture <span>FLOOR FINISH</span></div><div class="floor-swatches">${[['wood','#d1b393','Warm oak'],['tile','#dedec9','Soft stone'],['sage','#c7d0ac','Sage']].map(([id,c,name])=>`<button data-floor="${id}" class="floor-swatch ${ui.floor===id?'active':''}" style="background:${c}">${name}</button>`).join('')}</div><div class="instruction-box"><b>Room:</b> Drag from corner to corner, at least 3 × 3 tiles. Floors cost $12 and walls $18; an entrance is included.<br><b>Walls & doors:</b> Click near a tile edge.<br><b>Sell / remove:</b> Click furniture for a 65% refund. Empty tiles remove the nearest wall first, then the floor.<br><br>Time pauses while you make changes.</div>`;}
+
+export function bindBuildPanel(app,root){
+ const ui=app.ui;
+ root.querySelectorAll('[data-tool]').forEach(b=>b.onclick=()=>{ui.tool=b.dataset.tool;app.renderStudio();app.updateUI(true);});
+ root.querySelectorAll('[data-floor]').forEach(b=>b.onclick=()=>{ui.floor=b.dataset.floor;app.renderStudio();});
+}

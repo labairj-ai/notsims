@@ -21,7 +21,7 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
-      - run: node --check src/main.js && node --check src/render.js && node --check src/render3d.js && node --check src/character3d.js && node --check src/scene3d.js
+      - run: npm run check
       - uses: actions/upload-artifact@v4
         with:
           name: notsims-static

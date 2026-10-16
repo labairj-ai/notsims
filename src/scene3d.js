@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
-import { Renderer as CanvasRecipes } from './render.js';
+import {furnitureRecipes} from './render/shared/furniture-recipes.js';
 import { SIZE, dimensions, itemDef, key, furniturePoint } from './engine.js';
 
 const unitBox = new THREE.BoxGeometry(1, 1, 1);
@@ -19,11 +19,12 @@ export function material(color, options={}) {
 
 // Reuse the existing furniture proportions in world coordinates. All generated
 // geometry is original; the same catalog remains compatible with v1 save files.
-export class GeometryPainter extends CanvasRecipes {
+export class GeometryPainter {
   constructor(group=new THREE.Group()) {
-    super({getContext:()=>({globalAlpha:1})});
     this.group=group;
   }
+  furniture(f){return furnitureRecipes.furniture.call(this,f);}
+  tree(...args){return furnitureRecipes.tree.apply(this,args);}
   p(x,y,z=0) {return [x,z*1.4,y];}
   add(geometry,position,scale,color,options={}) {
     const mesh=new THREE.Mesh(geometry,material(color,options));

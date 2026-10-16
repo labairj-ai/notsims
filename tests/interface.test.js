@@ -47,3 +47,43 @@ test('failed WebGL initialization falls back and resumes an existing v1 save',as
     assert.equal($('#creator').open,false);
   }finally{app.finish();}
 });
+
+test('keyboard, touch controls and panels retain pause semantics and dispatch all player mutations',async()=>{
+  const app=await boot('controls'),{$,w}=app;
+  try{
+    // boot's entry point is independently initialized for this surface.
+    const mod=await import('../src/main.js?interface-test=controls');
+    const game=mod.app,commands=[],original=game.dispatch;
+    game.dispatch=c=>{commands.push(c);return original(c);};
+    $('#character-form').dispatchEvent(new w.Event('submit',{cancelable:true}));
+    const key=k=>w.document.dispatchEvent(new w.KeyboardEvent('keydown',{key:k,bubbles:true,cancelable:true}));
+    key(' ');assert.equal(game.speed,0);key(' ');assert.equal(game.speed,1);
+    $('[data-tab="build"]').click();assert.equal(game.paused(),true);key('3');assert.equal(game.ui.tab,'live');assert.equal(game.speed,8);
+    $('[data-tab="shop"]').click();assert.equal(game.paused(),true);key('r');assert.equal(game.ui.rotation,1);
+    $('[data-item="chair"]').click();key('Escape');assert.equal(game.ui.selected,null);
+    $('[data-speed="3"]').click();assert.equal(game.ui.tab,'live');assert.equal(game.speed,3);
+    $('.life-panel [data-action="chat"]').click();assert.equal(commands.at(-1).type,'QUICK_ACTION');
+    $('#cancel-action').click();assert.equal(commands.at(-1).type,'CANCEL_ACTION');
+    $('[data-tab="career"]').click();$('[data-job="designer"]').click();assert.equal(commands.at(-1).type,'CHANGE_JOB');
+    $('#edit-character').click();$('#character-name').value='Morgan';$('#character-form').dispatchEvent(new w.Event('submit',{cancelable:true}));assert.equal(commands.at(-1).type,'CHANGE_APPEARANCE');
+    $('#edit-character').click();$('#character-name').focus();key('1');assert.equal(game.speed,3);
+  }finally{app.finish();}
+});
+
+test('import/export controller validates before replacing local save and preserves backup data',async()=>{
+  const app=await boot('files'),{$,w}=app;
+  const oldCreate=URL.createObjectURL,oldRevoke=URL.revokeObjectURL;
+  try{
+    $('#character-form').dispatchEvent(new w.Event('submit',{cancelable:true}));
+    const previous=w.localStorage.getItem('notsims.save.v1');
+    const input=$('#import-file');
+    Object.defineProperty(input,'files',{configurable:true,value:[{size:4,text:async()=>'{bad'}]});
+    await input.onchange({target:input});assert.equal(w.localStorage.getItem('notsims.save.v1'),previous);
+    const imported=newGame({name:'Imported Resident'});imported.money=9876;
+    Object.defineProperty(input,'files',{configurable:true,value:[{size:1000,text:async()=>JSON.stringify(imported)}]});
+    await input.onchange({target:input});assert.equal($('#person-name').textContent,'Imported Resident');assert.equal(JSON.parse(w.localStorage.getItem('notsims.save.v1')).money,9876);
+    let blob,clicked=false;URL.createObjectURL=b=>{blob=b;return 'blob:notsims-test';};URL.revokeObjectURL=()=>{};
+    w.HTMLAnchorElement.prototype.click=function(){clicked=true;assert.match(this.download,/notsims-day-1.json/);};
+    $('#export').click();assert.equal(clicked,true);assert.equal(JSON.parse(await blob.text()).person.name,'Imported Resident');
+  }finally{URL.createObjectURL=oldCreate;URL.revokeObjectURL=oldRevoke;app.finish();}
+});

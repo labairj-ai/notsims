@@ -36,11 +36,45 @@ Node.js 22+. Install the free dependencies once with `npm ci`.
 
 ```sh
 npm run dev     # http://127.0.0.1:5173
-npm test        # node:test simulation checks
+npm test        # unit, interface, render and deterministic scenario checks
 npm run build  # static files in dist/
+npm run check  # syntax checks for all source and tests
 ```
 
-`src/engine.js` is the pure simulation, construction, navigation and save validation layer. `src/render3d.js` and `src/scene3d.js` render the 3D world with Three.js; `src/character3d.js` loads and animates the CC0 humanoid. `src/render.js` provides the classic Canvas fallback and procedural furniture recipes. `src/main.js` connects the engine to the interface. The build self-hosts Three.js and character assets on the OptiPlex. See `assets/README.md` for asset provenance, licensing, and regeneration. Fonts are optional Google Fonts; system fonts work offline.
+`src/content/` owns static furniture, career, need and trait definitions.
+`src/engine.js` is a compatibility facade over `src/core/`, `src/systems/`,
+`src/game/` and `src/persistence/`. `src/render3d.js` and `src/scene3d.js` render the 3D world with Three.js; `src/character3d.js` loads and animates the CC0 humanoid. `src/render.js` provides the classic Canvas fallback; `src/render/shared/furniture-recipes.js` owns neutral recipes. `src/main.js` starts the focused controllers in `src/ui/`. The build self-hosts Three.js and character assets on the OptiPlex. See `assets/README.md` for asset provenance, licensing, and regeneration. Fonts are optional Google Fonts; system fonts work offline.
+
+## Architecture work order
+
+The supplied tasks are in `.todos/`. Their numbered order satisfies every
+prerequisite. Use this sequence for reviewable, behavior-preserving changes:
+
+| Order | Task | Status |
+| --- | --- | --- |
+| 0001 | Architecture contracts and capability review | Complete |
+| 0002 | Extract static furniture, careers, needs and traits | Complete |
+| 0003 | Extract world grid and navigation | Complete |
+| 0004 | Extract building and placement | Complete |
+| 0005 | Extract actions and interactions | Complete |
+| 0006 | Extract needs and mood | Complete |
+| 0007 | Extract careers, progression and economy | Complete |
+| 0008 | Versioned save migrations | Complete |
+| 0009 | Shared furniture render recipes | Complete |
+| 0010 | Decompose UI controller and game loop | Complete |
+| 0011 | Command dispatch and domain events | Complete |
+| 0012 | Deterministic scenario and replay harness | Complete |
+
+After 0003, tasks 0004, 0005 and 0009 are independently ready. Keep 0008 after
+0004–0007, 0010 after 0008/0009, 0011 after 0010, and 0012 after 0008/0011.
+The numbering is a valid linear order; no dependency changes are needed.
+
+See [architecture](docs/architecture/game-architecture.md),
+[state ownership](docs/architecture/system-boundaries.md),
+[capability map](docs/reviews/current-capability-map.md), and the
+[system review template](docs/reviews/TEMPLATE.md).
+See the [validation record](docs/reviews/architecture-refactor-validation.md) for
+test results and browser checks.
 
 ## Hosting
 

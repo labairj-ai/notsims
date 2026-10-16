@@ -6,6 +6,9 @@ Task 0052 remains in progress. The implementation and automated evidence for
 implemented under the explicit request to build the entire backlog; their
 physical smoke check remains part of release acceptance.
 
+Current production implementation: `69b09c677b8ba1b6bc6eda5e21db8ce7e57132bb`.
+This identifies the available build; it is not a physical test result.
+
 ## Test record
 
 | Field | iPhone | Android |

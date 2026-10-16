@@ -1,7 +1,7 @@
 # 0047 — Correct Social Initiative, Discovery, Visitor Lifecycle, and Cooldowns
 
 - **ID:** 0047
-- **Status:** in progress
+- **Status:** complete
 - **Created:** 2026-10-16
 - **Priority:** critical
 - **Depends:** 0039, 0040, 0041, 0042
@@ -139,7 +139,7 @@ All timing variation must use seeded RNG.
 - [x] pending visitor interaction rejection test;
 - [x] visit cooldown boundary tests;
 - [x] save/load cooldown test;
-- [ ] `npm test`, build, source checks and CI pass.
+- [x] `npm test`, build, source checks and CI pass.
 
 
 
@@ -169,3 +169,5 @@ Source scope and acceptance criteria retained; dependency clarifications are rec
 
 See [follow-up validation](../docs/reviews/social-followup-validation.md) and
 [human acceptance](../docs/reviews/mobile-social-human-acceptance.md).
+
+Implementation: `69b09c677b8ba1b6bc6eda5e21db8ce7e57132bb`; [CI passed](https://github.com/labairj-ai/notsims/actions/runs/38975851836).

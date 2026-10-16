@@ -1,7 +1,7 @@
 # 0049 — Add Social Repetition Fatigue, Variety, and Diminishing Returns
 
 - **ID:** 0049
-- **Status:** in progress
+- **Status:** complete
 - **Created:** 2026-10-16
 - **Priority:** high
 - **Depends:** 0037, 0038, 0043, 0048
@@ -103,7 +103,7 @@ Repeated insults could:
 - [x] memory coalescing tests;
 - [x] relationship progression benchmark;
 - [x] deterministic replay remains identical;
-- [ ] full suite and CI pass.
+- [x] full suite and CI pass.
 
 
 
@@ -128,3 +128,5 @@ Source scope and acceptance criteria retained; dependency clarifications are rec
 
 See [follow-up validation](../docs/reviews/social-followup-validation.md) and
 [human acceptance](../docs/reviews/mobile-social-human-acceptance.md).
+
+Implementation: `69b09c677b8ba1b6bc6eda5e21db8ce7e57132bb`; [CI passed](https://github.com/labairj-ai/notsims/actions/runs/38975851836).

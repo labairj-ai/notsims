@@ -88,7 +88,7 @@ Use existing local/CC0 provenance rules.
 - [x] visitor audio deduplication test;
 - [x] asset provenance/build checks;
 - [ ] human listening acceptance;
-- [ ] full suite and CI pass.
+- [x] full suite and CI pass.
 
 
 
@@ -111,3 +111,5 @@ Source scope and acceptance criteria retained; dependency clarifications are rec
 See [follow-up validation](../docs/reviews/social-followup-validation.md) and
 [human acceptance](../docs/reviews/mobile-social-human-acceptance.md).
 Physical/mobile/listening acceptance remains pending where required; implementation evidence does not certify it.
+
+Implementation: `69b09c677b8ba1b6bc6eda5e21db8ce7e57132bb`; [CI passed](https://github.com/labairj-ai/notsims/actions/runs/38975851836).

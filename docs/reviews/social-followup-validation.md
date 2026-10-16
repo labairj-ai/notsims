@@ -72,3 +72,31 @@ before certifying those tasks. Existing certification records remain traceable.
 - Repeated QA game resets exposed an expected media-play cancellation being
   logged as failure. Intentional stopped/disposed media now resolves false; real
   playback failures still reject. A regression test covers both cases.
+
+## Production release
+
+- Source: `69b09c677b8ba1b6bc6eda5e21db8ce7e57132bb`.
+- [CI passed](https://github.com/labairj-ai/notsims/actions/runs/38975851836).
+- Clean detached checkout: npm ci, 122 tests, build and syntax checks pass.
+- Release: `/var/www/notsims/releases/20261016T222751Z-69b09c6`.
+- Atomic activation: 2026-10-16T22:28:39.234504+00:00.
+- All 154 packaged file hashes checked before activation.
+- Previous `/var/www/notsims/releases/20261016T210815Z-91008ba` retained.
+- 61 public HTTP responses pass MIME and exact-byte verification, including
+  all four social WAVs. Evidence is linked below.
+- Save v3 migrates old saves; a pre-v3 rollback cannot load a newly exported v3
+  save. Preserve the older backup when evaluating a rollback.
+- Public game: https://optiplex.tailb97cdb.ts.net/notsims/
+
+0047, 0049 and 0050 are complete. 0048, 0051 and 0053 are implemented and
+automatically verified, with their physical/listening checks still open.
+0052 remains in progress and does not supersede prior human certification
+without matching device evidence.
+
+Production acceptance: all 20 shared activity/renderer/viewport cases pass,
+with visible model poses and completion, plus four new audio decodes per browser
+case. All 8 phone/visitor/contextual-action browser cases pass.
+[HTTP evidence](social-followup-evidence/production-http-results.json),
+[shared activity results](social-followup-evidence/production-shared-results.json),
+[production shared pose](social-followup-evidence/production-shared-sit.png).
+These are automated production results, not human certification.

@@ -1,7 +1,7 @@
 # 0050 — Decompose Social System Into Focused Modules
 
 - **ID:** 0050
-- **Status:** in progress
+- **Status:** complete
 - **Created:** 2026-10-16
 - **Priority:** high
 - **Depends:** 0047, 0048, 0049
@@ -119,7 +119,7 @@ Recommended ownership:
 - [x] before/after replay equality;
 - [x] architecture dependency test;
 - [x] source-cycle check;
-- [ ] full suite/build/check/CI pass.
+- [x] full suite/build/check/CI pass.
 
 
 
@@ -141,3 +141,5 @@ Source scope and acceptance criteria retained; dependency clarifications are rec
 
 See [follow-up validation](../docs/reviews/social-followup-validation.md) and
 [human acceptance](../docs/reviews/mobile-social-human-acceptance.md).
+
+Implementation: `69b09c677b8ba1b6bc6eda5e21db8ce7e57132bb`; [CI passed](https://github.com/labairj-ai/notsims/actions/runs/38975851836).

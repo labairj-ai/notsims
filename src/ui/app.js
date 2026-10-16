@@ -8,6 +8,7 @@ import {bootstrapRenderer} from './renderer-bootstrap.js';
 import {installViews} from './views.js';
 import {installControls} from './controls.js';
 import {installCharacterCreator} from './character-creator.js';
+import {installMobile} from './mobile.js';
 import {installInput} from './input.js';
 import {createGameLoop} from './game-loop.js';
 
@@ -19,7 +20,7 @@ export async function startApp({dispatchCommand=dispatch,audioOptions}={}){
  app.send=(command,success)=>{const result=app.dispatch(command);app.errorOr(commandMessage(result),success);return result;};
  installViews(app);installControls(app);installPersistence(app);installAudio(app,audioOptions);
  await bootstrapRenderer(app);
- installCharacterCreator(app);installInput(app);
+ installCharacterCreator(app);installMobile(app);installInput(app);
  const loop=createGameLoop({now:performance.now(),paused:()=>app.paused(),hidden:()=>document.hidden,speed:()=>app.speed,
   advance:dt=>{const result=advance(app.state,dt);app.audio.receive(result);},draw:t=>{app.renderer.draw(app.state,app.ui,t);app.audio.frame();},
   preview:dt=>{if(app.characterPreview&&$('#creator').open)app.characterPreview.draw(dt);},refresh:()=>app.updateUI(),schedule:requestAnimationFrame});

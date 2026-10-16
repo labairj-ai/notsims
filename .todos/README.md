@@ -19,3 +19,12 @@ then 0020. Numeric order satisfies all dependencies. See the
 0021 is deployed and passes automated production checks. It remains in progress
 pending the required human listening result. See the
 [production acceptance record](../docs/reviews/audio-production-validation.md).
+
+## Mobile playability
+
+Tasks 0022–0031 imported from the supplied mobile UX backlog. Work order:
+0022 → 0023 → 0024/0025 → 0026 → 0027/0028 → 0029/0030 → 0031.
+Numeric order satisfies dependencies. Implementation and automated evidence are
+recorded in [mobile validation](../docs/reviews/mobile-playability-validation.md).
+Real iPhone/Android usability and standalone installation certification remain
+open; emulated Chrome is not a substitute for those checks.

@@ -55,13 +55,14 @@ export class Renderer3D extends WorldCamera {
     this.house=houseObject(s,this.fullWalls,this.angle);this.scene.add(this.house);
   }
   updatePreview(s,ui) {
-    const signature=JSON.stringify([ui.hover,ui.tab,ui.tool,ui.selected,ui.rotation,ui.roomStart,ui.edge,this.signature]);
+    const signature=JSON.stringify([ui.hover,ui.tab,ui.tool,ui.selected,ui.rotation,ui.roomStart,ui.edge,ui.selectedObjectId,ui.roomPreview,this.signature]);
     if(signature===this.previewSignature)return;this.previewSignature=signature;
     for(const child of [...this.highlight.children])disposeGroup(child);
-    if(!ui.hover)return;const [x,y]=ui.hover;
     const p=new GeometryPainter();
     const tile=(a,b,color)=>p.box(a+.025,b+.025,.95,.95,.012,color,.012);
-    if(ui.tab==='build'&&ui.tool==='room'&&ui.roomStart){const [sx,sy]=ui.roomStart;for(let a=Math.min(x,sx);a<=Math.max(x,sx);a++)for(let b=Math.min(y,sy);b<=Math.max(y,sy);b++)tile(a,b,'#f1d99599');}
+    if(ui.selectedObjectId){const f=s.furniture.find(f=>f.id===ui.selectedObjectId);if(f){const [w,h]=dimensions(f);for(let a=f.x;a<f.x+w;a++)for(let b=f.y;b<f.y+h;b++)tile(a,b,'#f8df8b88');}}
+    if(!ui.hover){this.highlight.add(batch(p.group));return;}const [x,y]=ui.hover;
+    if(ui.tab==='build'&&ui.tool==='room'&&ui.roomStart){const [sx,sy]=ui.roomStart;for(let a=Math.min(x,sx);a<=Math.max(x,sx);a++)for(let b=Math.min(y,sy);b<=Math.max(y,sy);b++)tile(a,b,ui.roomPreview?.valid?'#aac48999':'#ce806d99');}
     else if(ui.tab==='shop'&&ui.selected){
       const valid=canPlace(s,ui.selected,x,y,ui.rotation),[w,h]=dimensions({type:ui.selected,rotation:ui.rotation});
       for(let a=x;a<x+w;a++)for(let b=y;b<y+h;b++)tile(a,b,valid?'#afc17d99':'#ce806d99');

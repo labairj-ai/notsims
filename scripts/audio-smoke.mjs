@@ -27,7 +27,7 @@ try{
   await page.evaluate(async()=>{const {app}=await import('./src/main.js');const {advance}=await import('./src/game/dispatch.js');app.dispatch({type:'INTERACT',id:12});advance(app.state,1);while(app.state.activity?.path?.length)advance(app.state,1);});
   await page.waitForFunction(()=>notsimsAudio.manager.debug().loops.includes('interaction.shower.loop'));
   await page.click('#cancel-action');await page.waitForFunction(()=>!notsimsAudio.manager.debug().loops.includes('interaction.shower.loop'));
-  await page.click('#menu');await page.click('#audio-menu');await page.waitForSelector('#audio-settings[open]');
+  await page.click(await page.$eval('#menu',e=>e.getBoundingClientRect().width>0)?'#menu':'#mobile-menu');await page.click('#audio-menu');await page.waitForSelector('#audio-settings[open]');
   const settings=await page.evaluate(()=>['master','music','sfx','ambience','ui'].every(bus=>document.querySelector(`label[for="volume-${bus}"]`)&&document.querySelector(`#volume-${bus}`).getBoundingClientRect().height>=44));assert.ok(settings);
   await page.focus('#volume-music');await page.keyboard.press('ArrowLeft');
   const beforeMute=await page.evaluate(()=>notsimsAudio.manager.settings.music);assert.equal(beforeMute,.34);
@@ -44,7 +44,7 @@ try{
    await page.evaluate(async()=>{const backend=notsimsAudio.manager.backend;backend.context.createStereoPanner=undefined;notsimsAudio.manager.playCue('object.place',{spatial:true,position:{x:1,y:1}});const original=backend.fetcher;backend.buffers.delete('error');backend.fetcher=(url,...args)=>String(url).endsWith('/error.wav')?Promise.resolve(new Response(new Uint8Array([1,2,3]),{status:200})):original(url,...args);notsimsAudio.manager.playCue('ui.error');});
    await page.waitForFunction(()=>notsimsAudio.manager.diagnostics.some(d=>d.where==='ui.error'));
   }
-  await page.click('#save');const stored=await page.evaluate(()=>({world:JSON.parse(localStorage.getItem('notsims.save.v1')),preferences:JSON.parse(localStorage.getItem('notsims.settings.v1'))}));assert.equal(stored.world.version,1);assert.equal(stored.preferences.music,.34);assert.equal(Object.hasOwn(stored.world,'settings'),false);
+  if(await page.$eval('#save',e=>e.getBoundingClientRect().width>0))await page.click('#save');else{await page.click('#mobile-menu');await page.click('#manual-save');await page.click('[data-close="game-menu"]');}const stored=await page.evaluate(()=>({world:JSON.parse(localStorage.getItem('notsims.save.v1')),preferences:JSON.parse(localStorage.getItem('notsims.settings.v1'))}));assert.equal(stored.world.version,1);assert.equal(stored.preferences.music,.34);assert.equal(Object.hasOwn(stored.world,'settings'),false);
   await page.reload({waitUntil:'networkidle0'});await ready(page);assert.equal(await page.evaluate(()=>notsimsAudio.manager.settings.music),.34);assert.equal(await page.evaluate(()=>notsimsAudio.manager.unlocked),false);
   await page.evaluate(()=>notsimsAudio.dispose());assert.equal(await page.evaluate(()=>typeof globalThis.notsimsAudio),'undefined');
   assert.deepEqual(errors,[]);console.log(`${view} ${size.width}×${size.height}: gesture unlock, all WAV decode, MP3 stream/crossfade, owned loops, keyboard settings, mute, persistence, teardown${size.width===1440?', hidden/resume, failed decode and spatial fallback':''}: PASS`);await context.close();

@@ -1,0 +1,1412 @@
+[
+  {
+    "width": 320,
+    "tab": "creator",
+    "small": [
+      {
+        "control": "character-name",
+        "width": 256,
+        "height": 31
+      },
+      {
+        "control": "skin",
+        "width": 77.328125,
+        "height": 27
+      },
+      {
+        "control": "hair",
+        "width": 77.34375,
+        "height": 27
+      },
+      {
+        "control": "shirt",
+        "width": 77.328125,
+        "height": 27
+      },
+      {
+        "control": "hairstyle",
+        "width": 256,
+        "height": 33
+      },
+      {
+        "control": "trait",
+        "width": 256,
+        "height": 33
+      },
+      {
+        "control": "lot",
+        "width": 256,
+        "height": 33
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "tab": "live",
+    "small": [
+      {
+        "control": "menu",
+        "width": 31.953125,
+        "height": 34
+      },
+      {
+        "control": "edit-character",
+        "width": 85.40625,
+        "height": 12
+      },
+      {
+        "control": "camera-left",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "camera-right",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "walls",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "zoom-out",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "zoom-in",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "recenter",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "cancel-action",
+        "width": 11,
+        "height": 26
+      },
+      {
+        "control": "Ⅱ",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶▶▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "⌂Live",
+        "width": 68.5,
+        "height": 40
+      },
+      {
+        "control": "▧Build",
+        "width": 68.5,
+        "height": 40
+      },
+      {
+        "control": "▤Furnish",
+        "width": 68.5,
+        "height": 40
+      },
+      {
+        "control": "▱Work",
+        "width": 68.5,
+        "height": 40
+      },
+      {
+        "control": "Make it feel like you ↗",
+        "width": 106.21875,
+        "height": 15
+      },
+      {
+        "control": "show-guide",
+        "width": 85.515625,
+        "height": 14.390625
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "tab": "build",
+    "small": [
+      {
+        "control": "menu",
+        "width": 31.953125,
+        "height": 34
+      },
+      {
+        "control": "edit-character",
+        "width": 85.40625,
+        "height": 12
+      },
+      {
+        "control": "camera-left",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "camera-right",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "walls",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "zoom-out",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "zoom-in",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "recenter",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "cancel-action",
+        "width": 11,
+        "height": 26
+      },
+      {
+        "control": "Ⅱ",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶▶▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "⌂Live",
+        "width": 68.5,
+        "height": 40
+      },
+      {
+        "control": "▧Build",
+        "width": 68.5,
+        "height": 40
+      },
+      {
+        "control": "▤Furnish",
+        "width": 68.5,
+        "height": 40
+      },
+      {
+        "control": "▱Work",
+        "width": 68.5,
+        "height": 40
+      },
+      {
+        "control": "Warm oak",
+        "width": 88,
+        "height": 38
+      },
+      {
+        "control": "Soft stone",
+        "width": 88,
+        "height": 38
+      },
+      {
+        "control": "Sage",
+        "width": 88,
+        "height": 38
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "tab": "shop",
+    "small": [
+      {
+        "control": "menu",
+        "width": 31.953125,
+        "height": 34
+      },
+      {
+        "control": "edit-character",
+        "width": 85.40625,
+        "height": 12
+      },
+      {
+        "control": "camera-left",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "camera-right",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "walls",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "zoom-out",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "zoom-in",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "recenter",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "cancel-action",
+        "width": 11,
+        "height": 26
+      },
+      {
+        "control": "Ⅱ",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶▶▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "⌂Live",
+        "width": 68.5,
+        "height": 40
+      },
+      {
+        "control": "▧Build",
+        "width": 68.5,
+        "height": 40
+      },
+      {
+        "control": "▤Furnish",
+        "width": 68.5,
+        "height": 40
+      },
+      {
+        "control": "▱Work",
+        "width": 68.5,
+        "height": 40
+      },
+      {
+        "control": "All",
+        "width": 30,
+        "height": 26
+      },
+      {
+        "control": "Living",
+        "width": 44,
+        "height": 26
+      },
+      {
+        "control": "Bedroom",
+        "width": 58.046875,
+        "height": 26
+      },
+      {
+        "control": "Kitchen",
+        "width": 51.421875,
+        "height": 26
+      },
+      {
+        "control": "Bathroom",
+        "width": 60.765625,
+        "height": 26
+      },
+      {
+        "control": "Decor",
+        "width": 45.125,
+        "height": 26
+      },
+      {
+        "control": "rotate",
+        "width": 71.34375,
+        "height": 29
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "tab": "career",
+    "small": [
+      {
+        "control": "menu",
+        "width": 31.953125,
+        "height": 34
+      },
+      {
+        "control": "edit-character",
+        "width": 85.40625,
+        "height": 12
+      },
+      {
+        "control": "camera-left",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "camera-right",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "walls",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "zoom-out",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "zoom-in",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "recenter",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "cancel-action",
+        "width": 11,
+        "height": 26
+      },
+      {
+        "control": "Ⅱ",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶▶▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "⌂Live",
+        "width": 68.5,
+        "height": 40
+      },
+      {
+        "control": "▧Build",
+        "width": 68.5,
+        "height": 40
+      },
+      {
+        "control": "▤Furnish",
+        "width": 68.5,
+        "height": 40
+      },
+      {
+        "control": "▱Work",
+        "width": 68.5,
+        "height": 40
+      },
+      {
+        "control": "Take the job ↗",
+        "width": 246,
+        "height": 35
+      },
+      {
+        "control": "Take the job ↗",
+        "width": 246,
+        "height": 35
+      },
+      {
+        "control": "Take the job ↗",
+        "width": 246,
+        "height": 35
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "tab": "creator",
+    "small": [
+      {
+        "control": "character-name",
+        "width": 322.5,
+        "height": 31
+      },
+      {
+        "control": "skin",
+        "width": 99.5,
+        "height": 27
+      },
+      {
+        "control": "hair",
+        "width": 99.5,
+        "height": 27
+      },
+      {
+        "control": "shirt",
+        "width": 99.5,
+        "height": 27
+      },
+      {
+        "control": "hairstyle",
+        "width": 322.5,
+        "height": 33
+      },
+      {
+        "control": "trait",
+        "width": 322.5,
+        "height": 33
+      },
+      {
+        "control": "lot",
+        "width": 322.5,
+        "height": 33
+      },
+      {
+        "control": "resume",
+        "width": 322.5,
+        "height": 35
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "tab": "live",
+    "small": [
+      {
+        "control": "save",
+        "width": 74.625,
+        "height": 39
+      },
+      {
+        "control": "menu",
+        "width": 34,
+        "height": 34
+      },
+      {
+        "control": "edit-character",
+        "width": 85.40625,
+        "height": 12
+      },
+      {
+        "control": "camera-left",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "camera-right",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "walls",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "zoom-out",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "zoom-in",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "recenter",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "cancel-action",
+        "width": 11,
+        "height": 26
+      },
+      {
+        "control": "Ⅱ",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶▶▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "⌂Live",
+        "width": 86,
+        "height": 40
+      },
+      {
+        "control": "▧Build",
+        "width": 86,
+        "height": 40
+      },
+      {
+        "control": "▤Furnish",
+        "width": 86,
+        "height": 40
+      },
+      {
+        "control": "▱Work",
+        "width": 86,
+        "height": 40
+      },
+      {
+        "control": "Make it feel like you ↗",
+        "width": 106.21875,
+        "height": 15
+      },
+      {
+        "control": "show-guide",
+        "width": 85.515625,
+        "height": 14.390625
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "tab": "build",
+    "small": [
+      {
+        "control": "save",
+        "width": 74.625,
+        "height": 39
+      },
+      {
+        "control": "menu",
+        "width": 34,
+        "height": 34
+      },
+      {
+        "control": "edit-character",
+        "width": 85.40625,
+        "height": 12
+      },
+      {
+        "control": "camera-left",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "camera-right",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "walls",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "zoom-out",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "zoom-in",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "recenter",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "cancel-action",
+        "width": 11,
+        "height": 26
+      },
+      {
+        "control": "Ⅱ",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶▶▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "⌂Live",
+        "width": 86,
+        "height": 40
+      },
+      {
+        "control": "▧Build",
+        "width": 86,
+        "height": 40
+      },
+      {
+        "control": "▤Furnish",
+        "width": 86,
+        "height": 40
+      },
+      {
+        "control": "▱Work",
+        "width": 86,
+        "height": 40
+      },
+      {
+        "control": "Warm oak",
+        "width": 111.328125,
+        "height": 38
+      },
+      {
+        "control": "Soft stone",
+        "width": 111.34375,
+        "height": 38
+      },
+      {
+        "control": "Sage",
+        "width": 111.328125,
+        "height": 38
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "tab": "shop",
+    "small": [
+      {
+        "control": "save",
+        "width": 74.625,
+        "height": 39
+      },
+      {
+        "control": "menu",
+        "width": 34,
+        "height": 34
+      },
+      {
+        "control": "edit-character",
+        "width": 85.40625,
+        "height": 12
+      },
+      {
+        "control": "camera-left",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "camera-right",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "walls",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "zoom-out",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "zoom-in",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "recenter",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "cancel-action",
+        "width": 11,
+        "height": 26
+      },
+      {
+        "control": "Ⅱ",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶▶▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "⌂Live",
+        "width": 86,
+        "height": 40
+      },
+      {
+        "control": "▧Build",
+        "width": 86,
+        "height": 40
+      },
+      {
+        "control": "▤Furnish",
+        "width": 86,
+        "height": 40
+      },
+      {
+        "control": "▱Work",
+        "width": 86,
+        "height": 40
+      },
+      {
+        "control": "All",
+        "width": 30,
+        "height": 26
+      },
+      {
+        "control": "Living",
+        "width": 44,
+        "height": 26
+      },
+      {
+        "control": "Bedroom",
+        "width": 58.046875,
+        "height": 26
+      },
+      {
+        "control": "Kitchen",
+        "width": 51.421875,
+        "height": 26
+      },
+      {
+        "control": "Bathroom",
+        "width": 60.765625,
+        "height": 26
+      },
+      {
+        "control": "Decor",
+        "width": 45.125,
+        "height": 26
+      },
+      {
+        "control": "rotate",
+        "width": 71.34375,
+        "height": 29
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "tab": "career",
+    "small": [
+      {
+        "control": "save",
+        "width": 74.625,
+        "height": 39
+      },
+      {
+        "control": "menu",
+        "width": 34,
+        "height": 34
+      },
+      {
+        "control": "edit-character",
+        "width": 85.40625,
+        "height": 12
+      },
+      {
+        "control": "camera-left",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "camera-right",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "walls",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "zoom-out",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "zoom-in",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "recenter",
+        "width": 24,
+        "height": 31
+      },
+      {
+        "control": "cancel-action",
+        "width": 11,
+        "height": 26
+      },
+      {
+        "control": "Ⅱ",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "▶▶▶",
+        "width": 25,
+        "height": 23
+      },
+      {
+        "control": "⌂Live",
+        "width": 86,
+        "height": 40
+      },
+      {
+        "control": "▧Build",
+        "width": 86,
+        "height": 40
+      },
+      {
+        "control": "▤Furnish",
+        "width": 86,
+        "height": 40
+      },
+      {
+        "control": "▱Work",
+        "width": 86,
+        "height": 40
+      },
+      {
+        "control": "Take the job ↗",
+        "width": 316,
+        "height": 35
+      },
+      {
+        "control": "Take the job ↗",
+        "width": 316,
+        "height": 35
+      },
+      {
+        "control": "Take the job ↗",
+        "width": 316,
+        "height": 35
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "tab": "creator",
+    "small": [
+      {
+        "control": "character-name",
+        "width": 386.5625,
+        "height": 36
+      },
+      {
+        "control": "skin",
+        "width": 120.84375,
+        "height": 32
+      },
+      {
+        "control": "hair",
+        "width": 120.859375,
+        "height": 32
+      },
+      {
+        "control": "shirt",
+        "width": 120.859375,
+        "height": 32
+      },
+      {
+        "control": "hairstyle",
+        "width": 386.5625,
+        "height": 38
+      },
+      {
+        "control": "trait",
+        "width": 386.5625,
+        "height": 38
+      },
+      {
+        "control": "lot",
+        "width": 386.5625,
+        "height": 38
+      },
+      {
+        "control": "resume",
+        "width": 386.5625,
+        "height": 35
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "tab": "live",
+    "small": [
+      {
+        "control": "save",
+        "width": 74.625,
+        "height": 39
+      },
+      {
+        "control": "menu",
+        "width": 34,
+        "height": 34
+      },
+      {
+        "control": "edit-character",
+        "width": 85.40625,
+        "height": 12
+      },
+      {
+        "control": "camera-left",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "camera-right",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "walls",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "zoom-out",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "zoom-in",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "recenter",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "cancel-action",
+        "width": 11,
+        "height": 26
+      },
+      {
+        "control": "Ⅱ",
+        "width": 29,
+        "height": 31
+      },
+      {
+        "control": "▶",
+        "width": 29,
+        "height": 31
+      },
+      {
+        "control": "▶▶",
+        "width": 29,
+        "height": 31
+      },
+      {
+        "control": "▶▶▶",
+        "width": 29,
+        "height": 31
+      },
+      {
+        "control": "Make it feel like you ↗",
+        "width": 106.21875,
+        "height": 15
+      },
+      {
+        "control": "show-guide",
+        "width": 85.515625,
+        "height": 14.390625
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "tab": "build",
+    "small": [
+      {
+        "control": "save",
+        "width": 74.625,
+        "height": 39
+      },
+      {
+        "control": "menu",
+        "width": 34,
+        "height": 34
+      },
+      {
+        "control": "edit-character",
+        "width": 85.40625,
+        "height": 12
+      },
+      {
+        "control": "camera-left",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "camera-right",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "walls",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "zoom-out",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "zoom-in",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "recenter",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "cancel-action",
+        "width": 11,
+        "height": 26
+      },
+      {
+        "control": "Ⅱ",
+        "width": 29,
+        "height": 31
+      },
+      {
+        "control": "▶",
+        "width": 29,
+        "height": 31
+      },
+      {
+        "control": "▶▶",
+        "width": 29,
+        "height": 31
+      },
+      {
+        "control": "▶▶▶",
+        "width": 29,
+        "height": 31
+      },
+      {
+        "control": "Warm oak",
+        "width": 67.65625,
+        "height": 38
+      },
+      {
+        "control": "Soft stone",
+        "width": 67.671875,
+        "height": 38
+      },
+      {
+        "control": "Sage",
+        "width": 67.671875,
+        "height": 38
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "tab": "shop",
+    "small": [
+      {
+        "control": "save",
+        "width": 74.625,
+        "height": 39
+      },
+      {
+        "control": "menu",
+        "width": 34,
+        "height": 34
+      },
+      {
+        "control": "edit-character",
+        "width": 85.40625,
+        "height": 12
+      },
+      {
+        "control": "camera-left",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "camera-right",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "walls",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "zoom-out",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "zoom-in",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "recenter",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "cancel-action",
+        "width": 11,
+        "height": 26
+      },
+      {
+        "control": "Ⅱ",
+        "width": 29,
+        "height": 31
+      },
+      {
+        "control": "▶",
+        "width": 29,
+        "height": 31
+      },
+      {
+        "control": "▶▶",
+        "width": 29,
+        "height": 31
+      },
+      {
+        "control": "▶▶▶",
+        "width": 29,
+        "height": 31
+      },
+      {
+        "control": "All",
+        "width": 30,
+        "height": 26
+      },
+      {
+        "control": "Living",
+        "width": 44,
+        "height": 26
+      },
+      {
+        "control": "Bedroom",
+        "width": 58.046875,
+        "height": 26
+      },
+      {
+        "control": "Kitchen",
+        "width": 51.421875,
+        "height": 26
+      },
+      {
+        "control": "Bathroom",
+        "width": 60.765625,
+        "height": 26
+      },
+      {
+        "control": "Decor",
+        "width": 45.125,
+        "height": 26
+      },
+      {
+        "control": "rotate",
+        "width": 71.34375,
+        "height": 29
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "tab": "career",
+    "small": [
+      {
+        "control": "save",
+        "width": 74.625,
+        "height": 39
+      },
+      {
+        "control": "menu",
+        "width": 34,
+        "height": 34
+      },
+      {
+        "control": "edit-character",
+        "width": 85.40625,
+        "height": 12
+      },
+      {
+        "control": "camera-left",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "camera-right",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "walls",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "zoom-out",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "zoom-in",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "recenter",
+        "width": 25,
+        "height": 31
+      },
+      {
+        "control": "cancel-action",
+        "width": 11,
+        "height": 26
+      },
+      {
+        "control": "Ⅱ",
+        "width": 29,
+        "height": 31
+      },
+      {
+        "control": "▶",
+        "width": 29,
+        "height": 31
+      },
+      {
+        "control": "▶▶",
+        "width": 29,
+        "height": 31
+      },
+      {
+        "control": "▶▶▶",
+        "width": 29,
+        "height": 31
+      },
+      {
+        "control": "Take the job ↗",
+        "width": 185,
+        "height": 35
+      },
+      {
+        "control": "Take the job ↗",
+        "width": 185,
+        "height": 35
+      },
+      {
+        "control": "Take the job ↗",
+        "width": 185,
+        "height": 35
+      }
+    ]
+  }
+]

@@ -3,6 +3,6 @@ export function buildPanel({ui,state}){return `<span class="eyebrow">FROM THE GR
 
 export function bindBuildPanel(app,root){
  const ui=app.ui;
- root.querySelectorAll('[data-tool]').forEach(b=>b.onclick=()=>{ui.tool=b.dataset.tool;app.renderStudio();app.updateUI(true);});
+ root.querySelectorAll('[data-tool]').forEach(b=>b.onclick=()=>{ui.tool=b.dataset.tool;app.mobile?.selection();app.renderStudio();app.updateUI(true);});
  root.querySelectorAll('[data-floor]').forEach(b=>b.onclick=()=>{ui.floor=b.dataset.floor;app.renderStudio();});
 }

@@ -8,6 +8,10 @@ def verify_response(name,kind,body,expected):
         raise ValueError(f'Production differs from verified build: {name}')
     if name.endswith(('.mp3','.wav')) and not kind.startswith('audio/'):
         raise ValueError(f'Incorrect audio MIME type: {name}: {kind}')
+    if name.endswith('.webmanifest') and 'manifest+json' not in kind:
+        raise ValueError(f'Incorrect manifest MIME type: {kind}')
+    if name.endswith('.png') and not kind.startswith('image/png'):
+        raise ValueError(f'Incorrect icon MIME type: {name}: {kind}')
     if name.endswith('.js') and 'javascript' not in kind:
         raise ValueError(f'Incorrect JavaScript MIME type: {name}: {kind}')
 
@@ -17,7 +21,7 @@ def main():
     parser.add_argument('--dist',required=True,type=Path)
     parser.add_argument('--report',required=True,type=Path)
     args=parser.parse_args();dist=args.dist.resolve();base=args.base.rstrip('/')+'/'
-    paths=['index.html','src/main.js','src/settings/settings.js','src/ui/audio-settings.js','build-info.json','assets/audio/manifest.json']
+    paths=['manifest.webmanifest','assets/icons/icon-192.png','assets/icons/icon-512.png','src/mobile.css','src/ui/mobile.js','src/ui/gestures.js','index.html','src/main.js','src/settings/settings.js','src/ui/audio-settings.js','build-info.json','assets/audio/manifest.json']
     paths += [str(f.relative_to(dist)) for f in sorted((dist/'src/audio').glob('*.js'))]
     paths += [a['src'] for a in json.loads((dist/'assets/audio/library.json').read_text())['assets']]
     def check(name):

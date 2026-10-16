@@ -75,3 +75,24 @@ device before closing task 0021. On that device, reload the production debug URL
 use a trusted gesture and inspect Menu → Audio settings. Restore mute/zero levels
 through the UI. Check browser/site/OS output configuration if its graph is healthy
 but the listener still hears nothing. Never bypass autoplay or modify world saves.
+
+## Mobile shell and standalone assets
+
+The complete release includes manifest.webmanifest and assets/icons/icon-{192,512}.png.
+Serve the manifest as application/manifest+json and icons as image/png. The
+Notsims listener's types block adds webmanifest alongside WAV without changing
+routes. The release verifier checks those files, mobile CSS, and input modules.
+There is no service worker. Installation never replaces normal browser-tab play.
+
+Run the optional external-browser QA harness (no production dependencies added):
+
+```sh
+node scripts/mobile-smoke.mjs --puppeteer-module /path/to/puppeteer-export.js \
+  --chrome /path/to/chrome --url https://optiplex.tailb97cdb.ts.net/notsims/ \
+  --out /tmp/mobile-evidence
+```
+
+It checks both renderers, seven viewport sizes, four modes, target geometry,
+document overflow, browser errors and trusted touch pan/pinch suppression. Real
+hardware, software keyboards, safe areas, installation, listening and comfort
+still require the scenarios in task 0031 and the mobile validation record.

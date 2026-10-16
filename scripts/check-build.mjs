@@ -21,3 +21,8 @@ const html=await readFile(resolve(root,'index.html'),'utf8');
 if(!html.includes('type="importmap"'))throw Error('Missing browser import map');
 await stat(resolve(root,'assets/CC0-1.0.txt'));await stat(resolve(root,'vendor/three/LICENSE'));
 console.log(`Verified ${seen.size} packaged JS modules, character asset, import map, and licenses.`);
+
+const manifest=JSON.parse(await readFile(resolve(root,'manifest.webmanifest'),'utf8'));
+if(manifest.id!=='/notsims/'||manifest.start_url!=='/notsims/'||manifest.display!=='standalone'||manifest.orientation)throw Error('Invalid standalone mobile contract');
+for(const icon of manifest.icons)await stat(resolve(root,icon.src));
+console.log('Verified standalone manifest and icons.');

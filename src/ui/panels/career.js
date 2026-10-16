@@ -7,5 +7,5 @@ export function careerPanel({ui,state}){return `<span class="eyebrow">A LITTLE W
 
 export function bindCareerPanel(app,root){
  const ui=app.ui;
- root.querySelectorAll('[data-job]').forEach(b=>b.onclick=()=>{if(app.state.activity?.kind==='work')return;if(app.state.job!==b.dataset.job){const result=app.dispatch({type:'CHANGE_JOB',job:b.dataset.job});if(!result.ok){app.toast(commandMessage(result));return;}app.toast('You got the job! Start a shift whenever you’re ready.');app.renderStudio();}else app.send({type:'START_SHIFT'},'Your next shift is queued. Speed up time for a quicker payday.');app.updateUI(true);});
+ root.querySelectorAll('[data-job]').forEach(b=>b.onclick=()=>{if(app.state.activity?.kind==='work')return;if(app.state.job!==b.dataset.job){const result=app.dispatch({type:'CHANGE_JOB',job:b.dataset.job});if(!result.ok){app.toast(commandMessage(result));return;}app.toast('You got the job! Start a shift whenever you’re ready.');app.renderStudio();}else app.send({type:'START_SHIFT'},'Your next shift is queued. Speed up time for a quicker payday.');app.mobile?.selection();app.updateUI(true);});
 }

@@ -6,6 +6,6 @@ export function furnishPanel({ui,state}){return `<span class="eyebrow">GOOD THIN
 export function bindFurnishPanel(app,root){
  const ui=app.ui;
  root.querySelectorAll('[data-category]').forEach(b=>b.onclick=()=>{ui.category=b.dataset.category;app.renderStudio();});
- root.querySelectorAll('[data-item]').forEach(b=>b.onclick=()=>{ui.selected=b.dataset.item;app.renderStudio();app.updateUI(true);});
+ root.querySelectorAll('[data-item]').forEach(b=>b.onclick=()=>{ui.selected=b.dataset.item;app.mobile?.selection();app.renderStudio();app.updateUI(true);});
  if($('#rotate'))$('#rotate').onclick=()=>{ui.rotation=(ui.rotation+1)%4;app.toast(`Rotated ${ui.rotation*90}°`);};
 }

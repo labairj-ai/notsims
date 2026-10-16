@@ -49,7 +49,8 @@ export class Renderer {
  objects.push({depth:p.x+p.y+1,draw:()=>this.person(p,time,s.activity?.kind==='work')});
  objects.sort((a,b)=>a.depth-b.depth);objects.forEach(o=>o.draw());
  if(s.activity?.path?.length){c.globalAlpha=.5;for(const [x,y] of s.activity.path)this.ellipse(x+.5,y+.5,.02,.07,.04,'#f9f7e2');c.globalAlpha=1;}
- if(ui.hover&&ui.tab==='build'&&ui.tool==='room'&&ui.roomStart){const [x1,y1]=ui.roomStart,[x2,y2]=ui.hover;for(let x=Math.min(x1,x2);x<=Math.max(x1,x2);x++)for(let y=Math.min(y1,y2);y<=Math.max(y1,y2);y++)this.tile(x,y,'#f5e7b780','#ffffcf');}
+ if(ui.selectedObjectId){const f=s.furniture.find(f=>f.id===ui.selectedObjectId);if(f){const [w,h]=dimensions(f);for(let x=f.x;x<f.x+w;x++)for(let y=f.y;y<f.y+h;y++)this.tile(x,y,'#f8df8b88','#fff4cb');}}
+ if(ui.hover&&ui.tab==='build'&&ui.tool==='room'&&ui.roomStart){const [x1,y1]=ui.roomStart,[x2,y2]=ui.hover;for(let x=Math.min(x1,x2);x<=Math.max(x1,x2);x++)for(let y=Math.min(y1,y2);y<=Math.max(y1,y2);y++)this.tile(x,y,ui.roomPreview?.valid?'#aac48980':'#ce806d80','#ffffcf');}
  else if(ui.hover&&ui.tab==='shop'&&ui.selected){const [x,y]=ui.hover,valid=canPlace(s,ui.selected,x,y,ui.rotation);c.globalAlpha=.6;this.furniture({type:ui.selected,x,y,rotation:ui.rotation});c.globalAlpha=.7;const [w,h]=dimensions({type:ui.selected,rotation:ui.rotation});for(let a=x;a<x+w;a++)for(let b=y;b<y+h;b++)this.tile(a,b,valid?'#aac48960':'#ce806d80','#fff4cb');c.globalAlpha=1;}
  else if(ui.hover&&ui.tab==='build'){const [x,y]=ui.hover;this.tile(x,y,'#f6f0ba66','#fff5c8');if((ui.tool==='wall'||ui.tool==='door'||ui.tool==='erase')&&ui.edge){const [a,xy]=ui.edge.split(':'),[ex,ey]=xy.split(',').map(Number);this.line(this.p(ex,ey,.1),this.p(ex+(a==='h'?1:0),ey+(a==='v'?1:0),.1),'#fff9cf',4);}}
  const night=Math.floor(s.minutes%1440/60);if(night<6||night>=20){c.fillStyle='#34466326';c.fillRect(0,0,this.w,this.h);}

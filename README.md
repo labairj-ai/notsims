@@ -42,7 +42,7 @@ Saves use this browser’s local storage and are specific to this origin/device.
 
 ## Develop
 
-Node.js 22+. Install the free dependencies once with `npm ci`.
+Node.js 22+ and Python 3 (for the deployment regression verifier). Install the free dependencies once with `npm ci`.
 
 ```sh
 npm run dev     # http://127.0.0.1:5173
@@ -91,6 +91,10 @@ test results and browser checks.
 Tasks 0013–0020 are complete. Dependency order is 0013, then
 0014/0015, 0016/0017, 0018/0019, and 0020 for final QA. The numeric order is valid.
 See [audio validation](docs/reviews/audio-validation.md) for acceptance evidence.
+
+Task 0021 deployed the audio release and corrected production MIME/crossfade
+issues. Automated checks pass; human listening confirmation remains pending. See
+[production audio evidence](docs/reviews/audio-production-validation.md).
 
 ## Hosting
 

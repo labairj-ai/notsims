@@ -77,37 +77,37 @@ optional build metadata. Existing diagnostics only if evidence proves a real def
 
 ## Done when
 
-- [ ] Production serves d392f66 or a direct descendant with the complete audio implementation.
-- [ ] current points to the intended release.
-- [ ] Menu → Audio settings is visible in production.
-- [ ] Representative MP3/WAV assets return HTTP 200.
-- [ ] Zero audio requests occur before a trusted user gesture.
-- [ ] Trusted pointer/keyboard input results in unlocked true.
-- [ ] Production settings are unmuted with nonzero Master/Music/SFX.
+- [x] Production serves d392f66 or a direct descendant with the complete audio implementation.
+- [x] current points to the intended release.
+- [x] Menu → Audio settings is visible in production.
+- [x] Representative MP3/WAV assets return HTTP 200.
+- [x] Zero audio requests occur before a trusted user gesture.
+- [x] Trusted pointer/keyboard input results in unlocked true.
+- [x] Production settings are unmuted with nonzero Master/Music/SFX.
 - [ ] playCue('ui.confirm') produces audible output.
 - [ ] Menu/day/evening music produces audible output.
 - [ ] Interaction loops and footsteps are audible.
-- [ ] Action cancellation stops audio correctly.
-- [ ] Hidden-tab suspension/resume behaves correctly.
-- [ ] Diagnostics contain no unexplained playback errors.
-- [ ] Unavailable audio leaves gameplay operational.
-- [ ] Final root cause is documented.
-- [ ] Any corrective code change has a regression test (or deployment-only correction is recorded).
+- [x] Action cancellation stops audio correctly.
+- [x] Hidden-tab suspension/resume behaves correctly.
+- [x] Diagnostics contain no unexplained playback errors.
+- [x] Unavailable audio leaves gameplay operational.
+- [x] Final root cause is documented.
+- [x] Any corrective code change has a regression test (or deployment-only correction is recorded).
 - [ ] Production audio playback is manually confirmed by a human listener.
 
 ## QA requirements
 
-- [ ] npm test passes.
-- [ ] npm run build passes.
-- [ ] npm run check passes.
-- [ ] GitHub CI passes on corrective code, if required.
+- [x] npm test passes.
+- [x] npm run build passes.
+- [x] npm run check passes.
+- [x] GitHub CI passes on corrective code, if required.
 - [ ] Classic desktop playback passes.
 - [ ] 3D desktop playback passes.
 - [ ] A real mobile/touch browser passes if available.
-- [ ] Deterministic replay output is unchanged.
-- [ ] No GameState/save schema change.
-- [ ] Audio budgets remain within limits.
-- [ ] Evidence is recorded in docs/reviews/audio-production-validation.md.
+- [x] Deterministic replay output is unchanged.
+- [x] No GameState/save schema change.
+- [x] Audio budgets remain within limits.
+- [x] Evidence is recorded in docs/reviews/audio-production-validation.md.
 
 ## Completion evidence
 
@@ -119,3 +119,13 @@ complete based on headless playback/decode tests.
 ## Source
 
 User-provided production certification task, after d392f66 was silent on the hosted site.
+
+## Deployment outcome
+
+Corrective commit `0d43f2cff03f821ae302c7d6dac7eb443b945cb1` is live at
+`/var/www/notsims/releases/20261016T182801Z-0d43f2c`, deployed
+2026-10-16T18:28:16.444299+00:00 from a clean checkout. 77 tests/build/check and
+GitHub CI pass. Both desktop modes and mobile/touch emulation pass automated
+playback/signal checks. Audible-output, human listening and conditional real
+mobile checks remain unchecked until a listener reports their result.
+See [production evidence](../docs/reviews/audio-production-validation.md).

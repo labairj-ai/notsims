@@ -1,0 +1,378 @@
+{
+  "sourceSha": "0d43f2cff03f821ae302c7d6dac7eb443b945cb1",
+  "base": "https://optiplex.tailb97cdb.ts.net/notsims/",
+  "results": [
+    {
+      "view": "classic",
+      "browser": "Chrome/155.0.8059.82",
+      "unlockedBeforeGesture": false,
+      "audioRequestsBeforeGesture": 0,
+      "confirmation": {
+        "token": 1,
+        "peak": 0.07095445692539215
+      },
+      "musicStates": {
+        "menu": {
+          "music": {
+            "state": "menu",
+            "track": "little-morning",
+            "fadingTrack": null
+          },
+          "peak": 0.0071947150863707066
+        },
+        "daytime": {
+          "music": {
+            "state": "home.day",
+            "track": "clover-walk",
+            "fadingTrack": null
+          },
+          "peak": 0.0222309660166502
+        },
+        "evening": {
+          "music": {
+            "state": "home.evening",
+            "track": "porch-light",
+            "fadingTrack": "clover-walk"
+          },
+          "peak": 0.01600012741982937
+        }
+      },
+      "finalDebug": {
+        "unlocked": true,
+        "suspended": false,
+        "muted": false,
+        "buses": {
+          "version": 1,
+          "muted": false,
+          "master": 0.7,
+          "music": 0.35,
+          "sfx": 0.65,
+          "ambience": 0.4,
+          "ui": 0.55
+        },
+        "activeVoices": 3,
+        "streams": 1,
+        "decodedBytes": 4068440,
+        "loops": [
+          "ambience.garden.loop"
+        ],
+        "diagnostics": [],
+        "music": {
+          "state": "home.evening",
+          "track": "porch-light",
+          "fadingTrack": null
+        }
+      },
+      "persistedSettingsViaUI": {
+        "version": 1,
+        "muted": false,
+        "master": 0.7,
+        "music": 0.35,
+        "sfx": 0.65,
+        "ambience": 0.4,
+        "ui": 0.55
+      },
+      "interactions": [
+        {
+          "object": "shower",
+          "pathLengthOnStart": 3,
+          "earlyLoops": [],
+          "activeLoops": [
+            "ambience.garden.loop",
+            "interaction.shower.loop"
+          ],
+          "loopsAfterCancel": [],
+          "completionCues": []
+        },
+        {
+          "object": "stove",
+          "pathLengthOnStart": 8,
+          "earlyLoops": [],
+          "activeLoops": [
+            "ambience.garden.loop",
+            "interaction.stove.loop"
+          ],
+          "loopsAfterCancel": [],
+          "completionCues": []
+        },
+        {
+          "object": "tv",
+          "pathLengthOnStart": 11,
+          "earlyLoops": [],
+          "activeLoops": [
+            "ambience.garden.loop",
+            "interaction.tv.loop"
+          ],
+          "loopsAfterCancel": [],
+          "completionCues": []
+        },
+        {
+          "object": "desk",
+          "pathLengthOnStart": 5,
+          "earlyLoops": [],
+          "activeLoops": [
+            "ambience.garden.loop",
+            "interaction.desk.loop"
+          ],
+          "loopsAfterCancel": [],
+          "completionCues": []
+        },
+        {
+          "object": "fridge",
+          "pathLengthOnStart": 9,
+          "earlyLoops": [],
+          "activeLoops": [
+            "ambience.garden.loop"
+          ],
+          "loopsAfterCancel": [],
+          "completionCues": [
+            "interaction.stove.loop",
+            "interaction.tv.loop",
+            "ui.cancel",
+            "object.place",
+            "interaction.desk.loop",
+            "interaction.fridge.open",
+            "interaction.eat",
+            "interaction.fridge.close"
+          ]
+        },
+        {
+          "object": "toilet",
+          "pathLengthOnStart": 7,
+          "earlyLoops": [],
+          "activeLoops": [
+            "ambience.garden.loop"
+          ],
+          "loopsAfterCancel": [],
+          "completionCues": [
+            "interaction.tv.loop",
+            "ui.cancel",
+            "object.place",
+            "interaction.desk.loop",
+            "interaction.fridge.open",
+            "interaction.eat",
+            "interaction.fridge.close",
+            "interaction.toilet.flush"
+          ]
+        }
+      ],
+      "footstepSurfaces": [
+        "movement.footstep.indoor",
+        "movement.footstep.outdoor"
+      ],
+      "cuesObserved": [
+        "ambience.garden.loop",
+        "interaction.desk.loop",
+        "interaction.eat",
+        "interaction.fridge.close",
+        "interaction.fridge.open",
+        "interaction.shower.loop",
+        "interaction.shower.start",
+        "interaction.stove.loop",
+        "interaction.stove.start",
+        "interaction.toilet.flush",
+        "interaction.tv.loop",
+        "movement.footstep.indoor",
+        "movement.footstep.outdoor",
+        "object.place",
+        "object.sell",
+        "ui.cancel",
+        "ui.confirm",
+        "ui.error",
+        "ui.select"
+      ],
+      "audioResponseStatuses": [
+        200,
+        206
+      ],
+      "pageErrors": [],
+      "humanListening": "pending; signal measurements are not a human listening result"
+    },
+    {
+      "view": "3d",
+      "browser": "Chrome/155.0.8059.82",
+      "unlockedBeforeGesture": false,
+      "audioRequestsBeforeGesture": 0,
+      "confirmation": {
+        "token": 1,
+        "peak": 0.07097755372524261
+      },
+      "musicStates": {
+        "menu": {
+          "music": {
+            "state": "menu",
+            "track": "little-morning",
+            "fadingTrack": null
+          },
+          "peak": 0.0071947150863707066
+        },
+        "daytime": {
+          "music": {
+            "state": "home.day",
+            "track": "clover-walk",
+            "fadingTrack": null
+          },
+          "peak": 0.019049592316150665
+        },
+        "evening": {
+          "music": {
+            "state": "home.evening",
+            "track": "porch-light",
+            "fadingTrack": "clover-walk"
+          },
+          "peak": 0.012727414257824421
+        }
+      },
+      "finalDebug": {
+        "unlocked": true,
+        "suspended": false,
+        "muted": false,
+        "buses": {
+          "version": 1,
+          "muted": false,
+          "master": 0.7,
+          "music": 0.35,
+          "sfx": 0.65,
+          "ambience": 0.4,
+          "ui": 0.55
+        },
+        "activeVoices": 3,
+        "streams": 1,
+        "decodedBytes": 4068440,
+        "loops": [
+          "ambience.garden.loop"
+        ],
+        "diagnostics": [],
+        "music": {
+          "state": "home.evening",
+          "track": "porch-light",
+          "fadingTrack": null
+        }
+      },
+      "persistedSettingsViaUI": {
+        "version": 1,
+        "muted": false,
+        "master": 0.7,
+        "music": 0.35,
+        "sfx": 0.65,
+        "ambience": 0.4,
+        "ui": 0.55
+      },
+      "interactions": [
+        {
+          "object": "shower",
+          "pathLengthOnStart": 3,
+          "earlyLoops": [],
+          "activeLoops": [
+            "ambience.garden.loop",
+            "interaction.shower.loop"
+          ],
+          "loopsAfterCancel": [],
+          "completionCues": []
+        },
+        {
+          "object": "stove",
+          "pathLengthOnStart": 8,
+          "earlyLoops": [],
+          "activeLoops": [
+            "ambience.garden.loop",
+            "interaction.stove.loop"
+          ],
+          "loopsAfterCancel": [],
+          "completionCues": []
+        },
+        {
+          "object": "tv",
+          "pathLengthOnStart": 11,
+          "earlyLoops": [],
+          "activeLoops": [
+            "ambience.garden.loop",
+            "interaction.tv.loop"
+          ],
+          "loopsAfterCancel": [],
+          "completionCues": []
+        },
+        {
+          "object": "desk",
+          "pathLengthOnStart": 5,
+          "earlyLoops": [],
+          "activeLoops": [
+            "ambience.garden.loop",
+            "interaction.desk.loop"
+          ],
+          "loopsAfterCancel": [],
+          "completionCues": []
+        },
+        {
+          "object": "fridge",
+          "pathLengthOnStart": 9,
+          "earlyLoops": [],
+          "activeLoops": [
+            "ambience.garden.loop"
+          ],
+          "loopsAfterCancel": [],
+          "completionCues": [
+            "interaction.stove.loop",
+            "interaction.tv.loop",
+            "ui.cancel",
+            "object.place",
+            "interaction.desk.loop",
+            "interaction.fridge.open",
+            "interaction.eat",
+            "interaction.fridge.close"
+          ]
+        },
+        {
+          "object": "toilet",
+          "pathLengthOnStart": 7,
+          "earlyLoops": [],
+          "activeLoops": [
+            "ambience.garden.loop"
+          ],
+          "loopsAfterCancel": [],
+          "completionCues": [
+            "interaction.tv.loop",
+            "ui.cancel",
+            "object.place",
+            "interaction.desk.loop",
+            "interaction.fridge.open",
+            "interaction.eat",
+            "interaction.fridge.close",
+            "interaction.toilet.flush"
+          ]
+        }
+      ],
+      "footstepSurfaces": [
+        "movement.footstep.indoor",
+        "movement.footstep.outdoor"
+      ],
+      "cuesObserved": [
+        "ambience.garden.loop",
+        "interaction.desk.loop",
+        "interaction.eat",
+        "interaction.fridge.close",
+        "interaction.fridge.open",
+        "interaction.shower.loop",
+        "interaction.shower.start",
+        "interaction.stove.loop",
+        "interaction.stove.start",
+        "interaction.toilet.flush",
+        "interaction.tv.loop",
+        "movement.footstep.indoor",
+        "movement.footstep.outdoor",
+        "object.place",
+        "object.sell",
+        "ui.cancel",
+        "ui.confirm",
+        "ui.error",
+        "ui.select"
+      ],
+      "audioResponseStatuses": [
+        200,
+        206
+      ],
+      "pageErrors": [],
+      "humanListening": "pending; signal measurements are not a human listening result"
+    }
+  ]
+}

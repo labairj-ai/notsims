@@ -19,3 +19,14 @@ test('music failure, hidden-tab, mute and disposal leave no orphaned media or re
  backend.musicFails=false;backend.time=11;director.update({});await flush();assert.equal(backend.music.size,1);manager.suspend();director.update({hidden:true});assert.equal(backend.music.size,0);manager.resume();director.update({});await flush();assert.equal(backend.music.size,1);
  manager.mute();director.update({});assert.equal(backend.music.size,0);director.dispose();manager.dispose();
 });
+
+test('default crossfade timers never invoke browser-style globals with a MusicDirector receiver',async()=>{
+ const originalSchedule=globalThis.setTimeout,originalCancel=globalThis.clearTimeout;let scheduled=0,cancelled=0;
+ globalThis.setTimeout=function(){assert.ok(this===undefined||this===globalThis,'Illegal invocation');scheduled++;return 42;};
+ globalThis.clearTimeout=function(handle){assert.ok(this===undefined||this===globalThis,'Illegal invocation');assert.equal(handle,42);cancelled++;};
+ const backend=new FakeAudioBackend(),manager=new AudioManager({backend});let director;
+ try{
+  await manager.unlock();director=new MusicDirector(manager);director.update({});await flush();director.update({started:true,minutes:480});await flush();
+  assert.deepEqual(manager.diagnostics,[]);assert.equal(scheduled,1);director.stop();assert.equal(cancelled,1);
+ }finally{director?.dispose();manager.dispose();globalThis.setTimeout=originalSchedule;globalThis.clearTimeout=originalCancel;}
+});

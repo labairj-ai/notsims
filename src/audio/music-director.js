@@ -2,7 +2,7 @@ import {CUES} from './audio-cues.js';
 import {AUDIO_ASSETS} from './audio-library.js';
 
 export class MusicDirector {
- constructor(manager,{fadeSeconds=1.5,schedule=setTimeout,unschedule=clearTimeout,random=Math.random}={}){
+ constructor(manager,{fadeSeconds=1.5,schedule=(...args)=>setTimeout(...args),unschedule=handle=>clearTimeout(handle),random=Math.random}={}){
   Object.assign(this,{manager,fadeSeconds,schedule,unschedule,random});this.current=null;this.previous=null;this.state=null;this.lastTrack=null;this.fadeTimer=null;this.generation=0;this.disposed=false;this.retryAt=0;
  }
  update({started=false,minutes=480,hidden=false}={}){

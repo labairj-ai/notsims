@@ -11,8 +11,8 @@ test('morning routine traverses furniture, meals, hygiene and social recovery',(
   {advance:80,assert:({state,events})=>{assert.equal(state.money,6492);assert.equal(state.activity,null);assert.ok(events.some(e=>e.type==='MONEY_SPENT'&&e.reason==='meal'));}},
   {command:{type:'INTERACT',id:12}}, // starter shower
   {advance:80,assert:({state})=>assert.ok(state.needs.hygiene>90)},
-  {command:{type:'QUICK_ACTION',kind:'chat'}},
-  {advance:40,assert:({state})=>{assert.ok(state.needs.social>95);assert.equal(state.activity,null);}},
+  {command:{type:'PHONE_CONTACT',personId:'person_1',interaction:'chat',channel:'phone_call'}},
+  {advance:40,assert:({state})=>{assert.ok(state.needs.social>75);assert.equal(state.activity,null);}},
  ]};
  const a=runScenario(scenario),b=runScenario(scenario);assert.deepEqual(a.trace,b.trace);assert.deepEqual(a.state,b.state);
  const replayed=replay(JSON.parse(JSON.stringify(a.trace)));assert.deepEqual(replayed.state,a.state);
@@ -29,7 +29,7 @@ test('furniture use completes skill practice and resting through public commands
 test('frozen legacy work save resumes, pays once and permits a new career',()=>{
  const result=runScenario({name:'legacy shift',initial:fixture,steps:[
   {advance:330,assert:({state,events})=>{assert.equal(state.money,6632);assert.equal(state.shifts,1);assert.equal(events.filter(e=>e.type==='SHIFT_COMPLETED').length,1);}},
-  {command:{type:'CHANGE_JOB',job:'designer'},expectEvents:['JOB_CHANGED']},
+  {command:{type:'CHANGE_JOB',job:'designer'},expectEvents:['JOB_CHANGED','CONTACT_ADDED']},
   {command:{type:'START_SHIFT'}},
   {advance:20},
   {command:{type:'CANCEL_ACTION'},assert:({state})=>{assert.equal(state.money,6632);assert.equal(state.shifts,1);}},

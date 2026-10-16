@@ -20,9 +20,12 @@ try{for(const view of ['classic','3d']){
  await page.click('[data-tab=build]');await page.click('[data-tool=room]');
  const cdp=await page.createCDPSession();const touch=(type,points)=>cdp.send('Input.dispatchTouchEvent',{type,touchPoints:points.map(([id,x,y])=>({id,x,y,radiusX:5,radiusY:5,force:1}))});
  const [start,end]=await page.evaluate(()=>[qaApp.renderer.p(4.5,4.5),qaApp.renderer.p(7.5,7.5)]);await page.evaluate(()=>{qaCommands=[];});
+ for(const tool of ['floor','wall','door','erase']){await page.click('[data-tab=build]');await page.click(`[data-tool=${tool}]`);await page.evaluate(()=>{qaCommands=[];});await touch('touchStart',[[1,...start]]);await touch('touchMove',[[1,...end]]);await touch('touchEnd',[]);assert.equal(await page.evaluate(()=>qaCommands.length),0,`${view}: ${tool} drag must not edit`);}
+ await page.click('[data-tab=build]');await page.click('[data-tool=room]');
  await touch('touchStart',[[1,...start]]);await touch('touchMove',[[1,...end]]);assert.ok(await page.evaluate(()=>qaApp.ui.roomPreview?.valid));await touch('touchEnd',[]);
  assert.equal(await page.evaluate(()=>qaCommands.filter(c=>c.type==='BUILD_ROOM').length),1);assert.equal(await page.evaluate(()=>Object.keys(qaApp.state.floors).length),16);
  await page.click('[data-tab=shop]');await page.click('[data-item]');for(let i=0;i<4;i++)await page.click('#placement-tray button');assert.equal(await page.evaluate(()=>qaApp.ui.rotation),0);
+ await page.evaluate(()=>{qaCommands=[];});await touch('touchStart',[[1,...start]]);await touch('touchMove',[[1,...end]]);await touch('touchEnd',[]);assert.equal(await page.evaluate(()=>qaCommands.length),0,`${view}: furnish drag must not place`);
  await touch('touchStart',[[1,...start]]);await touch('touchEnd',[]);assert.equal(await page.evaluate(()=>qaApp.state.furniture.length),1);
  await page.click('#placement-tray button:last-child');assert.equal(await page.evaluate(()=>qaApp.ui.tab),'live');
  await touch('touchStart',[[1,...start]]);await touch('touchEnd',[]);assert.ok(await page.evaluate(()=>!document.querySelector('#object-popup').hidden&&qaApp.ui.selectedObjectId));await page.click('.close-popup');assert.equal(await page.evaluate(()=>qaApp.ui.selectedObjectId),null);

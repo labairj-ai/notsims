@@ -1,3 +1,4 @@
+import {installSocial} from './social.js';
 import {installAudio} from '../audio/audio-controller.js';
 import {$} from './dom.js';
 import {newGame} from '../game/session.js';
@@ -20,7 +21,7 @@ export async function startApp({dispatchCommand=dispatch,audioOptions}={}){
  app.send=(command,success)=>{const result=app.dispatch(command);app.errorOr(commandMessage(result),success);return result;};
  installViews(app);installControls(app);installPersistence(app);installAudio(app,audioOptions);
  await bootstrapRenderer(app);
- installCharacterCreator(app);installMobile(app);installInput(app);
+ installCharacterCreator(app);installMobile(app);installSocial(app);installInput(app);
  const loop=createGameLoop({now:performance.now(),paused:()=>app.paused(),hidden:()=>document.hidden,speed:()=>app.speed,
   advance:dt=>{const result=advance(app.state,dt);app.audio.receive(result);},draw:t=>{app.renderer.draw(app.state,app.ui,t);app.audio.frame();},
   preview:dt=>{if(app.characterPreview&&$('#creator').open)app.characterPreview.draw(dt);},refresh:()=>app.updateUI(),schedule:requestAnimationFrame});

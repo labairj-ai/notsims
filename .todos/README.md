@@ -28,3 +28,18 @@ Numeric order satisfies dependencies. Implementation and automated evidence are
 recorded in [mobile validation](../docs/reviews/mobile-playability-validation.md).
 Real iPhone/Android usability and standalone installation certification remain
 open; emulated Chrome is not a substitute for those checks.
+
+## Gesture safety and social simulation
+
+Tasks 0032–0045 are implemented; 0046 has automated coverage with physical mobile acceptance pending. See [social validation](../docs/reviews/social-simulation-validation.md).
+0032 is the immediate critical Build/Furnish drag-safety correction; complete it
+before social mobile UI task 0045.
+
+Social work order: 0033 → 0034 → 0035 → 0036 → 0037 → 0038 → 0039 →
+0040 → 0041 → 0042 → 0043 → 0045 → 0046. Task 0044 (network introductions
+and reputation foundation) is medium priority and can follow the first playable
+milestone; it is not a prerequisite for 0046. Numeric order also satisfies dependencies.
+
+See the [social epic overview](../SOCIAL-EPIC-README.md) and
+[social architecture](../docs/architecture/social-simulation.md). Existing mobile
+and production audio certification requirements remain open as recorded above.

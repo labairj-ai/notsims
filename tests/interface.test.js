@@ -33,7 +33,7 @@ test('classic interface starts a game, edits appearance, switches tools and pers
     $('[data-tab="career"]').click();$('[data-job="barista"]').click();
     $('#edit-character').click();$('#shirt').value='#629482';$('#character-form').dispatchEvent(new w.Event('submit',{cancelable:true}));
     $('#save').click();const saved=JSON.parse(w.localStorage.getItem('notsims.save.v1'));
-    assert.equal(saved.person.name,'Riley');assert.equal(saved.person.shirt,'#629482');assert.equal(saved.job,'barista');assert.equal(saved.version,1);
+    assert.equal(saved.person.name,'Riley');assert.equal(saved.person.shirt,'#629482');assert.equal(saved.job,'barista');assert.equal(saved.version,2);
   }finally{app.finish();}
 });
 test('failed WebGL initialization falls back and resumes an existing v1 save',async()=>{
@@ -62,7 +62,7 @@ test('keyboard, touch controls and panels retain pause semantics and dispatch al
     $('[data-tab="shop"]').click();assert.equal(game.paused(),true);key('r');assert.equal(game.ui.rotation,1);
     $('[data-item="chair"]').click();key('Escape');assert.equal(game.ui.selected,null);
     $('[data-speed="3"]').click();assert.equal(game.ui.tab,'live');assert.equal(game.speed,3);
-    $('.life-panel [data-action="chat"]').click();assert.equal(commands.at(-1).type,'QUICK_ACTION');
+    $('.life-panel [data-action="chat"]').click();assert.equal($('#social-sheet').hidden,false);$('[data-person="person_1"]').click();$('[data-interaction="chat"][data-channel="phone_call"]').click();assert.equal(commands.at(-1).type,'SOCIAL_INTERACT');
     $('#cancel-action').click();assert.equal(commands.at(-1).type,'CANCEL_ACTION');
     $('[data-tab="career"]').click();$('[data-job="designer"]').click();assert.equal(commands.at(-1).type,'CHANGE_JOB');
     $('#edit-character').click();$('#character-name').value='Morgan';$('#character-form').dispatchEvent(new w.Event('submit',{cancelable:true}));assert.equal(commands.at(-1).type,'CHANGE_APPEARANCE');

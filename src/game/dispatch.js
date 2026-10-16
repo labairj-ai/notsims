@@ -1,3 +1,4 @@
+import {socialCommand} from '../systems/social/social.js';
 import {COMMANDS} from './commands.js';
 import {inside,SIZE} from '../core/grid.js';
 import {itemDef} from '../content/furniture.js';
@@ -38,15 +39,16 @@ function rejectionCode(message){
 export function dispatch(s,c){
  if(!c||!COMMANDS.includes(c.type))return fail('UNKNOWN_COMMAND');
  const events=[];let message=null;
+ if(['SOCIAL_INTERACT','PHONE_CONTACT','INVITE_OVER','RESPOND_SOCIAL_EVENT','ASK_GUEST_TO_LEAVE','CANCEL_SOCIAL_PLAN','REQUEST_INTRODUCTION'].includes(c.type)){const code=socialCommand(s,c,events);return code?fail(code):{ok:true,code:'OK',events};}
  switch(c.type){
  case 'MOVE_TO':if(!inside(c.x,c.y))return fail('INVALID_TARGET');message=enqueue(s,{kind:'walk',x:c.x,y:c.y},events);break;
  case 'INTERACT':{const f=s.furniture.find(f=>f.id===c.id);if(!f||!resolveInteraction(f,c.interaction))return fail('INVALID_TARGET');message=enqueue(s,{kind:'use',id:c.id,...(c.interaction?{interaction:c.interaction}:{})},events);break;}
- case 'QUICK_ACTION':if(typeof c.kind!=='string'||!Object.hasOwn(QUICK_ACTIONS,c.kind))return fail('INVALID_ACTION');message=enqueue(s,{kind:c.kind},events);break;
+ case 'QUICK_ACTION':if(c.kind==='chat')return fail('SELECT_CONTACT');if(typeof c.kind!=='string'||!Object.hasOwn(QUICK_ACTIONS,c.kind))return fail('INVALID_ACTION');message=enqueue(s,{kind:c.kind},events);break;
  case 'CANCEL_ACTION':cancel(s,events);break;
  case 'BUILD_ROOM':if(![c.x1,c.y1,c.x2,c.y2].every(Number.isInteger)||!floors.includes(c.floor??'wood'))return fail('INVALID_TARGET');message=room(s,c.x1,c.y1,c.x2,c.y2,c.floor??undefined,events);break;
  case 'EDIT_TILE':case 'ERASE':{const tool=c.type==='ERASE'?'erase':c.tool;if(!['floor','wall','door','erase'].includes(tool)||!inside(c.x,c.y)||!edgeValid(c.edge)||!floors.includes(c.floor??'wood'))return fail('INVALID_TARGET');message=buildTile(s,tool,c.x,c.y,c.edge,c.floor??undefined,events);break;}
  case 'PLACE_OBJECT':if(!itemDef(c.object)||!inside(c.x,c.y)||![0,1,2,3].includes(c.rotation??0))return fail('INVALID_TARGET');message=buy(s,c.object,c.x,c.y,c.rotation??0,events);break;
- case 'CHANGE_JOB':if(!jobDef(c.job))return fail('INVALID_CAREER');message=changeJob(s,c.job,events);break;
+ case 'CHANGE_JOB':if(!jobDef(c.job))return fail('INVALID_CAREER');message=changeJob(s,c.job,events);if(!message&&!s.contacts.includes('person_7')){s.contacts.push('person_7');emit(events,'CONTACT_ADDED',{personId:'person_7',reason:'coworker'});}break;
  case 'START_SHIFT':if(!jobDef(s.job))return fail('INVALID_CAREER');message=enqueue(s,{kind:'work'},events);break;
  case 'CHANGE_APPEARANCE':if(!appearanceValid(c.appearance))return fail('INVALID_APPEARANCE');Object.assign(s.person,c.appearance);log(s,'A fresh look for a new day.');emit(events,'APPEARANCE_CHANGED',{appearance:{...c.appearance}});break;
  }

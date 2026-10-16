@@ -1,0 +1,30 @@
+import {$,esc} from './dom.js';
+import {SOCIAL_ACTIONS} from '../content/social.js';
+import {relationship,relationshipStatus,dynamic,available} from '../systems/social/social.js';
+export function pickPerson(s,renderer,px,py){return s.social.presences.map(p=>{const [x,y]=renderer.p(p.x+.5,p.y+.5,.65);return {id:p.personId,d:Math.hypot(px-x,py-y)};}).filter(p=>p.d<=36).sort((a,b)=>a.d-b.d||a.id.localeCompare(b.id))[0]?.id;}
+export function installSocial(app){
+ const sheet=document.createElement('section');sheet.id='social-sheet';sheet.hidden=true;sheet.setAttribute('aria-label','Phone and people');document.body.append(sheet);
+ const card=document.createElement('aside');card.id='social-event';card.setAttribute('aria-live','polite');document.body.append(card);
+ let selected=null,view='contacts',last='';
+ const send=c=>{const result=app.send(c);if(result.ok)render();};
+ const selectTab=app.selectTab;app.selectTab=tab=>{sheet.hidden=true;selected=null;app.ui.selectedPersonId=null;selectTab(tab);};
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){sheet.hidden=true;app.ui.selectedPersonId=null;}});
+ app.openPhone=()=>{app.selectTab('live');selected=null;view='contacts';sheet.hidden=false;render();};
+ app.openPerson=id=>{selected=id;app.ui.selectedPersonId=id;sheet.hidden=false;render();};
+ function render(){const s=app.state;let content='';
+ if(selected&&s.people[selected]){const p=s.people[selected],r=relationship(s,'player',selected),present=s.social.presences.some(v=>v.personId===selected&&v.state!=='leaving');content=`<h2>${esc(p.name)}</h2><p>${relationshipStatus(r,s.minutes)} · ${dynamic(r)}</p><p>${r?.contactCount?esc(p.interests.join(' · ')):'Get to know this person to discover their interests.'}</p><p>${(r?.memories||[]).slice(-3).reverse().map(m=>esc(m.type.replaceAll('_',' '))).join(' · ')}</p><p>${available(s,selected)?'Available for a call':'Unavailable for calls right now; you can text.'}</p>`;
+ let family='';for(const [id,a] of Object.entries(SOCIAL_ACTIONS)){if(family!==a.family){family=a.family;content+=`<h3>${esc(family)}</h3>`;}const channels=present?['in_person','phone_call','text']:['phone_call','text'];content+=`<div class="social-action"><span>${esc(a.label)}</span>${channels.map(channel=>`<button data-interaction="${id}" data-channel="${channel}">${channel==='in_person'?'Talk':channel==='phone_call'?'Call':'Text'}</button>`).join('')}</div>`;}
+ content+=`<div class="social-plan"><button data-invite="now">Invite over now</button><button data-invite="later">Later today</button><button data-invite="tomorrow">Tomorrow</button><button id="social-introduce">Ask for introduction</button>${present?'<button id="social-leave">Ask to leave</button>':''}</div>`;
+ }else if(view==='contacts')content='<h2>Contacts</h2>'+s.contacts.map(id=>`<button class="contact" data-person="${id}">${esc(s.people[id].name)} <small>${relationshipStatus(relationship(s,'player',id),s.minutes)}</small></button>`).join('');
+ else if(view==='recent'||view==='notifications')content=`<h2>${view==='recent'?'Recent':'Notifications'}</h2>`+s.social.notifications.slice().reverse().map(n=>`<p>${esc(n.text)}</p>`).join('');
+ else content='<h2>Invitations</h2>'+s.social.plans.map(p=>`<div><p>${esc(s.people[p.personId].name)} · Day ${Math.floor(p.startMinute/1440)+1}, ${String(Math.floor(p.startMinute%1440/60)).padStart(2,'0')}:${String(Math.floor(p.startMinute%60)).padStart(2,'0')} · ${p.status}</p>${p.status==='scheduled'?`<button data-cancel-plan="${p.id}">Cancel plan</button>`:''}</div>`).join('');
+ sheet.innerHTML=`<header><button id="social-back">Contacts</button><button id="social-close" aria-label="Close phone">×</button></header><nav>${['contacts','recent','invitations','notifications'].map(v=>`<button data-social-view="${v}" aria-pressed="${view===v&&!selected}">${v}</button>`).join('')}</nav>${content||'<p>No updates yet.</p>'}`;
+ sheet.querySelector('#social-close').onclick=()=>{sheet.hidden=true;app.ui.selectedPersonId=null;};sheet.querySelector('#social-back').onclick=()=>{selected=null;view='contacts';render();};
+ sheet.querySelectorAll('[data-social-view]').forEach(b=>b.onclick=()=>{selected=null;view=b.dataset.socialView;render();});sheet.querySelectorAll('[data-person]').forEach(b=>b.onclick=()=>app.openPerson(b.dataset.person));
+ sheet.querySelectorAll('[data-interaction]').forEach(b=>b.onclick=()=>send({type:'SOCIAL_INTERACT',personId:selected,interaction:b.dataset.interaction,channel:b.dataset.channel}));
+ sheet.querySelectorAll('[data-invite]').forEach(b=>b.onclick=()=>{const when=b.dataset.invite,startMinute=when==='now'?s.minutes:when==='tomorrow'?Math.floor(s.minutes/1440)*1440+1440+18*60:Math.min(Math.floor(s.minutes/1440)*1440+20*60,s.minutes+120);send({type:'INVITE_OVER',personId:selected,startMinute});});
+ sheet.querySelectorAll('[data-cancel-plan]').forEach(b=>b.onclick=()=>send({type:'CANCEL_SOCIAL_PLAN',planId:+b.dataset.cancelPlan}));
+ if($('#social-introduce'))$('#social-introduce').onclick=()=>send({type:'REQUEST_INTRODUCTION',personId:selected});if($('#social-leave'))$('#social-leave').onclick=()=>send({type:'ASK_GUEST_TO_LEAVE',personId:selected});
+ }
+ const update=app.updateUI;app.updateUI=(...args)=>{update(...args);const e=app.state.social.pendingEvent;const sig=JSON.stringify([e,app.state.contacts,app.state.social.notifications.length]);if(last!==sig){last=sig;card.innerHTML=e?`<p>${esc(app.state.people[e.personId].name)} ${e.type==='drop_by'?'dropped by.':e.type==='text'?'sent a text.':'is calling.'}</p>${(e.type==='drop_by'?[['invite','Invite in'],['outside','Chat outside'],['decline','Not now']]:[['reply',e.type==='text'?'Reply':'Answer'],['decline','Not now']]).map(([id,label])=>`<button data-response="${id}">${label}</button>`).join('')}`:' ';card.hidden=!e;card.querySelectorAll('[data-response]').forEach(b=>b.onclick=()=>send({type:'RESPOND_SOCIAL_EVENT',eventId:e.id,response:b.dataset.response}));}const phone=$('#open-phone');if(phone)phone.textContent=`Phone · ${app.state.social.notifications.length} updates`;};
+}

@@ -4,10 +4,11 @@ import {NEEDS} from '../content/needs.js';
 export function installMobile(app){
  const media=window.matchMedia?.('(max-width: 1024px)'),panel=$('.studio-panel'),life=$('.life-panel');
  panel.insertAdjacentHTML('afterbegin','<div class="sheet-heading"><button id="sheet-size" aria-label="Expand panel">━</button><strong id="sheet-title">Your life</strong><button id="sheet-close" aria-label="Collapse panel">×</button></div><div id="placement-tray"></div>');
- $('.world').insertAdjacentHTML('beforeend','<div class="mobile-hud"><button id="mobile-needs" aria-label="Open needs"></button><span id="mobile-funds"></span><button id="mobile-menu" aria-label="Game menu">☰</button></div><div class="mobile-time"><span id="mobile-clock"></span><button id="mobile-pause" aria-label="Pause or play">Ⅱ</button><button id="mobile-speed" aria-label="Cycle time speed">1×</button></div>');
+ $('.world').insertAdjacentHTML('beforeend','<div class="mobile-hud"><button id="mobile-needs" aria-label="Open needs"></button><span id="mobile-funds"></span><button id="mobile-phone" aria-label="Open phone">Phone</button><button id="mobile-menu" aria-label="Game menu">☰</button></div><div class="mobile-time"><span id="mobile-clock"></span><button id="mobile-pause" aria-label="Pause or play">Ⅱ</button><button id="mobile-speed" aria-label="Cycle time speed">1×</button></div>');
  const mobile=app.mobile={active:!!media?.matches,state:'collapsed',setSheet(state){this.state=state;panel.dataset.sheet=state;$('#sheet-size').setAttribute('aria-expanded',String(state==='expanded'));$('#sheet-size').setAttribute('aria-label',state==='expanded'?'Reduce panel':'Expand panel');},selection(){if(this.active)this.setSheet('collapsed');this.update();},update(){
   if(this.lastState&&this.lastState!==app.state)app.dismissObject?.();this.lastState=app.state;
   const names={live:'Your life',build:'Build',shop:'Furnish',career:'Work'};$('#sheet-title').textContent=names[app.ui.tab];
+  $('#mobile-phone').hidden=app.ui.tab!=='live';$('#mobile-phone').onclick=()=>app.openPhone();
   $('#mobile-funds').textContent=$('#money').textContent;$('#mobile-clock').textContent=$('#weekday').textContent+' · '+$('#clock').textContent;
   const lowest=Object.entries(app.state.needs).sort((a,b)=>a[1]-b[1])[0];$('#mobile-needs').textContent=`${NEEDS[lowest[0]][0]} ${Math.round(lowest[1])}% · ${$('#mood').textContent}`;
   $('#mobile-pause').textContent=app.paused()?'▶':'Ⅱ';$('#mobile-speed').textContent=(app.speed||app.lastNonzero)+'×';

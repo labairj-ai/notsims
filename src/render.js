@@ -46,6 +46,7 @@ export class Renderer {
  const objects=s.furniture.filter(f=>!itemDef(f.type).flat).map(f=>({depth:f.x+f.y+dimensions(f)[0]+dimensions(f)[1]-.1,draw:()=>this.furniture(f)}));
  for(const [edge,v] of Object.entries(s.walls)){const [axis,xy]=edge.split(':'),[x,y]=xy.split(',').map(Number);objects.push({depth:x+y+(axis==='h'?1:1)+.02,draw:()=>this.wall(edge,v)});}
  const p={...s.person};if(s.activity?.path?.length){const target=s.activity.path[0],t=Math.min(1,(s.activity.walkClock||0)/2);p.x+=(target[0]-p.x)*t;p.y+=(target[1]-p.y)*t;}
+ for(const visitor of s.social?.presences||[]){const npc={...s.people[visitor.personId],x:visitor.x,y:visitor.y};objects.push({depth:npc.x+npc.y+1,draw:()=>{if(ui.selectedPersonId===visitor.personId)this.ellipse(npc.x+.5,npc.y+.5,.02,.48,.2,'#e5c67a');this.person(npc,time);}});}
  objects.push({depth:p.x+p.y+1,draw:()=>this.person(p,time,s.activity?.kind==='work')});
  objects.sort((a,b)=>a.depth-b.depth);objects.forEach(o=>o.draw());
  if(s.activity?.path?.length){c.globalAlpha=.5;for(const [x,y] of s.activity.path)this.ellipse(x+.5,y+.5,.02,.07,.04,'#f9f7e2');c.globalAlpha=1;}

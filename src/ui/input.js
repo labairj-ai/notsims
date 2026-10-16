@@ -1,3 +1,4 @@
+import {pickPerson} from './social.js';
 import {WorldGesture,clampZoom} from './gestures.js';
 import {room} from '../systems/building/building.js';
 import {$,$$,money,esc} from './dom.js';
@@ -12,15 +13,16 @@ export function installInput(app){
 function pointer(e){const rect=$('#world').getBoundingClientRect(),px=e.clientX-rect.left,py=e.clientY-rect.top,[x,y]=app.renderer.unproject(px,py),tx=Math.floor(x),ty=Math.floor(y);const fx=x-tx,fy=y-ty,dist=[fx,1-fx,fy,1-fy],i=dist.indexOf(Math.min(...dist));return {px,py,x:tx,y:ty,edge:i===0?`v:${tx},${ty}`:i===1?`v:${tx+1},${ty}`:i===2?`h:${tx},${ty}`:`h:${tx},${ty+1}`};}
 $('#world').addEventListener('contextmenu',e=>e.preventDefault());
 $('#world').addEventListener('pointerdown',e=>{if(e.button!==0&&e.button!==2)return;const p=pointer(e);gesture.down(e.pointerId,e.clientX,e.clientY);app.dismissObject();$('#world').setPointerCapture?.(e.pointerId);if(gesture.points.size>1){ui.roomStart=null;ui.roomPreview=null;return;}app.down={...p,clientX:e.clientX,clientY:e.clientY,panX:app.renderer.panX,panY:app.renderer.panY,button:e.button,mode:ui.tab};if(ui.tab==='build'&&ui.tool==='room'&&inside(p.x,p.y)&&e.button===0)ui.roomStart=[p.x,p.y];ui.hover=inside(p.x,p.y)?[p.x,p.y]:null;ui.edge=p.edge;preview();});
-$('#world').addEventListener('pointermove',e=>{const navigate=ui.tab==='live'||ui.tab==='career'||app.down?.button===2;const movement=gesture.move(e.pointerId,e.clientX,e.clientY,{navigate});if(movement){const {before,after}=movement;if(after.count>1||(navigate&&gesture.panning)){app.renderer.panX+=after.x-before.x;app.renderer.panY+=after.y-before.y;if(after.count>1&&before.distance>0)app.renderer.zoom=clampZoom(app.renderer.zoom*after.distance/before.distance);ui.roomStart=null;ui.roomPreview=null;app.dismissObject();}}const p=pointer(e);ui.hover=inside(p.x,p.y)?[p.x,p.y]:null;ui.edge=p.edge;preview();});
+$('#world').addEventListener('pointermove',e=>{const navigate=ui.tab==='live'||ui.tab==='career'||app.down?.button===2;const movement=gesture.move(e.pointerId,e.clientX,e.clientY,{navigate,roomDrag:ui.tab==='build'&&ui.tool==='room'});if(movement){const {before,after}=movement;if(after.count>1||(navigate&&gesture.panning)){app.renderer.panX+=after.x-before.x;app.renderer.panY+=after.y-before.y;if(after.count>1&&before.distance>0)app.renderer.zoom=clampZoom(app.renderer.zoom*after.distance/before.distance);ui.roomStart=null;ui.roomPreview=null;app.dismissObject();}}const p=pointer(e);ui.hover=inside(p.x,p.y)?[p.x,p.y]:null;ui.edge=p.edge;preview();});
 $('#world').addEventListener('pointerleave',()=>{if(!app.down)ui.hover=null;});
 $('#world').addEventListener('pointercancel',()=>{gesture.cancel();app.down=null;ui.roomStart=null;ui.roomPreview=null;app.mobile?.update();});
-$('#world').addEventListener('pointerup',e=>{const allowed=gesture.up(e.pointerId);if(!app.down)return;const d=app.down;app.down=null;const p=pointer(e);if(!allowed||d.button===2||d.mode!==ui.tab){ui.roomStart=null;ui.roomPreview=null;app.mobile?.update();return;}if(!inside(p.x,p.y)){ui.roomStart=null;return;}
+$('#world').addEventListener('pointerup',e=>{gesture.move(e.pointerId,e.clientX,e.clientY,{navigate:ui.tab==='live'||ui.tab==='career'||app.down?.button===2,roomDrag:ui.tab==='build'&&ui.tool==='room'});const allowed=gesture.up(e.pointerId);if(!app.down)return;const d=app.down;app.down=null;const p=pointer(e);if(!allowed||d.button===2||d.mode!==ui.tab){ui.roomStart=null;ui.roomPreview=null;app.mobile?.update();return;}if(!inside(p.x,p.y)){ui.roomStart=null;return;}
  if(ui.tab==='build'){
  if(ui.tool==='room'&&ui.roomStart){app.send({type:'BUILD_ROOM',x1:ui.roomStart[0],y1:ui.roomStart[1],x2:p.x,y2:p.y,floor:ui.floor},'A little more room for your life.');ui.roomStart=null;ui.roomPreview=null;}
  else app.send({type:'EDIT_TILE',tool:ui.tool,x:p.x,y:p.y,edge:p.edge,floor:ui.floor});return;
  }
  if(ui.tab==='shop'&&ui.selected){app.send({type:'PLACE_OBJECT',object:ui.selected,x:p.x,y:p.y,rotation:ui.rotation});return;}
+ const personId=pickPerson(app.state,app.renderer,p.px,p.py);if(personId){app.openPerson(personId);return;}
  let f=app.renderer.pickFurniture?.(app.state,p.px,p.py)||(!app.is3D?at(app.state,p.x,p.y):null);if(!f&&!app.is3D){const candidates=app.state.furniture.filter(f=>!itemDef(f.type).flat).filter(f=>{const [w,h]=dimensions(f),[cx,cy]=app.renderer.p(f.x+w/2,f.y+h/2);return Math.abs(p.px-cx)<app.renderer.t*(w+h)*.45&&p.py>cy-app.renderer.t*2.6&&p.py<cy+app.renderer.t*.3;});f=candidates.sort((a,b)=>(b.x+b.y)-(a.x+a.y))[0];}
  if(!f&&e.pointerType==='touch'){f=touchFurniture(app.state,app.renderer,p.px,p.py);}if(f){showObject(f,p);return;}app.send({type:'MOVE_TO',x:p.x,y:p.y});
 });

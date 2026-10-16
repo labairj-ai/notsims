@@ -1,10 +1,11 @@
+import {validateSocial} from './social-schema.js';
 import {SIZE,inside} from '../core/grid.js';
 import {itemDef} from '../content/furniture.js';
 import {JOBS} from '../content/careers.js';
 import {NEEDS} from '../content/needs.js';
 import {TRAITS} from '../content/traits.js';
 import {dimensions} from '../systems/objects/geometry.js';
-export const CURRENT_SAVE_VERSION=1;
+export const CURRENT_SAVE_VERSION=2;
 export function validateState(s){
  const finite=n=>typeof n==='number'&&Number.isFinite(n);
  if(!s||s.version!==CURRENT_SAVE_VERSION||!finite(s.money)||!finite(s.minutes)||s.minutes<0||!s.person||typeof s.person.name!=='string'||s.person.name.length>40||!inside(s.person.x,s.person.y))throw Error('This is not a valid Notsims save.');
@@ -19,5 +20,5 @@ export function validateState(s){
  if(!finite(s.shifts)||s.shifts<0||!finite(s.skill)||s.skill<0||s.skill>100||!Number.isInteger(s.billsDay)||s.billsDay<0)throw Error('Invalid progress.');
  if(!Array.isArray(s.log)||!s.log.every(t=>typeof t==='string'))s.log=[];
  s.log=s.log.slice(0,12).map(t=>t.slice(0,200));s.person.name=s.person.name.trim()||'Alex';
- return s;
+ validateSocial(s);return s;
 }

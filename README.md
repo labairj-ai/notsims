@@ -12,6 +12,8 @@ Public game, hosted on the OptiPlex: **https://optiplex.tailb97cdb.ts.net/notsim
 - Buy 14 kinds of furniture, with rotation and placement validation.
 - Walk around your home; use furniture to eat, sleep, shower, use the bathroom, relax, and learn.
 - Manage hunger, energy, hygiene, bladder, fun, and social needs.
+- Meet seven persistent neighbors and contacts. Call or text specific people, build friendships, argue and repair relationships, invite guests, schedule visits, and respond to unexpected drop-ins.
+- Open Phone in Live mode or tap a visitor for person actions, relationship history, and invitations.
 - Take a job as a barista, designer, or developer; finish shifts to get paid and earn raises.
 - Pause or run time at 1×, 3×, or 8×. Building and dialogs pause the simulation.
 - Autosave locally; download and import JSON saves to back up or continue on another device.
@@ -38,7 +40,7 @@ are silent. See [audio architecture](docs/architecture/audio.md) and
 
 ## Saves
 
-Saves use this browser’s local storage and are specific to this origin/device. The game autosaves every 20 seconds and when the page is hidden or left. Use the game menu to download a save and import it elsewhere. No account or cloud service is required; there is no cloud save synchronization. The game does not advance while closed or in a hidden tab. In-progress jobs resume after loading; other current actions and queued paths are cleared safely.
+Saves use this browser’s local storage and are specific to this origin/device. The game autosaves every 20 seconds and when the page is hidden or left. Use the game menu to download a save and import it elsewhere. No account or cloud service is required; there is no cloud save synchronization. The game does not advance while closed or in a hidden tab. In-progress jobs resume after loading; other current actions and the player’s queued paths are cleared safely. Version 1 saves migrate to version 2 with their home, funds, needs, career, and clock preserved. People, directional relationships, memories, scheduled visits, visitor movement, and social RNG are saved.
 
 ## Develop
 
@@ -100,4 +102,4 @@ issues. Automated checks pass; human listening confirmation remains pending. See
 
 GitHub stores the source and runs test/build checks; **GitHub Pages is not used**. Production static assets are hosted by Nginx on the OptiPlex at `127.0.0.1:4601`, published under `/notsims/` through its existing public Tailscale Funnel HTTPS endpoint. Deployment files and instructions are in `deploy/`.
 
-This is a first playable single-character sandbox, with one 18 × 18 plot, original art, and simplified life simulation mechanics. It is not affiliated with Electronic Arts or The Sims and uses none of their code or assets.
+This is a first playable social sandbox with one controlled character, with one 18 × 18 plot, original art, and simplified life simulation mechanics. It is not affiliated with Electronic Arts or The Sims and uses none of their code or assets.

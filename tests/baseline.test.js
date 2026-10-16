@@ -5,11 +5,12 @@ import * as current from '../src/engine.js';
 const source=readFileSync(new URL('./fixtures/engine-baseline.txt',import.meta.url),'utf8');
 const legacy=await import(`data:text/javascript;base64,${Buffer.from(source).toString('base64')}`);
 
-test('extracted systems exactly match frozen engine across traits, careers, actions, building and load',()=>{
+function legacyProjection(s){const out=structuredClone(s);delete out.people;delete out.contacts;delete out.relationships;delete out.social;delete out.person.id;out.version=1;delete out.log;return out;}
+test('legacy economy, home, careers, actions and needs match frozen engine through social v2',()=>{
  for(const trait of ['creative','active','social'])for(const job of current.JOBS){
   const a=legacy.newGame({trait}),b=current.newGame({trait});a.job=b.job=job.id;
-  for(const command of [{kind:'use',id:2},{kind:'work'},{kind:'chat'},{kind:'nap'},{kind:'snack'},{kind:'stretch'}]){assert.equal(legacy.enqueue(a,command),current.enqueue(b,command));legacy.tick(a,600);current.tick(b,600);assert.deepEqual(b,a);}
-  for(const [method,args] of [['buildTile',['floor',0,0,'h:0,0']],['room',[0,0,2,2]],['buy',['chair',1,1]],['buildTile',['erase',1,1,'h:1,1']],['buildTile',['door',0,0,'h:0,0']]]){assert.equal(current[method](b,...args),legacy[method](a,...args));assert.deepEqual(b,a);}
-  assert.deepEqual(current.validateSave(JSON.stringify(b)),legacy.validateSave(JSON.stringify(a)));
+  for(const command of [{kind:'use',id:2},{kind:'work'},{kind:'chat'},{kind:'nap'},{kind:'snack'},{kind:'stretch'}]){assert.equal(legacy.enqueue(a,command),current.enqueue(b,command));legacy.tick(a,600);current.tick(b,600);assert.deepEqual(legacyProjection(b),legacyProjection(a));}
+  for(const [method,args] of [['buildTile',['floor',0,0,'h:0,0']],['room',[0,0,2,2]],['buy',['chair',1,1]],['buildTile',['erase',1,1,'h:1,1']],['buildTile',['door',0,0,'h:0,0']]]){assert.equal(current[method](b,...args),legacy[method](a,...args));assert.deepEqual(legacyProjection(b),legacyProjection(a));}
+  assert.deepEqual(legacyProjection(current.validateSave(JSON.stringify(b))),legacyProjection(legacy.validateSave(JSON.stringify(a))));
  }
 });

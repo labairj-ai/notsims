@@ -96,3 +96,7 @@ It checks both renderers, seven viewport sizes, four modes, target geometry,
 document overflow, browser errors and trusted touch pan/pinch suppression. Real
 hardware, software keyboards, safe areas, installation, listening and comfort
 still require the scenarios in task 0031 and the mobile validation record.
+
+Use scripts/mobile-scenarios.mjs with the same --puppeteer-module, --chrome and
+--url arguments for creator viewport, sheet expand/collapse, Play from Build,
+actual touch room construction, placement/rotation and object-sheet regressions.

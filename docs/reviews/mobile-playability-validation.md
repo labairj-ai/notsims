@@ -55,3 +55,19 @@ import/export, all sheet drags, unavailable-audio, and cross-device lifecycle
 scenarios still need the full human scenario pass. Recommendation: use portrait
 mobile shell as implemented for evaluation; withhold mobile certification until
 those checks pass and record device, OS/browser, SHA, outcomes and screenshots.
+
+## Additional interaction regressions
+
+scripts/mobile-scenarios.mjs checks creator target sizes and a reduced viewport,
+needs/half/expanded/collapsed sheets, pause/play, Play while Build is paused,
+one-command touch room drawing (16 resulting floor tiles), four on-screen
+rotations, touch furniture placement, object action sheet selection/close and
+touch help. Classic and Three pass. The sheet test caught parent pointer capture
+intercepting the expand button; capture now applies only to heading drags outside
+buttons. This correction has a repeatable browser regression scenario.
+
+Initial production release 929208b passed all 56 layout checks and 57 exact-byte
+HTTP/MIME checks. Classic/Three desktop and phone-size audio tests passed unlock,
+all WAV decoding, MP3 streams/crossfades, mute/settings/persistence, owned-loop
+teardown; desktop hidden/resume and failure paths also passed. Audio-disabled
+startup and New Game passed. Physical listening remains pending.

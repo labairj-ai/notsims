@@ -1,7 +1,7 @@
 # Expand the Deterministic Character Animation Library
 
 - **ID:** 0055
-- **Status:** open
+- **Status:** complete
 - **Created:** 2026-10-16
 - **Priority:** critical
 - **Depends:** 0054
@@ -96,11 +96,11 @@ SitToStand
 
 ## Done when
 
-- [ ] animation vocabulary exports reproducibly.
-- [ ] every required clip exists in the GLB.
-- [ ] clip duration/loop metadata validated.
-- [ ] existing character customization works.
-- [ ] animation transitions show no major pose snapping.
+- [x] animation vocabulary exports reproducibly.
+- [x] every required clip exists in the GLB.
+- [x] clip duration/loop metadata validated.
+- [x] existing character customization works.
+- [x] animation transitions show no major pose snapping.
 
 ## QA requirements
 
@@ -126,3 +126,9 @@ mobile budget. Missing optional new clips must fall back to legacy behavior.
 
 Imported from the [shared embodied-behavior review](https://chatgpt.com/s/t_6ad2a99165108191bc4e362cee7f9ee9), reviewed against implementation `69b09c677b8ba1b6bc6eda5e21db8ce7e57132bb`.
 Original design scope retained; dependency and integration clarifications are documented above. Research citations in the source are design rationale, not independently certified findings in this backlog import.
+
+## Implementation evidence (2026-10-16)
+
+Software implementation and automated coverage are available. See
+[behavior contract](../docs/architecture/embodied-character-behavior.md) and
+[validation record](../docs/reviews/embodied-character-behavior-validation.md).

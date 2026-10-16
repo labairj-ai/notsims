@@ -26,3 +26,7 @@ test('visible movement bounds footsteps by wall time at every simulation speed a
 test('footstep surface metadata selects indoor variants over existing floors',async()=>{
  const backend=new FakeAudioBackend(),manager=new AudioManager({backend}),adapter=new InteractionAudio(manager);await manager.unlock();const state=newGame();state.activity={kind:'walk',path:[[9,10]],walkClock:0};adapter.frame(state);state.activity.walkClock=1;backend.time=1;adapter.frame(state);await flush();assert.ok(backend.calls.some(c=>c.id?.startsWith('step-indoor')));manager.dispose();
 });
+
+test('fridge eating detail follows reach/contact once without duplicate start or completion cues',async()=>{
+ const backend=new FakeAudioBackend(),manager=new AudioManager({backend}),adapter=new InteractionAudio(manager);await manager.unlock();const s=newGame(),f=s.furniture.find(f=>f.type==='fridge');s.activity={kind:'use',id:f.id,path:[],elapsed:.1,total:35};adapter.frame(s);await flush();assert.ok(!backend.calls.some(c=>c.id==='eat'));s.activity.elapsed=2;adapter.frame(s);await flush();adapter.frame(s);await flush();assert.equal(backend.calls.filter(c=>c.id==='eat').length,1);manager.dispose();
+});

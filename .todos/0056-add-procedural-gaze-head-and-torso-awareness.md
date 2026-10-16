@@ -1,7 +1,7 @@
 # Add Procedural Gaze, Head, and Torso Awareness
 
 - **ID:** 0056
-- **Status:** open
+- **Status:** in progress
 - **Created:** 2026-10-16
 - **Priority:** critical
 - **Depends:** 0054, 0055, 0065 (controller foundation)
@@ -112,3 +112,11 @@ hide, departure, state replacement and feature disable.
 
 Imported from the [shared embodied-behavior review](https://chatgpt.com/s/t_6ad2a99165108191bc4e362cee7f9ee9), reviewed against implementation `69b09c677b8ba1b6bc6eda5e21db8ce7e57132bb`.
 Original design scope retained; dependency and integration clarifications are documented above. Research citations in the source are design rationale, not independently certified findings in this backlog import.
+
+## Implementation evidence (2026-10-16)
+
+Software implementation and automated coverage are available. See
+[behavior contract](../docs/architecture/embodied-character-behavior.md) and
+[validation record](../docs/reviews/embodied-character-behavior-validation.md).
+Physical/mobile, human motion and any audible-output requirements remain pending;
+automated results do not certify them.

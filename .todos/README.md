@@ -81,11 +81,14 @@ The explicit request to build everything included shared-activity implementation
 
 ## Embodied character behavior and food-economy correction
 
-Tasks **0054–0068** are open, imported from the
+Tasks **0054–0068** were imported from the
 [replacement embodied-behavior review](https://chatgpt.com/s/t_6ad2a99165108191bc4e362cee7f9ee9)
 and checked against implementation `69b09c6`. **0069** is a separate critical
 correctness task identified while reviewing its claim of an earlier food fix.
-This update adds backlog items only.
+Software implementation and automated evidence are now available; see the
+[body validation record](../docs/reviews/embodied-character-behavior-validation.md).
+0054, 0055, 0065 and 0069 are complete. Other items retain their human/physical
+acceptance requirements; 0052/0068 are not certified.
 
 | ID | Priority | Work |
 | --- | --- | --- |
@@ -123,8 +126,8 @@ Dependency corrections from the source:
   certification still accounts for 0052 and never infers a physical result.
 - The source's eight-character performance case is synthetic stress testing;
   production remains capped at one player plus three visitors.
-- The source's earlier food-economy correction is not implemented. Shared meals
-  currently restore hunger without a charge; 0069 captures the missing work.
+- The missing food-economy correction is implemented under 0069: shared meals
+  purchase two portions once at coordinated arrival. See the validation record.
 
 Each item retains its proposed behavior and guardrails, plus repository-specific
 integration notes and QA. Presentation must remain separate from gameplay truth,

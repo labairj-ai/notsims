@@ -6,7 +6,7 @@
 
 Public game, hosted on the OptiPlex: **https://optiplex.tailb97cdb.ts.net/notsims/**
 
-- Create a character: name, skin tone, hair color/style, outfit, and personality. The 3D view uses a free CC0 MPFB-derived human with a 53-bone skeleton, three hair options, and animation clips for walking, idle/standing, sitting, eating gestures, and a lying-down sleep pose.
+- Create a character: name, skin tone, hair color/style, outfit, and personality. The 3D view uses a free CC0 MPFB-derived human with a 53-bone skeleton, three hair options, and 26 reusable animation clips with layered social gestures, gaze, mood posture, furniture contact and shared-activity roles.
 - Move into a furnished cottage or start from an empty lot.
 - Build rooms from the ground up, paint floors, add walls and doors, and sell items.
 - Buy 14 kinds of furniture, with rotation and placement validation.
@@ -105,3 +105,13 @@ issues. Automated checks pass; human listening confirmation remains pending. See
 GitHub stores the source and runs test/build checks; **GitHub Pages is not used**. Production static assets are hosted by Nginx on the OptiPlex at `127.0.0.1:4601`, published under `/notsims/` through its existing public Tailscale Funnel HTTPS endpoint. Deployment files and instructions are in `deploy/`.
 
 This is a first playable social sandbox with one controlled character, with one 18 × 18 plot, original art, and simplified life simulation mechanics. It is not affiliated with Electronic Arts or The Sims and uses none of their code or assets.
+
+## Embodied behavior
+
+Tasks 0054–0069 have software implementation; physical/mobile and human motion
+acceptance remains pending. See the [behavior contract](docs/architecture/embodied-character-behavior.md)
+and [validation record](docs/reviews/embodied-character-behavior-validation.md).
+Both renderers share semantic body intent. Live reduced-motion preferences are
+honored; `?body=off` disables new body layers. Shared eating costs $16 for two
+portions; cooking together costs $24, charged once both participants arrive.
+Cancellation before consumption is free; purchased portions are not refunded.

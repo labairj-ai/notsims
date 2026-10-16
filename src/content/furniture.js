@@ -1,8 +1,9 @@
+import {MEAL_PRICES} from './meals.js';
 export const CATALOG = [
   {id:'bed',name:'Sunday bed',category:'Bedroom',price:450,w:2,h:2,color:'#e5aa83',need:'energy',rate:1.3,duration:420,verb:'Sleep'},
   {id:'sofa',name:'Cloud sofa',category:'Living',price:280,w:2,h:1,color:'#91a899',need:'fun',rate:.8,duration:90,verb:'Unwind'},
-  {id:'fridge',name:'Everyday fridge',category:'Kitchen',price:320,w:1,h:1,color:'#e1e9d6',need:'hunger',rate:2.8,duration:35,verb:'Make a meal',cost:8},
-  {id:'stove',name:'Little chef stove',category:'Kitchen',price:260,w:1,h:1,color:'#e7dbc3',need:'hunger',rate:3.8,duration:30,verb:'Cook dinner',cost:12},
+  {id:'fridge',name:'Everyday fridge',category:'Kitchen',price:320,w:1,h:1,color:'#e1e9d6',need:'hunger',rate:2.8,duration:35,verb:'Make a meal',cost:MEAL_PRICES.prepared},
+  {id:'stove',name:'Little chef stove',category:'Kitchen',price:260,w:1,h:1,color:'#e7dbc3',need:'hunger',rate:3.8,duration:30,verb:'Cook dinner',cost:MEAL_PRICES.cooked},
   {id:'toilet',name:'Porcelain throne',category:'Bathroom',price:150,w:1,h:1,color:'#eeeade',need:'bladder',rate:6,duration:18,verb:'Use bathroom'},
   {id:'shower',name:'Rain shower',category:'Bathroom',price:300,w:1,h:1,color:'#94bcc2',need:'hygiene',rate:4,duration:25,verb:'Take a shower'},
   {id:'tv',name:'Movie night TV',category:'Living',price:380,w:2,h:1,color:'#687b73',need:'fun',rate:1.8,duration:60,verb:'Watch a movie'},

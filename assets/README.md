@@ -1,8 +1,8 @@
 # Free character assets
 
 `notsims-human.glb` contains a MakeHuman/MPFB-derived clothed human, a shared
-53-bone game-engine skeleton, three hair meshes, and five original motion clips:
-Idle, Walk, Sit, Eat, and Sleep. Sleep uses a relaxed skeletal pose with the game
+53-bone game-engine skeleton, three hair meshes, and 26 original reusable motion clips. The vocabulary and loop/one-shot metadata
+are defined in `src/presentation/clips.js` and checked by the build. Sleep uses a relaxed skeletal pose with the game
 renderer positioning the character horizontally on the bed. Transitions blend
 between clips; standing returns to Idle.
 
@@ -38,7 +38,10 @@ CHARACTER_OUT=/path/to/output \
 blender --background --python scripts/export-character.py
 ```
 
-Copy the resulting `notsims-human.glb` into this directory. Authoring `.blend`
+Copy the resulting `notsims-human.glb` and `character-metadata.json` into this
+directory. The exporter is pinned to Blender 4.5.4; exports start at frame zero
+and sample at 24 fps. The current asset is 6.8 MB against a 12 MB mobile budget.
+Run `node scripts/check-character.mjs` to validate the asset and metadata. Authoring `.blend`
 files and source textures need not be deployed. The optional preview scripts
 produce offline asset/geometry QA images; they do not certify browser rendering.
 

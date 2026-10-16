@@ -1,0 +1,137 @@
+{
+  "blender": "4.5.4 LTS",
+  "fps": 24,
+  "bones": 53,
+  "clips": [
+    {
+      "name": "Idle",
+      "duration": 3.0,
+      "loop": true
+    },
+    {
+      "name": "Walk",
+      "duration": 1.0,
+      "loop": true
+    },
+    {
+      "name": "Sit",
+      "duration": 3.0,
+      "loop": true
+    },
+    {
+      "name": "Eat",
+      "duration": 2.0,
+      "loop": true
+    },
+    {
+      "name": "Sleep",
+      "duration": 3.0,
+      "loop": true
+    },
+    {
+      "name": "Wave",
+      "duration": 2.0,
+      "loop": false
+    },
+    {
+      "name": "TalkA",
+      "duration": 3.0,
+      "loop": true
+    },
+    {
+      "name": "TalkB",
+      "duration": 3.5,
+      "loop": true
+    },
+    {
+      "name": "Nod",
+      "duration": 1.2083333333333333,
+      "loop": false
+    },
+    {
+      "name": "HeadShake",
+      "duration": 1.4166666666666667,
+      "loop": false
+    },
+    {
+      "name": "Laugh",
+      "duration": 2.0,
+      "loop": false
+    },
+    {
+      "name": "Shrug",
+      "duration": 2.0,
+      "loop": false
+    },
+    {
+      "name": "Point",
+      "duration": 1.7916666666666667,
+      "loop": false
+    },
+    {
+      "name": "LeanIn",
+      "duration": 2.0,
+      "loop": false
+    },
+    {
+      "name": "LeanBack",
+      "duration": 2.0,
+      "loop": false
+    },
+    {
+      "name": "Apologize",
+      "duration": 2.5,
+      "loop": false
+    },
+    {
+      "name": "Argue",
+      "duration": 2.0,
+      "loop": true
+    },
+    {
+      "name": "ReachHigh",
+      "duration": 2.0,
+      "loop": false
+    },
+    {
+      "name": "ReachMid",
+      "duration": 2.0,
+      "loop": false
+    },
+    {
+      "name": "ReachLow",
+      "duration": 2.0,
+      "loop": false
+    },
+    {
+      "name": "UseHands",
+      "duration": 2.0,
+      "loop": true
+    },
+    {
+      "name": "Type",
+      "duration": 2.0,
+      "loop": true
+    },
+    {
+      "name": "Read",
+      "duration": 3.0,
+      "loop": true
+    },
+    {
+      "name": "Stir",
+      "duration": 2.5,
+      "loop": true
+    },
+    {
+      "name": "StandToSit",
+      "duration": 1.5,
+      "loop": false
+    },
+    {
+      "name": "SitToStand",
+      "duration": 1.5,
+      "loop": false
+    }
+  ]
+}

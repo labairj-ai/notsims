@@ -1,0 +1,55 @@
+[
+  {
+    "name": "extraction-contact",
+    "empty": true,
+    "steps": [
+      {
+        "command": {
+          "type": "PHONE_CONTACT",
+          "personId": "person_1",
+          "interaction": "joke",
+          "channel": "text"
+        }
+      },
+      {
+        "advance": 20
+      },
+      {
+        "command": {
+          "type": "REQUEST_INTRODUCTION",
+          "personId": "person_1"
+        }
+      },
+      {
+        "advance": 1500
+      }
+    ],
+    "expected": "cabf98d60cbe929e0b4b39e8bdc2da50ec4170d253e201915daa424cbcc56fed"
+  },
+  {
+    "name": "extraction-visits",
+    "empty": true,
+    "steps": [
+      {
+        "command": {
+          "type": "INVITE_OVER",
+          "personId": "person_1"
+        }
+      },
+      {
+        "advance": 60
+      },
+      {
+        "command": {
+          "type": "SOCIAL_INTERACT",
+          "personId": "person_1",
+          "interaction": "chat"
+        }
+      },
+      {
+        "advance": 400
+      }
+    ],
+    "expected": "f61d17fe61e73fa4d4ea1633d0efb9fcbf2bc2c214318652adaa9b5bfcf5a0c0"
+  }
+]

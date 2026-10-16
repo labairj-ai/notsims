@@ -39,7 +39,7 @@ function rejectionCode(message){
 export function dispatch(s,c){
  if(!c||!COMMANDS.includes(c.type))return fail('UNKNOWN_COMMAND');
  const events=[];let message=null;
- if(['SOCIAL_INTERACT','PHONE_CONTACT','INVITE_OVER','RESPOND_SOCIAL_EVENT','ASK_GUEST_TO_LEAVE','CANCEL_SOCIAL_PLAN','REQUEST_INTRODUCTION'].includes(c.type)){const code=socialCommand(s,c,events);return code?fail(code):{ok:true,code:'OK',events};}
+ if(['SHARED_ACTIVITY','SOCIAL_INTERACT','PHONE_CONTACT','INVITE_OVER','RESPOND_SOCIAL_EVENT','ASK_GUEST_TO_LEAVE','CANCEL_SOCIAL_PLAN','REQUEST_INTRODUCTION'].includes(c.type)){const code=socialCommand(s,c,events);return code?fail(code):{ok:true,code:'OK',events};}
  switch(c.type){
  case 'MOVE_TO':if(!inside(c.x,c.y))return fail('INVALID_TARGET');message=enqueue(s,{kind:'walk',x:c.x,y:c.y},events);break;
  case 'INTERACT':{const f=s.furniture.find(f=>f.id===c.id);if(!f||!resolveInteraction(f,c.interaction))return fail('INVALID_TARGET');message=enqueue(s,{kind:'use',id:c.id,...(c.interaction?{interaction:c.interaction}:{})},events);break;}

@@ -25,6 +25,7 @@ export function begin(s,a,events){
 export function advanceActions(s,step,events){
  if(!s.activity&&s.queue.length){const queued=s.queue.shift();const reason=begin(s,queued,events);emit(events,s.activity?'ACTION_STARTED':'ACTION_REJECTED',{kind:queued.kind,...(!s.activity?{reason:reason??'INVALID_ACTION'}:{}),...(queued.id!==undefined?{id:queued.id}:{})});}const a=s.activity;if(!a)return;
  if(a.path?.length){a.walkClock=(a.walkClock||0)+step;if(a.walkClock>=2-1e-9){a.walkClock=Math.max(0,a.walkClock-2);const [x,y]=a.path.shift();if(blocked(s,s.person.x,s.person.y,x,y)||s.social.presences.some(p=>p.x===x&&p.y===y)){log(s,'The path changed. Action cancelled.');emit(events,'ACTION_CANCELLED',{kind:a.kind,reason:'PATH_CHANGED'});s.activity=null;return;}s.person.x=x;s.person.y=y;}if(a.kind!=='walk')return;}
+ if(a.kind==='shared')return;
  if(a.kind==='walk'){a.elapsed+=step;if(!a.path.length){emit(events,'ACTION_COMPLETED',{kind:a.kind});s.activity=null;}return;}
  a.elapsed+=step;
  recoverNeed(s,a,step);

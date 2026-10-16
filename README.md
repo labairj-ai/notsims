@@ -13,7 +13,9 @@ Public game, hosted on the OptiPlex: **https://optiplex.tailb97cdb.ts.net/notsim
 - Walk around your home; use furniture to eat, sleep, shower, use the bathroom, relax, and learn.
 - Manage hunger, energy, hygiene, bladder, fun, and social needs.
 - Meet seven persistent neighbors and contacts. Call or text specific people, build friendships, argue and repair relationships, invite guests, schedule visits, and respond to unexpected drop-ins.
-- Open Phone in Live mode or tap a visitor for person actions, relationship history, and invitations.
+- Open Phone in Live mode or tap a visitor for contextual action recommendations, relationship history, and invitations. Choose Call or Text; More keeps deeper, conflict and repair actions accessible.
+- Sit and chat, watch TV, eat, cook, or read together with a visiting friend. Both people approach the object before the activity begins.
+- Phone texts, incoming calls, visitors and friendship milestones have original local sound cues. Repeated social actions have diminishing growth; varied experiences and ongoing contact matter.
 - Take a job as a barista, designer, or developer; finish shifts to get paid and earn raises.
 - Pause or run time at 1×, 3×, or 8×. Building and dialogs pause the simulation.
 - Autosave locally; download and import JSON saves to back up or continue on another device.
@@ -40,7 +42,7 @@ are silent. See [audio architecture](docs/architecture/audio.md) and
 
 ## Saves
 
-Saves use this browser’s local storage and are specific to this origin/device. The game autosaves every 20 seconds and when the page is hidden or left. Use the game menu to download a save and import it elsewhere. No account or cloud service is required; there is no cloud save synchronization. The game does not advance while closed or in a hidden tab. In-progress jobs resume after loading; other current actions and the player’s queued paths are cleared safely. Version 1 saves migrate to version 2 with their home, funds, needs, career, and clock preserved. People, directional relationships, memories, scheduled visits, visitor movement, and social RNG are saved.
+Saves use this browser’s local storage and are specific to this origin/device. The game autosaves every 20 seconds and when the page is hidden or left. Use the game menu to download a save and import it elsewhere. No account or cloud service is required; there is no cloud save synchronization. The game does not advance while closed or in a hidden tab. In-progress jobs resume after loading; other current actions and the player’s queued paths are cleared safely. Version 1 and 2 saves migrate to version 3 with their home, funds, needs, career, and clock preserved. People, directional relationships, recent interaction history, visit cooldowns, scheduled visits, visitor movement, and social RNG are saved. Shared activities cancel safely on export/load without awarding completion effects. Older game releases cannot load version 3 saves.
 
 ## Develop
 

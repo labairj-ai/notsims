@@ -1,7 +1,7 @@
 # 0049 — Add Social Repetition Fatigue, Variety, and Diminishing Returns
 
 - **ID:** 0049
-- **Status:** open
+- **Status:** in progress
 - **Created:** 2026-10-16
 - **Priority:** high
 - **Depends:** 0037, 0038, 0043, 0048
@@ -89,20 +89,20 @@ Repeated insults could:
 
 ## Done when
 
-- [ ] repeating one positive action produces sharply diminishing relationship gains;
-- [ ] varied interactions produce healthier progression;
-- [ ] repeated identical memories are bounded/coalesced;
-- [ ] conflict repetition behaves predictably;
-- [ ] normal casual repeated chat remains useful for maintenance;
-- [ ] relationship tiers cannot be trivially farmed in minutes.
+- [x] repeating one positive action produces sharply diminishing relationship gains;
+- [x] varied interactions produce healthier progression;
+- [x] repeated identical memories are bounded/coalesced;
+- [x] conflict repetition behaves predictably;
+- [x] normal casual repeated chat remains useful for maintenance;
+- [x] relationship tiers cannot be trivially farmed in minutes.
 
 ## QA requirements
 
-- [ ] 1st/2nd/3rd/4th repetition multiplier tests;
-- [ ] varied-action comparison scenario;
-- [ ] memory coalescing tests;
-- [ ] relationship progression benchmark;
-- [ ] deterministic replay remains identical;
+- [x] 1st/2nd/3rd/4th repetition multiplier tests;
+- [x] varied-action comparison scenario;
+- [x] memory coalescing tests;
+- [x] relationship progression benchmark;
+- [x] deterministic replay remains identical;
 - [ ] full suite and CI pass.
 
 
@@ -123,3 +123,8 @@ assertions merely to make the old test pass.
 
 Reviewed and imported from the [shared social follow-up review](https://chatgpt.com/share/6ad2940c-5270-83ea-88e8-a8ec8f0f1dfe?ogimg=plain), against implementation `91008ba695c8359c894baa83488c4ea43467359e`.
 Source scope and acceptance criteria retained; dependency clarifications are recorded above.
+
+## Implementation evidence
+
+See [follow-up validation](../docs/reviews/social-followup-validation.md) and
+[human acceptance](../docs/reviews/mobile-social-human-acceptance.md).

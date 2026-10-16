@@ -1,0 +1,122 @@
+[
+  {
+    "view": "classic",
+    "width": 390,
+    "activity": "shared_sit",
+    "passed": true
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "activity": "shared_watch",
+    "passed": true
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "activity": "shared_eat",
+    "passed": true
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "activity": "shared_cook",
+    "passed": true
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "activity": "shared_read",
+    "passed": true
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "activity": "shared_sit",
+    "passed": true
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "activity": "shared_watch",
+    "passed": true
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "activity": "shared_eat",
+    "passed": true
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "activity": "shared_cook",
+    "passed": true
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "activity": "shared_read",
+    "passed": true
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "activity": "shared_sit",
+    "passed": true
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "activity": "shared_watch",
+    "passed": true
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "activity": "shared_eat",
+    "passed": true
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "activity": "shared_cook",
+    "passed": true
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "activity": "shared_read",
+    "passed": true
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "activity": "shared_sit",
+    "passed": true
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "activity": "shared_watch",
+    "passed": true
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "activity": "shared_eat",
+    "passed": true
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "activity": "shared_cook",
+    "passed": true
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "activity": "shared_read",
+    "passed": true
+  }
+]

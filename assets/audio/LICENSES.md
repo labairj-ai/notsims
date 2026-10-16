@@ -50,3 +50,9 @@ filename, local path, creation date, author, source and modifications) are in
 | Little Morning (`little-morning`) | `music/little-morning.mp3` | CC0-1.0 |
 | Clover Walk (`clover-walk`) | `music/clover-walk.mp3` | CC0-1.0 |
 | Porch Light (`porch-light`) | `music/porch-light.mp3` | CC0-1.0 |
+
+## Social extension
+
+Phone text/ring, door knock and relationship milestone are original deterministic
+synthesis by the Notsims project, dedicated under CC0-1.0. Reproduce with
+`scripts/generate-social-audio.py`; per-file provenance is in library.json.

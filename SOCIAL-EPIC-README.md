@@ -15,4 +15,6 @@ First playable social milestone: a known old friend and several neighbors exist;
 The reviewed next phase is [0047–0053](.todos/README.md#social-correctness-usability-and-shared-activities):
 correctness and discovery → contextual UI → repetition/variety → module extraction
 → social audio → consolidated human certification → shared activities.
-These items are open; existing physical-device/audio acceptance remains open.
+These features are implemented with automated coverage; see
+[follow-up validation](docs/reviews/social-followup-validation.md). Physical-device,
+standalone and human audio acceptance remains open under 0052.

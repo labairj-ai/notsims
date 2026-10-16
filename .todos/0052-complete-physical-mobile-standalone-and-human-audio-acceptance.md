@@ -1,7 +1,7 @@
 # 0052 — Complete Physical Mobile, Standalone, and Human Audio Acceptance
 
 - **ID:** 0052
-- **Status:** open
+- **Status:** in progress
 - **Created:** 2026-10-16
 - **Priority:** critical
 - **Depends:** 0048, 0051 (implementation and automated checks)
@@ -116,7 +116,7 @@ Verify:
 - [ ] no critical accidental Build/Furnish commands;
 - [ ] standalone launch works where supported;
 - [ ] human confirms audible music/SFX/social cues;
-- [ ] known usability findings are documented;
+- [x] known usability findings are documented;
 - [ ] 0031 and 0046 physical acceptance criteria are satisfied or explicitly superseded by this validation.
 
 ## Completion artifact
@@ -142,11 +142,11 @@ Record:
 
 ## QA requirements
 
-- [ ] full automated suite still passes;
+- [x] full automated suite still passes;
 - [ ] production SHA verified;
 - [ ] GitHub CI green;
 - [ ] physical evidence recorded;
-- [ ] no inferred/fabricated human result.
+- [x] no inferred/fabricated human result.
 
 
 
@@ -168,3 +168,9 @@ browser and standalone mode.
 
 Reviewed and imported from the [shared social follow-up review](https://chatgpt.com/share/6ad2940c-5270-83ea-88e8-a8ec8f0f1dfe?ogimg=plain), against implementation `91008ba695c8359c894baa83488c4ea43467359e`.
 Source scope and acceptance criteria retained; dependency clarifications are recorded above.
+
+## Implementation evidence
+
+See [follow-up validation](../docs/reviews/social-followup-validation.md) and
+[human acceptance](../docs/reviews/mobile-social-human-acceptance.md).
+Physical/mobile/listening acceptance remains pending where required; implementation evidence does not certify it.

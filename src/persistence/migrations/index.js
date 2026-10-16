@@ -1,7 +1,7 @@
 import {initSocial} from '../../systems/social/social.js';
 import {CURRENT_SAVE_VERSION} from '../schema.js';
 // Map source version -> pure one-version migration. No production step is needed at v1.
-export const MIGRATIONS=new Map([[1,s=>{initSocial(s);s.version=2;return s;}]]);
+export const MIGRATIONS=new Map([[1,s=>{initSocial(s);s.version=2;return s;}],[2,s=>{s.social.visits=Object.fromEntries(s.social.presences.map(p=>[p.personId,{lastVisitMinute:s.minutes,nextAllowedMinute:s.minutes+2880,introduced:true}]));s.social.sharedActivity=null;for(const r of Object.values(s.relationships))r.recentInteractions=[];s.version=3;return s;}]]);
 export function migrateSave(input,{currentVersion=CURRENT_SAVE_VERSION,migrations=MIGRATIONS}={}){
  let s=structuredClone(input);
  if(!s||!Number.isInteger(s.version)||s.version<1||s.version>currentVersion)throw Error('This is not a valid Notsims save.');

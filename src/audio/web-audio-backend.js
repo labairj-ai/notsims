@@ -32,7 +32,7 @@ export class WebAudioBackend {
   element.loop=asset.loopable;element.preload='metadata';volume.gain.value=gain;source.connect(volume);volume.connect(this.buses.music);this.media.add(element);
   let stopped=false;
   const voice={stop:()=>{if(stopped)return;stopped=true;element.pause();element.removeAttribute('src');element.load();source.disconnect();volume.disconnect();this.media.delete(element);},setGain:(value,seconds=0)=>{volume.gain.cancelScheduledValues(c.currentTime);volume.gain.setValueAtTime(volume.gain.value,c.currentTime);volume.gain.linearRampToValueAtTime(value,c.currentTime+seconds);}};
-  voice.ready=element.play().then(()=>{if(this.disposed||stopped){voice.stop();return false;}return true;}).catch(error=>{voice.stop();throw error;});return voice;
+  voice.ready=element.play().then(()=>{if(this.disposed||stopped){voice.stop();return false;}return true;}).catch(error=>{if(stopped||this.disposed)return false;voice.stop();throw error;});return voice;
  }
  dispose(){this.disposed=true;for(const media of this.media){media.pause();media.removeAttribute('src');media.load();}this.media.clear();this.buffers.clear();this.decodedBytes=0;this.context?.close().catch(()=>{});}
 }

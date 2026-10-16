@@ -13,7 +13,7 @@ test('frozen v1 fixture loads, resumes canonical work and rebuilds IDs without m
 test('ordered pure migrations reject missing steps, bad results, corruption and future saves',()=>{
  const registry=new Map([[1,s=>({...s,version:2,marker:1})],[2,s=>({...s,version:3,marker:s.marker+1})]]);
  const before=structuredClone(fixture);const migrated=migrateSave(fixture,{currentVersion:3,migrations:registry});assert.equal(migrated.marker,2);assert.deepEqual(fixture,before);
- assert.throws(()=>migrateSave(fixture,{currentVersion:3}),/Missing/);
+ assert.throws(()=>migrateSave(fixture,{currentVersion:4}),/Missing/);
  assert.throws(()=>migrateSave(fixture,{currentVersion:2,migrations:new Map([[1,s=>s]])}),/Invalid/);
  assert.throws(()=>validateState({...migrateSave(fixture),needs:{hunger:-1}}));
  for(const raw of ['{bad',JSON.stringify({...fixture,version:99}),JSON.stringify({...fixture,money:null}),' '.repeat(MAX_SAVE_BYTES+1)])assert.throws(()=>validateSave(raw));

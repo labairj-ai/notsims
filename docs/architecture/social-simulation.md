@@ -236,3 +236,9 @@ Mobile stays primary. Tap a person → bottom social action sheet with name, rel
 Include persistent people, friend/enemy progression, compatibility, memories, phone contacts, invitations, unexpected visitors, physical visitor presence, basic in-person actions, bounded autonomy, maintenance/drift, mobile UI and deterministic QA.
 
 Defer romance, marriage, family tree, children, roommates, overnight guests, parties, clubs, full neighborhood simulation, infinite procedural population, AI/LLM dialogue, voice acting and full reputation propagation.
+
+## Follow-up implementation
+
+See [social follow-up contracts](social-followups.md) for actor-aware exchanges,
+contextual ranking, fatigue, focused module ownership, save v3, semantic audio
+and shared-activity coordination/cancellation.

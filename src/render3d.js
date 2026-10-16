@@ -1,3 +1,4 @@
+import {sharedActivityPose} from './systems/social/shared-activities.js';
 import * as THREE from 'three';
 import {SIZE,inside,dimensions,canPlace} from './engine.js';
 import {GeometryPainter,houseObject,gardenObject,furnitureObject,disposeGroup,interactionPose,material,batch} from './scene3d.js';
@@ -86,7 +87,7 @@ export class Renderer3D extends WorldCamera {
     const human=this.human;human.customize(s.person);human.root.visible=!working;
     let x=s.person.x+.5,y=s.person.y+.5,height=0,angle=human.root.rotation.y,animation='Idle';
     if(a?.path?.length){const [tx,ty]=a.path[0],t=Math.min(1,(a.walkClock||0)/2);x+=(tx-s.person.x)*t;y+=(ty-s.person.y)*t;angle=Math.atan2(tx-s.person.x,ty-s.person.y);animation='Walk';}
-    const pose=interactionPose(s);if(pose){({x,y,height,angle,animation}=pose);if(animation==='Sit')height-=.874;}
+    const pose=sharedActivityPose(s,'player')||interactionPose(s);if(pose){({x,y,height,angle,animation}=pose);if(animation==='Sit')height-=.874;}
     if(a?.kind==='snack')animation='Eat';if(a?.kind==='nap'){animation='Sleep';height=.05;}
     human.root.position.set(x,height,y);human.root.rotation.set(0,angle,0);
     human.model.rotation.x=animation==='Sleep'?-Math.PI/2:0;
@@ -101,7 +102,7 @@ export class Renderer3D extends WorldCamera {
     if(!this.humanAsset)return;
     const ids=new Set(s.social.presences.map(p=>p.personId));
     for(const [id,h] of this.visitors)if(!ids.has(id)){this.scene.remove(h.root);h.dispose();this.visitors.delete(id);}
-    for(const p of s.social.presences){let h=this.visitors.get(p.personId);if(!h){h=new Human(this.humanAsset);this.visitors.set(p.personId,h);this.scene.add(h.root);}h.customize(s.people[p.personId]);let x=p.x+.5,y=p.y+.5;if(p.path.length){const [tx,ty]=p.path[0],t=Math.min(1,p.moveClock/2);x+=(tx-p.x)*t;y+=(ty-p.y)*t;h.root.rotation.y=Math.atan2(tx-p.x,ty-p.y);}h.root.position.set(x,0,y);h.play(p.path.length?'Walk':'Idle');h.update(this.lastMinute===null?0:Math.max(0,Math.min(2,s.minutes-this.lastMinute)));}
+    for(const p of s.social.presences){let h=this.visitors.get(p.personId);if(!h){h=new Human(this.humanAsset);this.visitors.set(p.personId,h);this.scene.add(h.root);}h.customize(s.people[p.personId]);let x=p.x+.5,y=p.y+.5;if(p.path.length){const [tx,ty]=p.path[0],t=Math.min(1,p.moveClock/2);x+=(tx-p.x)*t;y+=(ty-p.y)*t;h.root.rotation.y=Math.atan2(tx-p.x,ty-p.y);}const pose=sharedActivityPose(s,p.personId);h.root.position.set(pose?pose.x:x,pose?(pose.animation==='Sit'?pose.height-.874:pose.height):0,pose?pose.y:y);if(pose)h.root.rotation.y=pose.angle;h.play(pose?pose.animation:p.path.length?'Walk':'Idle');h.update(this.lastMinute===null?0:Math.max(0,Math.min(2,s.minutes-this.lastMinute)));}
   }
   draw(s,ui,time) {
     this.resize();this.updateHouse(s);this.updatePreview(s,ui);this.updatePath(s);this.updateHuman(s,time);this.updateVisitors(s);

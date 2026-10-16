@@ -1,6 +1,7 @@
 import {JOBS} from '../content/careers.js';
 import {workActivity} from '../systems/careers/careers.js';
 export function rebuildRuntime(s){
+ if(s.social.sharedActivity){const p=s.social.presences.find(p=>p.personId===s.social.sharedActivity.personId);if(p){p.path=[];p.moveClock=0;}s.social.sharedActivity=null;}
  const finite=Number.isFinite,ids=s.furniture.map(f=>f.id);
  // Rebuild transient paths after loading; preserve only legitimate work progress.
  if(s.activity?.kind==='work'){

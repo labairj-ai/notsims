@@ -1,7 +1,7 @@
 # 0048 — Add Contextual Social Action Ranking and Progressive Disclosure
 
 - **ID:** 0048
-- **Status:** open
+- **Status:** in progress
 - **Created:** 2026-10-16
 - **Priority:** critical
 - **Depends:** 0037, 0038, 0045, 0047
@@ -123,22 +123,22 @@ Primary action list:
 
 ## Done when
 
-- [ ] person sheet shows at most five primary actions;
-- [ ] action choices change with relationship context;
-- [ ] apology/repair actions surface after conflict;
-- [ ] stranger actions differ from close-friend actions;
-- [ ] ineligible actions cannot dispatch;
-- [ ] More exposes complete eligible interaction catalog;
-- [ ] phone and in-person contexts display appropriate channels.
+- [x] person sheet shows at most five primary actions;
+- [x] action choices change with relationship context;
+- [x] apology/repair actions surface after conflict;
+- [x] stranger actions differ from close-friend actions;
+- [x] ineligible actions cannot dispatch;
+- [x] More exposes complete eligible interaction catalog;
+- [x] phone and in-person contexts display appropriate channels.
 
 ## QA requirements
 
-- [ ] stranger ranking test;
-- [ ] friend ranking test;
-- [ ] enemy/rival ranking test;
-- [ ] recent-conflict ranking test;
-- [ ] cooldown filtering test;
-- [ ] mobile 320/390/430 layout checks;
+- [x] stranger ranking test;
+- [x] friend ranking test;
+- [x] enemy/rival ranking test;
+- [x] recent-conflict ranking test;
+- [x] cooldown filtering test;
+- [x] mobile 320/390/430 layout checks;
 - [ ] real-device acceptance;
 - [ ] full suite and CI pass.
 
@@ -158,3 +158,9 @@ sign-off with 0052 while retaining this task's automated implementation evidence
 
 Reviewed and imported from the [shared social follow-up review](https://chatgpt.com/share/6ad2940c-5270-83ea-88e8-a8ec8f0f1dfe?ogimg=plain), against implementation `91008ba695c8359c894baa83488c4ea43467359e`.
 Source scope and acceptance criteria retained; dependency clarifications are recorded above.
+
+## Implementation evidence
+
+See [follow-up validation](../docs/reviews/social-followup-validation.md) and
+[human acceptance](../docs/reviews/mobile-social-human-acceptance.md).
+Physical/mobile/listening acceptance remains pending where required; implementation evidence does not certify it.

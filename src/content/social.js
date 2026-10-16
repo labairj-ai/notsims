@@ -1,4 +1,5 @@
 export const SOCIAL_LIMITS=Object.freeze({people:8,relationships:36,memories:24,plans:12,presences:3,notifications:16,priors:16});
+export const SOCIAL_TUNING=Object.freeze({historyLimit:48,repetitionWindow:240,repetition:[1,.65,.35,.15],familyFloor:.55,memoryWindow:240,visitMin:2880,visitRange:4320});
 export const CHANNELS=Object.freeze({in_person:1,phone_call:.65,text:.3});
 const action=(label,family,affinity,trust,need,extra={})=>({label,family,affinity,trust,need,duration:8,cooldown:12,channels:Object.keys(CHANNELS),...extra});
 export const SOCIAL_ACTIONS=Object.freeze({

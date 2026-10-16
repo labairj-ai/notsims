@@ -12,7 +12,7 @@ const quiet=()=>{const s=newGame({},true);s.social.nextSocialOpportunityMinute=1
 test('v1 migration adds deterministic roster and canonical player without changing existing progress',()=>{
  const old=JSON.parse(readFileSync(new URL('./fixtures/save-v1.json',import.meta.url))),copy=structuredClone(old),s=validateSave(old);
  assert.deepEqual(old,copy);for(const k of ['money','minutes','needs','floors','walls','furniture','job','shifts','skill'])assert.deepEqual(s[k],old[k]);
- assert.equal(s.version,2);assert.equal(s.person.id,'player');assert.equal(Object.keys(s.people).length,7);assert.deepEqual(s.contacts,['person_1']);assert.deepEqual(s,validateSave(old));assert.deepEqual(validateSave(serializeSave(s)),s);
+ assert.equal(s.version,3);assert.equal(s.person.id,'player');assert.equal(Object.keys(s.people).length,7);assert.deepEqual(s.contacts,['person_1']);assert.deepEqual(s,validateSave(old));assert.deepEqual(validateSave(serializeSave(s)),s);
 });
 test('canonical pairs, directional tiers, negative history and compatibility are separate from social need',()=>{
  const s=quiet(),r=relationship(s,'player','person_2',true);assert.equal(pairKey('player','person_2'),pairKey('person_2','player'));r.familiarity=85;
@@ -28,9 +28,9 @@ test('specific contact calls/texts, cooldowns, invalid IDs and availability reje
  send(s,{type:'PHONE_CONTACT',personId:'person_1',channel:'text'});assert.equal(dispatch(s,{type:'PHONE_CONTACT',personId:'person_1',channel:'text'}).code,'SOCIAL_COOLDOWN');
 });
 test('phone friendship progresses, conflict makes rivals/enemies, repair recovers and peak history persists',()=>{
- const s=quiet();for(let i=0;i<18;i++)contact(s,'encourage','phone_call');const r=relationship(s,'player','person_1');assert.ok(['Friend','Close Friend','Best Friend'].includes(relationshipStatus(r,s.minutes)));
- const peak=r.peakTier;for(let i=0;i<25;i++)contact(s,'insult','text');assert.ok(['Uneasy','Disliked','Rival','Enemy'].includes(relationshipStatus(r,s.minutes)));assert.equal(r.peakTier,peak);assert.equal(r.memories.length,24);
- for(let i=0;i<15;i++)contact(s,'apologize','text');assert.ok(r.toward.player.affinity>-90);assert.ok(r.memories.some(m=>m.type==='apology_accepted'));assert.ok(['Tense','Volatile','Warm','Distant'].includes(dynamic(r)));
+ const s=quiet();for(let i=0;i<18;i++)contact(s,['encourage','know','chat','advice','news','compliment'][i%6],'phone_call');const r=relationship(s,'player','person_1');assert.ok(['Friend','Close Friend','Best Friend'].includes(relationshipStatus(r,s.minutes)));
+ const peak=r.peakTier;for(let i=0;i<36;i++){contact(s,['insult','argue','confront','disagree'][i%4],'text');advance(s,60);}assert.ok(['Uneasy','Disliked','Rival','Enemy'].includes(relationshipStatus(r,s.minutes)));assert.equal(r.peakTier,peak);assert.ok(r.memories.length<=24);
+ for(let i=0;i<18;i++)contact(s,['apologize','clear','encourage'][i%3],'text');assert.ok(r.toward.player.affinity>-90);assert.ok(r.memories.some(m=>m.type==='apology_accepted'));assert.ok(['Tense','Volatile','Warm','Distant'].includes(dynamic(r)));
 });
 test('visits arrive visibly, accept, path adjacent for conversations and leave without overlapping actors',()=>{
  const s=quiet();send(s,{type:'INVITE_OVER',personId:'person_1'});advance(s,1);assert.equal(s.social.presences.length,1);const p=s.social.presences[0];assert.equal(p.state,'visiting');advance(s,60);assert.equal(p.path.length,0);assert.equal(Math.abs(p.x-s.person.x)+Math.abs(p.y-s.person.y),1);

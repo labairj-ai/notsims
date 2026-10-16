@@ -1,7 +1,7 @@
 # 0047 — Correct Social Initiative, Discovery, Visitor Lifecycle, and Cooldowns
 
 - **ID:** 0047
-- **Status:** open
+- **Status:** in progress
 - **Created:** 2026-10-16
 - **Priority:** critical
 - **Depends:** 0039, 0040, 0041, 0042
@@ -121,24 +121,24 @@ All timing variation must use seeded RNG.
 
 ## Done when
 
-- [ ] incoming contacts increment the correct initiator;
-- [ ] NPC autonomy uses the canonical interaction resolver;
-- [ ] undiscovered coworker cannot spontaneously visit/call;
-- [ ] neighbor introductions still work;
-- [ ] waiting visitor cannot bypass arrival decision;
-- [ ] visitor cooldown is stored and enforced;
-- [ ] contact cooldown and visit cooldown are separate concepts;
-- [ ] replay produces identical results with fixed seed.
+- [x] incoming contacts increment the correct initiator;
+- [x] NPC autonomy uses the canonical interaction resolver;
+- [x] undiscovered coworker cannot spontaneously visit/call;
+- [x] neighbor introductions still work;
+- [x] waiting visitor cannot bypass arrival decision;
+- [x] visitor cooldown is stored and enforced;
+- [x] contact cooldown and visit cooldown are separate concepts;
+- [x] replay produces identical results with fixed seed.
 
 ## QA requirements
 
-- [ ] incoming call initiation ownership test;
-- [ ] incoming text initiation ownership test;
-- [ ] autonomous check-in produces canonical social events;
-- [ ] coworker discovery gate test;
-- [ ] pending visitor interaction rejection test;
-- [ ] visit cooldown boundary tests;
-- [ ] save/load cooldown test;
+- [x] incoming call initiation ownership test;
+- [x] incoming text initiation ownership test;
+- [x] autonomous check-in produces canonical social events;
+- [x] coworker discovery gate test;
+- [x] pending visitor interaction rejection test;
+- [x] visit cooldown boundary tests;
+- [x] save/load cooldown test;
 - [ ] `npm test`, build, source checks and CI pass.
 
 
@@ -164,3 +164,8 @@ existing relationships or saves.
 
 Reviewed and imported from the [shared social follow-up review](https://chatgpt.com/share/6ad2940c-5270-83ea-88e8-a8ec8f0f1dfe?ogimg=plain), against implementation `91008ba695c8359c894baa83488c4ea43467359e`.
 Source scope and acceptance criteria retained; dependency clarifications are recorded above.
+
+## Implementation evidence
+
+See [follow-up validation](../docs/reviews/social-followup-validation.md) and
+[human acceptance](../docs/reviews/mobile-social-human-acceptance.md).

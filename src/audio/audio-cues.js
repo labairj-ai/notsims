@@ -1,6 +1,7 @@
 // IDs are independent of filenames. Asset IDs resolve through the local library.
 const cue=(id,sources,{bus='sfx',mode='oneShot',gain=.5,cooldown=.12,maxPolyphony=2,pitchJitter=.025,spatial=true,preloadGroup='world'}={})=>({id,sources,bus,mode,gain,cooldown,maxPolyphony,pitchJitter,spatial,preloadGroup});
 export const AUDIO_CUES=[
+ ...[['phone.text','social-text'],['phone.ring','social-ring'],['door.knock','social-knock'],['relationship.milestone','social-milestone']].map(([id,asset])=>cue(`social.${id}`,[asset],{gain:.3,spatial:false,maxPolyphony:1,cooldown:2,pitchJitter:0})),
  cue('ui.select',['select'],{bus:'ui',gain:.25,spatial:false,preloadGroup:'essential'}),
  cue('ui.confirm',['confirm'],{bus:'ui',gain:.3,spatial:false,preloadGroup:'essential'}),
  cue('ui.cancel',['cancel'],{bus:'ui',gain:.3,spatial:false,preloadGroup:'essential'}),

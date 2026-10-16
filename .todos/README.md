@@ -46,7 +46,7 @@ and production audio certification requirements remain open as recorded above.
 
 ## Social correctness, usability and shared activities
 
-Tasks 0047–0053 are **open**, reviewed against implementation `91008ba` and
+Tasks 0047–0053 have implementation and automated coverage, reviewed against implementation `91008ba` and
 imported from the [shared follow-up review](https://chatgpt.com/share/6ad2940c-5270-83ea-88e8-a8ec8f0f1dfe?ogimg=plain).
 This is backlog planning; no gameplay changes are included in this import.
 
@@ -71,3 +71,10 @@ Review findings are confirmed in current source: unconditional player initiative
 direct autonomy effects, ungated roster candidates, normal actions for waiting
 guests, full catalog/channel clusters and full repeat gains. Each task records
 its repository-specific integration notes, save compatibility and QA obligations.
+
+Implementation: 0047, 0049 and 0050 have no remaining physical-only criteria;
+0048, 0051 and 0053 retain their required human acceptance, consolidated in 0052.
+See [follow-up validation](../docs/reviews/social-followup-validation.md) and
+[physical/audio acceptance matrix](../docs/reviews/mobile-social-human-acceptance.md).
+The explicit request to build everything included shared-activity implementation;
+0052 remains the human certification gate and has not been declared passed.

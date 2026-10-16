@@ -1,7 +1,7 @@
 # 0051 — Add Semantic Social Audio Cues
 
 - **ID:** 0051
-- **Status:** open
+- **Status:** in progress
 - **Created:** 2026-10-16
 - **Priority:** high
 - **Depends:** 0013, 0015, 0017, 0047, 0050
@@ -73,20 +73,20 @@ Use existing local/CC0 provenance rules.
 
 ## Done when
 
-- [ ] text notification produces semantic cue;
-- [ ] call produces ringtone;
-- [ ] answering/declining stops ringtone;
-- [ ] visitor produces knock/doorbell;
-- [ ] no duplicate knock occurs;
-- [ ] social audio respects mute/bus settings;
-- [ ] audio-disabled gameplay remains identical.
+- [x] text notification produces semantic cue;
+- [x] call produces ringtone;
+- [x] answering/declining stops ringtone;
+- [x] visitor produces knock/doorbell;
+- [x] no duplicate knock occurs;
+- [x] social audio respects mute/bus settings;
+- [x] audio-disabled gameplay remains identical.
 
 ## QA requirements
 
-- [ ] resolver tests;
-- [ ] ringtone lifecycle tests;
-- [ ] visitor audio deduplication test;
-- [ ] asset provenance/build checks;
+- [x] resolver tests;
+- [x] ringtone lifecycle tests;
+- [x] visitor audio deduplication test;
+- [x] asset provenance/build checks;
 - [ ] human listening acceptance;
 - [ ] full suite and CI pass.
 
@@ -105,3 +105,9 @@ existing 0021 record; automated signal checks do not establish audibility.
 
 Reviewed and imported from the [shared social follow-up review](https://chatgpt.com/share/6ad2940c-5270-83ea-88e8-a8ec8f0f1dfe?ogimg=plain), against implementation `91008ba695c8359c894baa83488c4ea43467359e`.
 Source scope and acceptance criteria retained; dependency clarifications are recorded above.
+
+## Implementation evidence
+
+See [follow-up validation](../docs/reviews/social-followup-validation.md) and
+[human acceptance](../docs/reviews/mobile-social-human-acceptance.md).
+Physical/mobile/listening acceptance remains pending where required; implementation evidence does not certify it.

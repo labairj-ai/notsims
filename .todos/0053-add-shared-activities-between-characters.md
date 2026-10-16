@@ -1,7 +1,7 @@
 # 0053 — Add Shared Activities Between Characters
 
 - **ID:** 0053
-- **Status:** open
+- **Status:** in progress
 - **Created:** 2026-10-16
 - **Priority:** high
 - **Depends:** 0036, 0037, 0043, 0050, 0052
@@ -160,24 +160,24 @@ Contextual ranking from 0048 should determine prominence.
 
 ## Done when
 
-- [ ] at least four shared activities work;
-- [ ] both participants visibly navigate to/use the object;
-- [ ] activity affects needs and relationship separately;
-- [ ] memories may result;
-- [ ] cancellation cleans both participants;
-- [ ] unreachable/occupied objects fail safely;
-- [ ] Classic and Three render equivalent social activity state;
-- [ ] mobile contextual action UI exposes shared activities naturally.
+- [x] at least four shared activities work;
+- [x] both participants visibly navigate to/use the object;
+- [x] activity affects needs and relationship separately;
+- [x] memories may result;
+- [x] cancellation cleans both participants;
+- [x] unreachable/occupied objects fail safely;
+- [x] Classic and Three render equivalent social activity state;
+- [x] mobile contextual action UI exposes shared activities naturally.
 
 ## QA requirements
 
-- [ ] two-participant reservation tests;
-- [ ] path failure tests;
-- [ ] cancel-mid-activity tests;
-- [ ] need/relationship effect tests;
-- [ ] save/load policy documented for active shared activity;
-- [ ] deterministic replay scenario;
-- [ ] Classic/Three browser checks;
+- [x] two-participant reservation tests;
+- [x] path failure tests;
+- [x] cancel-mid-activity tests;
+- [x] need/relationship effect tests;
+- [x] save/load policy documented for active shared activity;
+- [x] deterministic replay scenario;
+- [x] Classic/Three browser checks;
 - [ ] physical mobile smoke check;
 - [ ] full suite/build/check/CI pass.
 
@@ -197,3 +197,9 @@ certification.
 
 Reviewed and imported from the [shared social follow-up review](https://chatgpt.com/share/6ad2940c-5270-83ea-88e8-a8ec8f0f1dfe?ogimg=plain), against implementation `91008ba695c8359c894baa83488c4ea43467359e`.
 Source scope and acceptance criteria retained; dependency clarifications are recorded above.
+
+## Implementation evidence
+
+See [follow-up validation](../docs/reviews/social-followup-validation.md) and
+[human acceptance](../docs/reviews/mobile-social-human-acceptance.md).
+Physical/mobile/listening acceptance remains pending where required; implementation evidence does not certify it.

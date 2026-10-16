@@ -1,0 +1,3 @@
+import {starterPeople} from '../../content/social.js';
+import {relationship} from './relationships.js';
+export function initSocial(s){s.person.id='player';s.people=starterPeople();s.contacts=['person_1'];s.relationships={};s.social={rngState:71037,eventCounter:0,nextId:1,nextSocialOpportunityMinute:s.minutes+90,nextDriftMinute:s.minutes+60,presences:[],plans:[],notifications:[],priors:[],pendingEvent:null,visits:{},sharedActivity:null};const r=relationship(s,'player','person_1',true);r.familiarity=45;r.peakTier='Friend';for(const v of Object.values(r.toward))Object.assign(v,{affinity:38,trust:28,connection:25});relationship(s,'person_1','person_2',true).familiarity=35;return s;}

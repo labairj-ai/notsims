@@ -1,7 +1,7 @@
 # 0050 — Decompose Social System Into Focused Modules
 
 - **ID:** 0050
-- **Status:** open
+- **Status:** in progress
 - **Created:** 2026-10-16
 - **Priority:** high
 - **Depends:** 0047, 0048, 0049
@@ -107,18 +107,18 @@ Recommended ownership:
 
 ## Done when
 
-- [ ] social monolith is decomposed;
-- [ ] no social file owns unrelated responsibilities;
-- [ ] public behavior remains unchanged;
-- [ ] all existing 101+ tests continue passing;
-- [ ] scenario replay outputs are unchanged;
-- [ ] module dependency scan remains cycle-free.
+- [x] social monolith is decomposed;
+- [x] no social file owns unrelated responsibilities;
+- [x] public behavior remains unchanged;
+- [x] all existing 101+ tests continue passing;
+- [x] scenario replay outputs are unchanged;
+- [x] module dependency scan remains cycle-free.
 
 ## QA requirements
 
-- [ ] before/after replay equality;
-- [ ] architecture dependency test;
-- [ ] source-cycle check;
+- [x] before/after replay equality;
+- [x] architecture dependency test;
+- [x] source-cycle check;
 - [ ] full suite/build/check/CI pass.
 
 
@@ -136,3 +136,8 @@ and RNG ownership explicit, with a cycle-free graph.
 
 Reviewed and imported from the [shared social follow-up review](https://chatgpt.com/share/6ad2940c-5270-83ea-88e8-a8ec8f0f1dfe?ogimg=plain), against implementation `91008ba695c8359c894baa83488c4ea43467359e`.
 Source scope and acceptance criteria retained; dependency clarifications are recorded above.
+
+## Implementation evidence
+
+See [follow-up validation](../docs/reviews/social-followup-validation.md) and
+[human acceptance](../docs/reviews/mobile-social-human-acceptance.md).

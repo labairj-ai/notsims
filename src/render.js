@@ -1,3 +1,4 @@
+import {sharedActivityPose} from './systems/social/shared-activities.js';
 import {furnitureRecipes} from './render/shared/furniture-recipes.js';
 import {SIZE, CATALOG, itemDef, dimensions, canPlace, key} from './engine.js';
 const shade=(hex,n)=>{const v=parseInt(hex.slice(1),16);return `rgb(${Math.max(0,Math.min(255,(v>>16)+n))},${Math.max(0,Math.min(255,((v>>8)&255)+n))},${Math.max(0,Math.min(255,(v&255)+n))})`;};
@@ -13,6 +14,13 @@ export class Renderer {
  ellipse(x,y,z,rx,ry,color){const p=this.p(x,y,z),c=this.ctx;c.beginPath();c.ellipse(p[0],p[1],rx*this.t,ry*this.t,0,0,Math.PI*2);c.fillStyle=color;c.fill();}
  furniture(f){return furnitureRecipes.furniture.call(this,f);}
  person(p,time=0,working=false){if(working)return;const x=p.x+.5,y=p.y+.5;const c=this.ctx;this.ellipse(x,y,.01,.39,.16,'#233e3330');const bounce=Math.sin(time*4)*.012;
+ if(p.pose?.animation==='Sit'){
+  this.box(x-.2,y-.12,.4,.3,.42,p.shirt,.58);this.box(x-.2,y+.06,.4,.38,.13,'#42574c',.5);
+  this.box(x-.18,y+.32,.13,.12,.46,'#42574c');this.box(x+.06,y+.36,.13,.12,.46,'#42574c');
+  this.box(x-.29,y-.04,.1,.32,.12,p.skin,.66);this.box(x+.2,y+.02,.1,.32,.12,p.skin,.66);
+  const [hx,hy]=this.p(x,y,1.32);c.fillStyle=p.hair;c.beginPath();c.ellipse(hx,hy-this.t*.08,this.t*.24,this.t*.29,0,0,Math.PI*2);c.fill();c.fillStyle=p.skin;c.beginPath();c.ellipse(hx,hy,this.t*.2,this.t*.24,0,0,Math.PI*2);c.fill();c.fillStyle=p.hair;c.beginPath();c.ellipse(hx,hy-this.t*.2,this.t*.22,this.t*.12,0,0,Math.PI*2);c.fill();return;
+ }
+if(p.pose){this.ellipse(x,y,.4,.2,.12,p.shirt);if(p.pose.animation==='Eat')this.ellipse(x+.22,y,.72,.12,.05,'#fff5d6');}
  this.box(x-.16,y-.09,.13,.14,.37,'#42574c');this.box(x+.07,y+.02,.13,.14,.37,'#42574c');this.box(x-.19,y-.06,.19,.25,.07,'#f1e9d3');this.box(x+.05,y+.04,.19,.25,.07,'#f1e9d3');
  this.box(x-.2,y-.15,.4,.34,.46,p.shirt,.36+bounce);const [px,py]=this.p(x,y,1.08+bounce);c.fillStyle=p.skin;c.beginPath();c.ellipse(px,py,this.t*.22,this.t*.29,0,0,Math.PI*2);c.fill();
  if(p.style==='long'){c.fillStyle=p.hair;c.beginPath();c.ellipse(px,py-this.t*.03,this.t*.27,this.t*.35,0,Math.PI,Math.PI*2);c.lineTo(px+this.t*.27,py+this.t*.27);c.lineTo(px+this.t*.14,py+this.t*.2);c.lineTo(px+this.t*.13,py-this.t*.05);c.closePath();c.fill();}
@@ -45,8 +53,8 @@ export class Renderer {
  for(let x=1;x<5;x++){this.box(x,16,.5,.5,.12,'#9c9670');for(let i=0;i<3;i++){this.ellipse(x+.15+i*.12,16.25,.25,.15,.1,'#96a777');this.ellipse(x+.15+i*.12,16.25,.38,.07,.06,i%2?'#dfb994':'#eee1ae');}}
  const objects=s.furniture.filter(f=>!itemDef(f.type).flat).map(f=>({depth:f.x+f.y+dimensions(f)[0]+dimensions(f)[1]-.1,draw:()=>this.furniture(f)}));
  for(const [edge,v] of Object.entries(s.walls)){const [axis,xy]=edge.split(':'),[x,y]=xy.split(',').map(Number);objects.push({depth:x+y+(axis==='h'?1:1)+.02,draw:()=>this.wall(edge,v)});}
- const p={...s.person};if(s.activity?.path?.length){const target=s.activity.path[0],t=Math.min(1,(s.activity.walkClock||0)/2);p.x+=(target[0]-p.x)*t;p.y+=(target[1]-p.y)*t;}
- for(const visitor of s.social?.presences||[]){const npc={...s.people[visitor.personId],x:visitor.x,y:visitor.y};objects.push({depth:npc.x+npc.y+1,draw:()=>{if(ui.selectedPersonId===visitor.personId)this.ellipse(npc.x+.5,npc.y+.5,.02,.48,.2,'#e5c67a');this.person(npc,time);}});}
+ const p={...s.person};const pose=sharedActivityPose(s,'player');if(pose){p.x=pose.x-.5;p.y=pose.y-.5;p.pose=pose;}if(s.activity?.path?.length){const target=s.activity.path[0],t=Math.min(1,(s.activity.walkClock||0)/2);p.x+=(target[0]-p.x)*t;p.y+=(target[1]-p.y)*t;}
+ for(const visitor of s.social?.presences||[]){const pose=sharedActivityPose(s,visitor.personId),npc={...s.people[visitor.personId],x:pose?pose.x-.5:visitor.x,y:pose?pose.y-.5:visitor.y,pose};objects.push({depth:npc.x+npc.y+1,draw:()=>{if(ui.selectedPersonId===visitor.personId)this.ellipse(npc.x+.5,npc.y+.5,.02,.48,.2,'#e5c67a');this.person(npc,time);}});}
  objects.push({depth:p.x+p.y+1,draw:()=>this.person(p,time,s.activity?.kind==='work')});
  objects.sort((a,b)=>a.depth-b.depth);objects.forEach(o=>o.draw());
  if(s.activity?.path?.length){c.globalAlpha=.5;for(const [x,y] of s.activity.path)this.ellipse(x+.5,y+.5,.02,.07,.04,'#f9f7e2');c.globalAlpha=1;}

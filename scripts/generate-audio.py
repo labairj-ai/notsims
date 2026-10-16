@@ -64,3 +64,7 @@ for id,title,transpose,melody in [('little-morning','Little Morning',0,[0,4,7,11
 print('Created',len(assets),'original assets;',sum(a['bytes'] for a in assets),'bytes')
 
 masters.cleanup()
+
+# Restore the complete social extension after regenerating the base library.
+import sys
+subprocess.run([sys.executable,str(p/"scripts/generate-social-audio.py")],check=True)

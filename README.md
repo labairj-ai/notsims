@@ -115,3 +115,12 @@ Both renderers share semantic body intent. Live reduced-motion preferences are
 honored; `?body=off` disables new body layers. Shared eating costs $16 for two
 portions; cooking together costs $24, charged once both participants arrive.
 Cancellation before consumption is free; purchased portions are not refunded.
+
+## Contribution and release controls
+
+Main requires a pull request, an up-to-date successful GitHub Actions `build`
+check, and prohibits force pushes/deletion; admins follow the same rules. No
+reviewer count is required for solo development. See
+[verified branch policy](docs/reviews/branch-protection-validation.md).
+Human/device acceptance remains a separate release requirement; green CI alone
+does not certify motion, phone performance or audible output.

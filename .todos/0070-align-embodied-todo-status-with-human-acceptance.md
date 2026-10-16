@@ -1,7 +1,7 @@
 # Align Embodied TODO Status With Human Acceptance
 
 - **ID:** 0070
-- **Status:** in progress
+- **Status:** complete
 - **Created:** 2026-10-16
 - **Priority:** high
 - **Depends:** none
@@ -50,16 +50,16 @@ Do not silently treat automated browser screenshots as human motion certificatio
 
 ## Done when
 
-- [ ] TODO statuses no longer contradict outstanding human acceptance.
-- [ ] perceptual criteria have one clear owner.
-- [ ] validation document explains the distinction.
-- [ ] no unfinished physical/human criterion is marked complete.
+- [x] TODO statuses no longer contradict outstanding human acceptance.
+- [x] perceptual criteria have one clear owner.
+- [x] validation document explains the distinction.
+- [x] no unfinished physical/human criterion is marked complete.
 
 ## QA requirements
 
-- [ ] backlog dependency/status review.
-- [ ] documentation links resolve.
-- [ ] no source/build behavior changes.
+- [x] backlog dependency/status review.
+- [x] documentation links resolve.
+- [x] no source/build behavior changes.
 
 
 
@@ -82,3 +82,9 @@ Source scope retained; dependency, check-name and deployment clarifications are 
 
 Corrective work is implemented. See the updated embodied validation record;
 final candidate CI and governance evidence are recorded separately.
+
+## Verified result
+
+See [PR follow-up evidence](../docs/reviews/pr-acceptance-followup-validation.md).
+Corrective gameplay code at `428b08b2192229bf42db71017d54b81ee5d47236` passes
+142 tests, build/source checks and [CI](https://github.com/labairj-ai/notsims/actions/runs/38983577325).

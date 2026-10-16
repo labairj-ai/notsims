@@ -1,7 +1,7 @@
 # Remove Duplicate Shared-Activity Eligibility Evaluation
 
 - **ID:** 0071
-- **Status:** in progress
+- **Status:** complete
 - **Created:** 2026-10-16
 - **Priority:** medium
 - **Depends:** 0053, 0069
@@ -56,16 +56,16 @@ Preserve the existing rule that insufficient-funds options may remain visible bu
 
 ## Done when
 
-- [ ] every shared-activity candidate calls `prepareSharedActivity()` once per query.
-- [ ] eligible/disabled results remain identical.
-- [ ] paid meal cost labels remain unchanged.
-- [ ] authoritative start still revalidates current state.
+- [x] every shared-activity candidate calls `prepareSharedActivity()` once per query.
+- [x] eligible/disabled results remain identical.
+- [x] paid meal cost labels remain unchanged.
+- [x] authoritative start still revalidates current state.
 
 ## QA requirements
 
-- [ ] existing shared-activity tests pass unchanged.
-- [ ] add a focused call-count/purity regression if useful.
-- [ ] full suite/build/check/CI pass.
+- [x] existing shared-activity tests pass unchanged.
+- [x] add a focused call-count/purity regression if useful.
+- [x] full suite/build/check/CI pass.
 
 
 
@@ -87,3 +87,9 @@ Source scope retained; dependency, check-name and deployment clarifications are 
 
 Corrective work is implemented. See the updated embodied validation record;
 final candidate CI and governance evidence are recorded separately.
+
+## Verified result
+
+See [PR follow-up evidence](../docs/reviews/pr-acceptance-followup-validation.md).
+Corrective gameplay code at `428b08b2192229bf42db71017d54b81ee5d47236` passes
+142 tests, build/source checks and [CI](https://github.com/labairj-ai/notsims/actions/runs/38983577325).

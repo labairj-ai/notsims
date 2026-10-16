@@ -134,9 +134,9 @@ Record exact:
 
 ## QA requirements
 
-- [ ] no inferred physical result.
-- [ ] automated suite rerun after any fixes.
-- [ ] CI green on final candidate SHA.
+- [x] no inferred physical result.
+- [x] automated suite rerun after any fixes.
+- [x] CI green on final candidate SHA (software candidate; physical review remains pending).
 
 
 

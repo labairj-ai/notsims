@@ -132,3 +132,10 @@ PR #1; later corrective checks identify their own source SHA.
 Use behavior-off to isolate procedural presentation effects on the same asset.
 Use a separately checked-out old release for asset/load/performance comparisons.
 Neither comparison establishes human motion quality or physical phone comfort.
+
+## PR correction pass
+
+See [0070–0076 evidence](pr-acceptance-followup-validation.md) for corrected status
+ownership, single shared-candidate evaluation, behavior-off terminology and
+verified branch protection. Candidate tests: 142 passing; browser matrix: 52
+passing. Human/physical acceptance remains pending and PR #1 stays draft.

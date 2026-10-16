@@ -157,9 +157,9 @@ Include:
 
 ## QA requirements
 
-- [ ] rerun 141+ automated tests after fixes.
-- [ ] rerun 52 browser cases.
-- [ ] CI passes on final reviewed SHA.
+- [x] rerun 141+ automated tests after fixes.
+- [x] rerun 52 browser cases.
+- [x] CI passes on final reviewed SHA (software candidate; human review remains pending).
 
 
 

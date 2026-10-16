@@ -1,5 +1,5 @@
 // Optional human-review preparation, not perceptual acceptance. Uses isolated fixture pages.
-import {mkdir,writeFile,readFile} from 'node:fs/promises';
+import {mkdir,writeFile,readFile,stat} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 const imported=await import(process.env.PUPPETEER_MODULE??'puppeteer'),puppeteer=imported.puppeteer??imported.default;
@@ -17,10 +17,16 @@ try{for(const view of ['classic','3d']){
  else app.send({type:'SOCIAL_INTERACT',personId:'person_1',interaction:name,channel:'in_person'});
  app.renderer.zoom=2.8;app.renderer.panX=0;app.renderer.panY=0;app.renderer.body.reset();document.querySelector('#toast').hidden=true;app.updateUI(true);
  },{name});
- const filename=`${view}-${name}.webm`,recorder=await page.screencast({path:`${out}/${filename}`,ffmpegPath:process.env.FFMPEG_PATH??'/opt/homebrew/bin/ffmpeg',fps:15});await page.evaluate(speed=>reviewApp.setSpeed(speed),speed);await new Promise(resolve=>setTimeout(resolve,4000));await page.evaluate(()=>reviewApp.setSpeed(0));await recorder.stop();results.push({view,name,speed,filename});console.log(`${view} ${name}: captured 4 seconds for human review`);
+ const filename=`${view}-${name}.webm`,frames=[];await page.evaluate(speed=>reviewApp.setSpeed(speed),speed);const started=Date.now();
+ while(Date.now()-started<4000){frames.push(await page.screenshot({type:'png'}));const wait=frames.length*1000/15-(Date.now()-started);if(wait>0)await new Promise(resolve=>setTimeout(resolve,wait));}
+ const duration=(Date.now()-started)/1000;await page.evaluate(()=>reviewApp.setSpeed(0));
+ execFileSync(process.env.FFMPEG_PATH??'/opt/homebrew/bin/ffmpeg',['-hide_banner','-loglevel','error','-y','-f','image2pipe','-vcodec','png','-framerate',String(frames.length/duration),'-i','pipe:0','-an','-c:v','libvpx-vp9','-crf','34','-b:v','0','-pix_fmt','yuv420p','-threads','2',`${out}/${filename}`],{input:Buffer.concat(frames),maxBuffer:1024*1024});
+ if((await stat(`${out}/${filename}`)).size<1000)throw Error(`Empty motion recording: ${filename}`);
+ const media=JSON.parse(execFileSync(process.env.FFPROBE_PATH??'/opt/homebrew/bin/ffprobe',['-v','error','-show_entries','format=duration','-of','json',`${out}/${filename}`],{encoding:'utf8'}));if(Number(media.format.duration)<3.5)throw Error(`Truncated motion recording: ${filename}`);
+ results.push({view,name,speed,filename,duration:Number(media.format.duration),frames:frames.length,sampledFps:frames.length/duration});console.log(`${view} ${name}: verified ${frames.length} frames for human review`);
  }await page.close();
 }}finally{await browser.close();}
 const evidence={kind:'agent-generated review preparation; human acceptance pending',sourceSha,assetSha256,cases:results};await writeFile(`${out}/manifest.json`,JSON.stringify(evidence,null,2)+'\n');
 const cards=results.map(r=>`<article><h2>${r.view} · ${r.name}</h2><video controls loop muted preload="metadata" src="${r.filename}"></video></article>`).join('');
-await writeFile(`${out}/index.html`,`<!doctype html><meta charset="utf-8"><title>Notsims human motion review — pending</title><style>body{font:16px system-ui;background:#f7f5eb;color:#24382f;margin:24px}main{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}article{background:white;padding:16px;border-radius:14px}video{width:100%}code{overflow-wrap:anywhere}</style><h1>Motion review preparation</h1><p>These isolated, muted recordings are for a human to inspect. They are not human acceptance, physical-device evidence or audio listening results.</p><p>Source <code>${sourceSha}</code><br>Character <code>${assetSha256}</code></p><p>Record tester, browser, source/asset identity, scenario, observed defects and pass/fail in the repository acceptance matrices. This representative set supplements the full interactive matrix; short clips cannot establish sustained thermal/performance behavior.</p><main>${cards}</main>`);
+await writeFile(`${out}/index.html`,`<!doctype html><meta charset="utf-8"><title>Notsims human motion review — pending</title><style>body{font:16px system-ui;background:#f7f5eb;color:#24382f;margin:24px}main{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}article{background:white;padding:16px;border-radius:14px}video{width:100%}code{overflow-wrap:anywhere}</style><h1>Motion review preparation</h1><p>These isolated, muted recordings sample motion at up to 15fps for a human to inspect. Use live play to judge full-rate smoothness. They are not human acceptance, physical-device evidence or audio listening results.</p><p>Source <code>${sourceSha}</code><br>Character <code>${assetSha256}</code></p><p>Record tester, browser, source/asset identity, scenario, observed defects and pass/fail in the repository acceptance matrices. This representative set supplements the full interactive matrix; short clips cannot establish sustained thermal/performance behavior.</p><main>${cards}</main>`);
 console.log(`Review gallery: ${out}/index.html`);

@@ -1,7 +1,7 @@
 # Clarify Behavior-Off Baseline and Animation Performance Terminology
 
 - **ID:** 0072
-- **Status:** in progress
+- **Status:** complete
 - **Created:** 2026-10-16
 - **Priority:** low
 - **Depends:** 0065, 0067 (implementation/evidence available)
@@ -53,14 +53,14 @@ If a true old-release performance comparison is required, compare against the pr
 
 ## Done when
 
-- [ ] all documentation uses accurate terminology.
-- [ ] performance evidence distinguishes behavior-off from old-release baseline.
-- [ ] acceptance procedures specify which baseline to use.
+- [x] all documentation uses accurate terminology.
+- [x] performance evidence distinguishes behavior-off from old-release baseline.
+- [x] acceptance procedures specify which baseline to use.
 
 ## QA requirements
 
-- [ ] documentation-only check.
-- [ ] query parameter still disables procedural layers.
+- [x] documentation-only check.
+- [x] query parameter still disables procedural layers.
 
 
 
@@ -82,3 +82,9 @@ Source scope retained; dependency, check-name and deployment clarifications are 
 
 Corrective work is implemented. See the updated embodied validation record;
 final candidate CI and governance evidence are recorded separately.
+
+## Verified result
+
+See [PR follow-up evidence](../docs/reviews/pr-acceptance-followup-validation.md).
+Corrective gameplay code at `428b08b2192229bf42db71017d54b81ee5d47236` passes
+142 tests, build/source checks and [CI](https://github.com/labairj-ai/notsims/actions/runs/38983577325).

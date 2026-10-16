@@ -162,3 +162,9 @@ Read-only review found main unprotected and PR #1 draft with successful `build`
 check under workflow `Test Notsims`; require the actual check context when 0073
 is executed. Existing static hosting and clean-build/hash/atomic-release contracts
 remain authoritative. Each task records source and repository-specific notes.
+
+0070–0073 are complete: status ownership and baseline terminology corrected,
+eligibility evaluated once, and main protection verified with a disposable failing/
+passing PR. 0074/0075 remain in progress for actual human/device observations.
+0076 remains gated on those results; PR #1 is draft and production is unchanged.
+See [follow-up evidence](../docs/reviews/pr-acceptance-followup-validation.md).

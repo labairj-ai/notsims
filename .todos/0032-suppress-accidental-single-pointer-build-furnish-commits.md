@@ -1,7 +1,7 @@
 # Suppress Accidental Single-Pointer Build and Furnish Commits
 
 - **ID:** 0032
-- **Status:** in progress
+- **Status:** complete
 - **Created:** 2026-10-16
 - **Priority:** critical
 - **Depends:** 0024, 0027
@@ -65,8 +65,8 @@ Use the existing 10 CSS px movement threshold initially.
 - [x] `npm test` passes.
 - [x] `npm run build` passes.
 - [x] `npm run check` passes.
-- [ ] GitHub CI passes.
-- [ ] Record the corrective SHA in mobile validation.
+- [x] GitHub CI passes.
+- [x] Record the corrective SHA in mobile validation.
 
 ## Source
 
@@ -75,3 +75,4 @@ Created from the 2026-10-16 implementation review of the mobile UX at `e37f5c75b
 ## Implementation evidence
 
 Implemented; see [social validation](../docs/reviews/social-simulation-validation.md).
+Implementation SHA: `91008ba695c8359c894baa83488c4ea43467359e`. [CI passed](https://github.com/labairj-ai/notsims/actions/runs/38967199599).

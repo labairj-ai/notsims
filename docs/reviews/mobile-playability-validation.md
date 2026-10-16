@@ -97,3 +97,17 @@ The audio harness completed successfully after a delayed Chrome shutdown. All
 four desktop/phone renderer cases and unavailable-audio startup passed. This is
 not a physical listening result. Real-device certification remains pending as
 detailed above.
+
+## Gesture correction and social release
+
+Corrective implementation SHA: `91008ba695c8359c894baa83488c4ea43467359e`.
+Task 0032 is complete: Floor, Wall, Door, Erase and Furnish single-pointer drags
+over 10 CSS px dispatch zero edits; positive Room drag still dispatches one
+BUILD_ROOM. Unit coverage includes return-to-start suppression and the exact
+threshold. Actual Chrome touch scenarios pass locally and on production in
+Classic and Three; Live pan and multitouch regressions also pass.
+
+The Phone HUD addition passes all 56 existing renderer/viewport/mode layout
+checks. Social phone, visitor picking, 44px controls and event response pass at
+320px, 390px and desktop. See [social validation](social-simulation-validation.md)
+for release and evidence. Physical-device certification is still pending.

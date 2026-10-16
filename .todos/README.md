@@ -32,8 +32,8 @@ open; emulated Chrome is not a substitute for those checks.
 ## Gesture safety and social simulation
 
 Tasks 0032–0045 are implemented; 0046 has automated coverage with physical mobile acceptance pending. See [social validation](../docs/reviews/social-simulation-validation.md).
-0032 is the immediate critical Build/Furnish drag-safety correction; complete it
-before social mobile UI task 0045.
+0032 is the completed critical Build/Furnish drag-safety correction.
+Tasks 0032–0045 passed CI and are deployed at source `91008ba`.
 
 Social work order: 0033 → 0034 → 0035 → 0036 → 0037 → 0038 → 0039 →
 0040 → 0041 → 0042 → 0043 → 0045 → 0046. Task 0044 (network introductions

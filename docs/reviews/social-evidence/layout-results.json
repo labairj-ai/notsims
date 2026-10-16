@@ -1,0 +1,1266 @@
+[
+  {
+    "view": "classic",
+    "width": 320,
+    "height": 568,
+    "tab": "live",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 320,
+    "height": 568,
+    "tab": "build",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 320,
+    "height": 568,
+    "tab": "shop",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 320,
+    "height": 568,
+    "tab": "career",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 360,
+    "height": 800,
+    "tab": "live",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 360,
+    "height": 800,
+    "tab": "build",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 360,
+    "height": 800,
+    "tab": "shop",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 360,
+    "height": 800,
+    "tab": "career",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "height": 844,
+    "tab": "live",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "height": 844,
+    "tab": "build",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "height": 844,
+    "tab": "shop",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "height": 844,
+    "tab": "career",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 390,
+    "gestureChecks": "pan/pinch suppressed, tap at most one command",
+    "audio": {
+      "unlocked": true,
+      "suspended": false,
+      "muted": false,
+      "buses": {
+        "version": 1,
+        "muted": false,
+        "master": 0.7,
+        "music": 0.35,
+        "sfx": 0.65,
+        "ambience": 0.4,
+        "ui": 0.55
+      },
+      "activeVoices": 2,
+      "streams": 1,
+      "decodedBytes": 992632,
+      "loops": [
+        "ambience.garden.loop"
+      ],
+      "diagnostics": [
+        {
+          "where": "little-morning",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22"
+        }
+      ]
+    }
+  },
+  {
+    "view": "classic",
+    "width": 430,
+    "height": 932,
+    "tab": "live",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 430,
+    "height": 932,
+    "tab": "build",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 430,
+    "height": 932,
+    "tab": "shop",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 430,
+    "height": 932,
+    "tab": "career",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 844,
+    "height": 390,
+    "tab": "live",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 844,
+    "height": 390,
+    "tab": "build",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 844,
+    "height": 390,
+    "tab": "shop",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 844,
+    "height": 390,
+    "tab": "career",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 768,
+    "height": 1024,
+    "tab": "live",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 768,
+    "height": 1024,
+    "tab": "build",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 768,
+    "height": 1024,
+    "tab": "shop",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 768,
+    "height": 1024,
+    "tab": "career",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "height": 900,
+    "tab": "live",
+    "scroll": false,
+    "small": [
+      {
+        "id": "save",
+        "w": 74.625,
+        "h": 39
+      },
+      {
+        "id": "menu",
+        "w": 34,
+        "h": 34
+      },
+      {
+        "id": "edit-character",
+        "w": 114.75,
+        "h": 23
+      },
+      {
+        "id": "camera-left",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "camera-right",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "walls",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "zoom-out",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "zoom-in",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "recenter",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "Ⅱ",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶▶▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "Make it feel like you ↗",
+        "w": 106.21875,
+        "h": 15
+      },
+      {
+        "id": "show-guide",
+        "w": 114.890625,
+        "h": 26
+      },
+      {
+        "id": "open-phone",
+        "w": 259,
+        "h": 42
+      },
+      {
+        "id": "☾ Nap outdoors↗",
+        "w": 259,
+        "h": 42
+      }
+    ],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "height": 900,
+    "tab": "build",
+    "scroll": false,
+    "small": [
+      {
+        "id": "save",
+        "w": 74.625,
+        "h": 39
+      },
+      {
+        "id": "menu",
+        "w": 34,
+        "h": 34
+      },
+      {
+        "id": "edit-character",
+        "w": 114.75,
+        "h": 23
+      },
+      {
+        "id": "camera-left",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "camera-right",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "walls",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "zoom-out",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "zoom-in",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "recenter",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "Ⅱ",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶▶▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "Warm oak",
+        "w": 81,
+        "h": 38
+      },
+      {
+        "id": "Soft stone",
+        "w": 81,
+        "h": 38
+      },
+      {
+        "id": "Sage",
+        "w": 81,
+        "h": 38
+      }
+    ],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "height": 900,
+    "tab": "shop",
+    "scroll": false,
+    "small": [
+      {
+        "id": "save",
+        "w": 74.625,
+        "h": 39
+      },
+      {
+        "id": "menu",
+        "w": 34,
+        "h": 34
+      },
+      {
+        "id": "edit-character",
+        "w": 114.75,
+        "h": 23
+      },
+      {
+        "id": "camera-left",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "camera-right",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "walls",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "zoom-out",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "zoom-in",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "recenter",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "Ⅱ",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶▶▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "All",
+        "w": 30,
+        "h": 26
+      },
+      {
+        "id": "Living",
+        "w": 44,
+        "h": 26
+      },
+      {
+        "id": "Bedroom",
+        "w": 58.046875,
+        "h": 26
+      },
+      {
+        "id": "Kitchen",
+        "w": 51.421875,
+        "h": 26
+      },
+      {
+        "id": "Bathroom",
+        "w": 60.765625,
+        "h": 26
+      },
+      {
+        "id": "Decor",
+        "w": 45.125,
+        "h": 26
+      },
+      {
+        "id": "rotate",
+        "w": 71.34375,
+        "h": 29
+      }
+    ],
+    "errors": []
+  },
+  {
+    "view": "classic",
+    "width": 1440,
+    "height": 900,
+    "tab": "career",
+    "scroll": false,
+    "small": [
+      {
+        "id": "save",
+        "w": 74.625,
+        "h": 39
+      },
+      {
+        "id": "menu",
+        "w": 34,
+        "h": 34
+      },
+      {
+        "id": "edit-character",
+        "w": 114.75,
+        "h": 23
+      },
+      {
+        "id": "camera-left",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "camera-right",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "walls",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "zoom-out",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "zoom-in",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "recenter",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "Ⅱ",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶▶▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "Take the job ↗",
+        "w": 225,
+        "h": 35
+      },
+      {
+        "id": "Take the job ↗",
+        "w": 225,
+        "h": 35
+      },
+      {
+        "id": "Take the job ↗",
+        "w": 225,
+        "h": 35
+      }
+    ],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 320,
+    "height": 568,
+    "tab": "live",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 320,
+    "height": 568,
+    "tab": "build",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 320,
+    "height": 568,
+    "tab": "shop",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 320,
+    "height": 568,
+    "tab": "career",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 360,
+    "height": 800,
+    "tab": "live",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 360,
+    "height": 800,
+    "tab": "build",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 360,
+    "height": 800,
+    "tab": "shop",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 360,
+    "height": 800,
+    "tab": "career",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "height": 844,
+    "tab": "live",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "height": 844,
+    "tab": "build",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "height": 844,
+    "tab": "shop",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "height": 844,
+    "tab": "career",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 390,
+    "gestureChecks": "pan/pinch suppressed, tap at most one command",
+    "audio": {
+      "unlocked": true,
+      "suspended": false,
+      "muted": false,
+      "buses": {
+        "version": 1,
+        "muted": false,
+        "master": 0.7,
+        "music": 0.35,
+        "sfx": 0.65,
+        "ambience": 0.4,
+        "ui": 0.55
+      },
+      "activeVoices": 2,
+      "streams": 1,
+      "decodedBytes": 992632,
+      "loops": [
+        "ambience.garden.loop"
+      ],
+      "diagnostics": [
+        {
+          "where": "little-morning",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22"
+        }
+      ]
+    }
+  },
+  {
+    "view": "3d",
+    "width": 430,
+    "height": 932,
+    "tab": "live",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 430,
+    "height": 932,
+    "tab": "build",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 430,
+    "height": 932,
+    "tab": "shop",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 430,
+    "height": 932,
+    "tab": "career",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 844,
+    "height": 390,
+    "tab": "live",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 844,
+    "height": 390,
+    "tab": "build",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 844,
+    "height": 390,
+    "tab": "shop",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 844,
+    "height": 390,
+    "tab": "career",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 768,
+    "height": 1024,
+    "tab": "live",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 768,
+    "height": 1024,
+    "tab": "build",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 768,
+    "height": 1024,
+    "tab": "shop",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 768,
+    "height": 1024,
+    "tab": "career",
+    "scroll": false,
+    "small": [],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "height": 900,
+    "tab": "live",
+    "scroll": false,
+    "small": [
+      {
+        "id": "save",
+        "w": 74.625,
+        "h": 39
+      },
+      {
+        "id": "menu",
+        "w": 34,
+        "h": 34
+      },
+      {
+        "id": "edit-character",
+        "w": 114.75,
+        "h": 23
+      },
+      {
+        "id": "camera-left",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "camera-right",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "walls",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "zoom-out",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "zoom-in",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "recenter",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "Ⅱ",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶▶▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "Make it feel like you ↗",
+        "w": 106.21875,
+        "h": 15
+      },
+      {
+        "id": "show-guide",
+        "w": 114.890625,
+        "h": 26
+      },
+      {
+        "id": "open-phone",
+        "w": 259,
+        "h": 42
+      },
+      {
+        "id": "☾ Nap outdoors↗",
+        "w": 259,
+        "h": 42
+      }
+    ],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "height": 900,
+    "tab": "build",
+    "scroll": false,
+    "small": [
+      {
+        "id": "save",
+        "w": 74.625,
+        "h": 39
+      },
+      {
+        "id": "menu",
+        "w": 34,
+        "h": 34
+      },
+      {
+        "id": "edit-character",
+        "w": 114.75,
+        "h": 23
+      },
+      {
+        "id": "camera-left",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "camera-right",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "walls",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "zoom-out",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "zoom-in",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "recenter",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "Ⅱ",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶▶▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "Warm oak",
+        "w": 81,
+        "h": 38
+      },
+      {
+        "id": "Soft stone",
+        "w": 81,
+        "h": 38
+      },
+      {
+        "id": "Sage",
+        "w": 81,
+        "h": 38
+      }
+    ],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "height": 900,
+    "tab": "shop",
+    "scroll": false,
+    "small": [
+      {
+        "id": "save",
+        "w": 74.625,
+        "h": 39
+      },
+      {
+        "id": "menu",
+        "w": 34,
+        "h": 34
+      },
+      {
+        "id": "edit-character",
+        "w": 114.75,
+        "h": 23
+      },
+      {
+        "id": "camera-left",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "camera-right",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "walls",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "zoom-out",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "zoom-in",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "recenter",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "Ⅱ",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶▶▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "All",
+        "w": 30,
+        "h": 26
+      },
+      {
+        "id": "Living",
+        "w": 44,
+        "h": 26
+      },
+      {
+        "id": "Bedroom",
+        "w": 58.046875,
+        "h": 26
+      },
+      {
+        "id": "Kitchen",
+        "w": 51.421875,
+        "h": 26
+      },
+      {
+        "id": "Bathroom",
+        "w": 60.765625,
+        "h": 26
+      },
+      {
+        "id": "Decor",
+        "w": 45.125,
+        "h": 26
+      },
+      {
+        "id": "rotate",
+        "w": 71.34375,
+        "h": 29
+      }
+    ],
+    "errors": []
+  },
+  {
+    "view": "3d",
+    "width": 1440,
+    "height": 900,
+    "tab": "career",
+    "scroll": false,
+    "small": [
+      {
+        "id": "save",
+        "w": 74.625,
+        "h": 39
+      },
+      {
+        "id": "menu",
+        "w": 34,
+        "h": 34
+      },
+      {
+        "id": "edit-character",
+        "w": 114.75,
+        "h": 23
+      },
+      {
+        "id": "camera-left",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "camera-right",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "walls",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "zoom-out",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "zoom-in",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "recenter",
+        "w": 30,
+        "h": 31
+      },
+      {
+        "id": "Ⅱ",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "▶▶▶",
+        "w": 29,
+        "h": 31
+      },
+      {
+        "id": "Take the job ↗",
+        "w": 225,
+        "h": 35
+      },
+      {
+        "id": "Take the job ↗",
+        "w": 225,
+        "h": 35
+      },
+      {
+        "id": "Take the job ↗",
+        "w": 225,
+        "h": 35
+      }
+    ],
+    "errors": []
+  }
+]

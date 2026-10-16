@@ -1,7 +1,7 @@
 # Define Social Simulation Contract
 
 - **ID:** 0033
-- **Status:** in progress
+- **Status:** complete
 - **Created:** 2026-10-16
 - **Priority:** critical
 - **Depends:** 0011, 0012
@@ -31,7 +31,7 @@ No gameplay changes; no ECS/framework; no romance in this epic; preserve command
 - [x] Focused unit/integration tests cover success and failure paths.
 - [x] Existing deterministic scenarios remain valid or intentionally migrated.
 - [x] `npm test`, `npm run build`, and `npm run check` pass.
-- [ ] GitHub CI passes before deployment.
+- [x] GitHub CI passes before deployment.
 
 ## Source
 
@@ -40,3 +40,4 @@ Created from the 2026-10-16 Notsims social-simulation design review.
 ## Implementation evidence
 
 Implemented; see [social validation](../docs/reviews/social-simulation-validation.md).
+Implementation SHA: `91008ba695c8359c894baa83488c4ea43467359e`. [CI passed](https://github.com/labairj-ai/notsims/actions/runs/38967199599).

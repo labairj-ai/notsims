@@ -72,3 +72,26 @@ inspect relationship history and use the phone comfortably with a finger.
 Record actual device, OS/browser, release SHA and outcomes. Browser viewport
 emulation is not physical-device certification and headless audio is not proof
 of audible playback. No human result has been inferred or fabricated.
+
+## Production release
+
+- Source SHA: `91008ba695c8359c894baa83488c4ea43467359e`.
+- [GitHub CI passed](https://github.com/labairj-ai/notsims/actions/runs/38967199599).
+- Clean detached checkout: offline npm ci, 101 tests, build and syntax checks pass.
+- Release: `/var/www/notsims/releases/20261016T210815Z-91008ba`.
+- Activated at 2026-10-16T21:08:36.303211+00:00 via atomic symlink rename.
+- All 131 packaged file hashes verified on OptiPlex before activation.
+- Previous `/var/www/notsims/releases/20261016T192936Z-ef88e60` retained.
+- [HTTP evidence](social-evidence/production-http-results.json): all 57 public
+  responses return HTTP 200, correct MIME and verified build bytes. One initial
+  TLS handshake timeout cleared on rerun.
+- Production social scenarios pass in both renderers at 320, 390 and 1440px.
+- Production touch scenarios pass for both renderers, including drag suppression.
+- [Layout results](social-evidence/layout-results.json): 56 checks pass locally.
+- Production screenshots: [Classic](social-evidence/classic-390.png),
+  [Three](social-evidence/3d-390.png).
+- Public game: https://optiplex.tailb97cdb.ts.net/notsims/
+
+Task 0046 remains in progress solely for the required physical mobile acceptance.
+Tasks 0021 and 0031 and prior mobile subtasks retain their recorded human-device
+certification requirements; their implementation was already delivered.

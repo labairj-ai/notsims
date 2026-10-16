@@ -36,6 +36,11 @@ Character asset SHA256:
 - Browser scenarios are representative automated fixtures and do not establish
   motion quality, actual phone performance, touch comfort or audible output.
 
+- [Recording-tool CI passed](https://github.com/labairj-ai/notsims/actions/runs/38983810926).
+- [Desktop motion review gallery](pr-acceptance-evidence/motion-review/index.html):
+  16 verified four-second muted clips, generated from `fe599b5` in both renderers.
+  These sampled recordings prepare human review; they do not certify smoothness.
+
 ## Pending human and release work
 
 0074 remains in progress: a named human must review the desktop motion matrix

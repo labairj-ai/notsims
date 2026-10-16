@@ -1,0 +1,151 @@
+{
+  "kind": "agent-generated review preparation; human acceptance pending",
+  "sourceSha": "fe599b5b075b8ff5c63f2eb3ec5836a0663b6e70",
+  "assetSha256": "27c2e49a1ef0097a01459df989d516ebef5acfdbcd3c2229ca62007ba027773d",
+  "cases": [
+    {
+      "view": "classic",
+      "name": "walk-1x",
+      "speed": 1,
+      "filename": "classic-walk-1x.webm",
+      "duration": 4.044,
+      "frames": 50,
+      "sampledFps": 12.363996043521267
+    },
+    {
+      "view": "classic",
+      "name": "walk-3x",
+      "speed": 3,
+      "filename": "classic-walk-3x.webm",
+      "duration": 4.039,
+      "frames": 49,
+      "sampledFps": 12.131715771230503
+    },
+    {
+      "view": "classic",
+      "name": "walk-8x",
+      "speed": 8,
+      "filename": "classic-walk-8x.webm",
+      "duration": 4.029,
+      "frames": 51,
+      "sampledFps": 12.658227848101266
+    },
+    {
+      "view": "classic",
+      "name": "chat",
+      "speed": 1,
+      "filename": "classic-chat.webm",
+      "duration": 4.042,
+      "frames": 51,
+      "sampledFps": 12.617516081147947
+    },
+    {
+      "view": "classic",
+      "name": "argue",
+      "speed": 1,
+      "filename": "classic-argue.webm",
+      "duration": 4.005,
+      "frames": 49,
+      "sampledFps": 12.234706616729088
+    },
+    {
+      "view": "classic",
+      "name": "apologize",
+      "speed": 1,
+      "filename": "classic-apologize.webm",
+      "duration": 4.01,
+      "frames": 49,
+      "sampledFps": 12.219451371571074
+    },
+    {
+      "view": "classic",
+      "name": "fridge",
+      "speed": 1,
+      "filename": "classic-fridge.webm",
+      "duration": 4.037,
+      "frames": 50,
+      "sampledFps": 12.38543472875898
+    },
+    {
+      "view": "classic",
+      "name": "shared-cook",
+      "speed": 1,
+      "filename": "classic-shared-cook.webm",
+      "duration": 4.028,
+      "frames": 49,
+      "sampledFps": 12.164846077457797
+    },
+    {
+      "view": "3d",
+      "name": "walk-1x",
+      "speed": 1,
+      "filename": "3d-walk-1x.webm",
+      "duration": 4.078,
+      "frames": 49,
+      "sampledFps": 12.01569396763119
+    },
+    {
+      "view": "3d",
+      "name": "walk-3x",
+      "speed": 3,
+      "filename": "3d-walk-3x.webm",
+      "duration": 4.061,
+      "frames": 49,
+      "sampledFps": 12.06599359763605
+    },
+    {
+      "view": "3d",
+      "name": "walk-8x",
+      "speed": 8,
+      "filename": "3d-walk-8x.webm",
+      "duration": 4.045,
+      "frames": 49,
+      "sampledFps": 12.11372064276885
+    },
+    {
+      "view": "3d",
+      "name": "chat",
+      "speed": 1,
+      "filename": "3d-chat.webm",
+      "duration": 4.025,
+      "frames": 49,
+      "sampledFps": 12.17391304347826
+    },
+    {
+      "view": "3d",
+      "name": "argue",
+      "speed": 1,
+      "filename": "3d-argue.webm",
+      "duration": 4.053,
+      "frames": 51,
+      "sampledFps": 12.583271650629165
+    },
+    {
+      "view": "3d",
+      "name": "apologize",
+      "speed": 1,
+      "filename": "3d-apologize.webm",
+      "duration": 4.029,
+      "frames": 50,
+      "sampledFps": 12.410027302060065
+    },
+    {
+      "view": "3d",
+      "name": "fridge",
+      "speed": 1,
+      "filename": "3d-fridge.webm",
+      "duration": 4.042,
+      "frames": 49,
+      "sampledFps": 12.122711528946066
+    },
+    {
+      "view": "3d",
+      "name": "shared-cook",
+      "speed": 1,
+      "filename": "3d-shared-cook.webm",
+      "duration": 4.072,
+      "frames": 50,
+      "sampledFps": 12.278978388998036
+    }
+  ]
+}

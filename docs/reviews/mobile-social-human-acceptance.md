@@ -82,3 +82,30 @@ Unsupported is not a pass. Run both Classic and Three where supported.
 Automated evidence is documented in `social-followup-validation.md`. It verifies
 layout, commands, state, assets and browser execution; it does not certify touch
 comfort, installation behavior on hardware or sound heard by a human.
+
+## Embodied candidate extension — 0075 (pending)
+
+The draft embodied candidate is separate from current production. Code candidate
+`428b08b2192229bf42db71017d54b81ee5d47236` has 142 passing tests and 52
+passing desktop/phone-size browser fixtures. These are automated preparation.
+Character asset: `27c2e49a1ef0097a01459df989d516ebef5acfdbcd3c2229ca62007ba027773d`.
+
+| Required physical observation | iPhone Safari | Android Chrome |
+| --- | --- | --- |
+| Actual tested source SHA, asset hash, device/OS/browser/tester | Pending | Pending |
+| Four actors: walk, talk, conflict, apology, shared activities | Pending | Pending |
+| 1× / 3× / 8× and portrait/landscape motion readability | Pending | Pending |
+| Sustained frame rate/stability and touch responsiveness | Pending | Pending |
+| Session duration, ambient/charging conditions and thermal observation | Pending | Pending |
+| Battery observations if measurable; mark unmeasured explicitly | Pending | Pending |
+| Live OS reduced-motion change without reload | Pending | Pending |
+| Installed mode: launch, safe areas, rotation and saves | Pending | Pending |
+| Human music/UI/footsteps/text/ring/knock/milestone listening | Pending | Pending |
+| Fridge/stove/shower reach/contact and semantic audio timing | Pending | Pending |
+
+Use the documented target of 60 fps, sustained minimum 30 fps, controller p95
+under 8 ms and IK under 2 ms at four actors. Record how each metric was measured;
+headless CPU timings are not phone frame-rate or thermal evidence. Record actual
+session duration and device observations rather than assuming extended-play
+stability. No physical, thermal, installation or audible result is currently
+available. 0074 desktop review precedes final 0075 sign-off; 0076 remains gated.

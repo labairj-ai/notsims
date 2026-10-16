@@ -139,3 +139,26 @@ See [0070–0076 evidence](pr-acceptance-followup-validation.md) for corrected s
 ownership, single shared-candidate evaluation, behavior-off terminology and
 verified branch protection. Candidate tests: 142 passing; browser matrix: 52
 passing. Human/physical acceptance remains pending and PR #1 stays draft.
+
+## Desktop review form — 0074 (pending)
+
+Available corrected code: `428b08b2192229bf42db71017d54b81ee5d47236`;
+review-preparation tools/documentation: `fe599b5b075b8ff5c63f2eb3ec5836a0663b6e70`.
+The character asset identity above is unchanged. Record the actual final tested
+revision, tester, date, OS/browser and observations; these are currently **pending**.
+
+| Desktop observation | Speeds / contexts | Human result |
+| --- | --- | --- |
+| Walking: normal, tired, tense; feet/arms/torso/start-stop | 1× / 3× / 8× | Pending |
+| Introduction/chat/compliment/confide | Both roles, Classic and Three | Pending |
+| Joke success/failure, apology accepted/rejected | Both outcomes | Pending |
+| Argument/insult, spacing, gaze/aversion, repetition/synchrony | Stranger/friend/tense | Pending |
+| Fridge/stove/sofa/bed/shower/toilet/desk/bookcase/TV | Contact, clipping, all rotations, cancel | Pending |
+| Sit/chat, TV, eating, cooking, reading together | Complementary roles and cancellation | Pending |
+| Tired/content/tense/hungry/bored/disconnected readability | Without reading debug values | Pending |
+
+Representative muted motion recordings are review preparation, sampled at up to
+15 fps; use live interactive play to judge full-rate smoothness and all required
+scenarios. No dedicated new need-flourish clips are added without observed human
+readability defects. Record defects and source/asset identity, fix them, rerun
+affected automated cases and repeat human review before closing 0074.

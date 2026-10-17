@@ -6,7 +6,7 @@ import {JOBS} from '../content/careers.js';
 import {NEEDS} from '../content/needs.js';
 import {TRAITS} from '../content/traits.js';
 import {dimensions} from '../systems/objects/geometry.js';
-export const CURRENT_SAVE_VERSION=4;
+export const CURRENT_SAVE_VERSION=5;
 export function validateState(s){
  const finite=n=>typeof n==='number'&&Number.isFinite(n);
  if(!s||s.version!==CURRENT_SAVE_VERSION||!finite(s.money)||!finite(s.minutes)||s.minutes<0||!s.person||typeof s.person.name!=='string'||s.person.name.length>40||!inside(s.person.x,s.person.y))throw Error('This is not a valid Notsims save.');

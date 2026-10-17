@@ -4,6 +4,7 @@ export const SHARED_ACTIVITIES=Object.freeze({
  shared_watch:shared('Watch TV together',['tv'],'fun','watched_show_together','Sit'),
  shared_eat:shared('Eat together',['table'],'hunger','shared_meal','Eat'),
  shared_cook:shared('Cook together',['stove'],'hunger','cooked_together','Eat'),
+ shared_outing:shared('Shared owned outing',[],'social','owned_outing','Idle'),
  shared_music:shared('Play and listen together',['piano','grand_piano'],'fun','made_music_together','Idle'),
  shared_pool:shared('Relax poolside together',['pool','hot_tub'],'fun','poolside_hangout','Idle'),
  shared_read:shared('Read and discuss books',['bookcase'],'fun','good_hangout','Idle')

@@ -226,3 +226,17 @@ TODOs **0084–0103** were imported from the [Review Game Architecture feedback]
 Recommended order: career depth **0084 → 0086 → 0087 → 0088 → 0089**; Away reuse **0090 → 0091**; purchase contract and tiers **0092 → 0093 → 0094 → 0095**; ownership **0097 → 0098 → 0099 → 0100**; then luxury meaning and UX **0096 → 0101 → 0102**; finish with economy certification **0103**. Physical acceptance **0085** can run independently when iPhone and Android devices are available. Task 0092 intentionally precedes expansion of the catalog so all purchase types share one ownership/economy contract.
 
 Validation and measured economy progression: [career/wealth report](../docs/reviews/economy-progression-validation.md). Save version 4 explicitly migrates existing careers and starter-property ownership. Run `npm run simulate:economy` to regenerate the deterministic evidence.
+
+## Wealth follow-up implementation
+
+Imported from [the wealth follow-up review](https://chatgpt.com/s/t_6ad2dc9f25b4819195a821f85bbe1c76). Execute **0104 → 0105 → 0106 → 0107 → 0108**. Simulator fidelity and balance policy are separate tasks. 0108 retains explicit human/device release gates.
+
+| ID | Work |
+| --- | --- |
+| 0104 | Run business economy simulation through canonical gameplay |
+| 0105 | Define versioned economy balance targets and CI regression gates |
+| 0106 | Make Career Performance drive bounded career progression |
+| 0107 | Give existing Premium/Ultra assets distinct gameplay identities |
+| 0108 | Certify the accepted wealth release and deploy its exact merged source |
+
+0104–0107 are implemented with canonical simulation, balance v2, performance-gated levels and premium identities. 0108 remains in progress for the explicit browser/physical/human gate; [validation](../docs/reviews/wealth-followup-validation.md) and [release gate](../docs/reviews/wealth-release-validation.md).

@@ -12,7 +12,7 @@ const quiet=()=>{const s=newGame({},true);s.social.nextSocialOpportunityMinute=1
 test('v1 migration adds deterministic roster and canonical player without changing existing progress',()=>{
  const old=JSON.parse(readFileSync(new URL('./fixtures/save-v1.json',import.meta.url))),copy=structuredClone(old),s=validateSave(old);
  assert.deepEqual(old,copy);for(const k of ['money','minutes','needs','floors','walls','furniture','job','shifts','skill'])assert.deepEqual(s[k],old[k]);
- assert.equal(s.version,4);assert.equal(s.person.id,'player');assert.equal(Object.keys(s.people).length,7);assert.deepEqual(s.contacts,['person_1']);assert.deepEqual(s,validateSave(old));assert.deepEqual(validateSave(serializeSave(s)),s);
+ assert.equal(s.version,5);assert.equal(s.person.id,'player');assert.equal(Object.keys(s.people).length,7);assert.deepEqual(s.contacts,['person_1']);assert.deepEqual(s,validateSave(old));assert.deepEqual(validateSave(serializeSave(s)),s);
 });
 test('canonical pairs, directional tiers, negative history and compatibility are separate from social need',()=>{
  const s=quiet(),r=relationship(s,'player','person_2',true);assert.equal(pairKey('player','person_2'),pairKey('person_2','player'));r.familiarity=85;

@@ -21,11 +21,11 @@ test('walls block movement and doors connect rooms',()=>{
 test('using a bed restores energy and caps all needs at 100',()=>{
  const s=newGame();s.needs.energy=10;enqueue(s,{kind:'use',id:s.furniture.find(f=>f.type==='bed').id});tick(s,200);assert.ok(s.needs.energy>90);assert.ok(Object.values(s.needs).every(v=>v>=0&&v<=100));
 });
-test('work pays only on completion and every third shift earns a raise',()=>{
+test('work pays only on completion and experience alone cannot force a promotion',()=>{
  const s=newGame();s.job='barista';s.minutes=419;const initial=s.money;
  enqueue(s,{kind:'work'});tick(s,100);assert.equal(s.money,initial);assert.equal(s.activity.kind,'work');cancel(s);assert.equal(s.money,initial);
  for(let i=0;i<3;i++){s.needs.energy=100;s.minutes=(i+1)*1440+419;enqueue(s,{kind:'work'});tick(s,360);}
- assert.equal(s.shifts,3);assert.equal(s.money,initial+132*3-101);s.needs.energy=100;s.minutes=4*1440+419;enqueue(s,{kind:'work'});tick(s,1);assert.equal(s.activity.pay,152);
+ assert.equal(s.shifts,3);assert.equal(s.money,initial+132*3-101);s.needs.energy=100;s.minutes=4*1440+419;enqueue(s,{kind:'work'});tick(s,1);assert.equal(s.activity.pay,132);
 });
 test('all three jobs pay the advertised wages',()=>{
  for(const j of JOBS){const s=newGame();s.job=j.id;s.minutes=j.startMinute-1;enqueue(s,{kind:'work'});tick(s,j.hours*60);assert.equal(s.money,6500+j.pay*j.hours);assert.equal(s.shifts,1);}

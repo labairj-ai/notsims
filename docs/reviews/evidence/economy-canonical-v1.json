@@ -1,0 +1,4916 @@
+{
+  "contractVersion": 1,
+  "result": {
+    "version": 1,
+    "passed": true,
+    "failures": []
+  },
+  "scope": "Historical local canonical-simulator baseline before performance-based promotions; not a release or production result.",
+  "scenarios": [
+    {
+      "scenario": "barista",
+      "inputs": {
+        "career": "barista",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 180,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 259200,
+        "cash": 45786,
+        "netWorth": 47586,
+        "shifts": 130,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 17,
+          "shifts": 13
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 56166,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 6060,
+        "livingCost": 4320,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 130,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 130,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 67,
+          "netWorthDay": 60
+        },
+        "100000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "barista",
+      "inputs": {
+        "career": "barista",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 365,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 525600,
+        "cash": 104353,
+        "netWorth": 106153,
+        "shifts": 261,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 17,
+          "shifts": 13
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 125334,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 12221,
+        "livingCost": 8760,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 261,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 261,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 67,
+          "netWorthDay": 60
+        },
+        "100000": {
+          "cashDay": 352,
+          "netWorthDay": 346
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "barista",
+      "inputs": {
+        "career": "barista",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 1095,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 1576800,
+        "cash": 337805,
+        "netWorth": 339605,
+        "shifts": 783,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 17,
+          "shifts": 13
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 540,
+          "shifts": 386
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 400950,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 36865,
+        "livingCost": 26280,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 783,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 783,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 67,
+          "netWorthDay": 60
+        },
+        "100000": {
+          "cashDay": 352,
+          "netWorthDay": 346
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "designer",
+      "inputs": {
+        "career": "designer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 180,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 259200,
+        "cash": 78981,
+        "netWorth": 80781,
+        "shifts": 130,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 10,
+          "shifts": 8
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 89361,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 6060,
+        "livingCost": 4320,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 130,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 130,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 46,
+          "netWorthDay": 40
+        },
+        "100000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "designer",
+      "inputs": {
+        "career": "designer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 365,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 525600,
+        "cash": 178420,
+        "netWorth": 180220,
+        "shifts": 261,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 10,
+          "shifts": 8
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 331,
+          "shifts": 237
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 199401,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 12221,
+        "livingCost": 8760,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 261,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 261,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 46,
+          "netWorthDay": 40
+        },
+        "100000": {
+          "cashDay": 220,
+          "netWorthDay": 218
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "designer",
+      "inputs": {
+        "career": "designer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 1095,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 1576800,
+        "cash": 574736,
+        "netWorth": 576536,
+        "shifts": 783,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 10,
+          "shifts": 8
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 331,
+          "shifts": 237
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 637881,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 36865,
+        "livingCost": 26280,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 783,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 783,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 46,
+          "netWorthDay": 40
+        },
+        "100000": {
+          "cashDay": 220,
+          "netWorthDay": 218
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "developer",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 180,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 259200,
+        "cash": 118972,
+        "netWorth": 120772,
+        "shifts": 130,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 5,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 129352,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 6060,
+        "livingCost": 4320,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 130,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 130,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 36,
+          "netWorthDay": 31
+        },
+        "100000": {
+          "cashDay": 158,
+          "netWorthDay": 156
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "developer",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 365,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 525600,
+        "cash": 267667,
+        "netWorth": 269467,
+        "shifts": 261,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 5,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 233,
+          "shifts": 167
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 288648,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 12221,
+        "livingCost": 8760,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 261,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 261,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 36,
+          "netWorthDay": 31
+        },
+        "100000": {
+          "cashDay": 158,
+          "netWorthDay": 156
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "developer",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 1095,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 1576800,
+        "cash": 860255,
+        "netWorth": 862055,
+        "shifts": 783,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 5,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 233,
+          "shifts": 167
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 923400,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 36865,
+        "livingCost": 26280,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 783,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 783,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 36,
+          "netWorthDay": 31
+        },
+        "100000": {
+          "cashDay": 158,
+          "netWorthDay": 156
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "skilled-developer",
+      "inputs": {
+        "career": "developer",
+        "performance": 90,
+        "strategy": "normal",
+        "skill": 80,
+        "days": 180,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 259200,
+        "cash": 134808,
+        "netWorth": 136608,
+        "shifts": 130,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 4,
+          "shifts": 4
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 145188,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 6060,
+        "livingCost": 4320,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 130,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 130,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 29,
+          "netWorthDay": 24
+        },
+        "100000": {
+          "cashDay": 143,
+          "netWorthDay": 141
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "skilled-developer",
+      "inputs": {
+        "career": "developer",
+        "performance": 90,
+        "strategy": "normal",
+        "skill": 80,
+        "days": 365,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 525600,
+        "cash": 299485,
+        "netWorth": 301285,
+        "shifts": 261,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 4,
+          "shifts": 4
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 211,
+          "shifts": 151
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 320466,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 12221,
+        "livingCost": 8760,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 261,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 261,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 29,
+          "netWorthDay": 24
+        },
+        "100000": {
+          "cashDay": 143,
+          "netWorthDay": 141
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "skilled-developer",
+      "inputs": {
+        "career": "developer",
+        "performance": 90,
+        "strategy": "normal",
+        "skill": 80,
+        "days": 1095,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 1576800,
+        "cash": 955757,
+        "netWorth": 957557,
+        "shifts": 783,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 4,
+          "shifts": 4
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 211,
+          "shifts": 151
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 1018902,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 36865,
+        "livingCost": 26280,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 783,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 783,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 29,
+          "netWorthDay": 24
+        },
+        "100000": {
+          "cashDay": 143,
+          "netWorthDay": 141
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "work-hard",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "hard",
+        "skill": 0,
+        "days": 180,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": true
+      },
+      "final": {
+        "minute": 259200,
+        "cash": 133141,
+        "netWorth": 134941,
+        "shifts": 130,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 5,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 143521,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 6060,
+        "livingCost": 4320,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 130,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 310,
+        "practiceMinutes": 76,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 33,
+          "netWorthDay": 30
+        },
+        "100000": {
+          "cashDay": 145,
+          "netWorthDay": 143
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "work-hard",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "hard",
+        "skill": 0,
+        "days": 365,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": true
+      },
+      "final": {
+        "minute": 525600,
+        "cash": 301748,
+        "netWorth": 303548,
+        "shifts": 261,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 5,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 211,
+          "shifts": 151
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 322729,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 12221,
+        "livingCost": 8760,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 261,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 626,
+        "practiceMinutes": 76,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 33,
+          "netWorthDay": 30
+        },
+        "100000": {
+          "cashDay": 145,
+          "netWorthDay": 143
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "work-hard",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "hard",
+        "skill": 0,
+        "days": 1095,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": true
+      },
+      "final": {
+        "minute": 1576800,
+        "cash": 973680,
+        "netWorth": 975480,
+        "shifts": 783,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 5,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 211,
+          "shifts": 151
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 1036825,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 36865,
+        "livingCost": 26280,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 783,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 1878,
+        "practiceMinutes": 76,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 33,
+          "netWorthDay": 30
+        },
+        "100000": {
+          "cashDay": 145,
+          "netWorthDay": 143
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "take-it-easy",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "easy",
+        "skill": 0,
+        "days": 180,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": true
+      },
+      "final": {
+        "minute": 259200,
+        "cash": 133141,
+        "netWorth": 134941,
+        "shifts": 130,
+        "performance": 50,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 5,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 143521,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 6060,
+        "livingCost": 4320,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 130,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 310,
+        "practiceMinutes": 76,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 33,
+          "netWorthDay": 30
+        },
+        "100000": {
+          "cashDay": 145,
+          "netWorthDay": 143
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "take-it-easy",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "easy",
+        "skill": 0,
+        "days": 365,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": true
+      },
+      "final": {
+        "minute": 525600,
+        "cash": 301748,
+        "netWorth": 303548,
+        "shifts": 261,
+        "performance": 50,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 5,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 211,
+          "shifts": 151
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 322729,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 12221,
+        "livingCost": 8760,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 261,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 626,
+        "practiceMinutes": 76,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 33,
+          "netWorthDay": 30
+        },
+        "100000": {
+          "cashDay": 145,
+          "netWorthDay": 143
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "take-it-easy",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "easy",
+        "skill": 0,
+        "days": 1095,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": true
+      },
+      "final": {
+        "minute": 1576800,
+        "cash": 973680,
+        "netWorth": 975480,
+        "shifts": 783,
+        "performance": 50,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 5,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 211,
+          "shifts": 151
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 1036825,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 36865,
+        "livingCost": 26280,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 783,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 1878,
+        "practiceMinutes": 76,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 33,
+          "netWorthDay": 30
+        },
+        "100000": {
+          "cashDay": 145,
+          "netWorthDay": 143
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "reliable-normal",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 180,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": true
+      },
+      "final": {
+        "minute": 259200,
+        "cash": 133141,
+        "netWorth": 134941,
+        "shifts": 130,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 5,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 143521,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 6060,
+        "livingCost": 4320,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 130,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 310,
+        "practiceMinutes": 76,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 33,
+          "netWorthDay": 30
+        },
+        "100000": {
+          "cashDay": 145,
+          "netWorthDay": 143
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "reliable-normal",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 365,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": true
+      },
+      "final": {
+        "minute": 525600,
+        "cash": 301748,
+        "netWorth": 303548,
+        "shifts": 261,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 5,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 211,
+          "shifts": 151
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 322729,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 12221,
+        "livingCost": 8760,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 261,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 626,
+        "practiceMinutes": 76,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 33,
+          "netWorthDay": 30
+        },
+        "100000": {
+          "cashDay": 145,
+          "netWorthDay": 143
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "reliable-normal",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 1095,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": true
+      },
+      "final": {
+        "minute": 1576800,
+        "cash": 973680,
+        "netWorth": 975480,
+        "shifts": 783,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 5,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 211,
+          "shifts": 151
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 1036825,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 36865,
+        "livingCost": 26280,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 783,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 1878,
+        "practiceMinutes": 76,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 33,
+          "netWorthDay": 30
+        },
+        "100000": {
+          "cashDay": 145,
+          "netWorthDay": 143
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "cafe-owner",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 180,
+        "cash": 0,
+        "ownedAssets": [
+          "cafe"
+        ],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 259200,
+        "cash": 298972,
+        "netWorth": 345772,
+        "shifts": 130,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 104,
+          "shifts": 75
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 129352,
+        "businessGross": 306000,
+        "operatingCost": 126000,
+        "bills": 6060,
+        "livingCost": 4320,
+        "managementMinutes": 3000,
+        "managementVisits": 25,
+        "completedShifts": 130,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 155,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 50,
+      "milestones": {
+        "10000": {
+          "cashDay": 9,
+          "netWorthDay": 0
+        },
+        "100000": {
+          "cashDay": 71,
+          "netWorthDay": 41
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "cafe-owner",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 365,
+        "cash": 0,
+        "ownedAssets": [
+          "cafe"
+        ],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 525600,
+        "cash": 632667,
+        "netWorth": 679467,
+        "shifts": 261,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 104,
+          "shifts": 75
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 288648,
+        "businessGross": 620500,
+        "operatingCost": 255500,
+        "bills": 12221,
+        "livingCost": 8760,
+        "managementMinutes": 6240,
+        "managementVisits": 52,
+        "completedShifts": 261,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 313,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 104,
+      "milestones": {
+        "10000": {
+          "cashDay": 9,
+          "netWorthDay": 0
+        },
+        "100000": {
+          "cashDay": 71,
+          "netWorthDay": 41
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "cafe-owner",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 1095,
+        "cash": 0,
+        "ownedAssets": [
+          "cafe"
+        ],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 1576800,
+        "cash": 1955255,
+        "netWorth": 2002055,
+        "shifts": 783,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 104,
+          "shifts": 75
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 923400,
+        "businessGross": 1861500,
+        "operatingCost": 766500,
+        "bills": 36865,
+        "livingCost": 26280,
+        "managementMinutes": 18720,
+        "managementVisits": 156,
+        "completedShifts": 783,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 939,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 312,
+      "milestones": {
+        "10000": {
+          "cashDay": 9,
+          "netWorthDay": 0
+        },
+        "100000": {
+          "cashDay": 71,
+          "netWorthDay": 41
+        },
+        "1000000": {
+          "cashDay": 568,
+          "netWorthDay": 542
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "multiple-businesses",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 180,
+        "cash": 0,
+        "ownedAssets": [
+          "cafe",
+          "online_shop",
+          "micro_business"
+        ],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 259200,
+        "cash": 360172,
+        "netWorth": 418972,
+        "shifts": 130,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 88,
+          "shifts": 64
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 129352,
+        "businessGross": 388800,
+        "operatingCost": 147600,
+        "bills": 6060,
+        "livingCost": 4320,
+        "managementMinutes": 9000,
+        "managementVisits": 75,
+        "completedShifts": 130,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 205,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 150,
+      "milestones": {
+        "10000": {
+          "cashDay": 7,
+          "netWorthDay": 0
+        },
+        "100000": {
+          "cashDay": 59,
+          "netWorthDay": 26
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "multiple-businesses",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 365,
+        "cash": 0,
+        "ownedAssets": [
+          "cafe",
+          "online_shop",
+          "micro_business"
+        ],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 525600,
+        "cash": 756767,
+        "netWorth": 815567,
+        "shifts": 261,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 88,
+          "shifts": 64
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 288648,
+        "businessGross": 788400,
+        "operatingCost": 299300,
+        "bills": 12221,
+        "livingCost": 8760,
+        "managementMinutes": 18720,
+        "managementVisits": 156,
+        "completedShifts": 261,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 417,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 312,
+      "milestones": {
+        "10000": {
+          "cashDay": 7,
+          "netWorthDay": 0
+        },
+        "100000": {
+          "cashDay": 59,
+          "netWorthDay": 26
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "multiple-businesses",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 1095,
+        "cash": 0,
+        "ownedAssets": [
+          "cafe",
+          "online_shop",
+          "micro_business"
+        ],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 1576800,
+        "cash": 2327555,
+        "netWorth": 2386355,
+        "shifts": 783,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 88,
+          "shifts": 64
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 923400,
+        "businessGross": 2365200,
+        "operatingCost": 897900,
+        "bills": 36865,
+        "livingCost": 26280,
+        "managementMinutes": 56160,
+        "managementVisits": 468,
+        "completedShifts": 783,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 1251,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 936,
+      "milestones": {
+        "10000": {
+          "cashDay": 7,
+          "netWorthDay": 0
+        },
+        "100000": {
+          "cashDay": 59,
+          "netWorthDay": 26
+        },
+        "1000000": {
+          "cashDay": 478,
+          "netWorthDay": 451
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "unmanaged-business",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 180,
+        "cash": 0,
+        "ownedAssets": [
+          "cafe"
+        ],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "none",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 259200,
+        "cash": 151922,
+        "netWorth": 198722,
+        "shifts": 130,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 129352,
+        "businessGross": 158950,
+        "operatingCost": 126000,
+        "bills": 6060,
+        "livingCost": 4320,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 130,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 130,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 11,
+          "netWorthDay": 0
+        },
+        "100000": {
+          "cashDay": 128,
+          "netWorthDay": 79
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "unmanaged-business",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 365,
+        "cash": 0,
+        "ownedAssets": [
+          "cafe"
+        ],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "none",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 525600,
+        "cash": 328367,
+        "netWorth": 375167,
+        "shifts": 261,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 190,
+          "shifts": 136
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 288648,
+        "businessGross": 316200,
+        "operatingCost": 255500,
+        "bills": 12221,
+        "livingCost": 8760,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 261,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 261,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 11,
+          "netWorthDay": 0
+        },
+        "100000": {
+          "cashDay": 128,
+          "netWorthDay": 79
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "unmanaged-business",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 1095,
+        "cash": 0,
+        "ownedAssets": [
+          "cafe"
+        ],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "none",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 1576800,
+        "cash": 1030455,
+        "netWorth": 1077255,
+        "shifts": 783,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 190,
+          "shifts": 136
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 923400,
+        "businessGross": 936700,
+        "operatingCost": 766500,
+        "bills": 36865,
+        "livingCost": 26280,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 783,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 783,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 11,
+          "netWorthDay": 0
+        },
+        "100000": {
+          "cashDay": 128,
+          "netWorthDay": 79
+        },
+        "1000000": {
+          "cashDay": 1065,
+          "netWorthDay": 1016
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "property-owner",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 180,
+        "cash": 0,
+        "ownedAssets": [
+          "cabin"
+        ],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 259200,
+        "cash": 91972,
+        "netWorth": 225772,
+        "shifts": 130,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 11,
+          "shifts": 9
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 129352,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 33060,
+        "livingCost": 4320,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 130,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 130,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 51,
+          "netWorthDay": 0
+        },
+        "100000": {
+          "cashDay": null,
+          "netWorthDay": 0
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "property-owner",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 365,
+        "cash": 0,
+        "ownedAssets": [
+          "cabin"
+        ],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 525600,
+        "cash": 213217,
+        "netWorth": 347017,
+        "shifts": 261,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 11,
+          "shifts": 9
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 284,
+          "shifts": 204
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 288648,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 66671,
+        "livingCost": 8760,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 261,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 261,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 51,
+          "netWorthDay": 0
+        },
+        "100000": {
+          "cashDay": 193,
+          "netWorthDay": 0
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "property-owner",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 1095,
+        "cash": 0,
+        "ownedAssets": [
+          "cabin"
+        ],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 1576800,
+        "cash": 696005,
+        "netWorth": 829805,
+        "shifts": 783,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 11,
+          "shifts": 9
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 284,
+          "shifts": 204
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 923400,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 201115,
+        "livingCost": 26280,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 783,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 783,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 51,
+          "netWorthDay": 0
+        },
+        "100000": {
+          "cashDay": 193,
+          "netWorthDay": 0
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "heavy-luxury",
+      "inputs": {
+        "career": "barista",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 180,
+        "cash": 0,
+        "ownedAssets": [
+          "jet",
+          "yacht"
+        ],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 259200,
+        "cash": -914214,
+        "netWorth": 9287586,
+        "shifts": 130,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": null,
+          "shifts": null
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 56166,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 966060,
+        "livingCost": 4320,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 130,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 130,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": null,
+          "netWorthDay": 0
+        },
+        "100000": {
+          "cashDay": null,
+          "netWorthDay": 0
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": 0
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": 0
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "heavy-luxury",
+      "inputs": {
+        "career": "barista",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 365,
+        "cash": 0,
+        "ownedAssets": [
+          "jet",
+          "yacht"
+        ],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 525600,
+        "cash": -1831647,
+        "netWorth": 8370153,
+        "shifts": 261,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": null,
+          "shifts": null
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 125334,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 1948221,
+        "livingCost": 8760,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 261,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 261,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": null,
+          "netWorthDay": 0
+        },
+        "100000": {
+          "cashDay": null,
+          "netWorthDay": 0
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": 0
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": 0
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "heavy-luxury",
+      "inputs": {
+        "career": "barista",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 1095,
+        "cash": 0,
+        "ownedAssets": [
+          "jet",
+          "yacht"
+        ],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 1576800,
+        "cash": -5502195,
+        "netWorth": 4699605,
+        "shifts": 783,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": null,
+          "shifts": null
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 400950,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 5876865,
+        "livingCost": 26280,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 783,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 783,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": null,
+          "netWorthDay": 0
+        },
+        "100000": {
+          "cashDay": null,
+          "netWorthDay": 0
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": 0
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": 0
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "funded-starter",
+      "inputs": {
+        "career": "barista",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 180,
+        "cash": 6500,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 259200,
+        "cash": 52286,
+        "netWorth": 54086,
+        "shifts": 130,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 0,
+          "shifts": 0
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 0,
+          "shifts": 0
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 56166,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 6060,
+        "livingCost": 4320,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 130,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 130,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 37,
+          "netWorthDay": 23
+        },
+        "100000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "funded-starter",
+      "inputs": {
+        "career": "barista",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 365,
+        "cash": 6500,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 525600,
+        "cash": 110853,
+        "netWorth": 112653,
+        "shifts": 261,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 0,
+          "shifts": 0
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 0,
+          "shifts": 0
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 125334,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 12221,
+        "livingCost": 8760,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 261,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 261,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 37,
+          "netWorthDay": 23
+        },
+        "100000": {
+          "cashDay": 331,
+          "netWorthDay": 325
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "funded-starter",
+      "inputs": {
+        "career": "barista",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 1095,
+        "cash": 6500,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 1576800,
+        "cash": 344305,
+        "netWorth": 346105,
+        "shifts": 783,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 0,
+          "shifts": 0
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 0,
+          "shifts": 0
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 520,
+          "shifts": 372
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 400950,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 36865,
+        "livingCost": 26280,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 783,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 783,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 37,
+          "netWorthDay": 23
+        },
+        "100000": {
+          "cashDay": 331,
+          "netWorthDay": 325
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "business-ladder",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 180,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": true,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 259200,
+        "cash": 129442,
+        "netWorth": 188242,
+        "shifts": 130,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "micro_business": {
+          "price": 5000,
+          "firstDay": 22,
+          "shifts": 16
+        },
+        "online_shop": {
+          "price": 15000,
+          "firstDay": 51,
+          "shifts": 37
+        },
+        "cafe": {
+          "price": 75000,
+          "firstDay": 121,
+          "shifts": 87
+        },
+        "duplex": {
+          "price": 250000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "commercial": {
+          "price": 1500000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "hotel": {
+          "price": 7500000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "island": {
+          "price": 25000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 129352,
+        "businessGross": 162830,
+        "operatingCost": 57360,
+        "bills": 6060,
+        "livingCost": 4320,
+        "managementMinutes": 5760,
+        "managementVisits": 48,
+        "completedShifts": 130,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 178,
+        "practiceMinutes": 0,
+        "purchases": 95000
+      },
+      "managementHours": 96,
+      "milestones": {
+        "10000": {
+          "cashDay": 43,
+          "netWorthDay": 32
+        },
+        "100000": {
+          "cashDay": 167,
+          "netWorthDay": 140
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "business-ladder",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 365,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": true,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 525600,
+        "cash": 641137,
+        "netWorth": 849937,
+        "shifts": 261,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "micro_business": {
+          "price": 5000,
+          "firstDay": 22,
+          "shifts": 16
+        },
+        "online_shop": {
+          "price": 15000,
+          "firstDay": 51,
+          "shifts": 37
+        },
+        "cafe": {
+          "price": 75000,
+          "firstDay": 121,
+          "shifts": 87
+        },
+        "duplex": {
+          "price": 250000,
+          "firstDay": 237,
+          "shifts": 170
+        },
+        "commercial": {
+          "price": 1500000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "hotel": {
+          "price": 7500000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "island": {
+          "price": 25000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 288648,
+        "businessGross": 1100030,
+        "operatingCost": 362660,
+        "bills": 31121,
+        "livingCost": 8760,
+        "managementMinutes": 17640,
+        "managementVisits": 147,
+        "completedShifts": 261,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 408,
+        "practiceMinutes": 0,
+        "purchases": 345000
+      },
+      "managementHours": 294,
+      "milestones": {
+        "10000": {
+          "cashDay": 43,
+          "netWorthDay": 32
+        },
+        "100000": {
+          "cashDay": 167,
+          "netWorthDay": 140
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "business-ladder",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 1095,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": true,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 1576800,
+        "cash": 5965325,
+        "netWorth": 10074125,
+        "shifts": 783,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "micro_business": {
+          "price": 5000,
+          "firstDay": 22,
+          "shifts": 16
+        },
+        "online_shop": {
+          "price": 15000,
+          "firstDay": 51,
+          "shifts": 37
+        },
+        "cafe": {
+          "price": 75000,
+          "firstDay": 121,
+          "shifts": 87
+        },
+        "duplex": {
+          "price": 250000,
+          "firstDay": 237,
+          "shifts": 170
+        },
+        "commercial": {
+          "price": 1500000,
+          "firstDay": 537,
+          "shifts": 385
+        },
+        "hotel": {
+          "price": 7500000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": 782,
+          "shifts": 560
+        },
+        "island": {
+          "price": 25000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 923400,
+        "businessGross": 19134830,
+        "operatingCost": 6301260,
+        "bills": 920365,
+        "livingCost": 26280,
+        "managementMinutes": 77040,
+        "managementVisits": 642,
+        "completedShifts": 783,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 1425,
+        "practiceMinutes": 0,
+        "purchases": 6845000
+      },
+      "managementHours": 1284,
+      "milestones": {
+        "10000": {
+          "cashDay": 43,
+          "netWorthDay": 32
+        },
+        "100000": {
+          "cashDay": 167,
+          "netWorthDay": 140
+        },
+        "1000000": {
+          "cashDay": 437,
+          "netWorthDay": 395
+        },
+        "5000000": {
+          "cashDay": 1045,
+          "netWorthDay": 728
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "frequent-lateness",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 180,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 45,
+        "missEvery": 0,
+        "skillPractice": true
+      },
+      "final": {
+        "minute": 259200,
+        "cash": 119703,
+        "netWorth": 121503,
+        "shifts": 130,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 5,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 130083,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 6060,
+        "livingCost": 4320,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 130,
+        "lateShifts": 130,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 310,
+        "practiceMinutes": 76,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 37,
+          "netWorthDay": 31
+        },
+        "100000": {
+          "cashDay": 158,
+          "netWorthDay": 156
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "frequent-lateness",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 365,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 45,
+        "missEvery": 0,
+        "skillPractice": true
+      },
+      "final": {
+        "minute": 525600,
+        "cash": 271542,
+        "netWorth": 273342,
+        "shifts": 261,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 5,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 229,
+          "shifts": 165
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 292523,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 12221,
+        "livingCost": 8760,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 261,
+        "lateShifts": 261,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 626,
+        "practiceMinutes": 76,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 37,
+          "netWorthDay": 31
+        },
+        "100000": {
+          "cashDay": 158,
+          "netWorthDay": 156
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "frequent-lateness",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 1095,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 45,
+        "missEvery": 0,
+        "skillPractice": true
+      },
+      "final": {
+        "minute": 1576800,
+        "cash": 876658,
+        "netWorth": 878458,
+        "shifts": 783,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 5,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 229,
+          "shifts": 165
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 939803,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 36865,
+        "livingCost": 26280,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 783,
+        "lateShifts": 783,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 1878,
+        "practiceMinutes": 76,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 37,
+          "netWorthDay": 31
+        },
+        "100000": {
+          "cashDay": 158,
+          "netWorthDay": 156
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "missed-shifts",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 180,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 3,
+        "skillPractice": true
+      },
+      "final": {
+        "minute": 259200,
+        "cash": 76128,
+        "netWorth": 77928,
+        "shifts": 87,
+        "performance": 9,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 8,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 86508,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 6060,
+        "livingCost": 4320,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 87,
+        "lateShifts": 0,
+        "missedShifts": 43,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 267,
+        "practiceMinutes": 76,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 52,
+          "netWorthDay": 46
+        },
+        "100000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "missed-shifts",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 365,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 3,
+        "skillPractice": true
+      },
+      "final": {
+        "minute": 525600,
+        "cash": 185911,
+        "netWorth": 187711,
+        "shifts": 175,
+        "performance": 7,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 8,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 323,
+          "shifts": 155
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 206892,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 12221,
+        "livingCost": 8760,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 175,
+        "lateShifts": 0,
+        "missedShifts": 86,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 540,
+        "practiceMinutes": 76,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 52,
+          "netWorthDay": 46
+        },
+        "100000": {
+          "cashDay": 221,
+          "netWorthDay": 218
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "missed-shifts",
+      "inputs": {
+        "career": "developer",
+        "performance": 50,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 1095,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 3,
+        "skillPractice": true
+      },
+      "final": {
+        "minute": 1576800,
+        "cash": 618443,
+        "netWorth": 620243,
+        "shifts": 522,
+        "performance": 1,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 8,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 323,
+          "shifts": 155
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 681588,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 36865,
+        "livingCost": 26280,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 522,
+        "lateShifts": 0,
+        "missedShifts": 261,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 1617,
+        "practiceMinutes": 76,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 52,
+          "netWorthDay": 46
+        },
+        "100000": {
+          "cashDay": 221,
+          "netWorthDay": 218
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "high-skill-low-performance",
+      "inputs": {
+        "career": "developer",
+        "performance": 10,
+        "strategy": "normal",
+        "skill": 80,
+        "days": 180,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 259200,
+        "cash": 134808,
+        "netWorth": 136608,
+        "shifts": 130,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 4,
+          "shifts": 4
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 145188,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 6060,
+        "livingCost": 4320,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 130,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 130,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 29,
+          "netWorthDay": 24
+        },
+        "100000": {
+          "cashDay": 143,
+          "netWorthDay": 141
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "high-skill-low-performance",
+      "inputs": {
+        "career": "developer",
+        "performance": 10,
+        "strategy": "normal",
+        "skill": 80,
+        "days": 365,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 525600,
+        "cash": 299485,
+        "netWorth": 301285,
+        "shifts": 261,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 4,
+          "shifts": 4
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 211,
+          "shifts": 151
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 320466,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 12221,
+        "livingCost": 8760,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 261,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 261,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 29,
+          "netWorthDay": 24
+        },
+        "100000": {
+          "cashDay": 143,
+          "netWorthDay": 141
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "high-skill-low-performance",
+      "inputs": {
+        "career": "developer",
+        "performance": 10,
+        "strategy": "normal",
+        "skill": 80,
+        "days": 1095,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 1576800,
+        "cash": 955757,
+        "netWorth": 957557,
+        "shifts": 783,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 4,
+          "shifts": 4
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 211,
+          "shifts": 151
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 1018902,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 36865,
+        "livingCost": 26280,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 783,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 783,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 29,
+          "netWorthDay": 24
+        },
+        "100000": {
+          "cashDay": 143,
+          "netWorthDay": 141
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "low-skill-high-performance",
+      "inputs": {
+        "career": "developer",
+        "performance": 90,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 180,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 259200,
+        "cash": 118972,
+        "netWorth": 120772,
+        "shifts": 130,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 5,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": null,
+          "shifts": null
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 129352,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 6060,
+        "livingCost": 4320,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 130,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 130,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 36,
+          "netWorthDay": 31
+        },
+        "100000": {
+          "cashDay": 158,
+          "netWorthDay": 156
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "low-skill-high-performance",
+      "inputs": {
+        "career": "developer",
+        "performance": 90,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 365,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 525600,
+        "cash": 267667,
+        "netWorth": 269467,
+        "shifts": 261,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 5,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 233,
+          "shifts": 167
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 288648,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 12221,
+        "livingCost": 8760,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 261,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 261,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 36,
+          "netWorthDay": 31
+        },
+        "100000": {
+          "cashDay": 158,
+          "netWorthDay": 156
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    },
+    {
+      "scenario": "low-skill-high-performance",
+      "inputs": {
+        "career": "developer",
+        "performance": 90,
+        "strategy": "normal",
+        "skill": 0,
+        "days": 1095,
+        "cash": 0,
+        "ownedAssets": [],
+        "livingCost": 24,
+        "buyGoals": false,
+        "management": "after-work",
+        "conflictPolicy": "defer",
+        "lateMinutes": 0,
+        "missEvery": 0,
+        "skillPractice": false
+      },
+      "final": {
+        "minute": 1576800,
+        "cash": 860255,
+        "netWorth": 862055,
+        "shifts": 783,
+        "performance": 100,
+        "level": 0
+      },
+      "goals": {
+        "chair": {
+          "price": 55,
+          "firstDay": 1,
+          "shifts": 1
+        },
+        "queen_bed": {
+          "price": 1200,
+          "firstDay": 5,
+          "shifts": 5
+        },
+        "sports_car": {
+          "price": 160000,
+          "firstDay": 233,
+          "shifts": 167
+        },
+        "yacht": {
+          "price": 5000000,
+          "firstDay": null,
+          "shifts": null
+        }
+      },
+      "totals": {
+        "wages": 923400,
+        "businessGross": 0,
+        "operatingCost": 0,
+        "bills": 36865,
+        "livingCost": 26280,
+        "managementMinutes": 0,
+        "managementVisits": 0,
+        "completedShifts": 783,
+        "lateShifts": 0,
+        "missedShifts": 0,
+        "conflicts": 0,
+        "busyManagement": 0,
+        "careResets": 783,
+        "practiceMinutes": 0,
+        "purchases": 0
+      },
+      "managementHours": 0,
+      "milestones": {
+        "10000": {
+          "cashDay": 36,
+          "netWorthDay": 31
+        },
+        "100000": {
+          "cashDay": 158,
+          "netWorthDay": 156
+        },
+        "1000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "5000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        },
+        "25000000": {
+          "cashDay": null,
+          "netWorthDay": null
+        }
+      }
+    }
+  ]
+}

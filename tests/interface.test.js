@@ -34,7 +34,7 @@ test('classic interface starts a game, edits appearance, switches tools and pers
     $('[data-tab="career"]').click();$('[data-job="barista"]').click();
     $('#edit-character').click();$('#shirt').value='#629482';$('#character-form').dispatchEvent(new w.Event('submit',{cancelable:true}));
     $('#save').click();const saved=JSON.parse(w.localStorage.getItem('notsims.save.v1'));
-    assert.equal(saved.person.name,'Riley');assert.equal(saved.person.shirt,'#629482');assert.equal(saved.job,'barista');assert.equal(saved.version,4);
+    assert.equal(saved.person.name,'Riley');assert.equal(saved.person.shirt,'#629482');assert.equal(saved.job,'barista');assert.equal(saved.version,5);
   }finally{app.finish();}
 });
 test('failed WebGL initialization falls back and resumes an existing v1 save',async()=>{

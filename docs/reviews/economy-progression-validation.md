@@ -1,5 +1,7 @@
 # Career, Away and wealth implementation validation
 
+**Historical initial PR #7 baseline.** Current v5 implementation and balance results supersede the figures below; see [0104–0108 validation](wealth-followup-validation.md).
+
 Software implementation for 0084 and 0086–0103 is present. Physical acceptance
 0085 and the browser/device acceptance portion of 0102 remain open. Existing
 human motion, audible-output and standalone gates are unchanged. No physical

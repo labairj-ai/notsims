@@ -20,9 +20,17 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
+      - run: npm run canary:wealth
+      - run: npm run check:economy
       - run: npm run build
       - run: npm run check
       - uses: actions/upload-artifact@v4
         with:
           name: notsims-static
           path: dist
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: economy-balance
+          path: artifacts/

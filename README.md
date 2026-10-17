@@ -139,7 +139,9 @@ as clear furnished-ready lots; the previous home keeps its furniture. Sell a
 property only after moving out and clearing its furnishings.
 
 Businesses pay daily and need weekly management. Prices and upkeep appear before
-purchase; luxury requires supporting cash flow. Save version 4 migrates existing
+purchase; luxury requires supporting cash flow. Save version 5 migrates existing
 saves automatically. `npm run simulate:economy` generates the conditional economy
 benchmarks in the [validation report](docs/reviews/economy-progression-validation.md).
 Physical/device and human acceptance remain open as recorded there.
+
+Follow-up [0104–0108 validation](docs/reviews/wealth-followup-validation.md) covers canonical business management, versioned balance gates (`npm run check:economy`), performance-gated career levels and distinct premium experiences. `npm run canary:wealth` prepares migration/ownership restart evidence. Actual browser/device/human release acceptance remains open.

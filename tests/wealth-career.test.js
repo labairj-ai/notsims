@@ -19,11 +19,11 @@ test('optional Away care validates empty and partial policies and never freezes 
  for(const kind of ['school','appointment','travel']){const s=newGame(),before=s.needs.energy;s.activity={kind,total:100,elapsed:0,path:[]};advanceAwayNeeds(s,s.activity,1,[]);tick(s,10);assert.ok(s.needs.energy<before);}
 });
 test('scheduled shifts reject early and repeated attendance atomically, late shifts pay only remaining hours, and misses occur once',()=>{
- const s=newGame();send(s,{type:'CHANGE_JOB',job:'developer'});assert.equal(shiftWindow(s).start,540);const before=structuredClone(s);assert.equal(dispatch(s,{type:'START_SHIFT'}).code,'SHIFT_UNAVAILABLE');assert.deepEqual(s,before);s.minutes=570;send(s,{type:'START_SHIFT'});assert.equal(s.activity.total,450);assert.equal(s.activity.pay,285);tick(s,450);assert.equal(s.career.performance,51);assert.equal(dispatch(s,{type:'START_SHIFT'}).code,'SHIFT_UNAVAILABLE');
+ const s=newGame();send(s,{type:'CHANGE_JOB',job:'developer'});assert.equal(shiftWindow(s).start,540);const before=structuredClone(s);assert.equal(dispatch(s,{type:'START_SHIFT'}).code,'SHIFT_UNAVAILABLE');assert.deepEqual(s,before);s.minutes=570;send(s,{type:'START_SHIFT'});assert.equal(s.activity.total,450);assert.equal(s.activity.pay,285);tick(s,450);assert.equal(s.career.performance,50.5);assert.equal(dispatch(s,{type:'START_SHIFT'}).code,'SHIFT_UNAVAILABLE');
  s.minutes=1980;const e=advance(s,61).events;assert.equal(e.filter(e=>e.type==='SHIFT_MISSED').length,1);const p=s.career.performance;tick(s,40);assert.equal(s.career.performance,p);
 });
 test('strategies are proportional, persist, replay exactly, and switching at completion cannot claim an entire hard shift',()=>{
- const a=work();send(a,{type:'SET_WORK_STRATEGY',strategy:'hard'});tick(a,240);const b=validateSave(serializeSave(a));send(a,{type:'SET_WORK_STRATEGY',strategy:'normal'});send(b,{type:'SET_WORK_STRATEGY',strategy:'normal'});const ea=[],eb=[];tick(a,240,ea);for(let n=0;n<240;n++)tick(b,1,eb);assert.deepEqual(ea,eb);assert.deepEqual(a.career,b.career);assert.equal(a.career.lastSummary.performanceDelta,4);assert.equal(a.career.lastSummary.strategyMinutes.hard,240);
+ const a=work();send(a,{type:'SET_WORK_STRATEGY',strategy:'hard'});tick(a,240);const b=validateSave(serializeSave(a));send(a,{type:'SET_WORK_STRATEGY',strategy:'normal'});send(b,{type:'SET_WORK_STRATEGY',strategy:'normal'});const ea=[],eb=[];tick(a,240,ea);for(let n=0;n<240;n++)tick(b,1,eb);assert.deepEqual(ea,eb);assert.deepEqual(a.career,b.career);assert.equal(a.career.lastSummary.performanceDelta,2);assert.equal(a.career.lastSummary.strategyMinutes.hard,240);
  const c=work();tick(c,479);send(c,{type:'SET_WORK_STRATEGY',strategy:'hard'});tick(c,1);assert.ok(c.career.lastSummary.performanceDelta<2.01);
 });
 test('one work choice suspends compression and uses canonical coworker relationships without repeating rewards',()=>{
@@ -51,7 +51,7 @@ test('corrupt ownership, duplicated lot IDs, future payout cursors, invalid stra
  const s=work();tick(s,10);s.activity.awayState.strategy='fake';assert.throws(()=>validateSave(s));const c=newGame();send(c,{type:'START_DESTINATION',destinationId:'coding_class'});c.activity.total=1;assert.throws(()=>validateSave(c));
 });
 test('economy simulator is deterministic, keeps ordinary starter cash flow viable and bounds wage growth',()=>{
- const a=simulateEconomy({days:20}),b=simulateEconomy({days:20});assert.deepEqual(a,b);assert.ok(a.rows.at(-1).cash>0);assert.ok(a.goals.queen_bed.shifts>=3&&a.goals.queen_bed.shifts<=25);assert.equal(a.goals.yacht.firstDay,null);assert.ok(a.billIncomeRatio<.5);
+ const a=simulateEconomy({days:45}),b=simulateEconomy({days:45});assert.deepEqual(a,b);assert.ok(a.rows.at(-1).cash>0);assert.ok(a.goals.queen_bed.shifts>=3&&a.goals.queen_bed.shifts<=25);assert.equal(a.goals.yacht.firstDay,null);assert.ok(a.billIncomeRatio<.5);
 });
 
 test('premium music and poolside activities use the existing shared relationship pipeline',()=>{

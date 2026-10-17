@@ -32,6 +32,6 @@ test('repetition multipliers recover, histories bound, memories coalesce and cas
 });
 test('varied progression beats repeated grinding without changing tiers; new v3 fields migrate purely from v2',()=>{
  const a=quiet(),b=quiet();for(let i=0;i<12;i++){text(a,'encourage');text(b,['chat','encourage','know','advice','news','compliment'][i%6]);}assert.ok(relationship(b,'player','person_1').toward.player.affinity>relationship(a,'player','person_1').toward.player.affinity+3);
- const old=quiet();old.version=2;delete old.social.visits;delete old.social.sharedActivity;for(const r of Object.values(old.relationships))delete r.recentInteractions;const snapshot=structuredClone(old),m=validateSave(old);assert.equal(m.version,4);assert.deepEqual(old,snapshot);assert.deepEqual(m.social.visits,{});assert.deepEqual(m.relationships['person_1|player'].recentInteractions,[]);
+ const old=quiet();old.version=2;delete old.social.visits;delete old.social.sharedActivity;for(const r of Object.values(old.relationships))delete r.recentInteractions;const snapshot=structuredClone(old),m=validateSave(old);assert.equal(m.version,5);assert.deepEqual(old,snapshot);assert.deepEqual(m.social.visits,{});assert.deepEqual(m.relationships['person_1|player'].recentInteractions,[]);
  for(const mutate of [s=>s.social.visits.person_1={lastVisitMinute:0,nextAllowedMinute:Infinity,introduced:true},s=>s.relationships['person_1|player'].recentInteractions=Array(49).fill({})]){const s=quiet();mutate(s);assert.throws(()=>validateSave(s));}
 });

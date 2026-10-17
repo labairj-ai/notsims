@@ -1,13 +1,6 @@
 import {writeFile,mkdir} from 'node:fs/promises';
-import {simulateEconomy} from '../src/systems/economy/simulator.js';
-const scenarios=[
- {name:'barista',career:'barista'},{name:'designer',career:'designer'},{name:'developer',career:'developer'},
- {name:'strong-performance',career:'developer',performance:90,skill:80},{name:'work-hard',strategy:'hard'},{name:'take-it-easy',strategy:'easy'},
- {name:'business-owner',career:'developer',ownedAssets:['cafe']},{name:'property-owner',ownedAssets:['cabin']},
- {name:'heavy-luxury',ownedAssets:['jet','yacht']},{name:'starter',cash:6500},
- {name:'business-ladder',career:'developer',days:1095,buyGoals:true,purchaseGoals:['micro_business','online_shop','cafe','duplex','commercial','hotel','yacht','island']},
- {name:'wealthy',career:'developer',cash:250000,ownedAssets:['hotel','commercial']}
-];
-const reports=scenarios.map(({name,...options})=>({name,...simulateEconomy({days:180,...options})}));
-await mkdir('docs/reviews/evidence',{recursive:true});await writeFile('docs/reviews/evidence/economy-simulation.json',JSON.stringify(reports,null,2)+'\n');
-console.table(reports.map(r=>({scenario:r.name,cash:Math.round(r.rows.at(-1).cash),netWorth:Math.round(r.rows.at(-1).netWorth),wages:r.totals.wages,businessNet:r.totals.businessGross-r.totals.operatingCost,bills:r.totals.bills,comfortableShifts:r.goals.queen_bed?.shifts,premiumShifts:r.goals.sports_car?.shifts,ultraDay:r.goals.yacht?.firstDay})));
+import {compactReport,runBalanceSuite} from '../src/systems/economy/balance-contract.js';
+const report=compactReport(runBalanceSuite());
+await mkdir('docs/reviews/evidence',{recursive:true});await writeFile('docs/reviews/evidence/economy-simulation.json',JSON.stringify(report,null,2)+'\n');
+console.table(report.scenarios.filter(r=>r.inputs.days===180||r.scenario==='business-ladder').map(r=>({scenario:r.scenario,days:r.inputs.days,cash:Math.round(r.final.cash),netWorth:Math.round(r.final.netWorth),managementHours:r.managementHours,shifts:r.totals.completedShifts,late:r.totals.lateShifts,missed:r.totals.missedShifts,yachtDay:r.goals.yacht?.firstDay})));
+console.log(JSON.stringify(report.result));if(!report.result.passed)process.exitCode=1;

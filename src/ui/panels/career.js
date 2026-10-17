@@ -7,5 +7,5 @@ export function careerPanel({ui,state}){return `<span class="eyebrow">A LITTLE W
 
 export function bindCareerPanel(app,root){
  const ui=app.ui;
- root.querySelectorAll('[data-job]').forEach(b=>b.onclick=()=>{if(app.state.activity?.kind==='work')return;if(app.state.job!==b.dataset.job){const result=app.dispatch({type:'CHANGE_JOB',job:b.dataset.job});if(!result.ok){app.toast(commandMessage(result));return;}app.toast('You got the job! Start a shift whenever you’re ready.');app.renderStudio();}else{const r=app.dispatch({type:'START_SHIFT'});if(r.code==='AWAY_CONFLICT')app.openAwayConflict(r.details.conflicts);else app.errorOr(commandMessage(r),'Your next shift is queued.');}app.mobile?.selection();app.updateUI(true);});
+ root.querySelectorAll('[data-job]').forEach(b=>b.onclick=()=>{if(app.state.activity?.kind==='work')return;if(app.state.job!==b.dataset.job){const result=app.dispatch({type:'CHANGE_JOB',job:b.dataset.job});if(!result.ok){app.toast(commandMessage(result));return;}app.toast('You got the job! Start a shift whenever you’re ready.');app.renderStudio();}else{const r=app.dispatch({type:'START_SHIFT'});if(r.code==='AWAY_CONFLICT')app.openAwayConflict(r.details.conflicts);else app.errorOr(commandMessage(r),'Your shift has started. Work fast-forwards automatically.');}app.mobile?.selection(app.state.activity?.kind==='work');app.updateUI(true);});
 }

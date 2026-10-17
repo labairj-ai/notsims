@@ -78,7 +78,8 @@ test('away work status, automatic speed, manual override, pause and Auto reset a
     game.dispatch({type:'CHANGE_JOB',job:'developer'});game.dispatch({type:'START_SHIFT'});advance(game.state,1);assert.equal(game.state.activity?.kind,'work');game.updateUI(true);
     $('[data-tab="career"]').click();assert.match($('[data-away-status]').textContent,/WORKING · DEVELOPER/,`${game.ui.tab} ${$('#studio-content').innerHTML}`);assert.match($('[data-away-status]').textContent,/Auto fast-forward · 24×/);assert.match($('#speed-label').textContent,/AUTO 24×/);
     game.setSpeed(3);assert.match($('[data-away-status]').textContent,/Manual speed · 3×/);$('[data-away-auto]').click();assert.match($('[data-away-status]').textContent,/Auto fast-forward · 24×/);
-    game.setSpeed(0);assert.match($('[data-away-status]').textContent,/Paused/);game.resumeSpeed();$('[data-tab="live"]').click();assert.match($('[data-away-status]').textContent,/Auto fast-forward · 24×/);
+    game.setSpeed(0);assert.match($('[data-away-status]').textContent,/Paused/);game.resumeSpeed();game.mobile.active=true;$('[data-tab="live"]').click();assert.equal($('.studio-panel').dataset.sheet,'half');assert.match($('[data-away-status]').textContent,/Auto fast-forward · 24×/);
+    game.setSpeed(3);game.dispatch({type:'CANCEL_ACTION'});assert.equal(game.workSpeedOverride,null);game.dispatch({type:'START_SHIFT'});assert.equal(game.effectiveSpeed(),24);game.setSpeed(8);game.replaceState(structuredClone(game.state));assert.equal(game.workSpeedOverride,null);assert.equal(game.effectiveSpeed(),24);
   }finally{app.finish();}
 });
 

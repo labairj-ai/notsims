@@ -32,8 +32,9 @@ export function advanceAwayNeeds(s,a,step,events){
  for(const [need,rate] of Object.entries(policy.effects??{}))changeNeed(s,need,rate*step);
  if(st.care){st.care.elapsed=Math.min(st.care.total,st.care.elapsed+step);if(st.care.elapsed>=st.care.total){const c=st.care;changeNeed(s,c.need,Math.max(0,c.target-s.needs[c.need]));if(c.need==='bladder')st.bladderCooldown=policy.affordances.bladder.cooldown;st.care=null;st.careNotice=c.kind;emit(events,'AWAY_CARE_COMPLETED',{activity:a.kind,care:c.kind,need:c.need});}return;}
  let need=null,cfg=null,kind=null;
- const b=policy.affordances.bladder;if(s.needs.bladder<b.triggerBelow&&st.bladderCooldown<=0){need='bladder';cfg=b;kind='bathroom_break';}
- else {const h=policy.affordances.hunger;if(!st.mealBreakUsed&&a.elapsed>=h.minElapsed&&s.needs.hunger<h.triggerBelow){need='hunger';cfg=h;kind='meal_break';st.mealBreakUsed=true;}}
+ const remaining=a.total-a.elapsed,b=policy.affordances.bladder,h=policy.affordances.hunger;
+ if(s.needs.bladder<b.triggerBelow&&st.bladderCooldown<=0&&remaining>=b.duration){need='bladder';cfg=b;kind='bathroom_break';}
+ else if(!st.mealBreakUsed&&a.elapsed>=h.minElapsed&&s.needs.hunger<h.triggerBelow&&remaining>=h.duration){need='hunger';cfg=h;kind='meal_break';st.mealBreakUsed=true;}
  if(need){st.care={need,kind,elapsed:0,total:cfg.duration,target:cfg.target};st.careNotice=kind;emit(events,'AWAY_CARE_STARTED',{activity:a.kind,care:kind,need});}
  else st.careNotice=null;
 }

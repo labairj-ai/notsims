@@ -17,15 +17,17 @@ import {effectiveTimeScale,activityAttentionRequired} from '../systems/away/away
 export async function startApp({dispatchCommand=dispatch,audioOptions}={}){
  const app={state:newGame(),saved:null,started:false,editing:false,speed:1,lastNonzero:1,speedPaused:false,workSpeedOverride:null,toastTimer:null,lastLog:'',lastActivity:'',renderer:null,characterPreview:null,is3D:false,down:null,
   ui:{tab:'live',tool:'room',floor:'wood',selected:null,rotation:0,category:'All',hover:null,roomStart:null,edge:null}};
- try{app.saved=loadStored(localStorage);if(app.saved)app.state=app.saved;}catch{$('#save-status').textContent='Saved game unavailable. You can load a backup.';}
- app.dispatch=command=>{const result=dispatchCommand(app.state,command);app.audio?.receive(result);app.renderer?.body?.receive(result);return result;};
+ app.resetAwayControls=()=>{app.workSpeedOverride=null;app.speedPaused=false;};
+ app.replaceState=state=>{app.resetAwayControls();app.state=state;};
+ try{app.saved=loadStored(localStorage);if(app.saved)app.replaceState(app.saved);}catch{$('#save-status').textContent='Saved game unavailable. You can load a backup.';}
+ app.dispatch=command=>{const wasWorking=app.state.activity?.kind==='work';const result=dispatchCommand(app.state,command);const isWorking=app.state.activity?.kind==='work';if(wasWorking&&!isWorking)app.resetAwayControls();else if(!wasWorking&&isWorking)app.workSpeedOverride=null;app.audio?.receive(result);app.renderer?.body?.receive(result);return result;};
  app.send=(command,success)=>{const result=app.dispatch(command);app.errorOr(commandMessage(result),success);return result;};
  installViews(app);installControls(app);installPersistence(app);installAudio(app,audioOptions);
  await bootstrapRenderer(app);
  installCharacterCreator(app);installMobile(app);installSocial(app);installInput(app);
  app.effectiveSpeed=()=>effectiveTimeScale({activity:app.state.activity,selectedSpeed:app.speed,paused:app.paused(),attentionRequired:activityAttentionRequired(app.state.activity),override:app.workSpeedOverride});
  const loop=createGameLoop({now:performance.now(),paused:()=>app.paused(),hidden:()=>document.hidden,speed:()=>app.effectiveSpeed(),
-  advance:dt=>{const wasWorking=app.state.activity?.kind==='work';const result=advance(app.state,dt);if(wasWorking&&app.state.activity?.kind!=='work'){app.workSpeedOverride=null;app.speedPaused=false;}app.audio.receive(result);app.renderer.body?.receive(result);},draw:t=>{app.renderer.draw(app.state,app.ui,t,{paused:app.paused(),hidden:document.hidden,speed:app.effectiveSpeed()});app.audio.frame();},
+  advance:dt=>{const wasWorking=app.state.activity?.kind==='work';const result=advance(app.state,dt);if(wasWorking&&app.state.activity?.kind!=='work')app.resetAwayControls();app.audio.receive(result);app.renderer.body?.receive(result);},draw:t=>{app.renderer.draw(app.state,app.ui,t,{paused:app.paused(),hidden:document.hidden,speed:app.effectiveSpeed()});app.audio.frame();},
   preview:dt=>{if(app.characterPreview&&$('#creator').open)app.characterPreview.draw(dt);},refresh:()=>app.updateUI(),schedule:requestAnimationFrame});
  document.addEventListener('visibilitychange',()=>{loop.reset(performance.now());if(document.hidden){if(app.renderer.resetBodies)app.renderer.resetBodies();else app.renderer.body?.reset();}});
  const motion=window.matchMedia?.('(prefers-reduced-motion: reduce)');

@@ -1,7 +1,7 @@
 # PR acceptance follow-up validation
 
-Code candidate: `428b08b2192229bf42db71017d54b81ee5d47236` on draft
-[PR #1](https://github.com/labairj-ai/notsims/pull/1).
+Corrected code candidate: `428b08b2192229bf42db71017d54b81ee5d47236`, subsequently
+merged in `d894f59ef1e9d991da11ce9525973e9d5f063d13` through [PR #1](https://github.com/labairj-ai/notsims/pull/1).
 Original embodied implementation: `c43dae2b1e8beccd1896a7173e95dde32f30d9fa`.
 Character asset SHA256:
 `27c2e49a1ef0097a01459df989d516ebef5acfdbcd3c2229ca62007ba027773d`.
@@ -53,8 +53,8 @@ performance, reduced motion, and human audio observations remain pending in the
 [human acceptance matrix](mobile-social-human-acceptance.md). No device or tester
 identity has been inferred.
 
-0076 remains in progress: its required 0074/0075 evidence does not exist yet.
-PR #1 stays draft, no merge is performed, and production remains on its prior
-release. The candidate has a clean build for review; the final merged source must
-be built and verified again under the existing atomic deployment contract after
-acceptance. No release gate has been bypassed.
+0076 is in progress. At the user's explicit direction, PR #1 was marked ready,
+merged through protected main, and deployed atomically before human/device
+acceptance was complete. This release event does not close 0074 or 0075 or record
+those outcomes as passed. The exact deployed SHA and production checks are in the
+[deployment validation record](embodied-production-deployment-validation.md).

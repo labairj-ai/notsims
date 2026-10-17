@@ -79,23 +79,23 @@ Record:
 
 ## Done when
 
-- [ ] PR #1 merged through protected main.
-- [ ] merged SHA is deployed.
-- [ ] production package matches verified build.
-- [ ] Classic/3D production smoke passes.
+- [x] PR #1 merged through protected main.
+- [x] merged SHA is deployed: `d894f59ef1e9d991da11ce9525973e9d5f063d13`.
+- [x] production package matches verified build (61 public byte/MIME responses; 164 active-release hashes).
+- [x] Classic/3D production smoke passes (52 embodied and 58 responsive/mobile-browser scenarios).
 - [ ] physical production smoke passes.
 - [ ] no release-blocking defects remain.
-- [ ] previous release remains available for rollback.
+- [x] previous release remains available for rollback: `20261016T222751Z-69b09c6`.
 - [ ] remaining embodied TODOs are closed only where all acceptance criteria have evidence.
 
 ## QA requirements
 
-- [ ] required GitHub CI passes.
-- [ ] clean production build.
-- [ ] hash/package verification.
-- [ ] production browser smoke.
+- [x] required GitHub CI passes: [run 38983991284](https://github.com/labairj-ai/notsims/actions/runs/38983991284).
+- [x] clean production build, 142 tests and source checks pass.
+- [x] archive and active release hashes verified.
+- [x] production browser smoke; see deployment validation record.
 - [ ] physical post-deploy smoke.
-- [ ] validation docs updated with exact identities.
+- [x] validation docs record exact source, package, release and test identities.
 
 ## Implementation guardrails
 
@@ -106,10 +106,9 @@ Record:
 
 ## Repository review and integration notes
 
-PR #1 is currently draft/open, not merged or deployed; base main is
-`c93f7d6`. Use the actual PR state/merge SHA at execution time. This release item
-is gated by the required human/physical reviews; automated success cannot stand
-in for them. Branch protection must use the real status context from 0073.
+At execution, PR #1 was open/draft with base `c93f7d6`; it was marked ready and
+merged through protected main at user direction. The required human/physical
+reviews remain incomplete; automated success does not stand in for them.
 
 Preserve the existing deployment contract: build the exact clean merged revision
 in a verified environment, package the complete dist and identity/hash metadata,
@@ -124,10 +123,18 @@ as part of creating these TODOs.
 ## Source
 
 Imported from the [PR follow-up review](https://chatgpt.com/s/t_6ad2b66d40308191b0b3972664052ad7), checked against `c43dae2b1e8beccd1896a7173e95dde32f30d9fa` on `codex/embodied-character-behavior` and read-only PR #1/main metadata.
-Source scope retained; dependency, check-name and deployment clarifications are recorded above. All new tasks remain open.
+Source scope retained; dependency, check-name and deployment clarifications are recorded above. At import time all new tasks remained open; 0070–0073 are now complete and 0074–0076 remain in progress.
 
 ## Current acceptance state
 
-Automated evidence and review preparation are in progress. Required human/
-physical results remain pending. PR #1 remains draft; merge and production
-activation are held by the explicit 0074/0075 acceptance criteria in 0076.
+The merged release is deployed and automated production checks passed. Required
+human/physical results and physical post-deploy smoke remain pending; 0074/0075
+are not closed. See the production validation record.
+
+
+## Deployment record
+
+At the user's explicit request, the release was merged and deployed before the
+0074/0075 human and physical acceptance criteria were complete. They remain open,
+and this TODO is still in progress pending named human review and physical
+post-deploy smoke. See [production validation](../docs/reviews/embodied-production-deployment-validation.md).

@@ -1,0 +1,1810 @@
+[
+  {
+    "view": "classic",
+    "browser": "Chrome/155.0.8059.82",
+    "before": {
+      "unlocked": false,
+      "suspended": false,
+      "muted": false,
+      "buses": {
+        "version": 1,
+        "muted": false,
+        "master": 0.7,
+        "music": 0.35,
+        "sfx": 0.65,
+        "ambience": 0.4,
+        "ui": 0.55
+      },
+      "activeVoices": 0,
+      "streams": 0,
+      "decodedBytes": 0,
+      "loops": [],
+      "diagnostics": [],
+      "music": {
+        "state": null,
+        "track": null,
+        "fadingTrack": null
+      }
+    },
+    "confirmation": {
+      "token": 1,
+      "peak": 0.07091397792100906
+    },
+    "menu": {
+      "music": {
+        "state": "menu",
+        "track": "little-morning",
+        "fadingTrack": null
+      },
+      "peak": 0.007329151965677738
+    },
+    "daytime": {
+      "music": {
+        "state": "home.day",
+        "track": "clover-walk",
+        "fadingTrack": null
+      },
+      "peak": 0.02546842023730278
+    },
+    "evening": {
+      "music": {
+        "state": "home.evening",
+        "track": "porch-light",
+        "fadingTrack": "clover-walk"
+      },
+      "peak": 0.019221976399421692
+    },
+    "interactions": [
+      {
+        "pathLength": 3,
+        "earlyLoops": [],
+        "loops": [
+          "ambience.garden.loop",
+          "interaction.shower.loop"
+        ],
+        "object": "shower",
+        "position": {
+          "x": 11,
+          "y": 10
+        },
+        "cues": [
+          {
+            "id": "ui.confirm",
+            "token": 1,
+            "time": 2756.5
+          },
+          {
+            "id": "ui.confirm",
+            "token": 2,
+            "time": 3104.8999996185303
+          },
+          {
+            "id": "ambience.garden.loop",
+            "token": 3,
+            "time": 3117.0999994277954
+          },
+          {
+            "id": "interaction.shower.start",
+            "token": 4,
+            "time": 5849.5
+          },
+          {
+            "id": "interaction.shower.loop",
+            "token": 5,
+            "time": 5849.5
+          }
+        ],
+        "afterCancel": []
+      },
+      {
+        "pathLength": 8,
+        "earlyLoops": [],
+        "loops": [
+          "ambience.garden.loop",
+          "interaction.stove.loop"
+        ],
+        "object": "stove",
+        "position": {
+          "x": 11,
+          "y": 4
+        },
+        "cues": [
+          {
+            "id": "ui.confirm",
+            "token": 1,
+            "time": 2756.5
+          },
+          {
+            "id": "ui.confirm",
+            "token": 2,
+            "time": 3104.8999996185303
+          },
+          {
+            "id": "ambience.garden.loop",
+            "token": 3,
+            "time": 3117.0999994277954
+          },
+          {
+            "id": "interaction.shower.start",
+            "token": 4,
+            "time": 5849.5
+          },
+          {
+            "id": "interaction.shower.loop",
+            "token": 5,
+            "time": 5849.5
+          },
+          {
+            "id": "ui.cancel",
+            "token": 6,
+            "time": 5951.099999427795
+          },
+          {
+            "id": "interaction.stove.start",
+            "token": 7,
+            "time": 5956.799999237061
+          },
+          {
+            "id": "interaction.stove.loop",
+            "token": 8,
+            "time": 5956.799999237061
+          }
+        ],
+        "afterCancel": []
+      },
+      {
+        "pathLength": 11,
+        "earlyLoops": [],
+        "loops": [
+          "ambience.garden.loop",
+          "interaction.tv.loop"
+        ],
+        "object": "tv",
+        "position": {
+          "x": 6,
+          "y": 10
+        },
+        "cues": [
+          {
+            "id": "ui.confirm",
+            "token": 2,
+            "time": 3104.8999996185303
+          },
+          {
+            "id": "ambience.garden.loop",
+            "token": 3,
+            "time": 3117.0999994277954
+          },
+          {
+            "id": "interaction.shower.start",
+            "token": 4,
+            "time": 5849.5
+          },
+          {
+            "id": "interaction.shower.loop",
+            "token": 5,
+            "time": 5849.5
+          },
+          {
+            "id": "ui.cancel",
+            "token": 6,
+            "time": 5951.099999427795
+          },
+          {
+            "id": "interaction.stove.start",
+            "token": 7,
+            "time": 5956.799999237061
+          },
+          {
+            "id": "interaction.stove.loop",
+            "token": 8,
+            "time": 5956.799999237061
+          },
+          {
+            "id": "interaction.tv.loop",
+            "token": 9,
+            "time": 6062.699999809265
+          }
+        ],
+        "afterCancel": []
+      },
+      {
+        "pathLength": 5,
+        "earlyLoops": [],
+        "loops": [
+          "ambience.garden.loop",
+          "interaction.desk.loop"
+        ],
+        "object": "desk",
+        "position": {
+          "x": 5,
+          "y": 6
+        },
+        "cues": [
+          {
+            "id": "interaction.shower.loop",
+            "token": 5,
+            "time": 5849.5
+          },
+          {
+            "id": "ui.cancel",
+            "token": 6,
+            "time": 5951.099999427795
+          },
+          {
+            "id": "interaction.stove.start",
+            "token": 7,
+            "time": 5956.799999237061
+          },
+          {
+            "id": "interaction.stove.loop",
+            "token": 8,
+            "time": 5956.799999237061
+          },
+          {
+            "id": "interaction.tv.loop",
+            "token": 9,
+            "time": 6062.699999809265
+          },
+          {
+            "id": "ui.cancel",
+            "token": 10,
+            "time": 6165.099999427795
+          },
+          {
+            "id": "object.place",
+            "token": 11,
+            "time": 6169.599999427795
+          },
+          {
+            "id": "interaction.desk.loop",
+            "token": 12,
+            "time": 6172.199999809265
+          }
+        ],
+        "afterCancel": []
+      },
+      {
+        "pathLength": 9,
+        "earlyLoops": [],
+        "loops": [
+          "ambience.garden.loop"
+        ],
+        "object": "fridge",
+        "position": {
+          "x": 12,
+          "y": 4
+        },
+        "cues": [
+          {
+            "id": "ui.cancel",
+            "token": 6,
+            "time": 5951.099999427795
+          },
+          {
+            "id": "interaction.stove.start",
+            "token": 7,
+            "time": 5956.799999237061
+          },
+          {
+            "id": "interaction.stove.loop",
+            "token": 8,
+            "time": 5956.799999237061
+          },
+          {
+            "id": "interaction.tv.loop",
+            "token": 9,
+            "time": 6062.699999809265
+          },
+          {
+            "id": "ui.cancel",
+            "token": 10,
+            "time": 6165.099999427795
+          },
+          {
+            "id": "object.place",
+            "token": 11,
+            "time": 6169.599999427795
+          },
+          {
+            "id": "interaction.desk.loop",
+            "token": 12,
+            "time": 6172.199999809265
+          },
+          {
+            "id": "interaction.fridge.open",
+            "token": 13,
+            "time": 6278.299999237061
+          }
+        ],
+        "completion": [
+          "ACTION_COMPLETED",
+          "SOCIAL_NOTIFICATION",
+          "SOCIAL_EVENT_OFFERED"
+        ],
+        "completionCues": [
+          "interaction.stove.loop",
+          "interaction.tv.loop",
+          "ui.cancel",
+          "object.place",
+          "interaction.desk.loop",
+          "interaction.fridge.open",
+          "social.phone.text",
+          "interaction.fridge.close"
+        ],
+        "afterCancel": []
+      },
+      {
+        "pathLength": 7,
+        "earlyLoops": [],
+        "loops": [
+          "ambience.garden.loop"
+        ],
+        "object": "toilet",
+        "position": {
+          "x": 12,
+          "y": 9
+        },
+        "cues": [
+          {
+            "id": "interaction.stove.loop",
+            "token": 8,
+            "time": 5956.799999237061
+          },
+          {
+            "id": "interaction.tv.loop",
+            "token": 9,
+            "time": 6062.699999809265
+          },
+          {
+            "id": "ui.cancel",
+            "token": 10,
+            "time": 6165.099999427795
+          },
+          {
+            "id": "object.place",
+            "token": 11,
+            "time": 6169.599999427795
+          },
+          {
+            "id": "interaction.desk.loop",
+            "token": 12,
+            "time": 6172.199999809265
+          },
+          {
+            "id": "interaction.fridge.open",
+            "token": 13,
+            "time": 6278.299999237061
+          },
+          {
+            "id": "social.phone.text",
+            "token": 14,
+            "time": 6381.5
+          },
+          {
+            "id": "interaction.fridge.close",
+            "token": 15,
+            "time": 6381.5
+          }
+        ],
+        "completion": [
+          "ACTION_COMPLETED",
+          "SOCIAL_EVENT_EXPIRED"
+        ],
+        "completionCues": [
+          "interaction.tv.loop",
+          "ui.cancel",
+          "object.place",
+          "interaction.desk.loop",
+          "interaction.fridge.open",
+          "social.phone.text",
+          "interaction.fridge.close",
+          "interaction.toilet.flush"
+        ],
+        "afterCancel": []
+      }
+    ],
+    "steps": [
+      {
+        "id": "movement.footstep.indoor",
+        "token": 17,
+        "time": 6568
+      },
+      {
+        "id": "movement.footstep.indoor",
+        "token": 18,
+        "time": 6984.5
+      },
+      {
+        "id": "movement.footstep.indoor",
+        "token": 19,
+        "time": 7385.299999237061
+      },
+      {
+        "id": "movement.footstep.indoor",
+        "token": 20,
+        "time": 7801.099999427795
+      },
+      {
+        "id": "movement.footstep.indoor",
+        "token": 21,
+        "time": 8201.099999427795
+      },
+      {
+        "id": "movement.footstep.outdoor",
+        "token": 22,
+        "time": 8617.699999809265
+      },
+      {
+        "id": "movement.footstep.outdoor",
+        "token": 23,
+        "time": 9034.5
+      }
+    ],
+    "purchase": {
+      "bought": {
+        "ok": true,
+        "code": "OK",
+        "events": [
+          {
+            "amount": 55,
+            "reason": "furniture",
+            "balance": 6085,
+            "type": "MONEY_SPENT"
+          },
+          {
+            "id": 15,
+            "object": "chair",
+            "x": 4,
+            "y": 7,
+            "rotation": 0,
+            "type": "FURNITURE_PLACED"
+          }
+        ]
+      },
+      "sold": {
+        "ok": true,
+        "code": "OK",
+        "events": [
+          {
+            "id": 15,
+            "object": "chair",
+            "type": "FURNITURE_SOLD"
+          },
+          {
+            "amount": 35,
+            "reason": "furniture-sale",
+            "balance": 6120,
+            "type": "MONEY_RECEIVED"
+          }
+        ]
+      },
+      "failed": {
+        "ok": false,
+        "code": "OBSTRUCTED",
+        "events": [],
+        "details": {
+          "message": "Place it on a clear floor, away from walls and your character."
+        }
+      }
+    },
+    "after": {
+      "debug": {
+        "unlocked": true,
+        "suspended": false,
+        "muted": false,
+        "buses": {
+          "version": 1,
+          "muted": false,
+          "master": 0.7,
+          "music": 0.35,
+          "sfx": 0.65,
+          "ambience": 0.4,
+          "ui": 0.55
+        },
+        "activeVoices": 3,
+        "streams": 1,
+        "decodedBytes": 4899792,
+        "loops": [
+          "ambience.garden.loop"
+        ],
+        "diagnostics": [],
+        "music": {
+          "state": "home.evening",
+          "track": "porch-light",
+          "fadingTrack": null
+        }
+      },
+      "music": {
+        "state": "home.evening",
+        "track": "porch-light",
+        "fadingTrack": null
+      },
+      "settings": "{\"version\":1,\"muted\":false,\"master\":0.7,\"music\":0.35,\"sfx\":0.65,\"ambience\":0.4,\"ui\":0.55}",
+      "observed": [
+        {
+          "id": "ui.confirm",
+          "token": 1,
+          "time": 2756.5
+        },
+        {
+          "id": "ui.confirm",
+          "token": 2,
+          "time": 3104.8999996185303
+        },
+        {
+          "id": "ambience.garden.loop",
+          "token": 3,
+          "time": 3117.0999994277954
+        },
+        {
+          "id": "interaction.shower.start",
+          "token": 4,
+          "time": 5849.5
+        },
+        {
+          "id": "interaction.shower.loop",
+          "token": 5,
+          "time": 5849.5
+        },
+        {
+          "id": "ui.cancel",
+          "token": 6,
+          "time": 5951.099999427795
+        },
+        {
+          "id": "interaction.stove.start",
+          "token": 7,
+          "time": 5956.799999237061
+        },
+        {
+          "id": "interaction.stove.loop",
+          "token": 8,
+          "time": 5956.799999237061
+        },
+        {
+          "id": "interaction.tv.loop",
+          "token": 9,
+          "time": 6062.699999809265
+        },
+        {
+          "id": "ui.cancel",
+          "token": 10,
+          "time": 6165.099999427795
+        },
+        {
+          "id": "object.place",
+          "token": 11,
+          "time": 6169.599999427795
+        },
+        {
+          "id": "interaction.desk.loop",
+          "token": 12,
+          "time": 6172.199999809265
+        },
+        {
+          "id": "interaction.fridge.open",
+          "token": 13,
+          "time": 6278.299999237061
+        },
+        {
+          "id": "social.phone.text",
+          "token": 14,
+          "time": 6381.5
+        },
+        {
+          "id": "interaction.fridge.close",
+          "token": 15,
+          "time": 6381.5
+        },
+        {
+          "id": "interaction.toilet.flush",
+          "token": 16,
+          "time": 6487.39999961853
+        },
+        {
+          "id": "movement.footstep.indoor",
+          "token": 17,
+          "time": 6568
+        },
+        {
+          "id": "movement.footstep.indoor",
+          "token": 18,
+          "time": 6984.5
+        },
+        {
+          "id": "movement.footstep.indoor",
+          "token": 19,
+          "time": 7385.299999237061
+        },
+        {
+          "id": "movement.footstep.indoor",
+          "token": 20,
+          "time": 7801.099999427795
+        },
+        {
+          "id": "movement.footstep.indoor",
+          "token": 21,
+          "time": 8201.099999427795
+        },
+        {
+          "id": "movement.footstep.outdoor",
+          "token": 22,
+          "time": 8617.699999809265
+        },
+        {
+          "id": "movement.footstep.outdoor",
+          "token": 23,
+          "time": 9034.5
+        },
+        {
+          "id": "object.place",
+          "token": 24,
+          "time": 9256.699999809265
+        },
+        {
+          "id": "object.sell",
+          "token": 25,
+          "time": 9409.5
+        },
+        {
+          "id": "ui.error",
+          "token": 26,
+          "time": 9409.599999427795
+        },
+        {
+          "id": "ui.select",
+          "token": 27,
+          "time": 11687.29999923706
+        },
+        {
+          "id": "ui.cancel",
+          "token": 28,
+          "time": 11721.699999809265
+        }
+      ]
+    },
+    "audioRequests": [
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/ui/confirm.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/ui/select.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/ui/cancel.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/ui/error.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/music/little-morning.mp3",
+        "status": 206,
+        "contentType": "audio/mpeg",
+        "contentRange": "bytes 0-320825/320826"
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/ui/rotate.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/ambience/garden-breeze.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/music/clover-walk.mp3",
+        "status": 206,
+        "contentType": "audio/mpeg",
+        "contentRange": "bytes 0-320825/320826"
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/build/wall.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/promotion.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/build/door-place.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/build/floor.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/build/sell.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/page.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/purchase.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/bill.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/build/place.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/foley/step-indoor-1.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/foley/step-indoor-2.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/social/social-text.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/water-start.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/tv.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/flush.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/water-stop.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/typing.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/ignite.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/social/social-ring.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/social/social-knock.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/payday.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/fabric.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/fridge.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/eat.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/social/social-milestone.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/switch.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/stove.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/foley/step-outdoor-1.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/shower.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/foley/step-outdoor-2.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/music/porch-light.mp3",
+        "status": 206,
+        "contentType": "audio/mpeg",
+        "contentRange": "bytes 0-320825/320826"
+      }
+    ],
+    "errors": [],
+    "humanListening": "not performed by automated tool"
+  },
+  {
+    "view": "3d",
+    "browser": "Chrome/155.0.8059.82",
+    "before": {
+      "unlocked": false,
+      "suspended": false,
+      "muted": false,
+      "buses": {
+        "version": 1,
+        "muted": false,
+        "master": 0.7,
+        "music": 0.35,
+        "sfx": 0.65,
+        "ambience": 0.4,
+        "ui": 0.55
+      },
+      "activeVoices": 0,
+      "streams": 0,
+      "decodedBytes": 0,
+      "loops": [],
+      "diagnostics": [],
+      "music": {
+        "state": null,
+        "track": null,
+        "fadingTrack": null
+      }
+    },
+    "confirmation": {
+      "token": 1,
+      "peak": 0.07090920954942703
+    },
+    "menu": {
+      "music": {
+        "state": "menu",
+        "track": "little-morning",
+        "fadingTrack": null
+      },
+      "peak": 0.007484009489417076
+    },
+    "daytime": {
+      "music": {
+        "state": "home.day",
+        "track": "clover-walk",
+        "fadingTrack": null
+      },
+      "peak": 0.05032680556178093
+    },
+    "evening": {
+      "music": {
+        "state": "home.evening",
+        "track": "porch-light",
+        "fadingTrack": "clover-walk"
+      },
+      "peak": 0.03665577620267868
+    },
+    "interactions": [
+      {
+        "pathLength": 3,
+        "earlyLoops": [],
+        "loops": [
+          "ambience.garden.loop",
+          "interaction.shower.loop"
+        ],
+        "object": "shower",
+        "position": {
+          "x": 11,
+          "y": 10
+        },
+        "cues": [
+          {
+            "id": "ui.confirm",
+            "token": 1,
+            "time": 16587.5
+          },
+          {
+            "id": "ui.confirm",
+            "token": 2,
+            "time": 16940.900000572205
+          },
+          {
+            "id": "ambience.garden.loop",
+            "token": 3,
+            "time": 16951.300000190735
+          },
+          {
+            "id": "interaction.shower.start",
+            "token": 4,
+            "time": 18687
+          },
+          {
+            "id": "interaction.shower.loop",
+            "token": 5,
+            "time": 18687
+          }
+        ],
+        "afterCancel": []
+      },
+      {
+        "pathLength": 8,
+        "earlyLoops": [],
+        "loops": [
+          "ambience.garden.loop",
+          "interaction.stove.loop"
+        ],
+        "object": "stove",
+        "position": {
+          "x": 11,
+          "y": 4
+        },
+        "cues": [
+          {
+            "id": "ui.confirm",
+            "token": 1,
+            "time": 16587.5
+          },
+          {
+            "id": "ui.confirm",
+            "token": 2,
+            "time": 16940.900000572205
+          },
+          {
+            "id": "ambience.garden.loop",
+            "token": 3,
+            "time": 16951.300000190735
+          },
+          {
+            "id": "interaction.shower.start",
+            "token": 4,
+            "time": 18687
+          },
+          {
+            "id": "interaction.shower.loop",
+            "token": 5,
+            "time": 18687
+          },
+          {
+            "id": "ui.cancel",
+            "token": 6,
+            "time": 18791.300000190735
+          },
+          {
+            "id": "interaction.stove.start",
+            "token": 7,
+            "time": 18797.300000190735
+          },
+          {
+            "id": "interaction.stove.loop",
+            "token": 8,
+            "time": 18797.300000190735
+          }
+        ],
+        "afterCancel": []
+      },
+      {
+        "pathLength": 11,
+        "earlyLoops": [],
+        "loops": [
+          "ambience.garden.loop",
+          "interaction.tv.loop"
+        ],
+        "object": "tv",
+        "position": {
+          "x": 6,
+          "y": 10
+        },
+        "cues": [
+          {
+            "id": "ui.confirm",
+            "token": 2,
+            "time": 16940.900000572205
+          },
+          {
+            "id": "ambience.garden.loop",
+            "token": 3,
+            "time": 16951.300000190735
+          },
+          {
+            "id": "interaction.shower.start",
+            "token": 4,
+            "time": 18687
+          },
+          {
+            "id": "interaction.shower.loop",
+            "token": 5,
+            "time": 18687
+          },
+          {
+            "id": "ui.cancel",
+            "token": 6,
+            "time": 18791.300000190735
+          },
+          {
+            "id": "interaction.stove.start",
+            "token": 7,
+            "time": 18797.300000190735
+          },
+          {
+            "id": "interaction.stove.loop",
+            "token": 8,
+            "time": 18797.300000190735
+          },
+          {
+            "id": "interaction.tv.loop",
+            "token": 9,
+            "time": 18907.10000038147
+          }
+        ],
+        "afterCancel": []
+      },
+      {
+        "pathLength": 5,
+        "earlyLoops": [],
+        "loops": [
+          "ambience.garden.loop",
+          "interaction.desk.loop"
+        ],
+        "object": "desk",
+        "position": {
+          "x": 5,
+          "y": 6
+        },
+        "cues": [
+          {
+            "id": "interaction.shower.loop",
+            "token": 5,
+            "time": 18687
+          },
+          {
+            "id": "ui.cancel",
+            "token": 6,
+            "time": 18791.300000190735
+          },
+          {
+            "id": "interaction.stove.start",
+            "token": 7,
+            "time": 18797.300000190735
+          },
+          {
+            "id": "interaction.stove.loop",
+            "token": 8,
+            "time": 18797.300000190735
+          },
+          {
+            "id": "interaction.tv.loop",
+            "token": 9,
+            "time": 18907.10000038147
+          },
+          {
+            "id": "ui.cancel",
+            "token": 10,
+            "time": 19008.60000038147
+          },
+          {
+            "id": "object.place",
+            "token": 11,
+            "time": 19011.10000038147
+          },
+          {
+            "id": "interaction.desk.loop",
+            "token": 12,
+            "time": 19013.60000038147
+          }
+        ],
+        "afterCancel": []
+      },
+      {
+        "pathLength": 9,
+        "earlyLoops": [],
+        "loops": [
+          "ambience.garden.loop"
+        ],
+        "object": "fridge",
+        "position": {
+          "x": 12,
+          "y": 4
+        },
+        "cues": [
+          {
+            "id": "ui.cancel",
+            "token": 6,
+            "time": 18791.300000190735
+          },
+          {
+            "id": "interaction.stove.start",
+            "token": 7,
+            "time": 18797.300000190735
+          },
+          {
+            "id": "interaction.stove.loop",
+            "token": 8,
+            "time": 18797.300000190735
+          },
+          {
+            "id": "interaction.tv.loop",
+            "token": 9,
+            "time": 18907.10000038147
+          },
+          {
+            "id": "ui.cancel",
+            "token": 10,
+            "time": 19008.60000038147
+          },
+          {
+            "id": "object.place",
+            "token": 11,
+            "time": 19011.10000038147
+          },
+          {
+            "id": "interaction.desk.loop",
+            "token": 12,
+            "time": 19013.60000038147
+          },
+          {
+            "id": "interaction.fridge.open",
+            "token": 13,
+            "time": 19120.199999809265
+          }
+        ],
+        "completion": [
+          "ACTION_COMPLETED",
+          "SOCIAL_NOTIFICATION",
+          "SOCIAL_EVENT_OFFERED"
+        ],
+        "completionCues": [
+          "interaction.stove.loop",
+          "interaction.tv.loop",
+          "ui.cancel",
+          "object.place",
+          "interaction.desk.loop",
+          "interaction.fridge.open",
+          "social.phone.text",
+          "interaction.fridge.close"
+        ],
+        "afterCancel": []
+      },
+      {
+        "pathLength": 7,
+        "earlyLoops": [],
+        "loops": [
+          "ambience.garden.loop"
+        ],
+        "object": "toilet",
+        "position": {
+          "x": 12,
+          "y": 9
+        },
+        "cues": [
+          {
+            "id": "interaction.stove.loop",
+            "token": 8,
+            "time": 18797.300000190735
+          },
+          {
+            "id": "interaction.tv.loop",
+            "token": 9,
+            "time": 18907.10000038147
+          },
+          {
+            "id": "ui.cancel",
+            "token": 10,
+            "time": 19008.60000038147
+          },
+          {
+            "id": "object.place",
+            "token": 11,
+            "time": 19011.10000038147
+          },
+          {
+            "id": "interaction.desk.loop",
+            "token": 12,
+            "time": 19013.60000038147
+          },
+          {
+            "id": "interaction.fridge.open",
+            "token": 13,
+            "time": 19120.199999809265
+          },
+          {
+            "id": "social.phone.text",
+            "token": 14,
+            "time": 19223.5
+          },
+          {
+            "id": "interaction.fridge.close",
+            "token": 15,
+            "time": 19223.5
+          }
+        ],
+        "completion": [
+          "ACTION_COMPLETED",
+          "SOCIAL_EVENT_EXPIRED"
+        ],
+        "completionCues": [
+          "interaction.tv.loop",
+          "ui.cancel",
+          "object.place",
+          "interaction.desk.loop",
+          "interaction.fridge.open",
+          "social.phone.text",
+          "interaction.fridge.close",
+          "interaction.toilet.flush"
+        ],
+        "afterCancel": []
+      }
+    ],
+    "steps": [
+      {
+        "id": "movement.footstep.indoor",
+        "token": 17,
+        "time": 19407.800000190735
+      },
+      {
+        "id": "movement.footstep.indoor",
+        "token": 18,
+        "time": 19809
+      },
+      {
+        "id": "movement.footstep.indoor",
+        "token": 19,
+        "time": 20209.300000190735
+      },
+      {
+        "id": "movement.footstep.indoor",
+        "token": 20,
+        "time": 20626.10000038147
+      },
+      {
+        "id": "movement.footstep.indoor",
+        "token": 21,
+        "time": 21041.300000190735
+      },
+      {
+        "id": "movement.footstep.outdoor",
+        "token": 22,
+        "time": 21442.300000190735
+      },
+      {
+        "id": "movement.footstep.outdoor",
+        "token": 23,
+        "time": 21859.199999809265
+      }
+    ],
+    "purchase": {
+      "bought": {
+        "ok": true,
+        "code": "OK",
+        "events": [
+          {
+            "amount": 55,
+            "reason": "furniture",
+            "balance": 6085,
+            "type": "MONEY_SPENT"
+          },
+          {
+            "id": 15,
+            "object": "chair",
+            "x": 4,
+            "y": 7,
+            "rotation": 0,
+            "type": "FURNITURE_PLACED"
+          }
+        ]
+      },
+      "sold": {
+        "ok": true,
+        "code": "OK",
+        "events": [
+          {
+            "id": 15,
+            "object": "chair",
+            "type": "FURNITURE_SOLD"
+          },
+          {
+            "amount": 35,
+            "reason": "furniture-sale",
+            "balance": 6120,
+            "type": "MONEY_RECEIVED"
+          }
+        ]
+      },
+      "failed": {
+        "ok": false,
+        "code": "OBSTRUCTED",
+        "events": [],
+        "details": {
+          "message": "Place it on a clear floor, away from walls and your character."
+        }
+      }
+    },
+    "after": {
+      "debug": {
+        "unlocked": true,
+        "suspended": false,
+        "muted": false,
+        "buses": {
+          "version": 1,
+          "muted": false,
+          "master": 0.7,
+          "music": 0.35,
+          "sfx": 0.65,
+          "ambience": 0.4,
+          "ui": 0.55
+        },
+        "activeVoices": 3,
+        "streams": 1,
+        "decodedBytes": 4899792,
+        "loops": [
+          "ambience.garden.loop"
+        ],
+        "diagnostics": [],
+        "music": {
+          "state": "home.evening",
+          "track": "porch-light",
+          "fadingTrack": null
+        }
+      },
+      "music": {
+        "state": "home.evening",
+        "track": "porch-light",
+        "fadingTrack": null
+      },
+      "settings": "{\"version\":1,\"muted\":false,\"master\":0.7,\"music\":0.35,\"sfx\":0.65,\"ambience\":0.4,\"ui\":0.55}",
+      "observed": [
+        {
+          "id": "ui.confirm",
+          "token": 1,
+          "time": 16587.5
+        },
+        {
+          "id": "ui.confirm",
+          "token": 2,
+          "time": 16940.900000572205
+        },
+        {
+          "id": "ambience.garden.loop",
+          "token": 3,
+          "time": 16951.300000190735
+        },
+        {
+          "id": "interaction.shower.start",
+          "token": 4,
+          "time": 18687
+        },
+        {
+          "id": "interaction.shower.loop",
+          "token": 5,
+          "time": 18687
+        },
+        {
+          "id": "ui.cancel",
+          "token": 6,
+          "time": 18791.300000190735
+        },
+        {
+          "id": "interaction.stove.start",
+          "token": 7,
+          "time": 18797.300000190735
+        },
+        {
+          "id": "interaction.stove.loop",
+          "token": 8,
+          "time": 18797.300000190735
+        },
+        {
+          "id": "interaction.tv.loop",
+          "token": 9,
+          "time": 18907.10000038147
+        },
+        {
+          "id": "ui.cancel",
+          "token": 10,
+          "time": 19008.60000038147
+        },
+        {
+          "id": "object.place",
+          "token": 11,
+          "time": 19011.10000038147
+        },
+        {
+          "id": "interaction.desk.loop",
+          "token": 12,
+          "time": 19013.60000038147
+        },
+        {
+          "id": "interaction.fridge.open",
+          "token": 13,
+          "time": 19120.199999809265
+        },
+        {
+          "id": "social.phone.text",
+          "token": 14,
+          "time": 19223.5
+        },
+        {
+          "id": "interaction.fridge.close",
+          "token": 15,
+          "time": 19223.5
+        },
+        {
+          "id": "interaction.toilet.flush",
+          "token": 16,
+          "time": 19331
+        },
+        {
+          "id": "movement.footstep.indoor",
+          "token": 17,
+          "time": 19407.800000190735
+        },
+        {
+          "id": "movement.footstep.indoor",
+          "token": 18,
+          "time": 19809
+        },
+        {
+          "id": "movement.footstep.indoor",
+          "token": 19,
+          "time": 20209.300000190735
+        },
+        {
+          "id": "movement.footstep.indoor",
+          "token": 20,
+          "time": 20626.10000038147
+        },
+        {
+          "id": "movement.footstep.indoor",
+          "token": 21,
+          "time": 21041.300000190735
+        },
+        {
+          "id": "movement.footstep.outdoor",
+          "token": 22,
+          "time": 21442.300000190735
+        },
+        {
+          "id": "movement.footstep.outdoor",
+          "token": 23,
+          "time": 21859.199999809265
+        },
+        {
+          "id": "object.place",
+          "token": 24,
+          "time": 22098.10000038147
+        },
+        {
+          "id": "object.sell",
+          "token": 25,
+          "time": 22251.199999809265
+        },
+        {
+          "id": "ui.error",
+          "token": 26,
+          "time": 22251.300000190735
+        },
+        {
+          "id": "ui.select",
+          "token": 27,
+          "time": 24350
+        },
+        {
+          "id": "ui.cancel",
+          "token": 28,
+          "time": 24394.699999809265
+        }
+      ]
+    },
+    "audioRequests": [
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/ui/cancel.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/ui/select.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/ui/confirm.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/ui/rotate.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/ui/error.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/music/little-morning.mp3",
+        "status": 206,
+        "contentType": "audio/mpeg",
+        "contentRange": "bytes 0-320825/320826"
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/ambience/garden-breeze.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/music/clover-walk.mp3",
+        "status": 206,
+        "contentType": "audio/mpeg",
+        "contentRange": "bytes 0-320825/320826"
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/build/floor.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/build/door-place.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/stove.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/build/wall.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/typing.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/shower.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/tv.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/switch.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/payday.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/ignite.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/build/place.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/eat.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/build/sell.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/fabric.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/bill.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/promotion.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/fridge.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/page.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/flush.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/social/social-ring.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/water-start.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/water-stop.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/foley/step-indoor-1.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/foley/step-indoor-2.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/interactions/purchase.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/foley/step-outdoor-1.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/social/social-knock.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/foley/step-outdoor-2.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/social/social-milestone.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/sfx/social/social-text.wav",
+        "status": 200,
+        "contentType": "audio/wav",
+        "contentRange": null
+      },
+      {
+        "url": "https://optiplex.tailb97cdb.ts.net/notsims/assets/audio/music/porch-light.mp3",
+        "status": 206,
+        "contentType": "audio/mpeg",
+        "contentRange": "bytes 0-320825/320826"
+      }
+    ],
+    "errors": [],
+    "humanListening": "not performed by automated tool"
+  }
+]

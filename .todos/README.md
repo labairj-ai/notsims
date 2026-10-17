@@ -171,3 +171,27 @@ passing PR. 0074/0075 remain in progress for actual human/device observations.
 0076 remains in progress: the merged build is deployed, but required human/device
 acceptance and physical post-deploy smoke remain open. See [follow-up evidence](../docs/reviews/pr-acceptance-followup-validation.md)
 and [production validation](../docs/reviews/embodied-production-deployment-validation.md).
+
+
+## Away Activity and Work time compression
+
+Tasks **0077–0083** were imported from the
+[Away Activity and Work Time Compression review](https://chatgpt.com/s/t_6ad2cd72e224819181f479ab0232b55a)
+and checked against main at 7bbcade5ef8ad1c5f1f712c82cd18b89fe6c09b3.
+They define reusable off-lot activity policy, then apply it to rabbit-hole Work.
+
+| ID | Priority | Work |
+| --- | --- | --- |
+| 0077 | Critical | Define generic Away Activity and time-compression contract |
+| 0078 | Critical | Add automatic 24× Work time compression |
+| 0079 | Critical | Add generic Away Need Affordance engine |
+| 0080 | Critical | Add workplace bathroom and meal-break self-care |
+| 0081 | High | Add attention boundaries and scheduled-plan conflict handling |
+| 0082 | High | Add away status UI and future strategy hooks |
+| 0083 | Critical | Add deterministic away-time and Work acceptance harness |
+
+Recommended implementation order: **0077 → 0079 → 0080 → 0078 → 0081 → 0082 → 0083**.
+Numeric order alone does not express the dependencies. Define the generic away
+contract and care semantics before enabling 24×; otherwise fast-forward magnifies
+the current absence of workplace self-care. These tasks are proposed work and do
+not claim the pending human/device acceptance from 0074–0076.

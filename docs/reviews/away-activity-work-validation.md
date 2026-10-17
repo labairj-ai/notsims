@@ -1,7 +1,7 @@
 # Away activity and work validation
 
 Implementation branch: `codex/away-activity-implementation`  
-Implementation SHA: recorded after the implementation commit.  
+Implementation SHA: `6de73ea`.  
 Validation date: 2026-10-16.
 
 ## Behavior covered
@@ -22,4 +22,4 @@ The deterministic away suite covers no-plan and overlapping-plan starts, exact s
 
 The interface suite checks Career and Live status, remaining time, Auto 24×, manual override, pause, Auto reset, and existing keyboard pause behavior. Existing renderer tests exercise mobile and desktop viewport dimensions; CSS retains the existing responsive panel layout and the new status card wraps within it.
 
-The production build, source checks, and full automated suite are run for this branch. No physical device test was performed, so no physical mobile result is claimed.
+The full automated suite passed (151 tests), source checks passed, the production build passed, and `git diff --check` passed. No physical device test was performed, so no physical mobile result is claimed.

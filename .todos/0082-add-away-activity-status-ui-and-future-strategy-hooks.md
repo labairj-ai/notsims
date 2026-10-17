@@ -1,7 +1,7 @@
 # 0082 — Add Away Activity Status UI and Future Strategy Hooks
 
 - **ID:** 0082
-- **Status:** open
+- **Status:** completed
 - **Created:** 2026-10-16
 - **Priority:** high
 - **Depends:** 0078, 0079, 0080
@@ -134,5 +134,5 @@ Imported from the [Away Activity and Work Time Compression review](https://chatg
 
 ## Current status
 
-Open. No implementation or acceptance criteria are claimed complete.
+Completed in the away activity implementation. Career and Live show work progress and speed/care status; the strategy hook exposes `normal` without gameplay modifiers.
 

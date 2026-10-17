@@ -12,6 +12,7 @@ import {resolveInteraction} from '../systems/actions/interactions.js';
 import {log} from './log.js';
 import {emit} from './events.js';
 import {tick} from './session.js';
+import {awayConflicts} from '../systems/away/away.js';
 
 const fail=(code,details={})=>({ok:false,code,events:[],details});
 const floors=['wood','tile','sage'];
@@ -49,7 +50,7 @@ export function dispatch(s,c){
  case 'EDIT_TILE':case 'ERASE':{const tool=c.type==='ERASE'?'erase':c.tool;if(!['floor','wall','door','erase'].includes(tool)||!inside(c.x,c.y)||!edgeValid(c.edge)||!floors.includes(c.floor??'wood'))return fail('INVALID_TARGET');message=buildTile(s,tool,c.x,c.y,c.edge,c.floor??undefined,events);break;}
  case 'PLACE_OBJECT':if(!itemDef(c.object)||!inside(c.x,c.y)||![0,1,2,3].includes(c.rotation??0))return fail('INVALID_TARGET');message=buy(s,c.object,c.x,c.y,c.rotation??0,events);break;
  case 'CHANGE_JOB':if(!jobDef(c.job))return fail('INVALID_CAREER');message=changeJob(s,c.job,events);if(!message&&!s.contacts.includes('person_7')){s.contacts.push('person_7');emit(events,'CONTACT_ADDED',{personId:'person_7',reason:'coworker'});}break;
- case 'START_SHIFT':if(!jobDef(s.job))return fail('INVALID_CAREER');message=enqueue(s,{kind:'work'},events);break;
+ case 'START_SHIFT':{if(!jobDef(s.job))return fail('INVALID_CAREER');const work={kind:'work',total:jobDef(s.job).hours*60};const conflicts=awayConflicts(s,work);const acknowledged=new Set(Array.isArray(c.confirmedConflictIds)?c.confirmedConflictIds.filter(Number.isInteger):[]);const unacknowledged=conflicts.filter(x=>!acknowledged.has(x.id));if(unacknowledged.length)return fail('AWAY_CONFLICT',{conflicts:unacknowledged});message=enqueue(s,{kind:'work'},events);break;}
  case 'CHANGE_APPEARANCE':if(!appearanceValid(c.appearance))return fail('INVALID_APPEARANCE');Object.assign(s.person,c.appearance);log(s,'A fresh look for a new day.');emit(events,'APPEARANCE_CHANGED',{appearance:{...c.appearance}});break;
  }
  return message?fail(rejectionCode(message),{message}):{ok:true,code:'OK',events};

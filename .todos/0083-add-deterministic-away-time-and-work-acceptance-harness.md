@@ -1,7 +1,7 @@
 # 0083 — Add Deterministic Away-Time and Work Acceptance Harness
 
 - **ID:** 0083
-- **Status:** open
+- **Status:** completed
 - **Created:** 2026-10-16
 - **Priority:** critical
 - **Depends:** 0077–0082
@@ -143,5 +143,5 @@ Imported from the [Away Activity and Work Time Compression review](https://chatg
 
 ## Current status
 
-Open. No implementation or acceptance criteria are claimed complete.
+Completed in the away activity implementation. Automated acceptance evidence is in `docs/reviews/away-activity-work-validation.md`; no physical-device result is claimed.
 

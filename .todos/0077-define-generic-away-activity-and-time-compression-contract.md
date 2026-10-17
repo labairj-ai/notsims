@@ -1,7 +1,7 @@
 # 0077 — Define Generic Away Activity and Time-Compression Contract
 
 - **ID:** 0077
-- **Status:** open
+- **Status:** completed
 - **Created:** 2026-10-16
 - **Priority:** critical
 - **Depends:** 0076
@@ -149,5 +149,5 @@ Imported from the [Away Activity and Work Time Compression review](https://chatg
 
 ## Current status
 
-Open. No implementation or acceptance criteria are claimed complete.
+Completed in the away activity implementation. Away metadata is derived from activity kind, and Work advances only through the existing authoritative tick path.
 

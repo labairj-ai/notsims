@@ -1,7 +1,7 @@
 # 0078 — Add Automatic Work Time Compression
 
 - **ID:** 0078
-- **Status:** open
+- **Status:** completed
 - **Created:** 2026-10-16
 - **Priority:** critical
 - **Depends:** 0077
@@ -185,5 +185,5 @@ Imported from the [Away Activity and Work Time Compression review](https://chatg
 
 ## Current status
 
-Open. No implementation or acceptance criteria are claimed complete.
+Completed in the away activity implementation. Work derives Auto 24× without changing the remembered normal speed; pause and manual overrides remain available.
 

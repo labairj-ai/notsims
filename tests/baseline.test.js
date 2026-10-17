@@ -5,7 +5,7 @@ import * as current from '../src/engine.js';
 const source=readFileSync(new URL('./fixtures/engine-baseline.txt',import.meta.url),'utf8');
 const legacy=await import(`data:text/javascript;base64,${Buffer.from(source).toString('base64')}`);
 
-function legacyProjection(s){const out=structuredClone(s);delete out.people;delete out.contacts;delete out.relationships;delete out.social;delete out.person.id;out.version=1;delete out.log;return out;}
+function legacyProjection(s){const out=structuredClone(s);delete out.people;delete out.contacts;delete out.relationships;delete out.social;delete out.person.id;out.version=1;delete out.log;/* Away work now includes bounded workplace bathroom and meal care. */delete out.needs.bladder;delete out.needs.hunger;return out;}
 test('legacy economy, home, careers, actions and needs match frozen engine through social v2',()=>{
  for(const trait of ['creative','active','social'])for(const job of current.JOBS){
   const a=legacy.newGame({trait}),b=current.newGame({trait});a.job=b.job=job.id;

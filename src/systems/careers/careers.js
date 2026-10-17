@@ -11,7 +11,7 @@ export function changeJob(s,id,events){
  if(s.activity||s.queue.length)return 'Finish or cancel your current action before changing careers.';
  if(s.job!==id){s.job=id;emit(events,'JOB_CHANGED',{job:id});log(s,`A new chapter: ${jobDef(id).role}.`);}return null;
 }
-export function workActivity(s,elapsed=0){const j=jobDef(s.job);return {kind:'work',label:`Working · ${j.role}`,elapsed,total:j.hours*60,pay:shiftPay(s,j),path:[]};}
+export function workActivity(s,elapsed=0,awayState=null){const j=jobDef(s.job);return {kind:'work',label:`Working · ${j.role}`,elapsed,total:j.hours*60,pay:shiftPay(s,j),path:[],awayState:awayState??{bladderCooldown:0,mealBreakUsed:false,care:null,careNotice:null,attentionRequired:false}};}
 export function startShift(s){const j=jobDef(s.job);if(!j)return 'INVALID_CAREER';
  if(s.needs.energy<15){log(s,'Get some rest before starting a shift.');return 'LOW_ENERGY';}
  s.activity=workActivity(s);log(s,`Off to ${j.name.toLowerCase()}. Payday in ${j.hours} hours.`);

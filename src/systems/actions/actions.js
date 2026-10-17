@@ -1,3 +1,6 @@
+import {completeAssetVisit} from '../ownership/ownership.js';
+import {advanceWork} from '../careers/performance.js';
+import {completeDestination} from '../away/destinations.js';
 import {prepareSocial,completeSocial} from '../social/social.js';
 import {emit} from '../../core/events.js';
 import {pathTo,blocked} from '../../core/navigation.js';
@@ -31,9 +34,12 @@ export function advanceActions(s,step,events){
  a.elapsed+=step;
  recoverNeed(s,a,step);
  if(awayPolicy(a))advanceAwayNeeds(s,a,step,events);
+ if(a.kind==='work')advanceWork(s,a,step,events);
  if(a.elapsed>=a.total||(a.need&&s.needs[a.need]>=99)){
  if(a.kind==='social')completeSocial(s,a,events);
  if(a.kind==='work')completeShift(s,a,events);
+ if(a.destinationId)completeDestination(s,a,events);
+ if(a.assetId)completeAssetVisit(s,a,events);
  if(a.skill)practice(s,events);
  emit(events,'ACTION_COMPLETED',{kind:a.kind});
  s.activity=null;

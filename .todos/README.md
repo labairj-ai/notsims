@@ -195,3 +195,34 @@ Numeric order alone does not express the dependencies. Define the generic away
 contract and care semantics before enabling 24×; otherwise fast-forward magnifies
 the current absence of workplace self-care. These tasks are proposed work and do
 not claim the pending human/device acceptance from 0074–0076.
+
+## Career, Away Activity, and Wealth Ecosystem
+
+TODOs **0084–0103** were imported from the [Review Game Architecture feedback](https://chatgpt.com/s/t_6ad2d6897db48191b50e32ec0f700145). Software is implemented for 0084 and 0086–0103. Physical acceptance 0085 and browser/mobile acceptance for 0102 remain open; full criteria and evidence are in their individual files. Shared economy assumptions, purchase tiers, and the cross-task price map are in the [ecosystem backlog plan](../docs/reviews/career-away-wealth-ecosystem-backlog.md).
+
+| ID | Priority | Work |
+| --- | --- | --- |
+| 0084 | High | Harden optional Away-policy affordances |
+| 0085 | Medium | Complete physical Work/Away mobile acceptance |
+| 0086 | Critical | Add Career Performance foundation |
+| 0087 | Critical | Add Work strategies |
+| 0088 | Critical | Add scheduled Work shifts and attendance |
+| 0089 | High | Add coworker experiences and Work events |
+| 0090 | Critical | Add paid skill classes as the second real Away consumer |
+| 0091 | High | Generalize Away destinations for errands, appointments, and travel |
+| 0092 | Critical | Define tiered purchase and ownership contract |
+| 0093 | High | Expand entry-level purchase ecosystem |
+| 0094 | High | Add comfortable/middle-class purchase ecosystem |
+| 0095 | High | Add really expensive/premium purchase ecosystem |
+| 0096 | Medium | Add ultra-luxury assets |
+| 0097 | High | Add vehicle and transportation ownership |
+| 0098 | Critical | Add property and residence progression |
+| 0099 | High | Add businesses and income-producing assets |
+| 0100 | Critical | Add ownership upkeep, maintenance, and operating costs |
+| 0101 | Medium | Add prestige, collection, and aspiration hooks |
+| 0102 | High | Upgrade shopping and asset-management UX |
+| 0103 | Critical | Build economy balance simulator and wealth acceptance harness |
+
+Recommended order: career depth **0084 → 0086 → 0087 → 0088 → 0089**; Away reuse **0090 → 0091**; purchase contract and tiers **0092 → 0093 → 0094 → 0095**; ownership **0097 → 0098 → 0099 → 0100**; then luxury meaning and UX **0096 → 0101 → 0102**; finish with economy certification **0103**. Physical acceptance **0085** can run independently when iPhone and Android devices are available. Task 0092 intentionally precedes expansion of the catalog so all purchase types share one ownership/economy contract.
+
+Validation and measured economy progression: [career/wealth report](../docs/reviews/economy-progression-validation.md). Save version 4 explicitly migrates existing careers and starter-property ownership. Run `npm run simulate:economy` to regenerate the deterministic evidence.

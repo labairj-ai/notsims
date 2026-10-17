@@ -35,3 +35,11 @@ The exact merged commit was checked out cleanly, then `npm ci`, all 155 tests, `
 The public release verifier passed all 61 HTTP responses with expected MIME and byte-identical content to the verified build. The production mobile browser smoke passed 58 scenarios across Classic/3D and seven viewport sizes, with zero overflow, runtime errors, or undersized controls. Touch pan/pinch were suppressed and tap dispatched at most one command. A separate production Work flow check at 320×568, 390×844, and 430×932 confirmed the active status remained visible in Career and Live, Auto 24× fit, and no overflow or runtime errors occurred.
 
 These are automated desktop-browser checks at phone-size viewports, not physical-device acceptance. No human or physical-device result is claimed.
+
+## Career/wealth extension (0085 physical acceptance still pending)
+
+Scheduled attendance replaces anytime work; use the displayed weekday/start time
+and attend within its first hour. Validate strategies, a third-shift work choice,
+classes and destination Auto controls alongside the existing device matrix.
+No iPhone/Android observation was supplied or performed for this extension.
+See [software/economy validation](economy-progression-validation.md).

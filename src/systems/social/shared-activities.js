@@ -1,3 +1,4 @@
+import {itemDef} from '../../content/furniture.js';
 import {sharedMealCost} from '../../content/meals.js';
 import {changeFunds} from '../economy/economy.js';
 import {SHARED_ACTIVITIES} from '../../content/shared-activities.js';
@@ -12,7 +13,7 @@ const objectSignature=f=>[f.type,f.x,f.y,f.rotation].join(':');
 // A single bounded shared activity reserves two approach tiles; no NPC player queue.
 export function prepareSharedActivity(s,{personId,objectId,interactionId}){
  const def=Object.hasOwn(SHARED_ACTIVITIES,interactionId??'')?SHARED_ACTIVITIES[interactionId]:null,f=s.furniture.find(f=>f.id===objectId),p=s.social.presences.find(p=>p.personId===personId&&p.state==='visiting');
- if(!def||!f||!def.objects.includes(f.type))return {code:'INVALID_SHARED_ACTIVITY'};
+ if(!def||!f||!(def.objects.includes(f.type)||def.objects.includes(itemDef(f.type)?.recipe??f.type)))return {code:'INVALID_SHARED_ACTIVITY'};
  if(!p)return {code:'NOT_PRESENT'};
  if(s.activity||s.queue.length||s.social.sharedActivity)return {code:'BUSY'};
  if(s.money<sharedMealCost(interactionId))return {code:'INSUFFICIENT_FUNDS'};
@@ -44,7 +45,7 @@ export function advanceSharedActivity(s,step,events){const a=s.social.sharedActi
  s.needs.social=Math.min(100,s.needs.social+step*.18);
  if(a.elapsed>=a.total){resolveSocialInteraction(s,{actorId:'player',targetId:p.personId,personId:p.personId,initiatedBy:'player',interactionId:a.interactionId,channel:'in_person',source:'shared'},events);emit(events,'SHARED_ACTIVITY_COMPLETED',{activityId:a.id,personId:a.personId,interactionId:a.interactionId});s.social.sharedActivity=null;s.activity=null;p.path=[];}
 }
-export function availableSharedActivities(s,personId){return Object.entries(SHARED_ACTIVITIES).flatMap(([interactionId,def])=>s.furniture.filter(f=>def.objects.includes(f.type)).map(f=>{const result=prepareSharedActivity(s,{personId,objectId:f.id,interactionId});return {interactionId,objectId:f.id,label:def.label,cost:sharedMealCost(interactionId),disabledReason:result.code??null,eligible:!result.code};})).filter(a=>a.eligible||a.disabledReason==='INSUFFICIENT_FUNDS').slice(0,8);}
+export function availableSharedActivities(s,personId){return Object.entries(SHARED_ACTIVITIES).flatMap(([interactionId,def])=>s.furniture.filter(f=>(def.objects.includes(f.type)||def.objects.includes(itemDef(f.type)?.recipe??f.type))).map(f=>{const result=prepareSharedActivity(s,{personId,objectId:f.id,interactionId});return {interactionId,objectId:f.id,label:def.label,cost:sharedMealCost(interactionId),disabledReason:result.code??null,eligible:!result.code};})).filter(a=>a.eligible||a.disabledReason==='INSUFFICIENT_FUNDS').slice(0,8);}
 // Presentation-neutral pose query shared by both renderers; state remains authoritative.
 export function sharedActivityPose(s,actorId){const a=s.social?.sharedActivity;if(!a||a.status!=='active'||!a.participants.includes(actorId))return null;const f=s.furniture.find(f=>f.id===a.objectId);if(!f)return null;const i=a.participants.indexOf(actorId),slot=a.slots[i],def=SHARED_ACTIVITIES[a.interactionId],angle=f.rotation*Math.PI/2;
  if(a.interactionId==='shared_sit'){const [x,y]=furniturePoint(f,i?1.35:.7,.56);return {x,y,height:.6,angle,animation:'Sit'};}

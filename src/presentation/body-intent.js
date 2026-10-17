@@ -1,3 +1,4 @@
+import {itemDef} from '../content/furniture.js';
 import {sharedActivityPose} from '../systems/social/shared-activities.js';
 import {interactionPose} from './object-pose.js';
 import {furnitureAnchors,objectPhase,objectGesture} from './anchors.js';
@@ -23,14 +24,14 @@ export function resolveBodyIntent(s,actorId,{time=0,reducedMotion=false,quality=
  if(!enabled)return {...intent,gesture:null,affect:{valence:0,arousal:.5,energy:.7,tension:0}};
  const shared=s.social?.sharedActivity,sharedActive=shared?.status==='active'&&shared.participants.includes(actorId),social=a?.kind==='social'&&!a.path?.length&&(player||a.personId===actorId)&&a.channel==='in_person'&&attentionPosition(s,a.personId),remote=player&&a?.kind==='social'&&!a.path?.length&&a.channel!=='in_person';
  if(!walking&&player&&a?.kind==='use'){
-  const f=s.furniture.find(f=>f.id===a.id);if(f){intent.key=`use:${f.id}:${f.rotation}`;intent.phase=objectPhase(a);intent.gesture=objectGesture(f.type,intent.phase);if(['fridge','stove'].includes(f.type))intent.base='Idle';const anchors=furnitureAnchors(f);intent.lookAt=anchors.look??anchors.center;
-   if(['sofa','toilet','bed'].includes(f.type)){
+  const f=s.furniture.find(f=>f.id===a.id);if(f){const type=itemDef(f.type)?.recipe??f.type;intent.key=`use:${f.id}:${f.rotation}`;intent.phase=objectPhase(a);intent.gesture=objectGesture(f.type,intent.phase);if(['fridge','stove'].includes(type))intent.base='Idle';const anchors=furnitureAnchors(f);intent.lookAt=anchors.look??anchors.center;
+   if(['sofa','toilet','bed'].includes(type)){
     const elapsed=a.elapsed??3,total=a.total??60,sitting=clamp(elapsed/1.5),leaving=elapsed>total-1.5;
-    if(elapsed<1.5){intent.base='StandToSit';intent.gesture=null;intent.seatOffset=.874*sitting;intent.position[1]=(f.type==='bed'?.62:pose.height)*sitting;intent.phase='prepare';}
-    else if(leaving){intent.base='SitToStand';intent.gesture=null;intent.seatOffset=.874*clamp((total-elapsed)/1.5);intent.position[1]=(f.type==='bed'?.62:pose.height)*clamp((total-elapsed)/1.5);intent.phase='release';}
-    else if(f.type==='bed'&&elapsed<3){intent.base='Sit';intent.gesture=null;intent.position[1]=.62;}
+    if(elapsed<1.5){intent.base='StandToSit';intent.gesture=null;intent.seatOffset=.874*sitting;intent.position[1]=(type==='bed'?.62:pose.height)*sitting;intent.phase='prepare';}
+    else if(leaving){intent.base='SitToStand';intent.gesture=null;intent.seatOffset=.874*clamp((total-elapsed)/1.5);intent.position[1]=(type==='bed'?.62:pose.height)*clamp((total-elapsed)/1.5);intent.phase='release';}
+    else if(type==='bed'&&elapsed<3){intent.base='Sit';intent.gesture=null;intent.position[1]=.62;}
    }
-   const contact=['contact','active'].includes(intent.phase)&&!['fridge'].includes(f.type)||f.type==='fridge'&&['prepare','contact'].includes(intent.phase);if(contact&&quality==='full')for(const hand of ['rightHand','leftHand'])if(anchors[hand])intent.hands.push({hand:hand==='rightHand'?'right':'left',target:anchors[hand],weight:clamp(((a.elapsed??0)-.3)/1.2)*clamp(((a.total??60)-(a.elapsed??0))/.8)});}
+   const contact=['contact','active'].includes(intent.phase)&&!['fridge'].includes(type)||type==='fridge'&&['prepare','contact'].includes(intent.phase);if(contact&&quality==='full')for(const hand of ['rightHand','leftHand'])if(anchors[hand])intent.hands.push({hand:hand==='rightHand'?'right':'left',target:anchors[hand],weight:clamp(((a.elapsed??0)-.3)/1.2)*clamp(((a.total??60)-(a.elapsed??0))/.8)});}
  }
  if(sharedActive){
   const i=shared.participants.indexOf(actorId),partner=shared.participants[1-i],f=s.furniture.find(f=>f.id===shared.objectId),anchors=furnitureAnchors(f),turn=Math.floor(shared.elapsed/6)%2,speaker=i===turn;
@@ -40,6 +41,8 @@ export function resolveBodyIntent(s,actorId,{time=0,reducedMotion=false,quality=
    case 'shared_watch':intent.base='Idle';intent.gesture=shared.elapsed%14<2?(i?'Nod':'Laugh'):null;if(shared.elapsed%17>15){intent.lookAt=attentionPosition(s,partner);if(intent.lookAt)intent.lookAt[1]=1.45;}if(intent.lookAt)intent.lookAt[1]=1.3;break;
    case 'shared_eat':intent.base='Idle';intent.gesture=speaker?'Eat':'TalkB';if(!speaker){intent.lookAt=attentionPosition(s,partner);if(intent.lookAt)intent.lookAt[1]=1.45;}if(intent.lookAt)intent.lookAt[1]=1.3;break;
    case 'shared_cook':intent.base='Idle';intent.role=i===turn?'cook':'helper';intent.gesture=i===turn?'Stir':'UseHands';if(quality==='full'&&anchors.rightHand)intent.hands=[{hand:'right',target:anchors[i?'leftHand':'rightHand']??anchors.rightHand,weight:.7}];break;
+   case 'shared_music':intent.gesture=i?'Nod':'Type';intent.lookAt=anchors.center;break;
+   case 'shared_pool':intent.gesture=speaker?'TalkB':'Nod';intent.lookAt=attentionPosition(s,partner);if(intent.lookAt)intent.lookAt[1]=1.45;break;
    case 'shared_read':intent.gesture=shared.elapsed%18<12?'Read':speaker?'TalkB':'Nod';if(intent.gesture!=='Read'){intent.lookAt=attentionPosition(s,partner);if(intent.lookAt)intent.lookAt[1]=1.45;}if(intent.lookAt)intent.lookAt[1]=1.3;break;
   }
   const stage=socialPoseFor(s,actorId,partner,shared.interactionId);intent.synchrony=mirroring?stage.synchrony:0;intent.lean=stage.lean;

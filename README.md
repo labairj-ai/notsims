@@ -124,3 +124,22 @@ reviewer count is required for solo development. See
 [verified branch policy](docs/reviews/branch-protection-validation.md).
 Human/device acceptance remains a separate release requirement; green CI alone
 does not certify motion, phone performance or audible output.
+
+## Careers, classes and ownership
+
+Careers now have weekday schedules, persistent performance, four work strategies
+and bounded coworker choices. Start work within one hour of the scheduled start;
+late arrival shortens the shift/pay. Career also offers paid skill classes and
+three Away destinations. Work and other Away activities share Auto 24× controls.
+
+Furnish filters by category, tier, affordability, need, shared use and ownership.
+Open Assets to buy/select vehicles, manage businesses, buy/switch residences,
+inspect collections and itemized upkeep, or maintain a wishlist. New homes start
+as clear furnished-ready lots; the previous home keeps its furniture. Sell a
+property only after moving out and clearing its furnishings.
+
+Businesses pay daily and need weekly management. Prices and upkeep appear before
+purchase; luxury requires supporting cash flow. Save version 4 migrates existing
+saves automatically. `npm run simulate:economy` generates the conditional economy
+benchmarks in the [validation report](docs/reviews/economy-progression-validation.md).
+Physical/device and human acceptance remain open as recorded there.

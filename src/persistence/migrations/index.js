@@ -1,7 +1,9 @@
+import {initialCareer} from '../../systems/careers/performance.js';
+import {initialOwnership} from '../../systems/ownership/ownership.js';
 import {initSocial} from '../../systems/social/social.js';
 import {CURRENT_SAVE_VERSION} from '../schema.js';
 // Map source version -> pure one-version migration. No production step is needed at v1.
-export const MIGRATIONS=new Map([[1,s=>{initSocial(s);s.version=2;return s;}],[2,s=>{s.social.visits=Object.fromEntries(s.social.presences.map(p=>[p.personId,{lastVisitMinute:s.minutes,nextAllowedMinute:s.minutes+2880,introduced:true}]));s.social.sharedActivity=null;for(const r of Object.values(s.relationships))r.recentInteractions=[];s.version=3;return s;}]]);
+export const MIGRATIONS=new Map([[1,s=>{initSocial(s);s.version=2;return s;}],[2,s=>{s.social.visits=Object.fromEntries(s.social.presences.map(p=>[p.personId,{lastVisitMinute:s.minutes,nextAllowedMinute:s.minutes+2880,introduced:true}]));s.social.sharedActivity=null;for(const r of Object.values(s.relationships))r.recentInteractions=[];s.version=3;return s;}],[3,s=>{s.career=initialCareer();s.ownership=initialOwnership();s.ownership.assets[0].lastPayout=s.minutes;if(s.activity?.kind==='work'){s.career.lastAttendanceDay=Math.floor(s.minutes/1440);s.activity.awayState??={};s.activity.awayState.strategy='normal';s.activity.awayState.strategyMinutes={normal:s.activity.elapsed,hard:0,easy:0,socialize:0};}s.version=4;return s;}]]);
 export function migrateSave(input,{currentVersion=CURRENT_SAVE_VERSION,migrations=MIGRATIONS}={}){
  let s=structuredClone(input);
  if(!s||!Number.isInteger(s.version)||s.version<1||s.version>currentVersion)throw Error('This is not a valid Notsims save.');

@@ -11,7 +11,7 @@ test('canonical content keeps facade identity, stable counts and unique IDs',()=
   assert.equal(engine.JOBS,JOBS);
   assert.equal(engine.NEEDS,NEEDS);
   assert.equal(engine.itemDef,itemDef);
-  assert.equal(CATALOG.length,14);
+  assert.equal(CATALOG.length,38);
   assert.equal(JOBS.length,3);
   for(const entries of [CATALOG,JOBS]){
     assert.equal(new Set(entries.map(d=>d.id)).size,entries.length);

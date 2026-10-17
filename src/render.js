@@ -1,3 +1,4 @@
+import {awayPolicy} from './systems/away/away.js';
 import {classicPose} from './presentation/classic-pose.js';
 import {BodyPresentation} from './presentation/runtime.js';
 import {furnitureRecipes} from './render/shared/furniture-recipes.js';
@@ -62,7 +63,7 @@ export class Renderer {
  const character=(id,person)=>{const intent=this.body.intent(s,id);return {...person,x:intent.position[0]-.5,y:intent.position[2]-.5,intent,pose:{animation:intent.base}};};
  const p=character('player',s.person);
  for(const visitor of s.social?.presences||[]){const npc=character(visitor.personId,s.people[visitor.personId]);objects.push({depth:npc.x+npc.y+1,draw:()=>{if(ui.selectedPersonId===visitor.personId)this.ellipse(npc.x+.5,npc.y+.5,.02,.48,.2,'#e5c67a');this.person(npc,time);}});}
- objects.push({depth:p.x+p.y+1,draw:()=>this.person(p,time,s.activity?.kind==='work')});
+ objects.push({depth:p.x+p.y+1,draw:()=>this.person(p,time,!!awayPolicy(s.activity))});
  objects.sort((a,b)=>a.depth-b.depth);objects.forEach(o=>o.draw());
  if(s.activity?.path?.length){c.globalAlpha=.5;for(const [x,y] of s.activity.path)this.ellipse(x+.5,y+.5,.02,.07,.04,'#f9f7e2');c.globalAlpha=1;}
  if(ui.selectedObjectId){const f=s.furniture.find(f=>f.id===ui.selectedObjectId);if(f){const [w,h]=dimensions(f);for(let x=f.x;x<f.x+w;x++)for(let y=f.y;y<f.y+h;y++)this.tile(x,y,'#f8df8b88','#fff4cb');}}

@@ -26,4 +26,12 @@ Headless Chrome responsive checks passed at 320×568, 390×844, and 430×932 in 
 
 A local 8-hour game-loop measurement completed 480 simulated minutes in 20 wall-clock seconds over 80 frames, with 3 total events and at most 3 events in any frame. The measured tick CPU time was 1.054 ms on this host; this is an observed run, not a performance guarantee. UI refreshed once per frame (80 refreshes).
 
-The full automated suite passed (155 tests), source checks passed, the production build passed, and `git diff --check` passed. The PR's required `Test Notsims` check must be rerun against the final feedback-hardening head before merge.
+The full automated suite passed (155 tests), source checks passed, the production build passed, and `git diff --check` passed. Required PR check `Test Notsims` passed at feedback-hardening head `903b893` (run [38992057806](https://github.com/labairj-ai/notsims/actions/runs/38992057806)). PR [#5](https://github.com/labairj-ai/notsims/pull/5) merged through protected `main` at `160e1f61f4443584c897d1df33f2a82eb0a970d3`.
+
+## Production deployment and smoke
+
+The exact merged commit was checked out cleanly, then `npm ci`, all 155 tests, `npm run build`, and `npm run check` passed. The verified release was deployed atomically to OptiPlex at `2026-10-17T01:45:00Z` as `20261017T014400Z-160e1f6`; the previous release remains available for rollback. The archive SHA256 is `afa000ca0d77de8697a602978c99c3b2a4c0b1c7e850ee89612c79b3de651c1b`. All 164 packaged files matched their checksum manifest before activation.
+
+The public release verifier passed all 61 HTTP responses with expected MIME and byte-identical content to the verified build. The production mobile browser smoke passed 58 scenarios across Classic/3D and seven viewport sizes, with zero overflow, runtime errors, or undersized controls. Touch pan/pinch were suppressed and tap dispatched at most one command. A separate production Work flow check at 320×568, 390×844, and 430×932 confirmed the active status remained visible in Career and Live, Auto 24× fit, and no overflow or runtime errors occurred.
+
+These are automated desktop-browser checks at phone-size viewports, not physical-device acceptance. No human or physical-device result is claimed.

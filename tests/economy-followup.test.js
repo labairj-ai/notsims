@@ -1,3 +1,4 @@
+import {JOBS} from '../src/content/careers.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -63,4 +64,8 @@ test('premium vehicle experiences consume actual clock time and preserve the ent
 
 test('legacy-only activity aliases cannot be started as new experiences and corrupt career review state is rejected',()=>{
  const s=newGame();s.money=1e7;send(s,{type:'BUY_ASSET',definitionId:'yacht'});const id=s.ownership.assets.at(-1).id;const before=structuredClone(s);assert.equal(dispatch(s,{type:'VISIT_ASSET',assetId:id,ownedActivityId:'legacy_visit'}).ok,false);assert.deepEqual(s,before);s.career.lastReviewedShift=1;assert.throws(()=>validateSave(s));
+});
+
+test('career offers quote the new job entry rate and reset reviewed experience when changing roles',()=>{
+ const s=newGame();s.job='developer';s.career.level=4;s.shifts=100;s.skill=50;const barista=JOBS.find(j=>j.id==='barista');const quote=hourlyWage(s,barista);send(s,{type:'CHANGE_JOB',job:'barista'});assert.equal(hourlyWage(s),quote);assert.equal(s.career.level,0);assert.equal(s.career.lastReviewedShift,100);assert.equal(reviewPromotion(s,[]),false);
 });

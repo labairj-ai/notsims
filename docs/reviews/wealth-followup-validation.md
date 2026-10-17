@@ -86,7 +86,7 @@ that deliberate stress case stays outside ordinary starter viability targets.
 
 ## Automated checks and limits
 
-All 180 tests pass locally, along with source checks, production build, the v2 balance suite and disposable-save canary.
+All 181 tests pass locally, along with source checks, production build, the v2 balance suite and disposable-save canary.
 The full suite covers canonical management, conflict/defer/late/missed consequences,
 content duration changes, unmanaged payouts, replay, versioned regression failures,
 promotion inputs/idempotency/recovery, old-save preservation, three distinct lots

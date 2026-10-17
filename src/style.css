@@ -10,3 +10,4 @@
 
 #social-sheet nav[hidden]{display:none}#social-sheet h2{margin:12px 0 5px}#social-sheet .social-status{margin:0 0 10px}#social-sheet details{font-size:.88rem;margin:6px 0}#social-sheet summary{cursor:pointer;min-height:24px}#social-sheet #social-body{padding-bottom:4px}
 #social-sheet summary{min-height:44px;display:flex;align-items:center}
+.away-status{display:grid;gap:6px;padding:13px;margin:12px 0 18px;border:1px solid var(--line);border-radius:10px;background:#f5f5e9}.away-status b{font-size:10px;letter-spacing:1px}.away-status span{font:20px Georgia,serif}.away-status small{color:var(--muted)}.away-status button{justify-self:start;background:var(--ink);color:var(--paper);padding:8px 10px;border-radius:7px;font-size:10px}.dialog-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:18px}.dialog-actions .primary-button{width:auto;margin:0;padding:12px 15px}.small-dialog ul{padding-left:20px;line-height:1.8;color:#65715f}

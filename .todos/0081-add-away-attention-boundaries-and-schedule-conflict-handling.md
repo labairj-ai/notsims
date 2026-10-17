@@ -1,7 +1,7 @@
 # 0081 — Add Away Attention Boundaries and Schedule Conflict Handling
 
 - **ID:** 0081
-- **Status:** open
+- **Status:** completed
 - **Created:** 2026-10-16
 - **Priority:** high
 - **Depends:** 0077, 0078
@@ -142,5 +142,5 @@ Imported from the [Away Activity and Work Time Compression review](https://chatg
 
 ## Current status
 
-Open. No implementation or acceptance criteria are claimed complete.
+Completed in the away activity implementation. Conflicts are queried and revalidated by the domain command, and attention state suspends compression to the selected normal speed.
 

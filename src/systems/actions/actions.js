@@ -7,7 +7,8 @@ import {QUICK_ACTIONS} from '../../content/interactions.js';
 import {changeFunds} from '../economy/economy.js';
 import {startShift,completeShift} from '../careers/careers.js';
 import {practice} from '../careers/progression.js';
-import {recoverNeed,changeNeed} from '../needs/needs.js';
+import {recoverNeed} from '../needs/needs.js';
+import {advanceAwayNeeds,awayPolicy} from '../away/away.js';
 import {log} from '../../core/log.js';
 export function begin(s,a,events){
  if(a.kind==='social'){const result=prepareSocial(s,{...a,type:'SOCIAL_INTERACT'});if(result.code)return result.code;s.activity=result.action;return;}
@@ -29,7 +30,7 @@ export function advanceActions(s,step,events){
  if(a.kind==='walk'){a.elapsed+=step;if(!a.path.length){emit(events,'ACTION_COMPLETED',{kind:a.kind});s.activity=null;}return;}
  a.elapsed+=step;
  recoverNeed(s,a,step);
- if(a.kind==='work'){changeNeed(s,'energy',-.025*step);changeNeed(s,'social',.08*step);}
+ if(awayPolicy(a))advanceAwayNeeds(s,a,step,events);
  if(a.elapsed>=a.total||(a.need&&s.needs[a.need]>=99)){
  if(a.kind==='social')completeSocial(s,a,events);
  if(a.kind==='work')completeShift(s,a,events);

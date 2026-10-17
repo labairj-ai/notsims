@@ -1,7 +1,7 @@
 # 0080 — Add Workplace Bathroom and Meal-Break Self-Care
 
 - **ID:** 0080
-- **Status:** open
+- **Status:** completed
 - **Created:** 2026-10-16
 - **Priority:** critical
 - **Depends:** 0079
@@ -195,5 +195,5 @@ Imported from the [Away Activity and Work Time Compression review](https://chatg
 
 ## Current status
 
-Open. No implementation or acceptance criteria are claimed complete.
+Completed in the away activity implementation. The initial abstract lunch is employer-provided and free; it does not use household funds or shared-meal pricing.
 

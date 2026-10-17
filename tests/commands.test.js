@@ -13,6 +13,6 @@ test('build, object sale, money and career/action events describe deterministic 
  assert.deepEqual(dispatch(s,room),dispatch(copy,JSON.parse(JSON.stringify(room))));assert.deepEqual(s,copy);
  const placed=dispatch(s,{type:'PLACE_OBJECT',object:'chair',x:1,y:1});assert.equal(placed.ok,true);assert.deepEqual(placed.events.map(e=>e.type),['MONEY_SPENT','FURNITURE_PLACED']);assert.equal(placed.events[0].amount,55);
  const sold=dispatch(s,{type:'ERASE',x:1,y:1,edge:'h:1,1'});assert.deepEqual(sold.events.map(e=>e.type),['FURNITURE_SOLD','MONEY_RECEIVED']);assert.equal(sold.events[1].amount,35);
- dispatch(s,{type:'CHANGE_JOB',job:'barista'});dispatch(s,{type:'START_SHIFT'});const result=advance(s,360);
- assert.ok(result.events.some(e=>e.type==='ACTION_STARTED'));assert.ok(result.events.some(e=>e.type==='SHIFT_COMPLETED'&&e.pay===132));assert.ok(result.events.some(e=>e.type==='ACTION_COMPLETED'));assert.equal(s.shifts,1);
+ dispatch(s,{type:'CHANGE_JOB',job:'barista'});const started=dispatch(s,{type:'START_SHIFT'});assert.deepEqual(started.events.map(e=>e.type),['ACTION_STARTED']);const result=advance(s,360);
+ assert.ok(result.events.some(e=>e.type==='SHIFT_COMPLETED'&&e.pay===132));assert.ok(result.events.some(e=>e.type==='ACTION_COMPLETED'));assert.equal(s.shifts,1);
 });

@@ -1,7 +1,7 @@
 # 0079 — Add Generic Away Need Affordance Engine
 
 - **ID:** 0079
-- **Status:** open
+- **Status:** completed
 - **Created:** 2026-10-16
 - **Priority:** critical
 - **Depends:** 0077
@@ -172,5 +172,5 @@ Imported from the [Away Activity and Work Time Compression review](https://chatg
 
 ## Current status
 
-Open. No implementation or acceptance criteria are claimed complete.
+Completed in the away activity implementation. Away need affordances run as deterministic bounded simulation episodes and only active progress is serialized.
 

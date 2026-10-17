@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {JSDOM} from 'jsdom';
 import {newGame} from '../src/engine.js';
+import {advance} from '../src/game/dispatch.js';
 
 async function boot(view,saved=null){
   const html=await readFile(new URL('../index.html',import.meta.url),'utf8');
@@ -57,7 +58,7 @@ test('keyboard, touch controls and panels retain pause semantics and dispatch al
     game.dispatch=c=>{commands.push(c);return original(c);};
     $('#character-form').dispatchEvent(new w.Event('submit',{cancelable:true}));
     const key=k=>w.document.dispatchEvent(new w.KeyboardEvent('keydown',{key:k,bubbles:true,cancelable:true}));
-    key(' ');assert.equal(game.speed,0);key(' ');assert.equal(game.speed,1);
+    key(' ');assert.equal(game.paused(),true);assert.equal(game.speed,1);key(' ');assert.equal(game.paused(),false);assert.equal(game.speed,1);
     $('[data-tab="build"]').click();assert.equal(game.paused(),true);key('3');assert.equal(game.ui.tab,'live');assert.equal(game.speed,8);
     $('[data-tab="shop"]').click();assert.equal(game.paused(),true);key('r');assert.equal(game.ui.rotation,1);
     $('[data-item="chair"]').click();key('Escape');assert.equal(game.ui.selected,null);
@@ -67,6 +68,18 @@ test('keyboard, touch controls and panels retain pause semantics and dispatch al
     $('[data-tab="career"]').click();$('[data-job="designer"]').click();assert.equal(commands.at(-1).type,'CHANGE_JOB');
     $('#edit-character').click();$('#character-name').value='Morgan';$('#character-form').dispatchEvent(new w.Event('submit',{cancelable:true}));assert.equal(commands.at(-1).type,'CHANGE_APPEARANCE');
     $('#edit-character').click();$('#character-name').focus();key('1');assert.equal(game.speed,3);
+  }finally{app.finish();}
+});
+
+test('away work status, automatic speed, manual override, pause and Auto reset are visible in Career and Live',async()=>{
+  const app=await boot('away-status'),{$}=app;
+  try{
+    const game=app.game;$('#character-form').dispatchEvent(new app.w.Event('submit',{cancelable:true}));
+    game.dispatch({type:'CHANGE_JOB',job:'developer'});game.dispatch({type:'START_SHIFT'});advance(game.state,1);assert.equal(game.state.activity?.kind,'work');game.updateUI(true);
+    $('[data-tab="career"]').click();assert.match($('[data-away-status]').textContent,/WORKING · DEVELOPER/,`${game.ui.tab} ${$('#studio-content').innerHTML}`);assert.match($('[data-away-status]').textContent,/Auto fast-forward · 24×/);assert.match($('#speed-label').textContent,/AUTO 24×/);
+    game.setSpeed(3);assert.match($('[data-away-status]').textContent,/Manual speed · 3×/);$('[data-away-auto]').click();assert.match($('[data-away-status]').textContent,/Auto fast-forward · 24×/);
+    game.setSpeed(0);assert.match($('[data-away-status]').textContent,/Paused/);game.resumeSpeed();game.mobile.active=true;$('[data-tab="live"]').click();assert.equal($('.studio-panel').dataset.sheet,'half');assert.match($('[data-away-status]').textContent,/Auto fast-forward · 24×/);
+    game.setSpeed(3);game.dispatch({type:'CANCEL_ACTION'});assert.equal(game.workSpeedOverride,null);game.dispatch({type:'START_SHIFT'});assert.equal(game.effectiveSpeed(),24);game.setSpeed(8);game.replaceState(structuredClone(game.state));assert.equal(game.workSpeedOverride,null);assert.equal(game.effectiveSpeed(),24);
   }finally{app.finish();}
 });
 

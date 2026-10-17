@@ -138,7 +138,8 @@ Neither comparison establishes human motion quality or physical phone comfort.
 See [0070–0076 evidence](pr-acceptance-followup-validation.md) for corrected status
 ownership, single shared-candidate evaluation, behavior-off terminology and
 verified branch protection. Candidate tests: 142 passing; browser matrix: 52
-passing. Human/physical acceptance remains pending and PR #1 stays draft.
+passing. Human/physical acceptance remains pending. PR #1 has since merged and
+deployed; see the deployment record.
 
 ## Desktop review form — 0074 (pending)
 
@@ -162,3 +163,10 @@ Representative muted motion recordings are review preparation, sampled at up to
 scenarios. No dedicated new need-flourish clips are added without observed human
 readability defects. Record defects and source/asset identity, fix them, rerun
 affected automated cases and repeat human review before closing 0074.
+
+
+## Production deployment — 2026-10-17
+
+PR #1 merged and exact merge SHA deployed to OptiPlex at the user's direction.
+Automated production verification passed; human/device acceptance remains open.
+See the [deployment validation record](embodied-production-deployment-validation.md).

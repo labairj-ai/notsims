@@ -135,11 +135,12 @@ consume no simulation RNG, preserve saves/replay and share intent across rendere
 
 ## Embodied PR acceptance and release follow-ups
 
-Tasks **0070–0076** are open, imported from the
+Tasks **0070–0076** were imported from the
 [PR follow-up review](https://chatgpt.com/s/t_6ad2b66d40308191b0b3972664052ad7)
 and checked against draft [PR #1](https://github.com/labairj-ai/notsims/pull/1),
-implementation `c43dae2`. This import is backlog-only: no runtime, status
-reconciliation, branch-protection, merge or deployment changes are performed.
+implementation `c43dae2`. The initial import was backlog-only; subsequent work
+implemented 0070–0073 and deployed the merged release under the user's explicit
+request. Human/device acceptance remains separate and pending.
 
 | ID | Priority | Work |
 | --- | --- | --- |
@@ -156,7 +157,8 @@ Suggested sequence: **0070 → 0071 → 0072 → 0073 → 0074 → 0075 → 0076
 0070 reviews evidence/status now rather than waiting on 0068 human acceptance.
 0074 needs implementation readiness, not completed human acceptance of the same
 features. 0075 validates 0052/0067/0068 physical criteria instead of depending on
-them already being certified. 0076 keeps those actual human/physical release gates.
+them already being certified. Those acceptance gates remain open after the user
+requested deployment; 0076 records both the release and the pending acceptance.
 
 Read-only review found main unprotected and PR #1 draft with successful `build`
 check under workflow `Test Notsims`; require the actual check context when 0073
@@ -166,5 +168,6 @@ remain authoritative. Each task records source and repository-specific notes.
 0070–0073 are complete: status ownership and baseline terminology corrected,
 eligibility evaluated once, and main protection verified with a disposable failing/
 passing PR. 0074/0075 remain in progress for actual human/device observations.
-0076 remains gated on those results; PR #1 is draft and production is unchanged.
-See [follow-up evidence](../docs/reviews/pr-acceptance-followup-validation.md).
+0076 remains in progress: the merged build is deployed, but required human/device
+acceptance and physical post-deploy smoke remain open. See [follow-up evidence](../docs/reviews/pr-acceptance-followup-validation.md)
+and [production validation](../docs/reviews/embodied-production-deployment-validation.md).

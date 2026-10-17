@@ -1,0 +1,429 @@
+[
+  {
+    "path": "manifest.webmanifest",
+    "status": 200,
+    "contentType": "application/manifest+json",
+    "bytes": 388,
+    "sha256": "f132ab51c871bd93d8267f0adf570f41ad8682a4ab54145c031cacf9caec75ed"
+  },
+  {
+    "path": "assets/icons/icon-192.png",
+    "status": 200,
+    "contentType": "image/png",
+    "bytes": 5109,
+    "sha256": "b716adb4a60afb2155997588cc5590e696515a1a7a3e8451b653f3faed228783"
+  },
+  {
+    "path": "assets/icons/icon-512.png",
+    "status": 200,
+    "contentType": "image/png",
+    "bytes": 10189,
+    "sha256": "6493db94c938b3df1f7f8f56ba5e83f74ab1b1b62d2cfb8aaed788e53dae6970"
+  },
+  {
+    "path": "src/mobile.css",
+    "status": 200,
+    "contentType": "text/css",
+    "bytes": 8044,
+    "sha256": "ad0bf75e17e13b35303c964490d122a005bf0aba105d39af72ab94746e97b4ac"
+  },
+  {
+    "path": "src/ui/mobile.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 6569,
+    "sha256": "37023b03a57e75c39883cd38da1b4e1115311374528cdc72a338a1b24492aaa7"
+  },
+  {
+    "path": "src/ui/gestures.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 1122,
+    "sha256": "af9dd6177f60c33f815b3033dc7c8082c92875fdfc4ce9d67026d7b51838ba50"
+  },
+  {
+    "path": "index.html",
+    "status": 200,
+    "contentType": "text/html",
+    "bytes": 12101,
+    "sha256": "192f3aa3409dbc2e052534beadaf9a234f8792bb0a10e2b20295c0e628d4e530"
+  },
+  {
+    "path": "src/main.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 73,
+    "sha256": "a5faae44d50a7b3e41c152f2fea1d8e93c82df2b55675706c4c0eb82415201f1"
+  },
+  {
+    "path": "src/settings/settings.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 1083,
+    "sha256": "6f5c266886194be892f265dfe4186e47c1a5aa69f127144b79da5b75ccfbe453"
+  },
+  {
+    "path": "src/ui/audio-settings.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 920,
+    "sha256": "7918ce0e0f7f3461e0e45ee22bd6bee7ed1a05ed117412cfe57bf2df2b1ac022"
+  },
+  {
+    "path": "build-info.json",
+    "status": 200,
+    "contentType": "application/json",
+    "bytes": 287,
+    "sha256": "bb8d26ae13b0c14df52530c6b20874ea9c3fed80d4a410c100438e7c0f2f8745"
+  },
+  {
+    "path": "assets/audio/manifest.json",
+    "status": 200,
+    "contentType": "application/json",
+    "bytes": 32293,
+    "sha256": "4d50791657332b6f42e512ffc27d7e6f01af366d2632b8314b39ad6ba2d4703a"
+  },
+  {
+    "path": "src/audio/audio-controller.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 3410,
+    "sha256": "e246e7ca1ed729dd71380eb588318452b57dcd6130ad3706519f4fbf47f8c666"
+  },
+  {
+    "path": "src/audio/audio-cue-resolver.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 1630,
+    "sha256": "32a193a8baa8d3326316d21f2be9d8c2025a11aa0a96c2a317706dcb587492e0"
+  },
+  {
+    "path": "src/audio/audio-cues.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 3973,
+    "sha256": "640b03128648885fbec703497281491b009ac21bb433d55b3cd8570d5909be7f"
+  },
+  {
+    "path": "src/audio/audio-event-subscriber.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 2314,
+    "sha256": "06ec0979f067d0643a267f48b8d87b55febecc0f20446a0549becfd81539a010"
+  },
+  {
+    "path": "src/audio/audio-events.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 343,
+    "sha256": "419ec510b941cfc30c1183cfafc34f329a30ce73942c2f215a83095843f9b74f"
+  },
+  {
+    "path": "src/audio/audio-library.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 17153,
+    "sha256": "fa750e31780ec9323554c9f3e48e790424dc11079e8e056455d1c4edb95a84a9"
+  },
+  {
+    "path": "src/audio/audio-manager.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 4723,
+    "sha256": "95b83593838a6df848c217f40209e82d14883b2378c2442cd366174662152911"
+  },
+  {
+    "path": "src/audio/interaction-audio.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 2448,
+    "sha256": "bf57e2d784c4092abfcca0262080726bc33d3f1621eb95d324ad8bc2113f3b5d"
+  },
+  {
+    "path": "src/audio/music-director.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 2977,
+    "sha256": "50a06ac4112cb006956bffa12d22893c42168c30b10653219ddb856907236964"
+  },
+  {
+    "path": "src/audio/web-audio-backend.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 4061,
+    "sha256": "35fafe46cc88b2d319276b5b80d4d33a76f1be8ca4535a959009db228becd728"
+  },
+  {
+    "path": "assets/audio/sfx/ui/select.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 7982,
+    "sha256": "43d88c57b1feb9fa9df3ecd6b5180ef86d32e419aad935c24c605c511c2167bd"
+  },
+  {
+    "path": "assets/audio/sfx/ui/confirm.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 19888,
+    "sha256": "7d5a4ca81c07ee0ebe2b91a8a448494a680ea573b97e853248da53db12402eb9"
+  },
+  {
+    "path": "assets/audio/sfx/ui/cancel.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 7982,
+    "sha256": "a7f9441d61267e2aa3c5e7dda0d836517c2d4b7662b1adf87b84ee088bce86a0"
+  },
+  {
+    "path": "assets/audio/sfx/ui/error.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 7982,
+    "sha256": "63371cdfd57ba96f3fd18ae4f71165ccf10f5be572f1c35abbd127ea09fcb789"
+  },
+  {
+    "path": "assets/audio/sfx/ui/rotate.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 7982,
+    "sha256": "67bb78fe51fafa8b03063866c8da930649fd288edc07c001e66706e5100d9b09"
+  },
+  {
+    "path": "assets/audio/sfx/build/floor.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 10628,
+    "sha256": "7ab8a8470f92b5e430560dcc917919cda419c1de76a436f7f32e1d9790f970eb"
+  },
+  {
+    "path": "assets/audio/sfx/build/wall.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 10628,
+    "sha256": "ec036d5cff4516751c39d0354762e7d327851c679d171f7bb92e241c24a188f9"
+  },
+  {
+    "path": "assets/audio/sfx/build/door-place.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 10628,
+    "sha256": "e39604085bdf84900600fd295216d435634df379afe75995e1fdbb5943f0ebdf"
+  },
+  {
+    "path": "assets/audio/sfx/build/place.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 10628,
+    "sha256": "46554260f7f3af9377d7e8b543af0c8822ec6b835cd49fb288000fefad483722"
+  },
+  {
+    "path": "assets/audio/sfx/build/sell.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 10628,
+    "sha256": "a1bc5369b419e9d633ef098c723d05561bb2ac7cef2d0f38d28fe29143f44da8"
+  },
+  {
+    "path": "assets/audio/sfx/interactions/purchase.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 11068,
+    "sha256": "b1d7378952e6646491e7dc9f937a6babef1d9e820b84df198a0166a407011241"
+  },
+  {
+    "path": "assets/audio/sfx/interactions/bill.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 17684,
+    "sha256": "8e93d67f7f73217d06298a0de2e9609c4ade193109470a4126c9dfb96b6b9a4c"
+  },
+  {
+    "path": "assets/audio/sfx/interactions/payday.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 26504,
+    "sha256": "a78ad20f1df6112551628e93a1b242e229de3b64667a24a6f031f6d57759f95e"
+  },
+  {
+    "path": "assets/audio/sfx/interactions/promotion.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 39734,
+    "sha256": "b311fcfba621378d66e8a0ba6859baa2b82346bb1dae92454a29e2a988873ab5"
+  },
+  {
+    "path": "assets/audio/sfx/interactions/fabric.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 19888,
+    "sha256": "92af80933584fb94d61db29829abc6a731d6d2cf727817510117cf65d8113236"
+  },
+  {
+    "path": "assets/audio/sfx/interactions/fridge.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 24298,
+    "sha256": "3805a73aa0503038627a42e2d646c0d3528dd5ab74cd98d4432421a1a36b0a24"
+  },
+  {
+    "path": "assets/audio/sfx/interactions/eat.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 13274,
+    "sha256": "f28ab3624f22e58216b319c4949d472c46d32b26c7281e7d4cc2d8bc82672a4a"
+  },
+  {
+    "path": "assets/audio/sfx/interactions/flush.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 52964,
+    "sha256": "edc423727df9565a0ef3eb243d008b10002890b4f3e144f20b8c3d2a22972697"
+  },
+  {
+    "path": "assets/audio/sfx/interactions/page.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 13274,
+    "sha256": "eb8cd913886cb2e6e5c1b8236226642ade611f96e7da8c73b7b898556dffaf38"
+  },
+  {
+    "path": "assets/audio/sfx/interactions/switch.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 3572,
+    "sha256": "e35ab596d211e842476e764efcfa2c1ca6d3157f47d2c473677a4cc55eccd429"
+  },
+  {
+    "path": "assets/audio/sfx/interactions/water-start.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 22094,
+    "sha256": "39a4284a267e848b6870bd171848ec8f9492b18d3acce356724ca0271d8069eb"
+  },
+  {
+    "path": "assets/audio/sfx/interactions/water-stop.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 15478,
+    "sha256": "351be8c2501e0a59231bdb03773f1deec9c7521fe2d18f55d6bf0f22e36bf140"
+  },
+  {
+    "path": "assets/audio/sfx/interactions/ignite.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 13274,
+    "sha256": "f875b2eb6d568ee11cd681115663fdbd750acb5d7f71f2fe11a6fbfec2bebee5"
+  },
+  {
+    "path": "assets/audio/sfx/interactions/shower.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 88244,
+    "sha256": "d5a4ad259d48e4313787bca6c69272fd142c39a5955c820c006f45a7d06da9f7"
+  },
+  {
+    "path": "assets/audio/sfx/interactions/stove.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 88244,
+    "sha256": "15a096fc94f1e5b3152669b1635eb16a6abb0f13ea8c78c406bf6d535995f2c8"
+  },
+  {
+    "path": "assets/audio/sfx/interactions/tv.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 88244,
+    "sha256": "139c7fc1e9379dff7cd632a50fcb0d18194a529e28df030a11ebb533ba199c1c"
+  },
+  {
+    "path": "assets/audio/sfx/interactions/typing.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 88244,
+    "sha256": "5b671a5da6ef2fcc23813f69dd3adccfa152a2085c8fb67e33b438f7a611c269"
+  },
+  {
+    "path": "assets/audio/sfx/foley/step-indoor-1.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 7100,
+    "sha256": "c71eb70b4bb8cd57f05bbd0d514015bb9342d3dadc39fb8e67d85ff0217853ce"
+  },
+  {
+    "path": "assets/audio/sfx/foley/step-indoor-2.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 7100,
+    "sha256": "94e7b128570010dbc96f9863884c99824f81de19aff4782421a8f4ed65d5f44e"
+  },
+  {
+    "path": "assets/audio/sfx/foley/step-outdoor-1.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 7100,
+    "sha256": "1ba085d1d40741e090d0db573104ff0954f7c7282b46d4bbbb7a0469d8c6db5b"
+  },
+  {
+    "path": "assets/audio/sfx/foley/step-outdoor-2.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 7100,
+    "sha256": "fe29afc082831263633635c221e5c89b5929d0a15f63a26ced1a89cedceb4f70"
+  },
+  {
+    "path": "assets/audio/ambience/garden-breeze.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 176444,
+    "sha256": "b902f06044654f035f9e9b0dc1ef08c0f840b31df5defef6de057fead1bbf459"
+  },
+  {
+    "path": "assets/audio/music/little-morning.mp3",
+    "status": 200,
+    "contentType": "audio/mpeg",
+    "bytes": 320826,
+    "sha256": "9553aa91f10fea0e30d435bbe7d1c0bfa5c3b270a5f702b0e0f1919d10caf519"
+  },
+  {
+    "path": "assets/audio/music/clover-walk.mp3",
+    "status": 200,
+    "contentType": "audio/mpeg",
+    "bytes": 320826,
+    "sha256": "296c96ddba96300f32dc8eb37903ce68d3148035f3a41653862251ec36ce1212"
+  },
+  {
+    "path": "assets/audio/music/porch-light.mp3",
+    "status": 200,
+    "contentType": "audio/mpeg",
+    "bytes": 320826,
+    "sha256": "ebc4f7ca70121423b5af2ff274f920e8b7c53790b454bf9e6a61396f0553cbf4"
+  },
+  {
+    "path": "assets/audio/sfx/social/social-text.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 16802,
+    "sha256": "752b4df4b66e9a9db26ca560a08727f57f320ea2a25f2269eb0f9865005b8729"
+  },
+  {
+    "path": "assets/audio/sfx/social/social-ring.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 110294,
+    "sha256": "d55bb5d19402881c01f6c98e69d477407407848d9699882ab6602e8ad397413d"
+  },
+  {
+    "path": "assets/audio/sfx/social/social-knock.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 28708,
+    "sha256": "b0379a7ce6701d60314b102cc7a15ee2f03e6b0dcee0f296347c00b2aba4eda7"
+  },
+  {
+    "path": "assets/audio/sfx/social/social-milestone.wav",
+    "status": 200,
+    "contentType": "audio/wav",
+    "bytes": 35324,
+    "sha256": "161c4d68560ff830dd3c2efc2f8b6df60a6da95de63e2f19126307c2807c8ee8"
+  }
+]

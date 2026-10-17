@@ -13,7 +13,7 @@ PR #7 has strong automated implementation evidence, but it is intentionally stil
 
 The release must not infer browser, touch, physical-device, motion, audio or standalone acceptance from DOM/unit/CI results.
 
-The wealth changes also introduce save v4, new recurring payouts, multiple properties and substantially more purchase/sale state, so production verification needs an explicit migration and idempotency canary.
+The wealth changes also introduce save v5, new recurring payouts, multiple properties and substantially more purchase/sale state, so production verification needs an explicit migration and idempotency canary.
 
 ## Goal
 
@@ -78,21 +78,21 @@ Do not substitute emulator-only evidence.
 
 ## Save migration canary
 
-Use a real pre-v4 save fixture or production-compatible captured save.
+Use reproducible, production-compatible v3 and v4 save fixtures or captured saves. Preserve the original inputs; use disposable copies for each run.
 
 Verify:
 
 ```text
-load v3
-→ migrate exactly once to v4
-→ career default sane
-→ starter property ownership created
-→ existing furniture preserved
+load v3 → migrate v3 → v4 → v5 exactly once
+load v4 → migrate v4 → v5 exactly once
+→ career defaults, level/review state and earned wage floor are sane
+→ starter property ownership created for the v3 path
+→ existing furniture and independent property state preserved
 → money preserved
 → relationships/social state preserved
-→ serialize
-→ reload
-→ no second migration effects
+→ serialize as v5
+→ reload v5 repeatedly
+→ no second migration effects, duplicated payouts or lost ownership
 ```
 
 Keep a reproducible fixture in tests if policy permits.
@@ -189,9 +189,9 @@ Create or update a release validation record covering:
 ## Done when
 
 - [ ] 0085 and 0102 acceptance are complete.
-- [ ] 0104–0107 are complete.
+- [x] 0104–0107 are complete.
 - [ ] exact merge candidate CI passes.
-- [ ] real v3→v4 migration canary passes.
+- [ ] v3→v4→v5 and v4→v5 migration canaries pass on the accepted candidate; repeated v5 reload is idempotent.
 - [ ] ownership/payout restart canary passes.
 - [ ] browser review passes.
 - [ ] physical iPhone/Android review passes.
@@ -209,3 +209,9 @@ https://chatgpt.com/s/t_6ad2dc9f25b4819195a821f85bbe1c76
 See [follow-up validation](../docs/reviews/wealth-followup-validation.md), the [versioned contract](../docs/architecture/economy-balance-contract.md), and `tests/economy-followup.test.js`.
 
 Migration/ownership canaries and the release procedure are prepared. Actual browser, physical-device and earlier human acceptance remain open. PR #7 remains draft; no merge/deployment is claimed. See [release gate](../docs/reviews/wealth-release-validation.md).
+
+## Acceptance-only review follow-up
+
+The [latest review](https://chatgpt.com/s/t_6ad2e0fe8c6481918f279ce5497e12e4) confirms 0104–0107 remain complete and requests this v5 contract correction. Do not add another economy feature backlog before certification. Prior successful implementation CI is [38995760858](https://github.com/labairj-ai/notsims/actions/runs/38995760858), for `f2e47fc505e550a8d87781110d9d4468a7e7bfc0`; a final accepted candidate still needs its own exact-head check.
+
+Use the [browser/property acceptance walkthrough](../docs/reviews/wealth-browser-acceptance.md). Browser, physical-device and inherited human observations remain required, not inferred from fixtures or CI.

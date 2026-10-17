@@ -7,8 +7,8 @@ import {hourlyWage,shiftPay,changeJob,startShift} from '../src/systems/careers/c
 import {cancel} from '../src/systems/actions/queue.js';
 
 test('canonical wages, promotion, work energy and early leave cover every career',()=>{
- for(const j of JOBS){const s=newGame();changeJob(s,j.id);assert.equal(hourlyWage(s),j.pay);assert.equal(shiftPay(s),j.pay*j.hours);
-  s.shifts=3;s.skill=10;assert.equal(hourlyWage(s),Math.round(j.pay*1.2));assert.equal(shiftPay(s),Math.round(j.pay*j.hours*1.2));
+ for(const j of JOBS){const s=newGame();changeJob(s,j.id);s.minutes=j.startMinute;assert.equal(hourlyWage(s),j.pay);assert.equal(shiftPay(s),j.pay*j.hours);
+  s.shifts=3;s.skill=10;s.career.level=1;s.career.completedShifts=3;assert.equal(hourlyWage(s),Math.round(j.pay*1.4));assert.equal(shiftPay(s),Math.round(j.pay*j.hours*1.4));
   s.needs.energy=14;startShift(s);assert.equal(s.activity,null);s.needs.energy=15;startShift(s);assert.equal(s.activity.kind,'work');const money=s.money;tick(s,1);cancel(s);assert.equal(s.money,money);assert.equal(s.shifts,3);
  }
  assert.match(readFileSync(new URL('../src/ui/panels/career.js',import.meta.url),'utf8'),/hourlyWage\(state,j\)/);

@@ -1,3 +1,4 @@
+import {awayPolicy} from '../systems/away/away.js';
 import {$} from './dom.js';
 import {itemDef} from '../content/furniture.js';
 import {NEEDS} from '../content/needs.js';
@@ -11,18 +12,18 @@ export function installMobile(app){
   $('#mobile-phone').hidden=app.ui.tab!=='live';$('#mobile-phone').onclick=()=>app.openPhone();
   $('#mobile-funds').textContent=$('#money').textContent;$('#mobile-clock').textContent=$('#weekday').textContent+' · '+$('#clock').textContent;
   const lowest=Object.entries(app.state.needs).sort((a,b)=>a[1]-b[1])[0];$('#mobile-needs').textContent=`${NEEDS[lowest[0]][0]} ${Math.round(lowest[1])}% · ${$('#mood').textContent}`;
-  $('#mobile-pause').textContent=app.paused()?'▶':'Ⅱ';$('#mobile-speed').textContent=app.state.activity?.kind==='work'?(app.workSpeedOverride===null?'AUTO 24×':`${app.workSpeedOverride}×`):`${app.speed}×`;
+  $('#mobile-pause').textContent=app.paused()?'▶':'Ⅱ';$('#mobile-speed').textContent=!!awayPolicy(app.state.activity)?(app.workSpeedOverride===null?'AUTO 24×':`${app.workSpeedOverride}×`):`${app.speed}×`;
   if(app.ui.selectedObjectId&&!app.state.furniture.some(f=>f.id===app.ui.selectedObjectId))app.dismissObject?.();
   const ui=app.ui,tray=$('#placement-tray'),signature=JSON.stringify([ui.tab,ui.tool,ui.floor,ui.selected,ui.rotation,ui.roomPreview]);if(signature===this.traySignature)return;this.traySignature=signature;tray.replaceChildren();
   if(ui.tab==='build'||ui.tab==='shop'&&ui.selected){const label=document.createElement('span');label.textContent=ui.tab==='build'?`${ui.tool} · ${ui.floor} · ${ui.roomPreview?.message||'Tap to edit; two fingers to navigate'}`:`${itemDef(ui.selected).name} · $${itemDef(ui.selected).price}`;tray.append(label);
    if(ui.tab==='shop'){const rotate=document.createElement('button');rotate.textContent=`Rotate ${ui.rotation*90}°`;rotate.onclick=()=>{ui.rotation=(ui.rotation+1)%4;this.update();};tray.append(rotate);}
    const cancel=document.createElement('button');cancel.textContent='Cancel';cancel.onclick=()=>{ui.selected=null;ui.roomStart=null;ui.roomPreview=null;app.selectTab('live');};tray.append(cancel);}
  }};
- const select=app.selectTab;app.selectTab=tab=>{app.dismissObject?.();app.ui.roomPreview=null;select(tab);mobile.setSheet(tab==='live'&&app.state.activity?.kind!=='work'?'collapsed':'half');};
+ const select=app.selectTab;app.selectTab=tab=>{app.dismissObject?.();app.ui.roomPreview=null;select(tab);mobile.setSheet(tab==='live'&&!awayPolicy(app.state.activity)?'collapsed':'half');};
  const render=app.renderStudio;app.renderStudio=()=>{render();if(mobile.active){const walker=document.createTreeWalker($('#studio-content'),window.NodeFilter.SHOW_TEXT);while(walker.nextNode()){walker.currentNode.textContent=walker.currentNode.textContent.replace(/Click/g,'Tap').replace(/click/g,'tap').replace(/Press R to rotate or Esc to put it down\./g,'Use Rotate or Cancel in the placement tray.').replace(/Press /g,'Use ');}}if(mobile.active){panel.insertBefore(life,$('#studio-content'));life.hidden=app.ui.tab!=='live';}else life.hidden=false;mobile.update();};
  const update=app.updateUI;app.updateUI=(...args)=>{update(...args);mobile.update();};
  $('#mobile-menu').onclick=()=>$('#game-menu').showModal();$('#mobile-needs').onclick=()=>{app.selectTab('live');mobile.setSheet('half');};
- $('#mobile-pause').onclick=()=>{const paused=app.paused();if(['build','shop'].includes(app.ui.tab))app.selectTab('live');if(paused)app.resumeSpeed();else app.setSpeed(0);};$('#mobile-speed').onclick=()=>{app.selectTab('live');if(app.state.activity?.kind==='work'){if(app.workSpeedOverride===null)app.setSpeed(1);else if(app.workSpeedOverride===1)app.setSpeed(3);else if(app.workSpeedOverride===3)app.setSpeed(8);else app.useAutoWorkSpeed();}else app.setSpeed(({1:3,3:8,8:1})[app.speed||app.lastNonzero]);};
+ $('#mobile-pause').onclick=()=>{const paused=app.paused();if(['build','shop'].includes(app.ui.tab))app.selectTab('live');if(paused)app.resumeSpeed();else app.setSpeed(0);};$('#mobile-speed').onclick=()=>{app.selectTab('live');if(!!awayPolicy(app.state.activity)){if(app.workSpeedOverride===null)app.setSpeed(1);else if(app.workSpeedOverride===1)app.setSpeed(3);else if(app.workSpeedOverride===3)app.setSpeed(8);else app.useAutoWorkSpeed();}else app.setSpeed(({1:3,3:8,8:1})[app.speed||app.lastNonzero]);};
  $('#sheet-close').onclick=()=>mobile.setSheet('collapsed');$('#sheet-size').onclick=()=>mobile.setSheet(mobile.state==='expanded'?'half':'expanded');
  let start;$('.sheet-heading').addEventListener('pointerdown',e=>{if(e.target.closest('button'))return;start=e.clientY;$('.sheet-heading').setPointerCapture?.(e.pointerId);});$('.sheet-heading').addEventListener('pointerup',e=>{if(start!==undefined&&Math.abs(e.clientY-start)>25)mobile.setSheet(e.clientY>start?'collapsed':'expanded');start=undefined;});
  const layout=()=>{mobile.active=!!media?.matches;$('#world').setAttribute('aria-label',mobile.active?'Home and garden. Tap ground to walk, furniture to interact. Drag to pan, pinch to zoom. Use two fingers to navigate while building.':'Home and garden. Click ground to walk and furniture to interact.');document.documentElement.classList.toggle('mobile-layout',mobile.active);if(!mobile.active)document.querySelector('.game-layout').prepend(life);app.renderStudio();};media?.addEventListener('change',layout);

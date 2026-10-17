@@ -1,3 +1,6 @@
+import {WORK_STRATEGIES,shiftWindow,adjustPerformance,resolveWorkEvent} from '../systems/careers/performance.js';
+import {ownershipCommand} from '../systems/ownership/ownership.js';
+import {startDestination} from '../systems/away/destinations.js';
 import {socialCommand} from '../systems/social/social.js';
 import {COMMANDS} from './commands.js';
 import {inside,SIZE} from '../core/grid.js';
@@ -41,7 +44,13 @@ export function dispatch(s,c){
  if(!c||!COMMANDS.includes(c.type))return fail('UNKNOWN_COMMAND');
  const events=[];let message=null;
  if(['SHARED_ACTIVITY','SOCIAL_INTERACT','PHONE_CONTACT','INVITE_OVER','RESPOND_SOCIAL_EVENT','ASK_GUEST_TO_LEAVE','CANCEL_SOCIAL_PLAN','REQUEST_INTRODUCTION'].includes(c.type)){const code=socialCommand(s,c,events);return code?fail(code):{ok:true,code:'OK',events};}
+ if(['BUY_ASSET','SELL_ASSET','SELECT_VEHICLE','SWITCH_RESIDENCE','MANAGE_BUSINESS','VISIT_ASSET','WISHLIST'].includes(c.type)){const code=ownershipCommand(s,c,events);return code?typeof code==='string'?fail(code):fail(code.code,code.details):{ok:true,code:'OK',events};}
  switch(c.type){
+ case 'START_DESTINATION':{const r=startDestination(s,c,events);return r?typeof r==='string'?fail(r):fail(r.code,r.details):{ok:true,code:'OK',events};}
+ case 'SET_WORK_STRATEGY':if(s.activity?.kind!=='work')return fail('NOT_WORKING');if(!Object.hasOwn(WORK_STRATEGIES,c.strategy??''))return fail('INVALID_STRATEGY');s.activity.awayState.strategy=c.strategy;break;
+ case 'RESOLVE_WORK_EVENT':{const code=resolveWorkEvent(s,c.choice,events);if(code)return fail(code);break;}
+ case 'TAKE_DAY_OFF':{const w=shiftWindow(s);if(s.activity||!w||s.minutes<w.start-120||s.minutes>w.start+60)return fail('SHIFT_UNAVAILABLE');s.career.lastAttendanceDay=w.day;adjustPerformance(s,-2,'day_off',events);emit(events,'DAY_OFF_TAKEN',{day:w.day});break;}
+
  case 'MOVE_TO':if(!inside(c.x,c.y))return fail('INVALID_TARGET');message=enqueue(s,{kind:'walk',x:c.x,y:c.y},events);break;
  case 'INTERACT':{const f=s.furniture.find(f=>f.id===c.id);if(!f||!resolveInteraction(f,c.interaction))return fail('INVALID_TARGET');message=enqueue(s,{kind:'use',id:c.id,...(c.interaction?{interaction:c.interaction}:{})},events);break;}
  case 'QUICK_ACTION':if(c.kind==='chat')return fail('SELECT_CONTACT');if(typeof c.kind!=='string'||!Object.hasOwn(QUICK_ACTIONS,c.kind))return fail('INVALID_ACTION');message=enqueue(s,{kind:c.kind},events);break;
@@ -50,7 +59,7 @@ export function dispatch(s,c){
  case 'EDIT_TILE':case 'ERASE':{const tool=c.type==='ERASE'?'erase':c.tool;if(!['floor','wall','door','erase'].includes(tool)||!inside(c.x,c.y)||!edgeValid(c.edge)||!floors.includes(c.floor??'wood'))return fail('INVALID_TARGET');message=buildTile(s,tool,c.x,c.y,c.edge,c.floor??undefined,events);break;}
  case 'PLACE_OBJECT':if(!itemDef(c.object)||!inside(c.x,c.y)||![0,1,2,3].includes(c.rotation??0))return fail('INVALID_TARGET');message=buy(s,c.object,c.x,c.y,c.rotation??0,events);break;
  case 'CHANGE_JOB':if(!jobDef(c.job))return fail('INVALID_CAREER');message=changeJob(s,c.job,events);if(!message&&!s.contacts.includes('person_7')){s.contacts.push('person_7');emit(events,'CONTACT_ADDED',{personId:'person_7',reason:'coworker'});}break;
- case 'START_SHIFT':{if(!jobDef(s.job))return fail('INVALID_CAREER');if(s.activity||s.queue.length)return fail('BUSY');if(s.needs.energy<15)return fail('LOW_ENERGY');const work={kind:'work',total:jobDef(s.job).hours*60};const conflicts=awayConflicts(s,work);const acknowledged=new Set(Array.isArray(c.confirmedConflictIds)?c.confirmedConflictIds.filter(Number.isInteger):[]);const unacknowledged=conflicts.filter(x=>!acknowledged.has(x.id));if(unacknowledged.length)return fail('AWAY_CONFLICT',{conflicts:unacknowledged});message=startShift(s);if(message)return fail(message);emit(events,'ACTION_STARTED',{kind:'work'});break;}
+ case 'START_SHIFT':{if(!jobDef(s.job))return fail('INVALID_CAREER');if(s.activity||s.queue.length)return fail('BUSY');if(s.needs.energy<15)return fail('LOW_ENERGY');const w=shiftWindow(s);if(!w?.canAttend)return fail('SHIFT_UNAVAILABLE');const work={kind:'work',total:w.end-s.minutes};const conflicts=awayConflicts(s,work);const acknowledged=new Set(Array.isArray(c.confirmedConflictIds)?c.confirmedConflictIds.filter(Number.isInteger):[]);const unacknowledged=conflicts.filter(x=>!acknowledged.has(x.id));if(unacknowledged.length)return fail('AWAY_CONFLICT',{conflicts:unacknowledged});message=startShift(s);if(message)return fail(message);emit(events,'ACTION_STARTED',{kind:'work'});break;}
  case 'CHANGE_APPEARANCE':if(!appearanceValid(c.appearance))return fail('INVALID_APPEARANCE');Object.assign(s.person,c.appearance);log(s,'A fresh look for a new day.');emit(events,'APPEARANCE_CHANGED',{appearance:{...c.appearance}});break;
  }
  return message?fail(rejectionCode(message),{message}):{ok:true,code:'OK',events};

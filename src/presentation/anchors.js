@@ -1,3 +1,4 @@
+import {itemDef} from '../content/furniture.js';
 import {furniturePoint,dimensions} from '../systems/objects/geometry.js';
 // Local [x, height, plot-y], metres, matching neutral furniture recipes.
 export const FURNITURE_ANCHORS=Object.freeze({
@@ -11,6 +12,6 @@ export const FURNITURE_ANCHORS=Object.freeze({
  toilet:{seat:[.5,.49,.59],look:[.5,.9,1]},
  tv:{look:[1,1.2,.5]},table:{rightHand:[.6,1.12,.8],leftHand:[1.4,1.12,.8],look:[1,.9,.5]}
 });
-export function furnitureAnchors(f){const result={};for(const [key,[lx,z,ly]] of Object.entries(FURNITURE_ANCHORS[f.type]??{})){const [x,y]=furniturePoint(f,lx,ly);result[key]=[x,z,y];}const [w,h]=dimensions(f);result.center=[f.x+w/2,.9,f.y+h/2];return result;}
+export function furnitureAnchors(f){const result={};for(const [key,[lx,z,ly]] of Object.entries(FURNITURE_ANCHORS[itemDef(f.type)?.recipe??f.type]??{})){const [x,y]=furniturePoint(f,lx,ly);result[key]=[x,z,y];}const [w,h]=dimensions(f);result.center=[f.x+w/2,.9,f.y+h/2];return result;}
 export function objectPhase(a){if(a?.path?.length)return 'approach';if(!a)return 'settle';const elapsed=a.elapsed??0,total=a.total??60;return elapsed<.3?'orient':elapsed<1?'prepare':elapsed<2?'contact':elapsed>total-1?'release':'active';}
-export function objectGesture(type,phase){if(phase==='approach'||phase==='settle')return null;if(['orient','prepare','contact'].includes(phase))return ['bed','sofa','toilet'].includes(type)?'StandToSit':type==='bookcase'?'ReachHigh':'ReachMid';if(phase==='release')return ['bed','sofa','toilet'].includes(type)?'SitToStand':'ReachMid';return {fridge:'Eat',stove:'Stir',bookcase:'Read',desk:'Type',shower:'UseHands',tv:null}[type]??null;}
+export function objectGesture(type,phase){type=itemDef(type)?.recipe??type;if(phase==='approach'||phase==='settle')return null;if(['orient','prepare','contact'].includes(phase))return ['bed','sofa','toilet'].includes(type)?'StandToSit':type==='bookcase'?'ReachHigh':'ReachMid';if(phase==='release')return ['bed','sofa','toilet'].includes(type)?'SitToStand':'ReachMid';return {fridge:'Eat',stove:'Stir',bookcase:'Read',desk:'Type',shower:'UseHands',tv:null}[type]??null;}

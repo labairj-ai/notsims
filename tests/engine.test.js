@@ -21,20 +21,20 @@ test('walls block movement and doors connect rooms',()=>{
 test('using a bed restores energy and caps all needs at 100',()=>{
  const s=newGame();s.needs.energy=10;enqueue(s,{kind:'use',id:s.furniture.find(f=>f.type==='bed').id});tick(s,200);assert.ok(s.needs.energy>90);assert.ok(Object.values(s.needs).every(v=>v>=0&&v<=100));
 });
-test('work pays only on completion and every third shift earns a raise',()=>{
- const s=newGame();s.job='barista';const initial=s.money;
+test('work pays only on completion and experience alone cannot force a promotion',()=>{
+ const s=newGame();s.job='barista';s.minutes=419;const initial=s.money;
  enqueue(s,{kind:'work'});tick(s,100);assert.equal(s.money,initial);assert.equal(s.activity.kind,'work');cancel(s);assert.equal(s.money,initial);
- for(let i=0;i<3;i++){s.needs.energy=100;enqueue(s,{kind:'work'});tick(s,360);}
- assert.equal(s.shifts,3);assert.equal(s.money,initial+132*3);s.needs.energy=100;enqueue(s,{kind:'work'});tick(s,1);assert.equal(s.activity.pay,152);
+ for(let i=0;i<3;i++){s.needs.energy=100;s.minutes=(i+1)*1440+419;enqueue(s,{kind:'work'});tick(s,360);}
+ assert.equal(s.shifts,3);assert.equal(s.money,initial+132*3-101);s.needs.energy=100;s.minutes=4*1440+419;enqueue(s,{kind:'work'});tick(s,1);assert.equal(s.activity.pay,132);
 });
 test('all three jobs pay the advertised wages',()=>{
- for(const j of JOBS){const s=newGame();s.job=j.id;enqueue(s,{kind:'work'});tick(s,j.hours*60);assert.equal(s.money,6500+j.pay*j.hours);assert.equal(s.shifts,1);}
+ for(const j of JOBS){const s=newGame();s.job=j.id;s.minutes=j.startMinute-1;enqueue(s,{kind:'work'});tick(s,j.hours*60);assert.equal(s.money,6500+j.pay*j.hours);assert.equal(s.shifts,1);}
 });
 test('fast-forward and normal time produce the same simulation result',()=>{
  const a=newGame(),b=structuredClone(a);enqueue(a,{kind:'chat'});enqueue(b,{kind:'chat'});tick(a,120);for(let i=0;i<120;i++)tick(b,1);assert.deepEqual(a,b);
 });
 test('save round trip preserves house, funds, needs, character and in-progress jobs',()=>{
- const s=newGame({name:'Taylor',style:'curly'});s.job='designer';enqueue(s,{kind:'work'});tick(s,100);const t=validateSave(JSON.stringify(s));assert.deepEqual(t.person,s.person);assert.deepEqual(t.furniture,s.furniture);assert.equal(t.activity.elapsed,100);assert.equal(t.money,s.money);tick(t,320);assert.equal(t.shifts,1);
+ const s=newGame({name:'Taylor',style:'curly'});s.job='designer';s.minutes=539;enqueue(s,{kind:'work'});tick(s,100);const t=validateSave(JSON.stringify(s));assert.deepEqual(t.person,s.person);assert.deepEqual(t.furniture,s.furniture);assert.equal(t.activity.elapsed,100);assert.equal(t.money,s.money);tick(t,320);assert.equal(t.shifts,1);
 });
 test('bad saves cannot introduce invalid furniture, colors, time, or needs',()=>{
  for(const mutate of [s=>s.version=22,s=>s.minutes=-1,s=>s.person.skin='bad',s=>s.furniture[0].type='unknown',s=>s.needs.hunger=999,s=>s.furniture.push({...s.furniture[0]}),s=>s.person.x=SIZE]){const s=newGame();mutate(s);assert.throws(()=>validateSave(s));}

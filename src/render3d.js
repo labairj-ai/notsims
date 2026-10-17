@@ -1,3 +1,4 @@
+import {awayPolicy} from './systems/away/away.js';
 import {BodyPresentation} from './presentation/runtime.js';
 import * as THREE from 'three';
 import {SIZE,inside,dimensions,canPlace} from './engine.js';
@@ -87,7 +88,7 @@ export class Renderer3D extends WorldCamera {
     h.root.position.fromArray(intent.position);const targetHeight=intent.position[1]-(intent.seatOffset??0);h.visualHeight=h.visualHeight??targetHeight;if(frame.dt)h.visualHeight+=(targetHeight-h.visualHeight)*(1-Math.exp(-frame.dt*10));h.root.position.y=h.visualHeight;
     if(intent.facing!==null){const delta=Math.atan2(Math.sin(intent.facing-h.root.rotation.y),Math.cos(intent.facing-h.root.rotation.y));h.root.rotation.y+=Math.sign(delta)*Math.min(Math.abs(delta),frame.dt?frame.dt*3:0);}
     const tilt=intent.base==='Sleep'?-Math.PI/2:0;if(frame.dt)h.model.rotation.x+=(tilt-h.model.rotation.x)*(1-Math.exp(-frame.dt*8));
-    h.root.visible=id!=='player'||s.activity?.kind!=='work';
+    h.root.visible=id!=='player'||!awayPolicy(s.activity);
     h.controller.update(intent,frame.dt,frame);
     return intent;
   }
@@ -95,7 +96,7 @@ export class Renderer3D extends WorldCamera {
     const start=performance.now(),frame=this.body.frame(s,time,options);
     const ids=new Set(s.social.presences.map(p=>p.personId));
     for(const [id,h] of this.visitors)if(!ids.has(id)){this.scene.remove(h.root);h.dispose();this.visitors.delete(id);}
-    if(this.human){const intent=this.applyBody(s,'player',this.human,frame);this.pin.visible=s.activity?.kind!=='work';this.pin.position.set(intent.position[0],intent.base==='Sleep'?.6:intent.base==='Sit'?1.7:2.05,intent.position[2]);if(frame.dt)this.pin.rotation.y+=frame.dt*.5;}
+    if(this.human){const intent=this.applyBody(s,'player',this.human,frame);this.pin.visible=!awayPolicy(s.activity);this.pin.position.set(intent.position[0],intent.base==='Sleep'?.6:intent.base==='Sit'?1.7:2.05,intent.position[2]);if(frame.dt)this.pin.rotation.y+=frame.dt*.5;}
     if(this.humanAsset)for(const p of s.social.presences){let h=this.visitors.get(p.personId);if(!h){h=new Human(this.humanAsset);this.visitors.set(p.personId,h);this.scene.add(h.root);}this.applyBody(s,p.personId,h,frame);}
     this.body.reportCost(performance.now()-start);
   }

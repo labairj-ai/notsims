@@ -145,3 +145,7 @@ benchmarks in the [validation report](docs/reviews/economy-progression-validatio
 Physical/device and human acceptance remain open as recorded there.
 
 Follow-up [0104–0108 validation](docs/reviews/wealth-followup-validation.md) covers canonical business management, versioned balance gates (`npm run check:economy`), performance-gated career levels and distinct premium experiences. `npm run canary:wealth` prepares migration/ownership restart evidence. Actual browser/device/human release acceptance remains open.
+
+## Planned character appearance correction
+
+Tasks [0109–0114](.todos/README.md#character-appearance-and-hair-rendering) cover neutral tintable hair textures, explicit cloned-material bindings, an appearance authoring contract, regression tests, an 18-case rendered matrix and persistence/mobile parity. Imported as open planning tasks; no appearance fix or human/device acceptance is claimed. Original shared-plan IDs 0104–0109 were remapped to avoid the existing wealth backlog.

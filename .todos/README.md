@@ -240,3 +240,20 @@ Imported from [the wealth follow-up review](https://chatgpt.com/s/t_6ad2dc9f25b4
 | 0108 | Certify the accepted wealth release and deploy its exact merged source |
 
 0104–0107 are implemented with canonical simulation, balance v2, performance-gated levels and premium identities. 0108 remains in progress for the explicit browser/physical/human gate; [validation](../docs/reviews/wealth-followup-validation.md) and [release gate](../docs/reviews/wealth-release-validation.md).
+
+## Character appearance and hair rendering
+
+Six tasks imported from the [shared appearance plan](https://chatgpt.com/s/t_6ad4192ee5948191bde12dc7f5b1660f). All remain **open / planning-only**. The source's 0104–0109 IDs overlap existing wealth work; they map to **0109–0114** without renumbering existing tasks.
+
+| Repository ID | Source ID | Work |
+| --- | --- | --- |
+| 0109 | 0104 | [Neutralize Hair Textures for Runtime Tinting](0109-neutralize-hair-textures-for-runtime-tinting.md) |
+| 0110 | 0105 | [Add Explicit Character Appearance Material Bindings](0110-add-explicit-character-appearance-material-bindings.md) |
+| 0111 | 0106 | [Define Tintable Material Authoring Contract](0111-define-tintable-material-authoring-contract.md) |
+| 0112 | 0107 | [Add Hair Color Material and Asset Regression Tests](0112-add-hair-color-material-and-asset-regression-tests.md) |
+| 0113 | 0108 | [Add Rendered Hair Color and Style Acceptance Matrix](0113-add-rendered-hair-color-and-style-acceptance-matrix.md) |
+| 0114 | 0109 | [Verify Appearance Persistence, Renderer Parity, and Mobile Creator Feedback](0114-verify-appearance-persistence-renderer-parity-and-mobile-creator-feedback.md) |
+
+Execution order: **0109 → 0110 → 0111 → 0112 → 0113 → 0114**. First neutralize all three exported hair textures without changing alpha/geometry/UVs, bind cloned appearance materials explicitly, define and measure the tintable material contract, then add runtime and authored-texture regressions. Validate the 18 color/style combinations in creator/live rendering, day/night cases, and persistence/Classic/mobile parity.
+
+GameState keeps semantic hair color and hairstyle; neutral authored detail plus per-character runtime tint produces the rendered appearance. Keep the original brown asset as a negative regression case. Material-property assertions alone cannot establish visible hair-color correctness. Existing wealth release and human/mobile/audio gates remain open; this import does not certify or deploy anything.

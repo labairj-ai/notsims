@@ -124,3 +124,28 @@ reviewer count is required for solo development. See
 [verified branch policy](docs/reviews/branch-protection-validation.md).
 Human/device acceptance remains a separate release requirement; green CI alone
 does not certify motion, phone performance or audible output.
+
+## Careers, classes and ownership
+
+Careers now have weekday schedules, persistent performance, four work strategies
+and bounded coworker choices. Start work within one hour of the scheduled start;
+late arrival shortens the shift/pay. Career also offers paid skill classes and
+three Away destinations. Work and other Away activities share Auto 24× controls.
+
+Furnish filters by category, tier, affordability, need, shared use and ownership.
+Open Assets to buy/select vehicles, manage businesses, buy/switch residences,
+inspect collections and itemized upkeep, or maintain a wishlist. New homes start
+as clear furnished-ready lots; the previous home keeps its furniture. Sell a
+property only after moving out and clearing its furnishings.
+
+Businesses pay daily and need weekly management. Prices and upkeep appear before
+purchase; luxury requires supporting cash flow. Save version 5 migrates existing
+saves automatically. `npm run simulate:economy` generates the conditional economy
+benchmarks in the [validation report](docs/reviews/economy-progression-validation.md).
+Physical/device and human acceptance remain open as recorded there.
+
+Follow-up [0104–0108 validation](docs/reviews/wealth-followup-validation.md) covers canonical business management, versioned balance gates (`npm run check:economy`), performance-gated career levels and distinct premium experiences. `npm run canary:wealth` prepares migration/ownership restart evidence. Actual browser/device/human release acceptance remains open.
+
+## Character appearance correction
+
+Tasks [0109–0114](.todos/README.md#character-appearance-and-hair-rendering) cover neutral tintable hair textures, explicit cloned-material bindings, an appearance authoring contract, regression tests, an 18-case rendered matrix and persistence/mobile parity. Neutral hair textures and explicit appearance bindings are implemented with 186 passing tests, asset regressions and an 18-case creator/live matrix. Human visual and physical-device feedback remain open; see [validation](docs/reviews/character-appearance-validation.md). Original shared-plan IDs 0104–0109 were remapped to avoid the existing wealth backlog.

@@ -28,6 +28,8 @@ export const INTERACTION_AUDIO={
  'care.toilet':{complete:'interaction.toilet.flush'},
  'care.shower':{start:'interaction.shower.start',loop:'interaction.shower.loop',complete:'interaction.shower.stop'},
  'leisure.watch':{loop:'interaction.tv.loop'},'learning.practice':{loop:'interaction.desk.loop'},'learning.read':{start:'interaction.book.page'},
+ 'leisure.quiet':{decision:'Quiet activity; no dedicated sound loop.'},
+ folding_chair:{decision:'Placement/sale feedback only.'},side_table:{decision:'Placement/sale feedback only.'},
  // Decorative furniture has no simulation interaction. Avoid inventing gameplay.
  chair:{decision:'No active interaction; placement/sale feedback only.'},lamp:{decision:'Decorative today; switch cue reserved.'},table:{decision:'Decorative today; placement/sale feedback only.'},plant:{decision:'Decorative today; placement/sale feedback only.'},rug:{decision:'Floor decoration; placement/sale feedback only.'},
 };

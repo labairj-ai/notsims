@@ -14,13 +14,18 @@ export class Human {
   constructor(asset) {
     this.root=new THREE.Group();this.model=clone(asset.scene);this.root.add(this.model);
     const clonedMaterials=new Map();
+    this.appearanceMaterials={skin:[],shirt:[],hair:[]};
+    this.hairMeshes=[];
     this.model.traverse(o=>{
+      if(o.name.startsWith('Notsims_Hair_')&&!o.isBone)this.hairMeshes.push(o);
       if(!o.isMesh)return;
       const cloneMaterial=m=>{
         if(!clonedMaterials.has(m.uuid)){
           const copy=m.clone();
           if(m.name.startsWith('Notsims_Hair_')){copy.alphaTest=.4;copy.transparent=false;copy.depthWrite=true;copy.side=THREE.DoubleSide;}
           clonedMaterials.set(m.uuid,copy);
+          const role=m.name==='Notsims_Skin'?'skin':m.name==='Notsims_Shirt'?'shirt':m.name.startsWith('Notsims_Hair_')?'hair':null;
+          if(role)this.appearanceMaterials[role].push(copy);
         }
         return clonedMaterials.get(m.uuid);
       };
@@ -44,12 +49,8 @@ export class Human {
   customize(person) {
     const signature=[person.skin,person.hair,person.shirt,person.style].join(':');
     if(this.appearance===signature)return;this.appearance=signature;
-    for(const m of this.materials){
-      if(m.name==='Notsims_Skin')m.color.set(person.skin);
-      if(m.name==='Notsims_Shirt')m.color.set(person.shirt);
-      if(m.name.startsWith('Notsims_Hair_'))m.color.set(person.hair);
-    }
-    this.model.traverse(o=>{if(o.name.startsWith('Notsims_Hair_')&&!o.isBone)o.visible=o.name.startsWith(`Notsims_Hair_${person.style}`);});
+    for(const role of ['skin','shirt','hair'])for(const material of this.appearanceMaterials[role])material.color.set(person[role]);
+    for(const mesh of this.hairMeshes)mesh.visible=mesh.name.startsWith(`Notsims_Hair_${person.style}`);
   }
   update(dt) {this.mixer.update(Math.max(0,dt));}
   dispose() {this.controller.dispose();this.mixer.stopAllAction();this.mixer.uncacheRoot(this.model);this.materials.forEach(m=>m.dispose());}

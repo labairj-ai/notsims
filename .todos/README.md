@@ -195,3 +195,65 @@ Numeric order alone does not express the dependencies. Define the generic away
 contract and care semantics before enabling 24×; otherwise fast-forward magnifies
 the current absence of workplace self-care. These tasks are proposed work and do
 not claim the pending human/device acceptance from 0074–0076.
+
+## Career, Away Activity, and Wealth Ecosystem
+
+TODOs **0084–0103** were imported from the [Review Game Architecture feedback](https://chatgpt.com/s/t_6ad2d6897db48191b50e32ec0f700145). Software is implemented for 0084 and 0086–0103. Physical acceptance 0085 and browser/mobile acceptance for 0102 remain open; full criteria and evidence are in their individual files. Shared economy assumptions, purchase tiers, and the cross-task price map are in the [ecosystem backlog plan](../docs/reviews/career-away-wealth-ecosystem-backlog.md).
+
+| ID | Priority | Work |
+| --- | --- | --- |
+| 0084 | High | Harden optional Away-policy affordances |
+| 0085 | Medium | Complete physical Work/Away mobile acceptance |
+| 0086 | Critical | Add Career Performance foundation |
+| 0087 | Critical | Add Work strategies |
+| 0088 | Critical | Add scheduled Work shifts and attendance |
+| 0089 | High | Add coworker experiences and Work events |
+| 0090 | Critical | Add paid skill classes as the second real Away consumer |
+| 0091 | High | Generalize Away destinations for errands, appointments, and travel |
+| 0092 | Critical | Define tiered purchase and ownership contract |
+| 0093 | High | Expand entry-level purchase ecosystem |
+| 0094 | High | Add comfortable/middle-class purchase ecosystem |
+| 0095 | High | Add really expensive/premium purchase ecosystem |
+| 0096 | Medium | Add ultra-luxury assets |
+| 0097 | High | Add vehicle and transportation ownership |
+| 0098 | Critical | Add property and residence progression |
+| 0099 | High | Add businesses and income-producing assets |
+| 0100 | Critical | Add ownership upkeep, maintenance, and operating costs |
+| 0101 | Medium | Add prestige, collection, and aspiration hooks |
+| 0102 | High | Upgrade shopping and asset-management UX |
+| 0103 | Critical | Build economy balance simulator and wealth acceptance harness |
+
+Recommended order: career depth **0084 → 0086 → 0087 → 0088 → 0089**; Away reuse **0090 → 0091**; purchase contract and tiers **0092 → 0093 → 0094 → 0095**; ownership **0097 → 0098 → 0099 → 0100**; then luxury meaning and UX **0096 → 0101 → 0102**; finish with economy certification **0103**. Physical acceptance **0085** can run independently when iPhone and Android devices are available. Task 0092 intentionally precedes expansion of the catalog so all purchase types share one ownership/economy contract.
+
+Validation and measured economy progression: [career/wealth report](../docs/reviews/economy-progression-validation.md). Save version 4 explicitly migrates existing careers and starter-property ownership. Run `npm run simulate:economy` to regenerate the deterministic evidence.
+
+## Wealth follow-up implementation
+
+Imported from [the wealth follow-up review](https://chatgpt.com/s/t_6ad2dc9f25b4819195a821f85bbe1c76). Execute **0104 → 0105 → 0106 → 0107 → 0108**. Simulator fidelity and balance policy are separate tasks. 0108 retains explicit human/device release gates.
+
+| ID | Work |
+| --- | --- |
+| 0104 | Run business economy simulation through canonical gameplay |
+| 0105 | Define versioned economy balance targets and CI regression gates |
+| 0106 | Make Career Performance drive bounded career progression |
+| 0107 | Give existing Premium/Ultra assets distinct gameplay identities |
+| 0108 | Certify the accepted wealth release and deploy its exact merged source |
+
+0104–0107 are implemented with canonical simulation, balance v2, performance-gated levels and premium identities. 0108 remains in progress for the explicit browser/physical/human gate; [validation](../docs/reviews/wealth-followup-validation.md) and [release gate](../docs/reviews/wealth-release-validation.md).
+
+## Character appearance and hair rendering
+
+Six tasks imported from the [shared appearance plan](https://chatgpt.com/s/t_6ad4192ee5948191bde12dc7f5b1660f). **0109–0112 are complete**; **0113 has automated matrix evidence and is blocked on human visual acceptance**; **0114 has automated lifecycle/parity coverage with human mobile feedback open**. The source's 0104–0109 IDs overlap existing wealth work; they map to **0109–0114** without renumbering existing tasks.
+
+| Repository ID | Source ID | Work |
+| --- | --- | --- |
+| 0109 | 0104 | [Neutralize Hair Textures for Runtime Tinting](0109-neutralize-hair-textures-for-runtime-tinting.md) |
+| 0110 | 0105 | [Add Explicit Character Appearance Material Bindings](0110-add-explicit-character-appearance-material-bindings.md) |
+| 0111 | 0106 | [Define Tintable Material Authoring Contract](0111-define-tintable-material-authoring-contract.md) |
+| 0112 | 0107 | [Add Hair Color Material and Asset Regression Tests](0112-add-hair-color-material-and-asset-regression-tests.md) |
+| 0113 | 0108 | [Add Rendered Hair Color and Style Acceptance Matrix](0113-add-rendered-hair-color-and-style-acceptance-matrix.md) |
+| 0114 | 0109 | [Verify Appearance Persistence, Renderer Parity, and Mobile Creator Feedback](0114-verify-appearance-persistence-renderer-parity-and-mobile-creator-feedback.md) |
+
+Execution order: **0109 → 0110 → 0111 → 0112 → 0113 → 0114**. First neutralize all three exported hair textures without changing alpha/geometry/UVs, bind cloned appearance materials explicitly, define and measure the tintable material contract, then add runtime and authored-texture regressions. Validate the 18 color/style combinations in creator/live rendering, day/night cases, and persistence/Classic/mobile parity.
+
+GameState keeps semantic hair color and hairstyle; neutral authored detail plus per-character runtime tint produces the rendered appearance. Keep the original brown asset as a negative regression case. Material-property assertions alone cannot establish visible hair-color correctness. See [appearance validation](../docs/reviews/character-appearance-validation.md) for 186 tests, reproducible asset/alpha checks and the rendered matrix. Existing wealth release and human/mobile/audio gates remain open; no certification or deployment is claimed.

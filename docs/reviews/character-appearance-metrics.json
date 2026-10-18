@@ -1,0 +1,36 @@
+{
+  "assetSha256": "a142f9433ce6c5e24510543fe245254b551665d74e28a06c9a35c1af5276d7a4",
+  "bytes": 6143660,
+  "hair": {
+    "short": {
+      "width": 1024,
+      "height": 1024,
+      "visiblePixels": 592914,
+      "maxChroma": 0,
+      "p05": 0.6470588235294118,
+      "p95": 0.9215686274509803,
+      "alphaSha256": "5c4e858c7875052bf29a1c3157630d9f54142baefa8f8c33397a53100b47e186",
+      "textureSha256": "f077cca3fcaf30f7cf405a48cf4cf35662ba1354b0274026ac98a009c66b991c"
+    },
+    "long": {
+      "width": 1024,
+      "height": 1024,
+      "visiblePixels": 790326,
+      "maxChroma": 0,
+      "p05": 0.6,
+      "p95": 0.9137254901960783,
+      "alphaSha256": "b315449a89b4d28a4478fd2a6d9bc1709a17708d1696dc69a3953a8a4937c872",
+      "textureSha256": "844576a01f5408a4402915aa047f94bbd9faacad3448c15c46de0ccc4b3e3a68"
+    },
+    "curly": {
+      "width": 1024,
+      "height": 1024,
+      "visiblePixels": 530589,
+      "maxChroma": 0,
+      "p05": 0.6039215686274509,
+      "p95": 0.8509803921568627,
+      "alphaSha256": "d0327ab44c87979fa355486ccb06ffaca7c6c72d113302d03b244520a04ccc65",
+      "textureSha256": "d2b9551ffc7ff03af5ea396a2a9312fc0c118ca0fe3d3da7ef1d4998f6b11659"
+    }
+  }
+}

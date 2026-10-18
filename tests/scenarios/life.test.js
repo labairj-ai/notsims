@@ -30,6 +30,7 @@ test('frozen legacy work save resumes, pays once and permits a new career',()=>{
  const result=runScenario({name:'legacy shift',initial:fixture,steps:[
   {advance:330,assert:({state,events})=>{assert.equal(state.money,6632);assert.equal(state.shifts,1);assert.equal(events.filter(e=>e.type==='SHIFT_COMPLETED').length,1);}},
   {command:{type:'CHANGE_JOB',job:'designer'},expectEvents:['JOB_CHANGED','CONTACT_ADDED']},
+  {advance:1440-(fixture.minutes+330)%1440+540},
   {command:{type:'START_SHIFT'}},
   {advance:20},
   {command:{type:'CANCEL_ACTION'},assert:({state})=>{assert.equal(state.money,6632);assert.equal(state.shifts,1);}},

@@ -1,0 +1,487 @@
+{
+  "version": 4,
+  "money": 6500,
+  "minutes": 570,
+  "person": {
+    "name": "Alex Green",
+    "skin": "#c58b65",
+    "hair": "#49392e",
+    "shirt": "#d78261",
+    "style": "short",
+    "trait": "creative",
+    "x": 8,
+    "y": 10,
+    "id": "player"
+  },
+  "needs": {
+    "hunger": 83.3499999999998,
+    "energy": 83.13999999999965,
+    "hygiene": 84.00999999999996,
+    "bladder": 83.05000000000007,
+    "fun": 84.0400000000001,
+    "social": 86.55999999999977
+  },
+  "floors": {
+    "4,3": "wood",
+    "4,4": "wood",
+    "4,5": "wood",
+    "4,6": "wood",
+    "4,7": "wood",
+    "4,8": "wood",
+    "4,9": "wood",
+    "4,10": "wood",
+    "4,11": "wood",
+    "5,3": "wood",
+    "5,4": "wood",
+    "5,5": "wood",
+    "5,6": "wood",
+    "5,7": "wood",
+    "5,8": "wood",
+    "5,9": "wood",
+    "5,10": "wood",
+    "5,11": "wood",
+    "6,3": "wood",
+    "6,4": "wood",
+    "6,5": "wood",
+    "6,6": "wood",
+    "6,7": "wood",
+    "6,8": "wood",
+    "6,9": "wood",
+    "6,10": "wood",
+    "6,11": "wood",
+    "7,3": "wood",
+    "7,4": "wood",
+    "7,5": "wood",
+    "7,6": "wood",
+    "7,7": "wood",
+    "7,8": "wood",
+    "7,9": "wood",
+    "7,10": "wood",
+    "7,11": "wood",
+    "8,3": "sage",
+    "8,4": "sage",
+    "8,5": "sage",
+    "8,6": "sage",
+    "8,7": "tile",
+    "8,8": "tile",
+    "8,9": "tile",
+    "8,10": "tile",
+    "8,11": "tile",
+    "9,3": "sage",
+    "9,4": "sage",
+    "9,5": "sage",
+    "9,6": "sage",
+    "9,7": "tile",
+    "9,8": "tile",
+    "9,9": "tile",
+    "9,10": "tile",
+    "9,11": "tile",
+    "10,3": "sage",
+    "10,4": "sage",
+    "10,5": "sage",
+    "10,6": "sage",
+    "10,7": "tile",
+    "10,8": "tile",
+    "10,9": "tile",
+    "10,10": "tile",
+    "10,11": "tile",
+    "11,3": "sage",
+    "11,4": "sage",
+    "11,5": "sage",
+    "11,6": "sage",
+    "11,7": "tile",
+    "11,8": "tile",
+    "11,9": "tile",
+    "11,10": "tile",
+    "11,11": "tile",
+    "12,3": "sage",
+    "12,4": "sage",
+    "12,5": "sage",
+    "12,6": "sage",
+    "12,7": "tile",
+    "12,8": "tile",
+    "12,9": "tile",
+    "12,10": "tile",
+    "12,11": "tile"
+  },
+  "walls": {
+    "h:4,3": "wall",
+    "h:4,12": "wall",
+    "h:5,3": "wall",
+    "h:5,12": "wall",
+    "h:6,3": "wall",
+    "h:6,12": "wall",
+    "h:7,3": "wall",
+    "h:7,12": "wall",
+    "h:8,3": "wall",
+    "h:8,12": "door",
+    "h:9,3": "wall",
+    "h:9,12": "wall",
+    "h:10,3": "wall",
+    "h:10,12": "wall",
+    "h:11,3": "wall",
+    "h:11,12": "wall",
+    "h:12,3": "wall",
+    "h:12,12": "wall",
+    "v:4,3": "wall",
+    "v:13,3": "wall",
+    "v:4,4": "wall",
+    "v:13,4": "wall",
+    "v:4,5": "wall",
+    "v:13,5": "wall",
+    "v:4,6": "wall",
+    "v:13,6": "wall",
+    "v:4,7": "wall",
+    "v:13,7": "wall",
+    "v:4,8": "wall",
+    "v:13,8": "wall",
+    "v:4,9": "wall",
+    "v:13,9": "wall",
+    "v:4,10": "wall",
+    "v:13,10": "wall",
+    "v:4,11": "wall",
+    "v:13,11": "wall",
+    "v:8,3": "wall",
+    "v:8,4": "wall",
+    "v:8,5": "wall",
+    "v:8,6": "door",
+    "v:8,7": "wall"
+  },
+  "furniture": [
+    {
+      "id": 1,
+      "type": "bed",
+      "x": 4,
+      "y": 3,
+      "rotation": 0
+    },
+    {
+      "id": 2,
+      "type": "bookcase",
+      "x": 6,
+      "y": 3,
+      "rotation": 0
+    },
+    {
+      "id": 3,
+      "type": "plant",
+      "x": 4,
+      "y": 6,
+      "rotation": 0
+    },
+    {
+      "id": 4,
+      "type": "fridge",
+      "x": 12,
+      "y": 3,
+      "rotation": 0
+    },
+    {
+      "id": 5,
+      "type": "stove",
+      "x": 11,
+      "y": 3,
+      "rotation": 0
+    },
+    {
+      "id": 6,
+      "type": "table",
+      "x": 9,
+      "y": 5,
+      "rotation": 0
+    },
+    {
+      "id": 7,
+      "type": "chair",
+      "x": 11,
+      "y": 5,
+      "rotation": 0
+    },
+    {
+      "id": 8,
+      "type": "sofa",
+      "x": 8,
+      "y": 8,
+      "rotation": 0
+    },
+    {
+      "id": 9,
+      "type": "tv",
+      "x": 5,
+      "y": 11,
+      "rotation": 0
+    },
+    {
+      "id": 10,
+      "type": "rug",
+      "x": 8,
+      "y": 9,
+      "rotation": 0
+    },
+    {
+      "id": 11,
+      "type": "toilet",
+      "x": 12,
+      "y": 8,
+      "rotation": 0
+    },
+    {
+      "id": 12,
+      "type": "shower",
+      "x": 12,
+      "y": 10,
+      "rotation": 0
+    },
+    {
+      "id": 13,
+      "type": "lamp",
+      "x": 4,
+      "y": 10,
+      "rotation": 0
+    }
+  ],
+  "job": "developer",
+  "career": {
+    "performance": 50,
+    "lastAttendanceDay": 0,
+    "lastSummary": null
+  },
+  "ownership": {
+    "nextId": 2,
+    "assets": [
+      {
+        "id": 1,
+        "definitionId": "starter_home",
+        "purchasePrice": 0,
+        "lastPayout": 0,
+        "managedUntil": 0,
+        "lot": null
+      }
+    ],
+    "primary": 1,
+    "activeVehicle": null,
+    "ledger": [],
+    "wishlist": []
+  },
+  "shifts": 12,
+  "skill": 20,
+  "queue": [],
+  "activity": {
+    "kind": "work",
+    "label": "Working · Developer",
+    "elapsed": 30,
+    "total": 480,
+    "pay": 517,
+    "path": [],
+    "awayState": {
+      "bladderCooldown": 0,
+      "mealBreakUsed": false,
+      "care": null,
+      "careNotice": null,
+      "attentionRequired": false,
+      "latePenalty": 0,
+      "strategy": "normal",
+      "strategyMinutes": {
+        "normal": 30,
+        "hard": 0,
+        "easy": 0,
+        "socialize": 0
+      }
+    }
+  },
+  "log": [
+    "Off to bright ideas. Payday in 8 hours.",
+    "A new chapter: Developer.",
+    "A little plot. A lot of possibility. Welcome home."
+  ],
+  "nextId": 14,
+  "billsDay": 0,
+  "people": {
+    "person_1": {
+      "id": "person_1",
+      "name": "Maya Hart",
+      "skin": "#c58b65",
+      "hair": "#49392e",
+      "shirt": "#d78261",
+      "style": "curly",
+      "trait": "creative",
+      "socialStyle": "warm",
+      "interests": [
+        "books",
+        "cooking"
+      ],
+      "role": "old_friend",
+      "availabilityProfile": "flexible"
+    },
+    "person_2": {
+      "id": "person_2",
+      "name": "Theo Reed",
+      "skin": "#9b6545",
+      "hair": "#29252b",
+      "shirt": "#809b87",
+      "style": "short",
+      "trait": "social",
+      "socialStyle": "reserved",
+      "interests": [
+        "gardening",
+        "books"
+      ],
+      "role": "neighbor",
+      "availabilityProfile": "day_evening"
+    },
+    "person_3": {
+      "id": "person_3",
+      "name": "June Moss",
+      "skin": "#e1b99a",
+      "hair": "#a66d3d",
+      "shirt": "#8793af",
+      "style": "long",
+      "trait": "active",
+      "socialStyle": "playful",
+      "interests": [
+        "music",
+        "games"
+      ],
+      "role": "neighbor",
+      "availabilityProfile": "evening"
+    },
+    "person_4": {
+      "id": "person_4",
+      "name": "Finn Brooks",
+      "skin": "#c58b65",
+      "hair": "#49392e",
+      "shirt": "#d78261",
+      "style": "curly",
+      "trait": "creative",
+      "socialStyle": "blunt",
+      "interests": [
+        "games",
+        "fitness"
+      ],
+      "role": "neighbor",
+      "availabilityProfile": "day_evening"
+    },
+    "person_5": {
+      "id": "person_5",
+      "name": "Riley Stone",
+      "skin": "#9b6545",
+      "hair": "#29252b",
+      "shirt": "#809b87",
+      "style": "short",
+      "trait": "social",
+      "socialStyle": "warm",
+      "interests": [
+        "fitness",
+        "cooking"
+      ],
+      "role": "neighbor",
+      "availabilityProfile": "evening"
+    },
+    "person_6": {
+      "id": "person_6",
+      "name": "Ada Bloom",
+      "skin": "#e1b99a",
+      "hair": "#a66d3d",
+      "shirt": "#8793af",
+      "style": "long",
+      "trait": "active",
+      "socialStyle": "reserved",
+      "interests": [
+        "art",
+        "music"
+      ],
+      "role": "neighbor",
+      "availabilityProfile": "day_evening"
+    },
+    "person_7": {
+      "id": "person_7",
+      "name": "Sam Vale",
+      "skin": "#c58b65",
+      "hair": "#49392e",
+      "shirt": "#d78261",
+      "style": "curly",
+      "trait": "creative",
+      "socialStyle": "playful",
+      "interests": [
+        "art",
+        "books"
+      ],
+      "role": "coworker",
+      "availabilityProfile": "evening"
+    }
+  },
+  "contacts": [
+    "person_1",
+    "person_7"
+  ],
+  "relationships": {
+    "person_1|player": {
+      "a": "person_1",
+      "b": "player",
+      "familiarity": 45,
+      "toward": {
+        "person_1": {
+          "affinity": 38,
+          "trust": 28,
+          "connection": 24.92
+        },
+        "player": {
+          "affinity": 38,
+          "trust": 28,
+          "connection": 24.92
+        }
+      },
+      "lastContactMinute": 0,
+      "contactCount": 0,
+      "initiations": {
+        "person_1": 0,
+        "player": 0
+      },
+      "peakTier": "Friend",
+      "memories": [],
+      "cooldowns": {},
+      "recentInteractions": []
+    },
+    "person_1|person_2": {
+      "a": "person_1",
+      "b": "person_2",
+      "familiarity": 35,
+      "toward": {
+        "person_1": {
+          "affinity": 0,
+          "trust": 0,
+          "connection": 0
+        },
+        "person_2": {
+          "affinity": 0,
+          "trust": 0,
+          "connection": 0
+        }
+      },
+      "lastContactMinute": 0,
+      "contactCount": 0,
+      "initiations": {
+        "person_1": 0,
+        "person_2": 0
+      },
+      "peakTier": "Stranger",
+      "memories": [],
+      "cooldowns": {},
+      "recentInteractions": []
+    }
+  },
+  "social": {
+    "rngState": 1831636850,
+    "eventCounter": 1,
+    "nextId": 1,
+    "nextSocialOpportunityMinute": 829,
+    "nextDriftMinute": 600,
+    "presences": [],
+    "plans": [],
+    "notifications": [],
+    "priors": [],
+    "pendingEvent": null,
+    "visits": {},
+    "sharedActivity": null
+  }
+}

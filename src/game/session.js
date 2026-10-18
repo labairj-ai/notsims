@@ -1,3 +1,5 @@
+import {initialOwnership,advanceOwnership} from '../systems/ownership/ownership.js';
+import {initialCareer,advanceAttendance} from '../systems/careers/performance.js';
 import {initSocial,advanceSocial} from '../systems/social/social.js';
 import {CURRENT_SAVE_VERSION} from '../persistence/schema.js';
 import {key} from '../core/grid.js';
@@ -5,7 +7,7 @@ import {initialNeeds,decayNeeds} from '../systems/needs/needs.js';
 import {chargeBills} from '../systems/economy/bills.js';
 import {advanceActions} from '../systems/actions/actions.js';
 export function newGame(character={},empty=false){
- const s={version:CURRENT_SAVE_VERSION,money:empty?12000:6500,minutes:480,person:{name:'Alex Green',skin:'#c58b65',hair:'#49392e',shirt:'#d78261',style:'short',trait:'creative',x:8,y:10,...character},needs:initialNeeds(),floors:{},walls:{},furniture:[],job:null,shifts:0,skill:0,queue:[],activity:null,log:['A little plot. A lot of possibility. Welcome home.'],nextId:1,billsDay:0};
+ const s={version:CURRENT_SAVE_VERSION,money:empty?12000:6500,minutes:480,person:{name:'Alex Green',skin:'#c58b65',hair:'#49392e',shirt:'#d78261',style:'short',trait:'creative',x:8,y:10,...character},needs:initialNeeds(),floors:{},walls:{},furniture:[],job:null,career:initialCareer(),ownership:initialOwnership(),shifts:0,skill:0,queue:[],activity:null,log:['A little plot. A lot of possibility. Welcome home.'],nextId:1,billsDay:0};
  if(!empty){for(let x=4;x<=12;x++)for(let y=3;y<=11;y++)s.floors[key(x,y)]=x<8?'wood':y<7?'sage':'tile';
  for(let x=4;x<=12;x++){s.walls[`h:${x},3`]='wall';s.walls[`h:${x},12`]=x===8?'door':'wall';}
  for(let y=3;y<=11;y++){s.walls[`v:4,${y}`]='wall';s.walls[`v:13,${y}`]='wall';}
@@ -15,5 +17,5 @@ export function newGame(character={},empty=false){
 }
 export function tick(s,dt,events){
  if(!Number.isFinite(dt)||dt<=0)return;
- for(let remaining=Math.min(dt,1440);remaining>0;){const step=Math.min(1,remaining);remaining-=step;s.minutes+=step;decayNeeds(s,step);chargeBills(s,events);advanceActions(s,step,events);advanceSocial(s,step,events);}
+ for(let remaining=Math.min(dt,1440);remaining>0;){const step=Math.min(1,remaining);remaining-=step;s.minutes+=step;decayNeeds(s,step);advanceOwnership(s,events);chargeBills(s,events);advanceActions(s,step,events);advanceAttendance(s,events);advanceSocial(s,step,events);}
 }

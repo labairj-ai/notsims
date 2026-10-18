@@ -1,0 +1,25 @@
+{
+  "sourceSha": "aa541f5987240de896a2bd69ea219bf8e9432939",
+  "release": "20261018T012139Z-aa541f598724",
+  "builtAt": "2026-10-18T01:21:39.782442+00:00",
+  "sourceClean": true,
+  "certified": false,
+  "saveVersion": 5,
+  "checks": {
+    "testsPassed": 186,
+    "testsFailed": 0,
+    "sourceChecks": "passed",
+    "staticBuild": "passed",
+    "wealthCanary": "passed",
+    "economyContractVersion": 2,
+    "balanceScenarios": 54,
+    "ciRun": "https://github.com/labairj-ai/notsims/actions/runs/39086051773"
+  },
+  "acceptance": "Human visual, physical-device and audible acceptance remain open",
+  "authorization": "User explicitly requested deploy to Optiplex",
+  "previous": "/var/www/notsims/releases/20261017T014400Z-160e1f6",
+  "current": "/var/www/notsims/releases/20261018T012139Z-aa541f598724",
+  "deployedAt": "2026-10-18T01:21:48.358388+00:00",
+  "verifiedFiles": 178,
+  "archiveSha256": "aad16b1e151092ffca9ba0744be6a47a280c894943980c019794078eddcad8a1"
+}

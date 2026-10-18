@@ -1,7 +1,6 @@
 # Wealth release gate — 0108
 
-**Status: NOT CERTIFIED. PR #7 remains draft. No deployment authorized by these
-results, and no merged/deployed source identity is claimed.**
+**Status: DEPLOYED, NOT CERTIFIED.** User explicitly requested deployment after implementation. PRs #7/#8 are merged; clean main source `aa541f5987240de896a2bd69ea219bf8e9432939` is live. Human/device acceptance remains open. See [deployment evidence](optiplex-wealth-appearance-deployment.md). The earlier preparation and gate records below are historical and do not override this observed activation.
 
 Candidate source is the final PR head, verified by GitHub's required `build` job.
 The exact SHA and code fingerprint are recorded by the uploaded wealth-canary
@@ -22,9 +21,9 @@ not identify an uncommitted local test as an accepted release candidate.
 | 0085 physical Work/Away acceptance | Pending iPhone Safari and Android Chrome |
 | Earlier motion/audio/standalone gates | Still open where recorded in existing matrices |
 | Accepted candidate SHA and tester sign-off | Pending human/device acceptance |
-| Protected merge SHA | Not merged |
-| Exact deployed SHA/release ID/target/timestamp | Not deployed |
-| Production post-deploy browser/device smoke | Not performed |
+| Protected merge SHA | `aa541f5987240de896a2bd69ea219bf8e9432939` |
+| Exact deployed SHA/release ID/target/timestamp | Recorded in deployment evidence; `20261018T012139Z-aa541f598724` |
+| Production post-deploy browser/device smoke | Three automated browser sessions passed; physical-device smoke remains open |
 
 ## Human evidence to record
 

@@ -149,3 +149,5 @@ Follow-up [0104–0108 validation](docs/reviews/wealth-followup-validation.md) c
 ## Character appearance correction
 
 Tasks [0109–0114](.todos/README.md#character-appearance-and-hair-rendering) cover neutral tintable hair textures, explicit cloned-material bindings, an appearance authoring contract, regression tests, an 18-case rendered matrix and persistence/mobile parity. Neutral hair textures and explicit appearance bindings are implemented with 186 passing tests, asset regressions and an 18-case creator/live matrix. Human visual and physical-device feedback remain open; see [validation](docs/reviews/character-appearance-validation.md). Original shared-plan IDs 0104–0109 were remapped to avoid the existing wealth backlog.
+
+Current OptiPlex candidate: `aa541f598724` (save v5, neutral hair correction), deployed at the user's explicit request with certification still false. [Deployment/rollback evidence](docs/reviews/optiplex-wealth-appearance-deployment.md) records public and browser checks. Human/physical-device acceptance remains open.

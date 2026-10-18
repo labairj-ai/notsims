@@ -1,0 +1,262 @@
+{
+  "expectedSource": "aa541f5987240de896a2bd69ea219bf8e9432939",
+  "results": [
+    {
+      "view": "3d",
+      "width": 1440,
+      "height": 900,
+      "info": {
+        "sourceSha": "aa541f5987240de896a2bd69ea219bf8e9432939",
+        "release": "20261018T012139Z-aa541f598724",
+        "builtAt": "2026-10-18T01:21:39.782442+00:00",
+        "sourceClean": true,
+        "certified": false,
+        "saveVersion": 5,
+        "checks": {
+          "testsPassed": 186,
+          "testsFailed": 0,
+          "sourceChecks": "passed",
+          "staticBuild": "passed",
+          "wealthCanary": "passed",
+          "economyContractVersion": 2,
+          "balanceScenarios": 54,
+          "ciRun": "https://github.com/labairj-ai/notsims/actions/runs/39086051773"
+        },
+        "acceptance": "Human visual, physical-device and audible acceptance remain open",
+        "authorization": "User explicitly requested deploy to Optiplex"
+      },
+      "is3D": true,
+      "preview": true,
+      "fresh": {
+        "version": 5,
+        "hair": "#eee3cf",
+        "style": "long",
+        "hairColors": [
+          "eee3cf",
+          "eee3cf",
+          "eee3cf"
+        ]
+      },
+      "legacy": {
+        "version": 5,
+        "money": 6500,
+        "furniture": 13
+      },
+      "canary": {
+        "passed": true,
+        "checks": [
+          "legacy save migrates to v5",
+          "money preserved",
+          "furniture preserved",
+          "relationships preserved",
+          "people preserved",
+          "social preserved",
+          "migration is idempotent",
+          "BUY_ASSET used_car",
+          "SELECT_VEHICLE 2",
+          "START_DESTINATION errand",
+          "SELL_ASSET 2",
+          "BUY_ASSET cabin",
+          "SWITCH_RESIDENCE 3",
+          "PLACE_OBJECT ",
+          "SWITCH_RESIDENCE 1",
+          "SWITCH_RESIDENCE 3",
+          "second residence furniture persists",
+          "BUY_ASSET cafe",
+          "one first payout",
+          "restart has no duplicate payout",
+          "MANAGE_BUSINESS 4",
+          "management resumes and completes",
+          "next payout uses managed gross",
+          "itemized property bills",
+          "net worth is finite",
+          "payout cursor advanced once per interval"
+        ],
+        "fixtureVersion": 3,
+        "targetVersion": 5,
+        "scope": "automated disposable-save canary; not browser, physical or production evidence"
+      },
+      "work": {
+        "status": "WORKING · DEVELOPER8h 0m remainingPausedStrategy Work NormallyWork HardTake It EasySocializeHard: +4 performance, more Energy/Fun cost. Easy: −2, less drain. Socialize: −1, more Social. Effects scale with time.",
+        "auto": 24,
+        "shopping": true
+      },
+      "layout": {
+        "overflow": false,
+        "assets": true
+      },
+      "errors": [],
+      "physicalDevice": false
+    },
+    {
+      "view": "3d",
+      "width": 390,
+      "height": 844,
+      "info": {
+        "sourceSha": "aa541f5987240de896a2bd69ea219bf8e9432939",
+        "release": "20261018T012139Z-aa541f598724",
+        "builtAt": "2026-10-18T01:21:39.782442+00:00",
+        "sourceClean": true,
+        "certified": false,
+        "saveVersion": 5,
+        "checks": {
+          "testsPassed": 186,
+          "testsFailed": 0,
+          "sourceChecks": "passed",
+          "staticBuild": "passed",
+          "wealthCanary": "passed",
+          "economyContractVersion": 2,
+          "balanceScenarios": 54,
+          "ciRun": "https://github.com/labairj-ai/notsims/actions/runs/39086051773"
+        },
+        "acceptance": "Human visual, physical-device and audible acceptance remain open",
+        "authorization": "User explicitly requested deploy to Optiplex"
+      },
+      "is3D": true,
+      "preview": true,
+      "fresh": {
+        "version": 5,
+        "hair": "#eee3cf",
+        "style": "long",
+        "hairColors": [
+          "49392e",
+          "49392e",
+          "49392e"
+        ]
+      },
+      "legacy": {
+        "version": 5,
+        "money": 6500,
+        "furniture": 13
+      },
+      "canary": {
+        "passed": true,
+        "checks": [
+          "legacy save migrates to v5",
+          "money preserved",
+          "furniture preserved",
+          "relationships preserved",
+          "people preserved",
+          "social preserved",
+          "migration is idempotent",
+          "BUY_ASSET used_car",
+          "SELECT_VEHICLE 2",
+          "START_DESTINATION errand",
+          "SELL_ASSET 2",
+          "BUY_ASSET cabin",
+          "SWITCH_RESIDENCE 3",
+          "PLACE_OBJECT ",
+          "SWITCH_RESIDENCE 1",
+          "SWITCH_RESIDENCE 3",
+          "second residence furniture persists",
+          "BUY_ASSET cafe",
+          "one first payout",
+          "restart has no duplicate payout",
+          "MANAGE_BUSINESS 4",
+          "management resumes and completes",
+          "next payout uses managed gross",
+          "itemized property bills",
+          "net worth is finite",
+          "payout cursor advanced once per interval"
+        ],
+        "fixtureVersion": 3,
+        "targetVersion": 5,
+        "scope": "automated disposable-save canary; not browser, physical or production evidence"
+      },
+      "work": {
+        "status": "WORKING · DEVELOPER8h 0m remainingPausedStrategy Work NormallyWork HardTake It EasySocializeHard: +4 performance, more Energy/Fun cost. Easy: −2, less drain. Socialize: −1, more Social. Effects scale with time.",
+        "auto": 24,
+        "shopping": true
+      },
+      "layout": {
+        "overflow": false,
+        "assets": true
+      },
+      "errors": [],
+      "physicalDevice": false
+    },
+    {
+      "view": "classic",
+      "width": 320,
+      "height": 568,
+      "info": {
+        "sourceSha": "aa541f5987240de896a2bd69ea219bf8e9432939",
+        "release": "20261018T012139Z-aa541f598724",
+        "builtAt": "2026-10-18T01:21:39.782442+00:00",
+        "sourceClean": true,
+        "certified": false,
+        "saveVersion": 5,
+        "checks": {
+          "testsPassed": 186,
+          "testsFailed": 0,
+          "sourceChecks": "passed",
+          "staticBuild": "passed",
+          "wealthCanary": "passed",
+          "economyContractVersion": 2,
+          "balanceScenarios": 54,
+          "ciRun": "https://github.com/labairj-ai/notsims/actions/runs/39086051773"
+        },
+        "acceptance": "Human visual, physical-device and audible acceptance remain open",
+        "authorization": "User explicitly requested deploy to Optiplex"
+      },
+      "is3D": false,
+      "preview": false,
+      "fresh": {
+        "version": 5,
+        "hair": "#eee3cf",
+        "style": "long"
+      },
+      "legacy": {
+        "version": 5,
+        "money": 6500,
+        "furniture": 13
+      },
+      "canary": {
+        "passed": true,
+        "checks": [
+          "legacy save migrates to v5",
+          "money preserved",
+          "furniture preserved",
+          "relationships preserved",
+          "people preserved",
+          "social preserved",
+          "migration is idempotent",
+          "BUY_ASSET used_car",
+          "SELECT_VEHICLE 2",
+          "START_DESTINATION errand",
+          "SELL_ASSET 2",
+          "BUY_ASSET cabin",
+          "SWITCH_RESIDENCE 3",
+          "PLACE_OBJECT ",
+          "SWITCH_RESIDENCE 1",
+          "SWITCH_RESIDENCE 3",
+          "second residence furniture persists",
+          "BUY_ASSET cafe",
+          "one first payout",
+          "restart has no duplicate payout",
+          "MANAGE_BUSINESS 4",
+          "management resumes and completes",
+          "next payout uses managed gross",
+          "itemized property bills",
+          "net worth is finite",
+          "payout cursor advanced once per interval"
+        ],
+        "fixtureVersion": 3,
+        "targetVersion": 5,
+        "scope": "automated disposable-save canary; not browser, physical or production evidence"
+      },
+      "work": {
+        "status": "WORKING · DEVELOPER8h 0m remainingPausedStrategy Work NormallyWork HardTake It EasySocializeHard: +4 performance, more Energy/Fun cost. Easy: −2, less drain. Socialize: −1, more Social. Effects scale with time.",
+        "auto": 24,
+        "shopping": true
+      },
+      "layout": {
+        "overflow": false,
+        "assets": true
+      },
+      "errors": [],
+      "physicalDevice": false
+    }
+  ],
+  "scope": "automated disposable browser smoke; no human/physical/audio certification"
+}

@@ -100,3 +100,7 @@ still require the scenarios in task 0031 and the mobile validation record.
 Use scripts/mobile-scenarios.mjs with the same --puppeteer-module, --chrome and
 --url arguments for creator viewport, sheet expand/collapse, Play from Build,
 actual touch room construction, placement/rotation and object-sheet regressions.
+
+## Current candidate
+
+Activated 2026-10-18T01:21:48.358388+00:00: `20261018T012139Z-aa541f598724`, source `aa541f5987240de896a2bd69ea219bf8e9432939`, clean, save v5, certified:false. Previous pointer retains `/var/www/notsims/releases/20261017T014400Z-160e1f6`. See [deployment and rollback evidence](../docs/reviews/optiplex-wealth-appearance-deployment.md). User explicitly requested deployment while human/device acceptance remains open. Older releases cannot read migrated v5 saves; export/back up before any rollback.

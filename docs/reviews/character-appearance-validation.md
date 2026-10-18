@@ -57,3 +57,7 @@ Runtime tests cover all 18 styles/colors, repeated brown→blonde→red→black 
 | Physical Android native picker/preview usability | Must record actual candidate | Not recorded | Not performed |
 
 Record hue distinction, alpha/strand quality for every style, dark/light detail, preview/live agreement, immediate feedback, redraw lag, edit/reopen behavior and sustained device performance. Keep physical results separate from the six emulated browser viewport cases. TODO 0113 remains blocked on human visual acceptance; 0114 has automated lifecycle/parity evidence with human mobile feedback open. Existing wealth, motion, audio and mobile release gates are unchanged. This work does not authorize or claim deployment of the unaccepted wealth candidate.
+
+## Subsequent deployment at explicit user request
+
+The capture-time statements about PR #7 being draft describe that earlier stage. PRs #7/#8 are now merged and clean source `aa541f5987240de896a2bd69ea219bf8e9432939` is deployed as `20261018T012139Z-aa541f598724`, with exact-source CI and public/browser verification. See [activation record](optiplex-wealth-appearance-deployment.md). Certification remains false and the human/physical questions above stay open.

@@ -112,3 +112,23 @@ test('two-bone contact never stretches, falls back on missing chains, and reduce
 test('all gestures can be interrupted and missing optional clips use a safe base',async()=>{
  const {resolveBodyIntent}=await import('../src/presentation/body-intent.js');const h=new Human(await asset()),s=newGame(),intent=resolveBodyIntent(s,'player');for(const gesture of Object.keys(CLIPS)){for(let i=0;i<8;i++)h.controller.update({...intent,key:gesture,gesture},1/60);h.controller.update({...intent,key:'idle'},1/60);assert.equal(h.controller.overlay,null);for(const {bone} of h.controller.bones)assert.ok(bone.quaternion.toArray().every(Number.isFinite));}h.controller.update({...intent,gesture:'MissingClip'},1/60);assert.equal(h.current,'Idle');assert.equal(h.controller.overlay,null);h.dispose();
 });
+
+test('0110/0112: every hairstyle recolors repeatedly through stable isolated material bindings',async()=>{
+ const assetData=await asset(),a=new Human(assetData),b=new Human(assetData),person=newGame().person;
+ const root=a.root,model=a.model,mixer=a.mixer,materials=[...a.materials],skeletons=[];a.model.traverse(o=>{if(o.isSkinnedMesh)skeletons.push(o.skeleton);});
+ b.customize({...person,hair:'#16120f',style:'curly'});
+ // Binding traversal is construction-only. Recoloring must never rescan the model.
+ a.model.traverse=()=>{throw Error('Recolor attempted a model traversal');};
+ for(const style of ['short','long','curly'])for(const hair of ['#16120f','#4a2c1b','#8a3324','#cc4b32','#d9b27c','#eee3cf']){
+  a.customize({...person,hair,style});assert.equal(a.appearanceMaterials.hair.length,3);
+  for(const m of a.appearanceMaterials.hair)assert.equal(m.color.getHexString(),hair.slice(1));
+  for(const mesh of a.hairMeshes)assert.equal(mesh.visible,mesh.name.startsWith(`Notsims_Hair_${style}`));
+  for(const m of b.appearanceMaterials.hair){assert.equal(m.color.getHexString(),'16120f');assert.ok(!a.materials.includes(m));}
+  assert.equal(b.model.getObjectByName('Notsims_Hair_curly').visible,true);
+ }
+ assert.equal(a.root,root);assert.equal(a.model,model);assert.equal(a.mixer,mixer);assert.deepEqual(a.materials,materials);
+ assert.equal(a.appearanceMaterials.skin[0].color.getHexString(),person.skin.slice(1));assert.equal(a.appearanceMaterials.shirt[0].color.getHexString(),person.shirt.slice(1));
+ for(const hair of ['#4a2c1b','#d9b27c','#cc4b32','#16120f']){a.customize({...person,hair,style:'long'});for(const m of a.appearanceMaterials.hair)assert.equal(m.color.getHexString(),hair.slice(1));}
+ // Restore traversal for normal Three.js teardown.
+ delete a.model.traverse;const afterSkeletons=[];a.model.traverse(o=>{if(o.isSkinnedMesh)afterSkeletons.push(o.skeleton);});assert.equal(afterSkeletons.length,skeletons.length);for(let i=0;i<skeletons.length;i++)assert.equal(afterSkeletons[i],skeletons[i]);a.dispose();b.dispose();
+});

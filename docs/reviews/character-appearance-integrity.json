@@ -1,0 +1,18 @@
+{
+  "beforeSha256": "27c2e49a1ef0097a01459df989d516ebef5acfdbcd3c2229ca62007ba027773d",
+  "afterSha256": "a142f9433ce6c5e24510543fe245254b551665d74e28a06c9a35c1af5276d7a4",
+  "unchanged": [
+    "meshes",
+    "skins",
+    "nodes",
+    "animations",
+    "accessors",
+    "non-image buffer bytes",
+    "all three hair alpha planes"
+  ],
+  "untouchedTextures": {
+    "Notsims_Skin": "12929eae7a0584a48fcaea30d6bbd6b3b27246e4535af5c5839f6a93330980a8",
+    "Notsims_Eyes": "4659691c7295ad6206c78b003e5fd0e5f91dcd53032fa914a229bb48cabe424b"
+  },
+  "repeatExportSha256": "a142f9433ce6c5e24510543fe245254b551665d74e28a06c9a35c1af5276d7a4"
+}

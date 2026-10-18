@@ -1,0 +1,674 @@
+{
+  "kind": "automated browser rendering/lifecycle; human visual and physical-device acceptance pending",
+  "sourceSha": "769d4373b71967e0cc4edc5c925f98472d562236",
+  "sourceClean": true,
+  "assetSha256": "a142f9433ce6c5e24510543fe245254b551665d74e28a06c9a35c1af5276d7a4",
+  "browser": "Chrome/155.0.8059.82",
+  "mode": "headless Chrome; SwiftShader allowed; not a physical phone",
+  "requestCounts": {
+    "1": 1,
+    "2": 2,
+    "3": 2,
+    "4": 2,
+    "5": 0,
+    "6": 0,
+    "7": 0
+  },
+  "errors": [],
+  "cases": [
+    {
+      "surface": "creator",
+      "style": "short",
+      "color": "black",
+      "hair": "#16120f",
+      "filename": "creator-short-black.png",
+      "colors": [
+        "16120f",
+        "16120f",
+        "16120f"
+      ],
+      "stable": true
+    },
+    {
+      "surface": "creator",
+      "style": "short",
+      "color": "brown",
+      "hair": "#4a2c1b",
+      "filename": "creator-short-brown.png",
+      "colors": [
+        "4a2c1b",
+        "4a2c1b",
+        "4a2c1b"
+      ],
+      "stable": true
+    },
+    {
+      "surface": "creator",
+      "style": "short",
+      "color": "auburn",
+      "hair": "#8a3324",
+      "filename": "creator-short-auburn.png",
+      "colors": [
+        "8a3324",
+        "8a3324",
+        "8a3324"
+      ],
+      "stable": true
+    },
+    {
+      "surface": "creator",
+      "style": "short",
+      "color": "red",
+      "hair": "#cc4b32",
+      "filename": "creator-short-red.png",
+      "colors": [
+        "cc4b32",
+        "cc4b32",
+        "cc4b32"
+      ],
+      "stable": true
+    },
+    {
+      "surface": "creator",
+      "style": "short",
+      "color": "blonde",
+      "hair": "#d9b27c",
+      "filename": "creator-short-blonde.png",
+      "colors": [
+        "d9b27c",
+        "d9b27c",
+        "d9b27c"
+      ],
+      "stable": true
+    },
+    {
+      "surface": "creator",
+      "style": "short",
+      "color": "platinum",
+      "hair": "#eee3cf",
+      "filename": "creator-short-platinum.png",
+      "colors": [
+        "eee3cf",
+        "eee3cf",
+        "eee3cf"
+      ],
+      "stable": true
+    },
+    {
+      "surface": "creator",
+      "style": "long",
+      "color": "black",
+      "hair": "#16120f",
+      "filename": "creator-long-black.png",
+      "colors": [
+        "16120f",
+        "16120f",
+        "16120f"
+      ],
+      "stable": true
+    },
+    {
+      "surface": "creator",
+      "style": "long",
+      "color": "brown",
+      "hair": "#4a2c1b",
+      "filename": "creator-long-brown.png",
+      "colors": [
+        "4a2c1b",
+        "4a2c1b",
+        "4a2c1b"
+      ],
+      "stable": true
+    },
+    {
+      "surface": "creator",
+      "style": "long",
+      "color": "auburn",
+      "hair": "#8a3324",
+      "filename": "creator-long-auburn.png",
+      "colors": [
+        "8a3324",
+        "8a3324",
+        "8a3324"
+      ],
+      "stable": true
+    },
+    {
+      "surface": "creator",
+      "style": "long",
+      "color": "red",
+      "hair": "#cc4b32",
+      "filename": "creator-long-red.png",
+      "colors": [
+        "cc4b32",
+        "cc4b32",
+        "cc4b32"
+      ],
+      "stable": true
+    },
+    {
+      "surface": "creator",
+      "style": "long",
+      "color": "blonde",
+      "hair": "#d9b27c",
+      "filename": "creator-long-blonde.png",
+      "colors": [
+        "d9b27c",
+        "d9b27c",
+        "d9b27c"
+      ],
+      "stable": true
+    },
+    {
+      "surface": "creator",
+      "style": "long",
+      "color": "platinum",
+      "hair": "#eee3cf",
+      "filename": "creator-long-platinum.png",
+      "colors": [
+        "eee3cf",
+        "eee3cf",
+        "eee3cf"
+      ],
+      "stable": true
+    },
+    {
+      "surface": "creator",
+      "style": "curly",
+      "color": "black",
+      "hair": "#16120f",
+      "filename": "creator-curly-black.png",
+      "colors": [
+        "16120f",
+        "16120f",
+        "16120f"
+      ],
+      "stable": true
+    },
+    {
+      "surface": "creator",
+      "style": "curly",
+      "color": "brown",
+      "hair": "#4a2c1b",
+      "filename": "creator-curly-brown.png",
+      "colors": [
+        "4a2c1b",
+        "4a2c1b",
+        "4a2c1b"
+      ],
+      "stable": true
+    },
+    {
+      "surface": "creator",
+      "style": "curly",
+      "color": "auburn",
+      "hair": "#8a3324",
+      "filename": "creator-curly-auburn.png",
+      "colors": [
+        "8a3324",
+        "8a3324",
+        "8a3324"
+      ],
+      "stable": true
+    },
+    {
+      "surface": "creator",
+      "style": "curly",
+      "color": "red",
+      "hair": "#cc4b32",
+      "filename": "creator-curly-red.png",
+      "colors": [
+        "cc4b32",
+        "cc4b32",
+        "cc4b32"
+      ],
+      "stable": true
+    },
+    {
+      "surface": "creator",
+      "style": "curly",
+      "color": "blonde",
+      "hair": "#d9b27c",
+      "filename": "creator-curly-blonde.png",
+      "colors": [
+        "d9b27c",
+        "d9b27c",
+        "d9b27c"
+      ],
+      "stable": true
+    },
+    {
+      "surface": "creator",
+      "style": "curly",
+      "color": "platinum",
+      "hair": "#eee3cf",
+      "filename": "creator-curly-platinum.png",
+      "colors": [
+        "eee3cf",
+        "eee3cf",
+        "eee3cf"
+      ],
+      "stable": true
+    },
+    {
+      "surface": "live",
+      "lighting": "day",
+      "style": "short",
+      "color": "black",
+      "hair": "#16120f",
+      "filename": "live-day-short-black.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "day",
+      "style": "short",
+      "color": "brown",
+      "hair": "#4a2c1b",
+      "filename": "live-day-short-brown.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "day",
+      "style": "short",
+      "color": "auburn",
+      "hair": "#8a3324",
+      "filename": "live-day-short-auburn.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "day",
+      "style": "short",
+      "color": "red",
+      "hair": "#cc4b32",
+      "filename": "live-day-short-red.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "day",
+      "style": "short",
+      "color": "blonde",
+      "hair": "#d9b27c",
+      "filename": "live-day-short-blonde.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "day",
+      "style": "short",
+      "color": "platinum",
+      "hair": "#eee3cf",
+      "filename": "live-day-short-platinum.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "day",
+      "style": "long",
+      "color": "black",
+      "hair": "#16120f",
+      "filename": "live-day-long-black.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "day",
+      "style": "long",
+      "color": "brown",
+      "hair": "#4a2c1b",
+      "filename": "live-day-long-brown.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "day",
+      "style": "long",
+      "color": "auburn",
+      "hair": "#8a3324",
+      "filename": "live-day-long-auburn.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "day",
+      "style": "long",
+      "color": "red",
+      "hair": "#cc4b32",
+      "filename": "live-day-long-red.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "day",
+      "style": "long",
+      "color": "blonde",
+      "hair": "#d9b27c",
+      "filename": "live-day-long-blonde.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "day",
+      "style": "long",
+      "color": "platinum",
+      "hair": "#eee3cf",
+      "filename": "live-day-long-platinum.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "day",
+      "style": "curly",
+      "color": "black",
+      "hair": "#16120f",
+      "filename": "live-day-curly-black.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "day",
+      "style": "curly",
+      "color": "brown",
+      "hair": "#4a2c1b",
+      "filename": "live-day-curly-brown.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "day",
+      "style": "curly",
+      "color": "auburn",
+      "hair": "#8a3324",
+      "filename": "live-day-curly-auburn.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "day",
+      "style": "curly",
+      "color": "red",
+      "hair": "#cc4b32",
+      "filename": "live-day-curly-red.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "day",
+      "style": "curly",
+      "color": "blonde",
+      "hair": "#d9b27c",
+      "filename": "live-day-curly-blonde.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "day",
+      "style": "curly",
+      "color": "platinum",
+      "hair": "#eee3cf",
+      "filename": "live-day-curly-platinum.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "night",
+      "style": "short",
+      "color": "black",
+      "hair": "#16120f",
+      "filename": "live-night-short-black.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "night",
+      "style": "short",
+      "color": "brown",
+      "hair": "#4a2c1b",
+      "filename": "live-night-short-brown.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "night",
+      "style": "short",
+      "color": "auburn",
+      "hair": "#8a3324",
+      "filename": "live-night-short-auburn.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "night",
+      "style": "short",
+      "color": "red",
+      "hair": "#cc4b32",
+      "filename": "live-night-short-red.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "night",
+      "style": "short",
+      "color": "blonde",
+      "hair": "#d9b27c",
+      "filename": "live-night-short-blonde.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "night",
+      "style": "short",
+      "color": "platinum",
+      "hair": "#eee3cf",
+      "filename": "live-night-short-platinum.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "night",
+      "style": "long",
+      "color": "black",
+      "hair": "#16120f",
+      "filename": "live-night-long-black.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "night",
+      "style": "long",
+      "color": "brown",
+      "hair": "#4a2c1b",
+      "filename": "live-night-long-brown.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "night",
+      "style": "long",
+      "color": "auburn",
+      "hair": "#8a3324",
+      "filename": "live-night-long-auburn.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "night",
+      "style": "long",
+      "color": "red",
+      "hair": "#cc4b32",
+      "filename": "live-night-long-red.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "night",
+      "style": "long",
+      "color": "blonde",
+      "hair": "#d9b27c",
+      "filename": "live-night-long-blonde.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "night",
+      "style": "long",
+      "color": "platinum",
+      "hair": "#eee3cf",
+      "filename": "live-night-long-platinum.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "night",
+      "style": "curly",
+      "color": "black",
+      "hair": "#16120f",
+      "filename": "live-night-curly-black.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "night",
+      "style": "curly",
+      "color": "brown",
+      "hair": "#4a2c1b",
+      "filename": "live-night-curly-brown.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "night",
+      "style": "curly",
+      "color": "auburn",
+      "hair": "#8a3324",
+      "filename": "live-night-curly-auburn.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "night",
+      "style": "curly",
+      "color": "red",
+      "hair": "#cc4b32",
+      "filename": "live-night-curly-red.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "night",
+      "style": "curly",
+      "color": "blonde",
+      "hair": "#d9b27c",
+      "filename": "live-night-curly-blonde.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "live",
+      "lighting": "night",
+      "style": "curly",
+      "color": "platinum",
+      "hair": "#eee3cf",
+      "filename": "live-night-curly-platinum.png",
+      "camera": "inspection close-up; actual live scene/lighting"
+    },
+    {
+      "surface": "lifecycle",
+      "view": "3d",
+      "width": 320,
+      "dialogOverflow": false,
+      "previewWidth": 142,
+      "previewHeight": 150,
+      "pickerWidth": 82,
+      "persisted": {
+        "hair": "#eee3cf",
+        "style": "curly"
+      },
+      "imported": true,
+      "reopened": true,
+      "physicalDevice": false
+    },
+    {
+      "surface": "lifecycle",
+      "view": "3d",
+      "width": 390,
+      "dialogOverflow": false,
+      "previewWidth": 142,
+      "previewHeight": 150,
+      "pickerWidth": 105.34375,
+      "persisted": {
+        "hair": "#eee3cf",
+        "style": "curly"
+      },
+      "imported": true,
+      "reopened": true,
+      "physicalDevice": false
+    },
+    {
+      "surface": "lifecycle",
+      "view": "3d",
+      "width": 430,
+      "dialogOverflow": false,
+      "previewWidth": 142,
+      "previewHeight": 150,
+      "pickerWidth": 118.671875,
+      "persisted": {
+        "hair": "#eee3cf",
+        "style": "curly"
+      },
+      "imported": true,
+      "reopened": true,
+      "physicalDevice": false
+    },
+    {
+      "surface": "lifecycle",
+      "view": "classic",
+      "width": 320,
+      "dialogOverflow": false,
+      "previewWidth": 142,
+      "previewHeight": 150,
+      "pickerWidth": 82,
+      "persisted": {
+        "hair": "#eee3cf",
+        "style": "curly"
+      },
+      "imported": true,
+      "reopened": true,
+      "physicalDevice": false
+    },
+    {
+      "surface": "lifecycle",
+      "view": "classic",
+      "width": 390,
+      "dialogOverflow": false,
+      "previewWidth": 142,
+      "previewHeight": 150,
+      "pickerWidth": 105.34375,
+      "persisted": {
+        "hair": "#eee3cf",
+        "style": "curly"
+      },
+      "imported": true,
+      "reopened": true,
+      "physicalDevice": false
+    },
+    {
+      "surface": "lifecycle",
+      "view": "classic",
+      "width": 430,
+      "dialogOverflow": false,
+      "previewWidth": 142,
+      "previewHeight": 150,
+      "pickerWidth": 118.671875,
+      "persisted": {
+        "hair": "#eee3cf",
+        "style": "curly"
+      },
+      "imported": true,
+      "reopened": true,
+      "physicalDevice": false
+    }
+  ]
+}

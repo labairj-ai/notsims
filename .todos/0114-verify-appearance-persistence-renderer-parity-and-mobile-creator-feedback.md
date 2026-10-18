@@ -1,7 +1,7 @@
 # 0114 — Verify Appearance Persistence, Renderer Parity, and Mobile Creator Feedback
 
 - **ID:** 0114
-- **Status:** open
+- **Status:** in_progress
 - **Priority:** high
 - **Depends:** 0113
 
@@ -106,19 +106,23 @@ Only existing material color state should update.
 
 ## Done when
 
-- [ ] creator preview updates live.
-- [ ] live 3D character matches persisted selection.
-- [ ] Classic remains semantically consistent.
-- [ ] save/reload works.
-- [ ] export/import works.
-- [ ] player/NPC material isolation passes.
-- [ ] repeated color changes do not reload the character asset.
+- [x] creator preview updates live.
+- [x] live 3D character matches persisted selection.
+- [x] Classic remains semantically consistent.
+- [x] save/reload works.
+- [x] export/import works.
+- [x] player/NPC material isolation passes.
+- [x] repeated color changes do not reload the character asset.
 - [ ] mobile creator feedback is acceptable.
 
 ## Imported source and repository mapping
 
 Imported from the [shared character appearance plan](https://chatgpt.com/s/t_6ad4192ee5948191bde12dc7f5b1660f) on 2026-10-17. Source task 0109 is repository task 0114. Source IDs 0104–0108 already belong to the wealth follow-up; all six appearance tasks are shifted by five and internal dependencies are remapped consistently. Existing tasks and acceptance gates are unchanged.
 
-This task is planning-only. Source defect descriptions are review findings to verify against the implementation before changing code. No asset regeneration, runtime fix, rendered review, human/device acceptance or deployment is claimed by this import.
+The original import was planning-only. Implementation and evidence are recorded below; no human/device certification or deployment is inferred from automated checks.
 
 Keep browser viewport checks at 320/390/430 px separate from any actual physical-phone observations. Neither CI nor fixture tests establish physical usability or human visual acceptance.
+
+## Implementation evidence
+
+Implementation `769d4373b71967e0cc4edc5c925f98472d562236`; character GLB `a142f9433ce6c5e24510543fe245254b551665d74e28a06c9a35c1af5276d7a4`. See [appearance validation](../docs/reviews/character-appearance-validation.md), browser/asset evidence and [authoring contract](../docs/architecture/character-appearance.md). 186 tests, full build/source checks, wealth canary and economy gates pass. All 18 creator, 36 live day/night and six browser lifecycle cases captured. Human visual and physical/mobile feedback remain open, explicitly retained in 0113/0114. No deployment claimed.

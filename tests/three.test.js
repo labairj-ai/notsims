@@ -128,6 +128,7 @@ test('0110/0112: every hairstyle recolors repeatedly through stable isolated mat
  }
  assert.equal(a.root,root);assert.equal(a.model,model);assert.equal(a.mixer,mixer);assert.deepEqual(a.materials,materials);
  assert.equal(a.appearanceMaterials.skin[0].color.getHexString(),person.skin.slice(1));assert.equal(a.appearanceMaterials.shirt[0].color.getHexString(),person.shirt.slice(1));
+ for(const hair of ['#4a2c1b','#d9b27c','#cc4b32','#16120f']){a.customize({...person,hair,style:'long'});for(const m of a.appearanceMaterials.hair)assert.equal(m.color.getHexString(),hair.slice(1));}
  // Restore traversal for normal Three.js teardown.
- delete a.model.traverse;a.dispose();b.dispose();
+ delete a.model.traverse;const afterSkeletons=[];a.model.traverse(o=>{if(o.isSkinnedMesh)afterSkeletons.push(o.skeleton);});assert.equal(afterSkeletons.length,skeletons.length);for(let i=0;i<skeletons.length;i++)assert.equal(afterSkeletons[i],skeletons[i]);a.dispose();b.dispose();
 });

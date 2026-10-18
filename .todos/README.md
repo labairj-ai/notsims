@@ -243,7 +243,7 @@ Imported from [the wealth follow-up review](https://chatgpt.com/s/t_6ad2dc9f25b4
 
 ## Character appearance and hair rendering
 
-Six tasks imported from the [shared appearance plan](https://chatgpt.com/s/t_6ad4192ee5948191bde12dc7f5b1660f). All remain **open / planning-only**. The source's 0104–0109 IDs overlap existing wealth work; they map to **0109–0114** without renumbering existing tasks.
+Six tasks imported from the [shared appearance plan](https://chatgpt.com/s/t_6ad4192ee5948191bde12dc7f5b1660f). **0109–0112 are complete**; **0113 has automated matrix evidence and is blocked on human visual acceptance**; **0114 has automated lifecycle/parity coverage with human mobile feedback open**. The source's 0104–0109 IDs overlap existing wealth work; they map to **0109–0114** without renumbering existing tasks.
 
 | Repository ID | Source ID | Work |
 | --- | --- | --- |
@@ -256,4 +256,4 @@ Six tasks imported from the [shared appearance plan](https://chatgpt.com/s/t_6ad
 
 Execution order: **0109 → 0110 → 0111 → 0112 → 0113 → 0114**. First neutralize all three exported hair textures without changing alpha/geometry/UVs, bind cloned appearance materials explicitly, define and measure the tintable material contract, then add runtime and authored-texture regressions. Validate the 18 color/style combinations in creator/live rendering, day/night cases, and persistence/Classic/mobile parity.
 
-GameState keeps semantic hair color and hairstyle; neutral authored detail plus per-character runtime tint produces the rendered appearance. Keep the original brown asset as a negative regression case. Material-property assertions alone cannot establish visible hair-color correctness. Existing wealth release and human/mobile/audio gates remain open; this import does not certify or deploy anything.
+GameState keeps semantic hair color and hairstyle; neutral authored detail plus per-character runtime tint produces the rendered appearance. Keep the original brown asset as a negative regression case. Material-property assertions alone cannot establish visible hair-color correctness. See [appearance validation](../docs/reviews/character-appearance-validation.md) for 186 tests, reproducible asset/alpha checks and the rendered matrix. Existing wealth release and human/mobile/audio gates remain open; no certification or deployment is claimed.

@@ -1,7 +1,7 @@
 # 0109 — Neutralize Hair Textures for Runtime Tinting
 
 - **ID:** 0109
-- **Status:** open
+- **Status:** complete
 - **Priority:** critical
 - **Depends:** existing character export pipeline
 
@@ -117,24 +117,28 @@ Runtime Three.js material color supplies the selected hair color.
 
 ## Done when
 
-- [ ] all three hair textures are generated as neutral tintable textures.
-- [ ] original alpha coverage is preserved.
-- [ ] source brown hue no longer dominates runtime hair color.
-- [ ] black, brown, red, blonde, and platinum colors are visibly distinct.
-- [ ] GLB exports reproducibly.
-- [ ] asset-size budget remains acceptable.
+- [x] all three hair textures are generated as neutral tintable textures.
+- [x] original alpha coverage is preserved.
+- [x] source brown hue no longer dominates runtime hair color.
+- [x] black, brown, red, blonde, and platinum colors are visibly distinct.
+- [x] GLB exports reproducibly.
+- [x] asset-size budget remains acceptable.
 
 ## QA
 
-- [ ] short hair export.
-- [ ] long hair export.
-- [ ] curly hair export.
-- [ ] alpha comparison against source.
-- [ ] texture luminance statistics.
-- [ ] production GLB structure validation.
+- [x] short hair export.
+- [x] long hair export.
+- [x] curly hair export.
+- [x] alpha comparison against source.
+- [x] texture luminance statistics.
+- [x] production GLB structure validation.
 
 ## Imported source and repository mapping
 
 Imported from the [shared character appearance plan](https://chatgpt.com/s/t_6ad4192ee5948191bde12dc7f5b1660f) on 2026-10-17. Source task 0104 is repository task 0109. Source IDs 0104–0108 already belong to the wealth follow-up; all six appearance tasks are shifted by five and internal dependencies are remapped consistently. Existing tasks and acceptance gates are unchanged.
 
-This task is planning-only. Source defect descriptions are review findings to verify against the implementation before changing code. No asset regeneration, runtime fix, rendered review, human/device acceptance or deployment is claimed by this import.
+The original import was planning-only. Implementation and evidence are recorded below; no human/device certification or deployment is inferred from automated checks.
+
+## Implementation evidence
+
+Implementation `769d4373b71967e0cc4edc5c925f98472d562236`; character GLB `a142f9433ce6c5e24510543fe245254b551665d74e28a06c9a35c1af5276d7a4`. See [appearance validation](../docs/reviews/character-appearance-validation.md), browser/asset evidence and [authoring contract](../docs/architecture/character-appearance.md). 186 tests, full build/source checks, wealth canary and economy gates pass. All 18 creator, 36 live day/night and six browser lifecycle cases captured. Human visual and physical/mobile feedback remain open, explicitly retained in 0113/0114. No deployment claimed.

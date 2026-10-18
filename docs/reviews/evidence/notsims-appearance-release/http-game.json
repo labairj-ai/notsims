@@ -1,0 +1,100 @@
+[
+  {
+    "path": "assets/notsims-human.glb",
+    "status": 200,
+    "contentType": "model/gltf-binary",
+    "bytes": 6143660,
+    "sha256": "a142f9433ce6c5e24510543fe245254b551665d74e28a06c9a35c1af5276d7a4"
+  },
+  {
+    "path": "assets/character-metadata.json",
+    "status": 200,
+    "contentType": "application/json",
+    "bytes": 3590,
+    "sha256": "bf20e4ed520ca07603745316101cacdbe01f3b0ef945b76c6a75d001f3f108ae"
+  },
+  {
+    "path": "assets/CC0-1.0.txt",
+    "status": 200,
+    "contentType": "text/plain",
+    "bytes": 6962,
+    "sha256": "f6089cba01cb570a24712b41ab8a586ccd3cc5ef53dc266ca50b95c288956d2c"
+  },
+  {
+    "path": "src/character3d.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 4187,
+    "sha256": "2f76a1644ea832e44dfab7d6504e8c49f7cf52a71decf3272b4fd398a6fb2ba0"
+  },
+  {
+    "path": "src/render3d.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 9127,
+    "sha256": "f01c1fd2825beb04691b0b387bbd94f9ac8d1d908531e08c60e3b8f132f613b7"
+  },
+  {
+    "path": "src/content/assets.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 2565,
+    "sha256": "5a2a8b1d0ace61a086127a21bc35e851b148b625ef76f32d1309febd5ade293b"
+  },
+  {
+    "path": "src/systems/ownership/ownership.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 7009,
+    "sha256": "b355ff6ee2068b5f93362b35790a457f1f52166a375c32a3a5b78b57d3c0871a"
+  },
+  {
+    "path": "src/systems/economy/release-canary.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 3387,
+    "sha256": "3f0514c4aa08cdae3098d3e86b315840ece632b823aae0fd8a1564f98ce0672f"
+  },
+  {
+    "path": "src/persistence/wealth-schema.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 3431,
+    "sha256": "c0e26946ae320eb78ea7657d1750db1e922761652b8f3694c6d614f826962d37"
+  },
+  {
+    "path": "src/ui/panels/assets.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 4633,
+    "sha256": "fd24ce4e3567f65a06395a27c46354ecc1f4c641bfae7015bc6ba9935f5cef5f"
+  },
+  {
+    "path": "vendor/three/addons/loaders/GLTFLoader.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 117570,
+    "sha256": "131c0f78c01d19368ae495caa65b3adaa10487810a36a05bb5901b769a35ac16"
+  },
+  {
+    "path": "vendor/three/addons/utils/SkeletonUtils.js",
+    "status": 200,
+    "contentType": "application/javascript",
+    "bytes": 11535,
+    "sha256": "b1632a703206c3d830de9fcbe515696770d04b71a15ee6b50afa6d2c3298c86f"
+  },
+  {
+    "path": "src/style.css",
+    "status": 200,
+    "contentType": "text/css",
+    "bytes": 26254,
+    "sha256": "837b0c2cb569830c6f0d2fb05a6b9555cdf4dded3dae546e73f800745bbc4fae"
+  },
+  {
+    "path": "src/mobile.css",
+    "status": 200,
+    "contentType": "text/css",
+    "bytes": 8460,
+    "sha256": "318c70d739918356629c097d93f64f08dd2c6f637e6fd166a1615d6aef1e8c4c"
+  }
+]

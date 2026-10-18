@@ -190,15 +190,15 @@ Create or update a release validation record covering:
 
 - [ ] 0085 and 0102 acceptance are complete.
 - [x] 0104–0107 are complete.
-- [ ] exact merge candidate CI passes.
+- [x] exact merge candidate CI passes.
 - [ ] v3→v4→v5 and v4→v5 migration canaries pass on the accepted candidate; repeated v5 reload is idempotent.
 - [ ] ownership/payout restart canary passes.
 - [ ] browser review passes.
 - [ ] physical iPhone/Android review passes.
-- [ ] PR is merged through protected main.
-- [ ] exact merged SHA is deployed atomically.
+- [x] PR is merged through protected main.
+- [x] exact merged SHA is deployed atomically.
 - [ ] post-deploy production smoke passes.
-- [ ] release evidence records exact source/deployment identity.
+- [x] release evidence records exact source/deployment identity.
 
 ## Imported review
 
@@ -215,3 +215,7 @@ Migration/ownership canaries and the release procedure are prepared. Actual brow
 The [latest review](https://chatgpt.com/s/t_6ad2e0fe8c6481918f279ce5497e12e4) confirms 0104–0107 remain complete and requests this v5 contract correction. Do not add another economy feature backlog before certification. Prior successful implementation CI is [38995760858](https://github.com/labairj-ai/notsims/actions/runs/38995760858), for `f2e47fc505e550a8d87781110d9d4468a7e7bfc0`; a final accepted candidate still needs its own exact-head check.
 
 Use the [browser/property acceptance walkthrough](../docs/reviews/wealth-browser-acceptance.md). Browser, physical-device and inherited human observations remain required, not inferred from fixtures or CI.
+
+## Explicit deployment request — observed activation
+
+User requested deployment to OptiPlex after the appearance work. PRs #7/#8 merged through normal checks; exact main `aa541f5987240de896a2bd69ea219bf8e9432939` passed CI and was built clean. Release `20261018T012139Z-aa541f598724` activated at 2026-10-18T01:21:48.358388+00:00; all 178 package hashes and archive integrity verified. Public HTTP checks and three isolated browser smoke sessions passed. See [deployment evidence](../docs/reviews/optiplex-wealth-appearance-deployment.md). This supersedes historical draft/not-deployed statements above. It does not certify human/device gates; this TODO remains in progress and certified:false remains public.

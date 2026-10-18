@@ -1,4 +1,37 @@
 {
+  "appearance": {
+    "version": 1,
+    "hair": {
+      "short": {
+        "sourceSha256": "f34a0957184e3d1e911ed59245f874f8d4843f61ee44ff49f43edb4be0196949",
+        "neutralTextureSha256": "f077cca3fcaf30f7cf405a48cf4cf35662ba1354b0274026ac98a009c66b991c",
+        "alphaSha256": "5c4e858c7875052bf29a1c3157630d9f54142baefa8f8c33397a53100b47e186",
+        "width": 1024,
+        "height": 1024,
+        "visiblePixels": 592914,
+        "luminanceFloor": 0.6
+      },
+      "long": {
+        "sourceSha256": "e8dc25d90f8f62467e8630420e1240a400d070054fb7c3f1d3f7bf3e457d6c2c",
+        "neutralTextureSha256": "844576a01f5408a4402915aa047f94bbd9faacad3448c15c46de0ccc4b3e3a68",
+        "alphaSha256": "b315449a89b4d28a4478fd2a6d9bc1709a17708d1696dc69a3953a8a4937c872",
+        "width": 1024,
+        "height": 1024,
+        "visiblePixels": 790326,
+        "luminanceFloor": 0.6
+      },
+      "curly": {
+        "sourceSha256": "dc0db7dd8a13802f02303ca7e49844b219e09db134471b7061538a8af8f7c7fb",
+        "neutralTextureSha256": "d2b9551ffc7ff03af5ea396a2a9312fc0c118ca0fe3d3da7ef1d4998f6b11659",
+        "alphaSha256": "d0327ab44c87979fa355486ccb06ffaca7c6c72d113302d03b244520a04ccc65",
+        "width": 1024,
+        "height": 1024,
+        "visiblePixels": 530589,
+        "luminanceFloor": 0.6
+      }
+    },
+    "exporterSha256": "1ea79cf1b54a4bf8fc59184b68c763a02d3a6720ca6e044d28e22dae79991811"
+  },
   "blender": "4.5.4 LTS",
   "fps": 24,
   "bones": 53,

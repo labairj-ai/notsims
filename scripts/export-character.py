@@ -9,6 +9,7 @@ from pathlib import Path
 import bpy
 import math
 import json
+import hashlib
 import numpy as np
 from mathutils import Quaternion, Vector
 
@@ -98,6 +99,38 @@ for poly in outfit.data.polygons:
 shoes=asset('clothes','shoes01','Notsims_Shoes')
 shoes.data.materials.clear();shoes.data.materials.append(simple_material('Notsims_Shoes',(.85,.82,.73)))
 
+hair_metadata={}
+def neutral_hair(diffuse,style):
+    image=bpy.data.images.load(str(diffuse),check_existing=False)
+    if max(image.size)>1024:
+        ratio=1024/max(image.size)
+        image.scale(int(image.size[0]*ratio),int(image.size[1]*ratio))
+    pixels=np.array(image.pixels[:],dtype=np.float32).reshape(-1,4)
+    alpha=pixels[:,3].copy()
+    visible=np.rint(alpha*255)>102
+    assert visible.any() and np.isfinite(pixels).all(), 'Invalid source hair texture'
+    luma=pixels[:,:3]@np.array([.2126,.7152,.0722],dtype=np.float32)
+    lo,hi=np.percentile(luma[visible],[1,99])
+    detail=.6+.4*np.clip((luma-lo)/max(float(hi-lo),1e-6),0,1)
+    pixels[:,:3]=detail[:,None]
+    pixels[:,3]=alpha
+    image.pixels.foreach_set(pixels.ravel())
+    image.filepath_raw=str(out/('hair-neutral-'+style+'.png'))
+    image.file_format='PNG';image.save()
+    # Verify saved alpha, not merely the in-memory array. Quantize the original
+    # to the same 8-bit PNG representation used by the existing export pipeline.
+    saved=bpy.data.images.load(image.filepath_raw,check_existing=False)
+    saved_pixels=np.array(saved.pixels[:],dtype=np.float32).reshape(-1,4)
+    alpha8=np.rint(alpha*255).astype(np.uint8)
+    saved_alpha8=np.rint(saved_pixels[:,3]*255).astype(np.uint8)
+    assert np.array_equal(alpha8,saved_alpha8), 'Hair alpha changed'
+    hair_metadata[style]={'sourceSha256':hashlib.sha256(diffuse.read_bytes()).hexdigest(),
+        'neutralTextureSha256':hashlib.sha256(Path(image.filepath_raw).read_bytes()).hexdigest(),
+        'alphaSha256':hashlib.sha256(alpha8.tobytes()).hexdigest(),
+        'width':image.size[0],'height':image.size[1],
+        'visiblePixels':int(visible.sum()),'luminanceFloor':.6}
+    return Path(image.filepath_raw)
+
 for style,name in [('short','short01'),('long','long01'),('curly','afro01')]:
     hair=asset('hair',name,'Notsims_Hair_'+style,'Hair')
     mhmat=assets/'hair'/name/(name+'.mhmat')
@@ -106,7 +139,8 @@ for style,name in [('short','short01'),('long','long01'),('curly','afro01')]:
         if line.startswith('diffuseTexture '):
             diffuse=mhmat.parent/line.split(maxsplit=1)[1].strip()
     hair.data.materials.clear()
-    hair.data.materials.append(simple_material('Notsims_Hair_'+style,(.18,.11,.07),diffuse,alpha=True))
+    assert diffuse and diffuse.is_file(), 'Missing source hair texture'
+    hair.data.materials.append(simple_material('Notsims_Hair_'+style,(1,1,1),neutral_hair(diffuse,style),alpha=True))
 
 for obj in [o for o in bpy.context.scene.objects if o.type=='MESH']:
     bpy.ops.object.select_all(action='DESELECT');obj.select_set(True);bpy.context.view_layer.objects.active=obj
@@ -220,7 +254,7 @@ bpy.ops.wm.save_as_mainfile(filepath=str(out / 'character-source.blend'))
 bpy.ops.export_scene.gltf(filepath=str(out/'notsims-human.glb'),export_format='GLB',
     export_animations=True,export_animation_mode='ACTIONS',export_force_sampling=True,
     export_skins=True,export_morph=False,export_yup=True,export_apply=False)
-metadata={'blender':bpy.app.version_string,'fps':24,'bones':len(rig.pose.bones),'clips':[{'name':name,'duration':duration,'loop':name in looping} for name,duration,_ in clips]}
+metadata={'appearance':{'version':1,'hair':hair_metadata,'exporterSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()},'blender':bpy.app.version_string,'fps':24,'bones':len(rig.pose.bones),'clips':[{'name':name,'duration':duration,'loop':name in looping} for name,duration,_ in clips]}
 assert len({c['name'] for c in metadata['clips']})==len(durations)
 assert (out/'notsims-human.glb').stat().st_size<12_000_000, 'Character exceeds 12 MB mobile budget'
 (out/'character-metadata.json').write_text(json.dumps(metadata,indent=2)+'\n')
